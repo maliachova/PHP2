@@ -291,8 +291,8 @@ class SplayTree extends SplayTreeRotations
      *
      * Time complexity: O(log n) for binary search tree search.
      *
-     * @param SplayTreeNode|null $node        The (sub)tree's root node to start searching
-     * from
+     * @param SplayTreeNode|null $node        The (sub)tree's root node to start
+     *                                         searching from
      * @param int                $key         The node's key being searched
      * @param SplayTreeNode|null $lastVisited Keep track of the last visited node
      *
