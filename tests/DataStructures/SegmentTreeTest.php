@@ -26,7 +26,9 @@ class SegmentTreeTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->testArray = [1, 3, 5, 7, 9, 11, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26];
+        $this->testArray = [
+            1, 3, 5, 7, 9, 11, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+        ];
     }
 
     public static function sumQueryProvider(): array
@@ -54,7 +56,8 @@ class SegmentTreeTest extends TestCase
         $this->assertEquals(
             $expected,
             $segmentTree->query($startIndex, $endIndex),
-            "Query sum between index $startIndex and $endIndex should return $expected."
+            "Query sum between index $startIndex and $endIndex should return " .
+            "$expected."
         );
     }
 
@@ -81,7 +84,8 @@ class SegmentTreeTest extends TestCase
         $this->assertEquals(
             $expected,
             $segmentTree->query($startIndex, $endIndex),
-            "Max query between index $startIndex and $endIndex should return $expected."
+            "Max query between index $startIndex and $endIndex should return " .
+            "$expected."
         );
     }
 
@@ -110,7 +114,8 @@ class SegmentTreeTest extends TestCase
         $this->assertEquals(
             $expected,
             $segmentTree->query($startIndex, $endIndex),
-            "Query min between index $startIndex and $endIndex should return $expected."
+            "Query min between index $startIndex and $endIndex should return " .
+            "$expected."
         );
     }
 
@@ -261,7 +266,8 @@ class SegmentTreeTest extends TestCase
         $this->assertEquals(
             100,
             $segmentTree->query($firstIndex, $firstIndex),
-            "After update, query at the first index should return {$this->testArray[$firstIndex]}."
+            "After update, query at the first index should return " .
+            "{$this->testArray[$firstIndex]}."
         );
 
         // Test updating the last index
@@ -269,7 +275,8 @@ class SegmentTreeTest extends TestCase
         $this->assertEquals(
             200,
             $segmentTree->query($lastIndex, $lastIndex),
-            "After update, query at the last index should return {$this->testArray[$lastIndex]}."
+            "After update, query at the last index should return " .
+            "{$this->testArray[$lastIndex]}."
         );
 
         // Test range update that includes the first index

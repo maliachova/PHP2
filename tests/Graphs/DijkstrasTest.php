@@ -25,7 +25,8 @@ class DijkstrasTest extends TestCase
         ];
         $vertices = ['S', 'A', 'B', 'C', 'D', 'E',];
 
-        #prepare array of edges listed by edge start to simplify Dijkstra's updating weights of other edges
+        // prepare array of edges listed by edge start to simplify Dijkstra's
+        // updating weights of other edges
         $edges = [];
         foreach ($edgesRaw as $edgeRaw) {
             $edge = new GraphEdge();

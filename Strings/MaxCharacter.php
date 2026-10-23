@@ -29,7 +29,9 @@ function maxCharacter(string $string): string
     // Loop through the characters to populate the count table.
     foreach ($characters as $character) {
         // Initialize or update the count of the current character.
-        $currentCharacterCount = isset($characterCountTable[$character]) ? $characterCountTable[$character] + 1 : 1;
+        $currentCharacterCount = isset($characterCountTable[$character])
+            ? $characterCountTable[$character] + 1
+            : 1;
 
         // Update the count in the table.
         $characterCountTable[$character] = $currentCharacterCount;

@@ -93,7 +93,9 @@ class AVLTree
     public function search(mixed $key)
     {
         $node = $this->searchNode($this->root, $key);
-        return $node instanceof \DataStructures\AVLTree\AVLTreeNode ? $node->value : null;
+        return $node instanceof \DataStructures\AVLTree\AVLTreeNode
+            ? $node->value
+            : null;
     }
 
     /**
@@ -257,8 +259,12 @@ class AVLTree
             return true;
         }
 
-        $leftHeight = $node->left instanceof \DataStructures\AVLTree\AVLTreeNode ? $node->left->height : 0;
-        $rightHeight = $node->right instanceof \DataStructures\AVLTree\AVLTreeNode ? $node->right->height : 0;
+        $leftHeight = $node->left instanceof \DataStructures\AVLTree\AVLTreeNode
+            ? $node->left->height
+            : 0;
+        $rightHeight = $node->right instanceof \DataStructures\AVLTree\AVLTreeNode
+            ? $node->right->height
+            : 0;
 
         $balanceFactor = abs($leftHeight - $rightHeight);
         if ($balanceFactor > 1) {

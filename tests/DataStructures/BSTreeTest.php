@@ -15,7 +15,8 @@ namespace DataStructures;
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../DataStructures/BinarySearchTree/BSTree.php';
 require_once __DIR__ . '/../../DataStructures/BinarySearchTree/BSTNode.php';
-require_once __DIR__ . '/../../DataStructures/BinarySearchTree/DuplicateKeyException.php';
+require_once __DIR__
+    . '/../../DataStructures/BinarySearchTree/DuplicateKeyException.php';
 
 use DataStructures\BinarySearchTree\BSTree;
 use DataStructures\BinarySearchTree\DuplicateKeyException;
@@ -270,7 +271,8 @@ class BSTreeTest extends TestCase
         );
         $this->assertNotNull(
             $this->tree->search($parentNode),
-            "Parent node with key 300 should still exist. Tree was not merged correctly."
+            "Parent node with key 300 should still exist. Tree was not merged " .
+            "correctly."
         );
 
         $this->assertEquals(
@@ -285,15 +287,18 @@ class BSTreeTest extends TestCase
         );
         $this->assertNull(
             $removedNode->left,
-            "The left pointer was not broken from tree correctly. Node isolation failed."
+            "The left pointer was not broken from tree correctly. Node isolation " .
+            "failed."
         );
         $this->assertNull(
             $removedNode->right,
-            "The right pointer was not broken from tree correctly. Node isolation failed."
+            "The right pointer was not broken from tree correctly. Node " .
+            "isolation failed."
         );
         $this->assertNull(
             $removedNode->parent,
-            "The parent pointer was not broken from tree correctly. Node isolation failed."
+            "The parent pointer was not broken from tree correctly. Node " .
+            "isolation failed."
         );
     }
 
@@ -321,11 +326,13 @@ class BSTreeTest extends TestCase
         );
         $this->assertNotNull(
             $this->tree->search($parentNode),
-            "Parent node with key 150 should still exist. Tree was not merged correctly."
+            "Parent node with key 150 should still exist. Tree was not merged " .
+            "correctly."
         );
         $this->assertNotNull(
             $this->tree->search($leftNode),
-            "Left Node with key 130 should still exist. Tree was not merged correctly."
+            "Left Node with key 130 should still exist. Tree was not merged " .
+            "correctly."
         );
 
         $this->assertEquals(
@@ -340,15 +347,18 @@ class BSTreeTest extends TestCase
         );
         $this->assertNull(
             $removedNode->left,
-            "The left pointer was not broken from tree correctly. Node isolation failed."
+            "The left pointer was not broken from tree correctly. Node isolation " .
+            "failed."
         );
         $this->assertNull(
             $removedNode->right,
-            "The right pointer was not broken from tree correctly. Node isolation failed."
+            "The right pointer was not broken from tree correctly. Node " .
+            "isolation failed."
         );
         $this->assertNull(
             $removedNode->parent,
-            "The parent pointer was not broken from tree correctly. Node isolation failed."
+            "The parent pointer was not broken from tree correctly. Node " .
+            "isolation failed."
         );
     }
 
@@ -378,15 +388,18 @@ class BSTreeTest extends TestCase
         );
         $this->assertNotNull(
             $this->tree->search($parentNode),
-            "Parent Node with key 220 should still exist. Tree was not merged correctly."
+            "Parent Node with key 220 should still exist. Tree was not merged " .
+            "correctly."
         );
         $this->assertNotNull(
             $this->tree->search($leftNode),
-            "Left Node with key 225 should still exist. Tree was not merged correctly."
+            "Left Node with key 225 should still exist. Tree was not merged " .
+            "correctly."
         );
         $this->assertNotNull(
             $this->tree->search($rightNode),
-            "Parent Node with key 240 should still exist. Tree was not merged correctly."
+            "Parent Node with key 240 should still exist. Tree was not merged " .
+            "correctly."
         );
 
         $this->assertEquals(
@@ -401,15 +414,18 @@ class BSTreeTest extends TestCase
         );
         $this->assertNull(
             $removedNode->left,
-            "The left pointer was not broken from tree correctly. Node isolation failed."
+            "The left pointer was not broken from tree correctly. Node isolation " .
+            "failed."
         );
         $this->assertNull(
             $removedNode->right,
-            "The right pointer was not broken from tree correctly. Node isolation failed."
+            "The right pointer was not broken from tree correctly. Node " .
+            "isolation failed."
         );
         $this->assertNull(
             $removedNode->parent,
-            "The parent pointer was not broken from tree correctly. Node isolation failed."
+            "The parent pointer was not broken from tree correctly. Node " .
+            "isolation failed."
         );
     }
 
@@ -782,12 +798,14 @@ class BSTreeTest extends TestCase
             $this->assertEquals(
                 $expectedKeys[$index],
                 $node->key,
-                "Did not match the expected $traversalType key. Failed tree iteration."
+                "Did not match the expected $traversalType key. Failed tree " .
+                "iteration."
             );
             $this->assertEquals(
                 $expectedValues[$index],
                 $node->value,
-                "Did not match the expected $traversalType value. Failed tree iteration."
+                "Did not match the expected $traversalType value. Failed tree " .
+                "iteration."
             );
             $index++;
         }

@@ -43,7 +43,9 @@ function findDistance($str1, $str2): int
         // use formula to fill in the rest of the row
         for ($j = 0; $j < $lenStr1; $j++) {
             $substitutionCost = 0;
-            $substitutionCost = $str1[$j] == $str2[$i] ? $distanceVectorInit[$j] : $distanceVectorInit[$j] + 1;
+            $substitutionCost = $str1[$j] == $str2[$i]
+                ? $distanceVectorInit[$j]
+                : $distanceVectorInit[$j] + 1;
 
             $distanceVectorFinal[$j + 1] = min(
                 $distanceVectorInit[$j + 1] + 1,

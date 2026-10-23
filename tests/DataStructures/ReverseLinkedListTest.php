@@ -4,7 +4,8 @@ namespace DataStructures;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../DataStructures/ReverseLinkedList/LinkedListItem.php';
-require_once __DIR__ . '/../../DataStructures/ReverseLinkedList/ReverseLinkedList.php';
+require_once __DIR__
+    . '/../../DataStructures/ReverseLinkedList/ReverseLinkedList.php';
 
 
 use DataStructures\ReverseLinkedList\LinkedListItem;

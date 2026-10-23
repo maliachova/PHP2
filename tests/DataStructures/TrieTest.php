@@ -157,13 +157,15 @@ class TrieTest extends TestCase
         $this->assertEquals(
             ['prefixmatch', 'prefixtesting'],
             $this->trie->startsWith('prefix'),
-            'Expected words starting with "prefix" to be found in the Trie (case-insensitive).'
+            'Expected words starting with "prefix" to be found in the Trie ' .
+            '(case-insensitive).'
         );
 
         $this->assertEquals(
             ['prefixmatch', 'prefixtesting'],
             $this->trie->startsWith('PREFIX'),
-            'Expected words starting with "PREFIX" to be found in the Trie (case-insensitive).'
+            'Expected words starting with "PREFIX" to be found in the Trie ' .
+            '(case-insensitive).'
         );
     }
 

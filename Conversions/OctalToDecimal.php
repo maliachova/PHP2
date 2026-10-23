@@ -49,7 +49,8 @@ function decimalToOctal($decimalNumber): string
 {
     if (!is_numeric($decimalNumber)) {
         throw new \Exception(
-            'Please pass a valid Decimal Number for Converting it to an Octal Number.'
+            'Please pass a valid Decimal Number for Converting it to an Octal ' .
+            'Number.'
         );
     }
 

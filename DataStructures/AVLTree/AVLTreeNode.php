@@ -32,15 +32,23 @@ class AVLTreeNode
 
     public function updateHeight(): void
     {
-        $leftHeight = $this->left instanceof \DataStructures\AVLTree\AVLTreeNode ? $this->left->height : 0;
-        $rightHeight = $this->right instanceof \DataStructures\AVLTree\AVLTreeNode ? $this->right->height : 0;
+        $leftHeight = $this->left instanceof \DataStructures\AVLTree\AVLTreeNode
+            ? $this->left->height
+            : 0;
+        $rightHeight = $this->right instanceof \DataStructures\AVLTree\AVLTreeNode
+            ? $this->right->height
+            : 0;
         $this->height = max($leftHeight, $rightHeight) + 1;
     }
 
     public function balanceFactor(): int
     {
-        $leftHeight = $this->left instanceof \DataStructures\AVLTree\AVLTreeNode ? $this->left->height : 0;
-        $rightHeight = $this->right instanceof \DataStructures\AVLTree\AVLTreeNode ? $this->right->height : 0;
+        $leftHeight = $this->left instanceof \DataStructures\AVLTree\AVLTreeNode
+            ? $this->left->height
+            : 0;
+        $rightHeight = $this->right instanceof \DataStructures\AVLTree\AVLTreeNode
+            ? $this->right->height
+            : 0;
         return $leftHeight - $rightHeight;
     }
 }

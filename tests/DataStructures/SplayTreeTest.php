@@ -124,7 +124,8 @@ class SplayTreeTest extends TestCase
 
         $this->assertTrue(
             $root->isRoot(),
-            "The last inserted node has no longer a parent. Failed to splay correctly."
+            "The last inserted node has no longer a parent. Failed to splay " .
+            "correctly."
         );
         $this->assertFalse(
             $root->isLeaf(),
@@ -172,7 +173,8 @@ class SplayTreeTest extends TestCase
 
         $this->assertTrue(
             $root->isRoot(),
-            "The last inserted node has no longer a parent. Failed to splay correctly."
+            "The last inserted node has no longer a parent. Failed to splay " .
+            "correctly."
         );
         $this->assertFalse(
             $root->isLeaf(),
@@ -251,7 +253,7 @@ class SplayTreeTest extends TestCase
             [
                 'insertions' => [20 => "Value 20", 15 => "Value 15", 17 => "Value 17", 25 => "Value 25",
                     30 => "Value 30", 36 => "Value 36", 23 => "Value 23",
-                    24 => "Value 24"],,
+                    24 => "Value 24"],
                 'expectedInOrderKeys' => [15, 17, 20, 23, 24, 25, 30, 36],
                 'expectedRootKey' => 24,
             ],
@@ -259,7 +261,7 @@ class SplayTreeTest extends TestCase
             [
                 'insertions' => [20 => "Value 20", 15 => "Value 15", 17 => "Value 17", 25 => "Value 25",
                     30 => "Value 30", 36 => "Value 36", 23 => "Value 23",
-                    24 => "Value 24", 22 => "Value 22"],,
+                    24 => "Value 24", 22 => "Value 22"],
                 'expectedInOrderKeys' => [15, 17, 20, 22, 23, 24, 25, 30, 36],
                 'expectedRootKey' => 22,
             ],
@@ -267,7 +269,7 @@ class SplayTreeTest extends TestCase
             [
                 'insertions' => [20 => "Value 20", 15 => "Value 15", 17 => "Value 17", 25 => "Value 25", 30 =>
                     "Value 30", 36 => "Value 36", 23 => "Value 23", 24 => "Value 24",
-                    22 => "Value 22", 5 => "Value 5"],,
+                    22 => "Value 22", 5 => "Value 5"],
                 'expectedInOrderKeys' => [5, 15, 17, 20, 22, 23, 24, 25, 30, 36],
                 'expectedRootKey' => 5,
             ],
@@ -301,7 +303,8 @@ class SplayTreeTest extends TestCase
         $this->assertEquals(
             $expectedInOrderKeys,
             $inOrderArrayKeys,
-            'Tree structure after splay is not correct. The in-order traversal is not correct.'
+            'Tree structure after splay is not correct. The in-order traversal ' .
+            'is not correct.'
         );
 
         // Assert the root key matches the expected root after the last insertion for
@@ -352,7 +355,8 @@ class SplayTreeTest extends TestCase
         );
         $this->assertTrue(
             $node->isRoot(),
-            "The searched node must have become the new root. Failed to splay it correctly."
+            "The searched node must have become the new root. Failed to splay it " .
+            "correctly."
         );
 
         $this->assertEquals(
@@ -363,7 +367,8 @@ class SplayTreeTest extends TestCase
         $this->assertEquals(
             "Value 22",
             $node->value,
-            "Value of Node with key 22 does not match. Got a non-expected value: $node->value"
+            "Value of Node with key 22 does not match. Got a non-expected value: " .
+            "$node->value"
         );
     }
 
@@ -389,7 +394,8 @@ class SplayTreeTest extends TestCase
 
         $this->assertTrue(
             $node->isRoot(),
-            "The searched node must have become the new root. Failed to splay it correctly."
+            "The searched node must have become the new root. Failed to splay it " .
+            "correctly."
         );
     }
 
@@ -421,7 +427,8 @@ class SplayTreeTest extends TestCase
 
         $this->assertNull(
             $node->parent,
-            "The last visited node must have become the new root which has no parent. Failed to splay correctly."
+            "The last visited node must have become the new root which has no " .
+            "parent. Failed to splay correctly."
         );
     }
 
@@ -447,7 +454,8 @@ class SplayTreeTest extends TestCase
         );
         $this->assertTrue(
             $node->isRoot(),
-            "The last visited node must have become the new root. Failed to splay it correctly."
+            "The last visited node must have become the new root. Failed to " .
+            "splay it correctly."
         );
     }
 
@@ -478,7 +486,8 @@ class SplayTreeTest extends TestCase
         );
         $this->assertTrue(
             $node->isRoot(),
-            "The updated node must have become the new root. Failed to splay it correctly."
+            "The updated node must have become the new root. Failed to splay it " .
+            "correctly."
         );
     }
 
@@ -507,7 +516,8 @@ class SplayTreeTest extends TestCase
         );
         $this->assertNull(
             $node->parent,
-            "The last visited node must have become the new root which has no parent. Failed to splay correctly."
+            "The last visited node must have become the new root which has no " .
+            "parent. Failed to splay correctly."
         );
     }
 

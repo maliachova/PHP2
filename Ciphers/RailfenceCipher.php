@@ -79,7 +79,9 @@ function Raildecode($cipherMessage, $rails): string
     $plainText = '';
     while (strlen($plainText) < $textLength) {
         for ($charIndex = 0; $charIndex < $position; $charIndex++) {
-            $index = isset($strings[$charIndex]) ? $charIndex : $position - $charIndex;
+            $index = isset($strings[$charIndex])
+                ? $charIndex
+                : $position - $charIndex;
 
             $plainText .= substr($strings[$index], 0, 1);
             $strings[$index] = substr($strings[$index], 1);

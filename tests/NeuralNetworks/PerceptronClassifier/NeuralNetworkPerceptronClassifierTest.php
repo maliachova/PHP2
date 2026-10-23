@@ -3,7 +3,8 @@
 namespace NeuralNetworks\PerceptronClassifier;
 
 require_once __DIR__ . '/../../../vendor/autoload.php';
-require_once __DIR__ . '/../../../NeuralNetworks/PerceptronClassifier/NeuralNetworkPerceptronClassifier.php';
+require_once __DIR__
+    . '/../../../NeuralNetworks/PerceptronClassifier/NeuralNetworkPerceptronClassifier.php';
 
 use PHPUnit\Framework\TestCase;
 

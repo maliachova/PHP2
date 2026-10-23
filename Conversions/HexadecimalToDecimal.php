@@ -23,7 +23,8 @@ function hexToDecimal($hexNumber): int|float
     // Using ctype to check all the digits are valid hex digits or not.
     if (!ctype_xdigit((string) $hexNumber)) {
         throw new \Exception(
-            'Please pass a valid Hexadecimal Number for Converting it to a Decimal Number.'
+            'Please pass a valid Hexadecimal Number for Converting it to a ' .
+            'Decimal Number.'
         );
     }
 
@@ -78,7 +79,8 @@ function decimalToHex($decimalNumber): string
     ];
     if (!is_numeric($decimalNumber)) {
         throw new \Exception(
-            'Please pass a valid Decimal Number for Converting it to a Hexadecimal Number.'
+            'Please pass a valid Decimal Number for Converting it to a ' .
+            'Hexadecimal Number.'
         );
     }
 

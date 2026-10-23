@@ -19,7 +19,8 @@ class ConversionsTest extends TestCase
         $this->assertEquals(5, binaryToDecimal(101));
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage(
-            'Please pass a valid Binary Number for Converting it to a Decimal Number.'
+            'Please pass a valid Binary Number for Converting it to a Decimal ' .
+            'Number.'
         );
         binaryToDecimal("this is a string");
     }
@@ -31,7 +32,8 @@ class ConversionsTest extends TestCase
         $this->assertEquals(110, decimalToBinary(6));
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage(
-            'Please pass a valid Decimal Number for Converting it to a Binary Number.'
+            'Please pass a valid Decimal Number for Converting it to a Binary ' .
+            'Number.'
         );
         decimalToBinary("this is a string");
     }
@@ -55,7 +57,8 @@ class ConversionsTest extends TestCase
         $this->assertEquals(1115, decimalToOctal(589));
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage(
-            'Please pass a valid Decimal Number for Converting it to an Octal Number.'
+            'Please pass a valid Decimal Number for Converting it to an Octal ' .
+            'Number.'
         );
         decimalToOctal("this is a string");
     }
@@ -67,7 +70,8 @@ class ConversionsTest extends TestCase
         $this->assertEquals('AB', decimalToHex(171));
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage(
-            'Please pass a valid Decimal Number for Converting it to a Hexadecimal Number.'
+            'Please pass a valid Decimal Number for Converting it to a ' .
+            'Hexadecimal Number.'
         );
         decimalToHex("this is a string");
     }
@@ -79,7 +83,8 @@ class ConversionsTest extends TestCase
         $this->assertEquals(171, hexToDecimal('AB'));
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage(
-            'Please pass a valid Hexadecimal Number for Converting it to a Decimal Number.'
+            'Please pass a valid Hexadecimal Number for Converting it to a ' .
+            'Decimal Number.'
         );
         hexToDecimal("this is a string");
     }

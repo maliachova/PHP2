@@ -40,7 +40,8 @@ function convertSpeed(float $speed, string $unitFrom, string $unitTo): float
 
     if (!is_numeric($speed)) {
         throw new \Exception(
-            "Please pass a valid speed number for converting it from one unit to another."
+            "Please pass a valid speed number for converting it from one unit to " .
+            "another."
         );
     }
 
