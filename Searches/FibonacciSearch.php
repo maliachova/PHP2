@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Searches
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -20,7 +20,7 @@ declare(strict_types=1);
 /**
  * Fibonacci position.
  *
- * @param int $n position to check
+ * @param int   $n position to check
  * @param array $m array to store solved trees
  *
  * @return mixed

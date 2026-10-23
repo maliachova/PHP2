@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Strings
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -17,7 +17,7 @@ declare(strict_types=1);
  * the given string using a simple method of looping through
  * all the characters present in the string.
  *
- * @param string $string
+ * @param string $string The string.
  *
  * @throws \Exception
  *
@@ -55,7 +55,7 @@ function countVowelsSimple(string $string): int
  * This function returns the Total number of vowels present in the given
  * string using a regular expression.
  *
- * @param string $string
+ * @param string $string The string.
  *
  * @throws \Exception
  *

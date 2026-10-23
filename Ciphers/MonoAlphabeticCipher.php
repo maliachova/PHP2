@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Ciphers
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -18,9 +18,9 @@ declare(strict_types=1);
 /**
  * Mono alphabetic cipher.
  *
- * @param string $key
- * @param mixed $alphabet
- * @param mixed $text
+ * @param string $key      The key.
+ * @param mixed  $alphabet The alphabet.
+ * @param mixed  $text     The text.
  *
  * @return false|string
  */
@@ -52,9 +52,9 @@ function monoAlphabeticCipher(string $key, $alphabet, $text): false|string
 /**
  * Ma encrypt.
  *
- * @param mixed $key
- * @param mixed $alphabet
- * @param mixed $text
+ * @param mixed $key      The key.
+ * @param mixed $alphabet The alphabet.
+ * @param mixed $text     The text.
  *
  * @return string|false
  */
@@ -66,9 +66,9 @@ function maEncrypt($key, $alphabet, $text): string|false
 /**
  * Ma decrypt.
  *
- * @param mixed $key
- * @param mixed $alphabet
- * @param mixed $text
+ * @param mixed $key      The key.
+ * @param mixed $alphabet The alphabet.
+ * @param mixed $text     The text.
  *
  * @return string|false
  */

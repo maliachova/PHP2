@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -38,7 +38,7 @@ class BSTNode
     /**
      * Construct.
      *
-     * @param int $key The key of the node.
+     * @param int   $key   The key of the node.
      * @param mixed $value The associated value.
      */
     public function __construct(public int $key, public mixed $value)

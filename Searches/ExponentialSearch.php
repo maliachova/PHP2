@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Searches
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -23,10 +23,10 @@ declare(strict_types=1);
 /**
  * Binary search.
  *
- * @param int $value
- * @param int $floor
- * @param int $ceiling
- * @param array $arr
+ * @param int   $value   The value.
+ * @param int   $floor   The floor.
+ * @param int   $ceiling The ceiling.
+ * @param array $arr     The arr.
  *
  * @return int
  */
@@ -58,8 +58,8 @@ function binarySearch(array $arr, $value, $floor, $ceiling)
 /**
  * Exponential search.
  *
- * @param int $value
- * @param array $arr
+ * @param int   $value The value.
+ * @param array $arr   The arr.
  *
  * @return int
  */

@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -32,7 +32,7 @@ class DisjointSet
     /**
      * Finds the representative of the set that contains the node.
      *
-     * @param DisjointSetNode $node
+     * @param DisjointSetNode $node The node.
      *
      * @return DisjointSetNode
      */
@@ -49,8 +49,8 @@ class DisjointSet
     /**
      * Unites the sets that contain x and y.
      *
-     * @param DisjointSetNode $nodeX
-     * @param DisjointSetNode $nodeY
+     * @param DisjointSetNode $nodeX The node x.
+     * @param DisjointSetNode $nodeY The node y.
      *
      * @return void
      */

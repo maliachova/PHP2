@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -37,7 +37,7 @@ class DoublyLinkedList implements \Stringable
     /**
      * Append.
      *
-     * @param mixed $data
+     * @param mixed $data The data.
      *
      * @return void
      */
@@ -66,8 +66,8 @@ class DoublyLinkedList implements \Stringable
     /**
      * Insert.
      *
-     * @param mixed $data
-     * @param mixed $position
+     * @param mixed $data     The data.
+     * @param mixed $position The position.
      *
      * @return void
      */
@@ -126,7 +126,7 @@ class DoublyLinkedList implements \Stringable
     /**
      * Delete.
      *
-     * @param mixed $data
+     * @param mixed $data The data.
      *
      * @return void
      */
@@ -171,7 +171,7 @@ class DoublyLinkedList implements \Stringable
     /**
      * Delete at.
      *
-     * @param mixed $position
+     * @param mixed $position The position.
      *
      * @return void
      */
@@ -346,7 +346,7 @@ class DoublyLinkedList implements \Stringable
     /**
      * Search.
      *
-     * @param mixed $data
+     * @param mixed $data The data.
      *
      * @return ?Node
      */

@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Maths
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -15,7 +15,7 @@ declare(strict_types=1);
 /**
  * Fibonacci recursive
  *
- * @param int $num
+ * @param int $num The num.
  *
  * @throws \Exception
  *
@@ -38,7 +38,7 @@ function fibonacciRecursive(int $num): array
 /**
  * Recursive.
  *
- * @param int $num
+ * @param int $num The num.
  *
  * @throws \Exception
  *
@@ -59,7 +59,7 @@ function recursive(int $num): float|int
 /**
  * Fibonacci with binet formula.
  *
- * @param int $num
+ * @param int $num The num.
  *
  * @throws \Exception
  *

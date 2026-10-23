@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Conversions
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -24,8 +24,7 @@ declare(strict_types=1);
  * (160 + 11) base 10
  * 171 base 10
  *
- * @param string $octalNumber
- * @param mixed $hexNumber
+ * @param mixed $hexNumber The hex number.
  *
  * @return int
  */
@@ -71,7 +70,7 @@ function hexToDecimal($hexNumber): int|float
  * submitted Decimal Number to
  * Hexadecimal Number.
  *
- * @param string $decimalNumber
+ * @param string $decimalNumber The decimal number.
  *
  * @return string
  */

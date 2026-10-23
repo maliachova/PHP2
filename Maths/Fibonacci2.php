@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Maths
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -19,7 +19,7 @@ declare(strict_types=1);
 /**
  * Loop.
  *
- * @param int $i number of Fibonacci numbers to generate
+ * @param int       $i   number of Fibonacci numbers to generate
  * @param Generator $set Fibonacci calculator
  *
  * @return mixed

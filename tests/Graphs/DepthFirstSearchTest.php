@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Graphs
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 require_once __DIR__ . '/../../vendor/autoload.php';

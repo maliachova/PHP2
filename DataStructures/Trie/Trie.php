@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -53,7 +53,7 @@ class Trie
     /**
      * Insert a word into the Trie.
      *
-     * @param string $word
+     * @param string $word The word.
      *
      * @return void
      */
@@ -71,7 +71,7 @@ class Trie
     /**
      * Search for a word in the Trie.
      *
-     * @param string $word
+     * @param string $word The word.
      *
      * @return bool
      */
@@ -93,7 +93,7 @@ class Trie
     /**
      * Find all words that start with a given prefix.
      *
-     * @param string $prefix
+     * @param string $prefix The prefix.
      *
      * @return array
      */
@@ -116,8 +116,8 @@ class Trie
     /**
      * Helper function to find all words from a given node.
      *
-     * @param TrieNode $node
-     * @param string $prefix
+     * @param TrieNode $node   The node.
+     * @param string   $prefix The prefix.
      *
      * @return array
      */
@@ -156,9 +156,9 @@ class Trie
      * Helper function for deleting a word.
      * Recursively traverse the Trie and removes nodes.
      *
-     * @param TrieNode $node The current node in the Trie.
-     * @param string $word The word being deleted.
-     * @param int $index The current index in the word.
+     * @param TrieNode $node  The current node in the Trie.
+     * @param string   $word  The word being deleted.
+     * @param int      $index The current index in the word.
      *
      * @return bool Returns true if the current node should be deleted, otherwise
      * false.
@@ -200,8 +200,8 @@ class Trie
      * Recursively traverses the Trie starting from the given node and collects all
      * words.
      *
-     * @param TrieNode $node The starting node for traversal.
-     * @param string $prefix The prefix of the current path in the Trie.
+     * @param TrieNode $node   The starting node for traversal.
+     * @param string   $prefix The prefix of the current path in the Trie.
      *
      * @return array An array of words found in the Trie starting from the given
      * node.

@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Strings
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -15,9 +15,9 @@ declare(strict_types=1);
 /**
  * Checks if two strings are anagrams of each other.
  *
- * @param string $originalString
- * @param string $testString
- * @param bool $caseInsensitive
+ * @param string $originalString  The original string.
+ * @param string $testString      The test string.
+ * @param bool   $caseInsensitive The case insensitive.
  *
  * @return bool
  */

@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -20,7 +20,7 @@ class Stack implements \Stringable
     /**
      * Construct.
      *
-     * @param array $stack
+     * @param array $stack The stack.
      */
     public function __construct(private array $stack = [])
     {
@@ -38,7 +38,7 @@ class Stack implements \Stringable
     /**
      * Push.
      *
-     * @param mixed $data
+     * @param mixed $data The data.
      *
      * @return void
      */
@@ -120,7 +120,7 @@ class Stack implements \Stringable
     /**
      * Search.
      *
-     * @param mixed $data
+     * @param mixed $data The data.
      *
      * @return int|false
      */
@@ -142,7 +142,7 @@ class Stack implements \Stringable
     /**
      * From array.
      *
-     * @param array $array
+     * @param array $array The array.
      *
      * @return void
      */

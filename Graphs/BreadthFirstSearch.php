@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Graphs
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -27,10 +27,10 @@ declare(strict_types=1);
  *
  * @author Aryansh Bhargavan https://github.com/aryanshb
  *
- * @param array $adjList An array representing the grapth as an Adjacent List
- * @param int|string $start The starting vertex
- * @param mixed $end
- * @param mixed $yes
+ * @param array      $adjList An array representing the grapth as an Adjacent List
+ * @param int|string $start   The starting vertex
+ * @param mixed      $end     The end.
+ * @param mixed      $yes     The yes.
  *
  * @return bool if path between start and end vertex exists
  */

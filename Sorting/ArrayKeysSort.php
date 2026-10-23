@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Sorting
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -26,9 +26,9 @@ class ArrayKeysSort
      * Sort.
      *
      * @param $collection
-     * @param array $keys
-     * @param string $order
-     * @param bool $isCaseSensitive
+     * @param array  $keys            The keys.
+     * @param string $order           The order.
+     * @param bool   $isCaseSensitive The is case sensitive.
      *
      * @return mixed
      */

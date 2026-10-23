@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Sorting
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -25,7 +25,7 @@ declare(strict_types=1);
 /**
  * Bubble sort2.
  *
- * @param array $input
+ * @param array $input The input.
  *
  * @return mixed
  */

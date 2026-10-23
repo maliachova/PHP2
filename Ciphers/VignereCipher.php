@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Ciphers
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -17,7 +17,7 @@ declare(strict_types=1);
  * (https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher)
  *
  * @param string $plaintext The plaintext to be encrypted.
- * @param string $key The encryption key.
+ * @param string $key       The encryption key.
  *
  * @return string The encrypted text.
  */
@@ -50,7 +50,7 @@ function vigenere_encrypt($plaintext, $key): string
  * Decrypts a ciphertext using the Vigenère cipher.
  *
  * @param string $ciphertext The ciphertext to be decrypted.
- * @param string $key The decryption key.
+ * @param string $key        The decryption key.
  *
  * @return string The decrypted text.
  */

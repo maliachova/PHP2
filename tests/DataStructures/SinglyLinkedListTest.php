@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 use PHPUnit\Framework\TestCase;
@@ -23,7 +23,7 @@ class SinglyLinkedListTest extends TestCase
     /**
      * Create a SinglyLinkedList node
      *
-     * @param string $string
+     * @param string $string The string.
      *
      * @return SinglyLinkedList
      */
@@ -70,8 +70,8 @@ class SinglyLinkedListTest extends TestCase
      *
      * @dataProvider provideNodes
      *
-     * @param mixed $string
-     * @param mixed $expected
+     * @param mixed $string   The string.
+     * @param mixed $expected The expected.
      *
      * @return void
      */
@@ -84,7 +84,7 @@ class SinglyLinkedListTest extends TestCase
     /**
      * Supporting method for testing if a linked list is palindrome
      *
-     * @param SinglyLinkedList $node
+     * @param SinglyLinkedList $node The node.
      *
      * @return bool
      */
@@ -108,8 +108,8 @@ class SinglyLinkedListTest extends TestCase
     /**
      * Supporting method for testing if a linked list is palindrome
      *
-     * @param mixed $node
-     * @param string $data
+     * @param mixed  $node The node.
+     * @param string $data The data.
      *
      * @return bool
      */
@@ -135,7 +135,7 @@ class SinglyLinkedListTest extends TestCase
     /**
      * Supporting method for testing if a linked list is palindrome
      *
-     * @param SinglyLinkedList $node
+     * @param SinglyLinkedList $node The node.
      *
      * @return int
      */

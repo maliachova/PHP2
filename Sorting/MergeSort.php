@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Sorting
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -15,7 +15,7 @@ declare(strict_types=1);
 /**
  * Merge Sort
  *
- * @param array $arr
+ * @param array $arr The arr.
  *
  * @return array
  */
@@ -35,8 +35,8 @@ function mergeSort(array $arr)
 /**
  * Merge.
  *
- * @param array $leftArray
- * @param array $rightArray
+ * @param array $leftArray  The left array.
+ * @param array $rightArray The right array.
  *
  * @return array
  */

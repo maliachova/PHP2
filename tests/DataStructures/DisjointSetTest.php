@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 /*
@@ -107,8 +107,8 @@ class DisjointSetTest extends TestCase
     /**
      * In same set.
      *
-     * @param int $i
-     * @param int $j
+     * @param int $i The i.
+     * @param int $j The j.
      *
      * @return bool
      */

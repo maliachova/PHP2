@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -25,7 +25,7 @@ class ReverseLinkedList
     /**
      * Reverse.
      *
-     * @param LinkedListItem $item
+     * @param LinkedListItem $item The item.
      *
      * @return LinkedListItem
      */

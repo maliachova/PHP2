@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Searches
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -26,8 +26,8 @@ declare(strict_types=1);
  * if the (value of index in array) is > key decrease the high index
  * repeat the loop
  *
- * @param array $arr
- * @param mixed $key
+ * @param array $arr The arr.
+ * @param mixed $key The key.
  *
  * @return ?int
  */

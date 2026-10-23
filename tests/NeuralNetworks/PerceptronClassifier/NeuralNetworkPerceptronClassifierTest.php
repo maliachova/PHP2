@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category NeuralNetworks
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 namespace NeuralNetworks\PerceptronClassifier;

@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Maths
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -28,8 +28,8 @@ declare(strict_types=1);
 /**
  * Base x.
  *
- * @param mixed $k
- * @param mixed $x
+ * @param mixed $k The k.
+ * @param mixed $x The x.
  *
  * @return string
  */

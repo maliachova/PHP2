@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -46,8 +46,8 @@ class SegmentTree
      * Example usage:
      *  $segmentTree = new SegmentTree($array, fn($a, $b) => max($a, $b));
      *
-     * @param array $currentArray The input array for the segment tree
-     * @param callable|null $callback Optional callback function for custom
+     * @param array         $currentArray The input array for the segment tree
+     * @param callable|null $callback     Optional callback function for custom
      * aggregation logic.
      *
      * @throws InvalidArgumentException if the array is empty, contains non-numeric
@@ -134,9 +134,9 @@ class SegmentTree
     /**
      * Builds the segment tree recursively. Takes O(n log n) in total.
      *
-     * @param array $arr The input array.
-     * @param int $start The starting index of the segment.
-     * @param int $end The ending index of the segment.
+     * @param array $arr   The input array.
+     * @param int   $start The starting index of the segment.
+     * @param int   $end   The ending index of the segment.
      *
      * @return SegmentTreeNode The root node of the constructed segment.
      */
@@ -168,7 +168,7 @@ class SegmentTree
      * Queries the aggregated value over a specified range. Takes O(log n).
      *
      * @param int $start The starting index of the range.
-     * @param int $end The ending index of the range.
+     * @param int $end   The ending index of the range.
      *
      * @throws OutOfBoundsException if the range is invalid.
      *
@@ -189,9 +189,9 @@ class SegmentTree
     /**
      * Recursively queries the segment tree for a specific range.
      *
-     * @param SegmentTreeNode $node The current node.
-     * @param int $start The starting index of the query range.
-     * @param int $end The ending index of the query range.
+     * @param SegmentTreeNode $node  The current node.
+     * @param int             $start The starting index of the query range.
+     * @param int             $end   The ending index of the query range.
      *
      * @return int|float The aggregated value for the range.
      */
@@ -225,7 +225,7 @@ class SegmentTree
     /**
      * Updates the value at a specified index in the segment tree. Takes O(log n).
      *
-     * @param int $index The index to update.
+     * @param int       $index The index to update.
      * @param int|float $value The new value to set.
      *
      * @throws OutOfBoundsException if the index is out of bounds.
@@ -250,9 +250,9 @@ class SegmentTree
     /**
      * Recursively updates the segment tree.
      *
-     * @param SegmentTreeNode $node The current node.
-     * @param int $index The index to update.
-     * @param int|float $value The new value.
+     * @param SegmentTreeNode $node  The current node.
+     * @param int             $index The index to update.
+     * @param int|float       $value The new value.
      *
      * @return void
      */
@@ -282,8 +282,8 @@ class SegmentTree
     /**
      * Performs a range update on a specified segment.
      *
-     * @param int $start The starting index of the range.
-     * @param int $end The ending index of the range.
+     * @param int       $start The starting index of the range.
+     * @param int       $end   The ending index of the range.
      * @param int|float $value The value to set for the range.
      *
      * @throws OutOfBoundsException if the range is invalid.
@@ -310,10 +310,10 @@ class SegmentTree
     /**
      * Recursively performs a range update in the segment tree.
      *
-     * @param SegmentTreeNode $node The current node.
-     * @param int $start The starting index of the range.
-     * @param int $end The ending index of the range.
-     * @param int|float $value The new value for the range.
+     * @param SegmentTreeNode $node  The current node.
+     * @param int             $start The starting index of the range.
+     * @param int             $end   The ending index of the range.
+     * @param int|float       $value The new value for the range.
      *
      * @return void
      */

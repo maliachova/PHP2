@@ -15,8 +15,8 @@ declare(strict_types=1);
  * PHP version 8.2
  *
  * @category Searches
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 /**
@@ -44,8 +44,8 @@ declare(strict_types=1);
 /**
  * Two pointers.
  *
- * @param mixed $list
- * @param mixed $target
+ * @param mixed $list   The list.
+ * @param mixed $target The target.
  *
  * @return int
  */

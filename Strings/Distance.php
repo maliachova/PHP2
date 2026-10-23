@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Strings
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -18,8 +18,8 @@ declare(strict_types=1);
  * Compute the difference between two sequences, ie, the minimum number of changes
  * to get to $str2 from $str1
  *
- * @param string $str1
- * @param string $str2
+ * @param string $str1 The str1.
+ * @param string $str2 The str2.
  *
  * @return int the minimum number of changes to transform one string into another
  */

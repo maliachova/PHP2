@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Conversions
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -23,7 +23,7 @@ declare(strict_types=1);
  * (8 + 0) base 10
  * 9 base 10
  *
- * @param string $octalNumber
+ * @param string $octalNumber The octal number.
  *
  * @throws \Exception
  *
@@ -52,7 +52,7 @@ function octalToDecimal($octalNumber): int|float
  * submitted Decimal Number to
  * Octal Number.
  *
- * @param string $decimalNumber
+ * @param string $decimalNumber The decimal number.
  *
  * @throws \Exception
  *

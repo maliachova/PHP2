@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Ciphers
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -15,7 +15,7 @@ declare(strict_types=1);
 /**
  * Encode text to Morse Code.
  *
- * @param string $text  text to encode
+ * @param string $text text to encode
  *
  * @throws \Exception
  *
@@ -81,7 +81,7 @@ function encode(string $text): string
 /**
  * Decode Morse Code to text.
  *
- * @param string $text  text to decode
+ * @param string $text text to decode
  *
  * @throws \Exception
  *

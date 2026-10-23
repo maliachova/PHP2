@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Graphs
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -19,9 +19,9 @@ declare(strict_types=1);
  *
  * @author Michał Żarnecki https://github.com/rzarno
  *
- * @param array $verticesNames An array of vertices names
- * @param GraphEdge[] $edges An array of edges
- * @param string $start The starting vertex
+ * @param array       $verticesNames An array of vertices names
+ * @param GraphEdge[] $edges         An array of edges
+ * @param string      $start         The starting vertex
  *
  * @return array An array of shortest paths from $start to all other vertices
  */

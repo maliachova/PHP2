@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Sorting
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -91,7 +91,7 @@ function maxDigits($arr)
 /**
  * Concat the array
  *
- * @param array $array
+ * @param array $array The array.
  *
  * @return array
  */

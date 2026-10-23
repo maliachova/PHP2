@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Searches
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -27,8 +27,8 @@ declare(strict_types=1);
  * 1
  * binarySearchIterative([0, 5, 7, 10, 15], 6);
  *
- * @param int $target
- * @param array $list
+ * @param int   $target The target.
+ * @param array $list   The list.
  *
  * @return int
  */
@@ -70,10 +70,10 @@ function binarySearchIterative(array $list, $target): ?int
  * 1
  * binarySearchByRecursion([0, 5, 7, 10, 15], 6, 0, 4);
  *
- * @param Array $list a sorted array list of integers to search
+ * @param Array   $list   a sorted array list of integers to search
  * @param integer $target an integer number to search for in the list
- * @param integer $start an integer number where to start searching in the list
- * @param integer $end an integer number where to end searching in the list
+ * @param integer $start  an integer number where to start searching in the list
+ * @param integer $end    an integer number where to end searching in the list
  *
  * @return integer the index where the target is found (or null if not found)
  */

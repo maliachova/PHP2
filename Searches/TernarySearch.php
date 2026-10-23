@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Searches
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -28,10 +28,10 @@ declare(strict_types=1);
 /**
  * Ternary search by recursion.
  *
- * @param array $arr
- * @param mixed $key
- * @param mixed $low
- * @param mixed $high
+ * @param array $arr  The arr.
+ * @param mixed $key  The key.
+ * @param mixed $low  The low.
+ * @param mixed $high The high.
  *
  * @return mixed
  */
@@ -74,8 +74,8 @@ function ternarySearchByRecursion(array $arr, $key, $low, $high)
 /**
  * Ternary search iterative.
  *
- * @param array $arr
- * @param mixed $key
+ * @param array $arr The arr.
+ * @param mixed $key The key.
  *
  * @return ?float
  */

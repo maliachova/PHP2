@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Strings
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -17,8 +17,8 @@ declare(strict_types=1);
  * using php strrev() function
  * make it simple
  *
- * @param string $string
- * @param bool $caseInsensitive
+ * @param string $string          The string.
+ * @param bool   $caseInsensitive The case insensitive.
  *
  * @throws \Exception
  *

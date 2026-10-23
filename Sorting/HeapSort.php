@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Sorting
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -21,7 +21,7 @@ declare(strict_types=1);
  * element
  * and "heapifying" the heap again.
  *
- * @param array $arr
+ * @param array $arr The arr.
  *
  * @throws \UnexpectedValueException
  *
@@ -61,9 +61,9 @@ function heapSort(array $arr): array
 /**
  * Ensures that the array satisfies the heap property
  *
- * @param array $arr
- * @param int $n
- * @param int $i
+ * @param array $arr The arr.
+ * @param int   $n   The n.
+ * @param int   $i   The i.
  *
  * @return void
  */

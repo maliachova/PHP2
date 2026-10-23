@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Ciphers
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -17,7 +17,7 @@ declare(strict_types=1);
  * (https://en.wikipedia.org/wiki/Rail_fence_cipher)
  *
  * @param string $plainMessage The message to encode.
- * @param int $rails The number of rails or rows in the rail fence.
+ * @param int    $rails        The number of rails or rows in the rail fence.
  *
  * @return string The encoded message.
  */
@@ -53,7 +53,7 @@ function Railencode($plainMessage, $rails): string
  * Decode a message encoded using the Rail Fence Cipher.
  *
  * @param string $cipherMessage The encoded message.
- * @param int $rails The number of rails or rows used for encoding.
+ * @param int    $rails         The number of rails or rows used for encoding.
  *
  * @return string The decoded plain message.
  */

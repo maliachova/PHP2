@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Ciphers
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -20,7 +20,7 @@ declare(strict_types=1);
  * The key is repeated until it is the same length as the input.
  *
  * @param string $input_string The input string.
- * @param string $key The key to use.
+ * @param string $key          The key to use.
  *
  * @return string The encrypted string.
  */

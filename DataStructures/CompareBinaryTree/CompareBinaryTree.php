@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -26,8 +26,8 @@ class CompareBinaryTree
     /**
      * compare two binary trees
      *
-     * @param ?BinaryTreeNode $a
-     * @param ?BinaryTreeNode $b
+     * @param ?BinaryTreeNode $a The a.
+     * @param ?BinaryTreeNode $b The b.
      *
      * @return bool
      */

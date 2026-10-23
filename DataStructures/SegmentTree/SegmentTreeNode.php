@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -36,8 +36,8 @@ class SegmentTreeNode
     /**
      * Construct.
      *
-     * @param int $start The starting index of the range.
-     * @param int $end The ending index of the range.
+     * @param int       $start The starting index of the range.
+     * @param int       $end   The ending index of the range.
      * @param int|float $value The initial aggregated value for this range (e.g. sum,
      * min, or max).
      * calculated using a callback. Defaults to sum.

@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Searches
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -25,14 +25,10 @@ declare(strict_types=1);
  *  x = 1
  *  Element not found
  *
- *  @param Array $list an array of integers to search
- *  @param integer $target an integer number to search for in the list
- *  @return integer the index where the target is found (or -1 if not found)
+ * @param Array   $list   an array of integers to search
+ * @param integer $target an integer number to search for in the list
  *
- * @param array $list
- * @param mixed $target
- *
- * @return int
+ * @return integer the index where the target is found (or -1 if not found)
  */
 function linearSearch(array $list, $target): int
 {

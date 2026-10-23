@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Conversions
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -19,7 +19,7 @@ declare(strict_types=1);
  *
  * @author Marco https://github.com/MaarcooC
  *
- * @param float $celsius
+ * @param float $celsius The celsius.
  *
  * @throws \Exception
  *
@@ -41,7 +41,7 @@ function CelsiusToFahrenheit($celsius): float
  *
  * @author Marco https://github.com/MaarcooC
  *
- * @param float $fahrenheit
+ * @param float $fahrenheit The fahrenheit.
  *
  * @throws \Exception
  *
@@ -63,7 +63,7 @@ function FahrenheitToCelsius($fahrenheit): float
  *
  * @author Marco https://github.com/MaarcooC
  *
- * @param float $celsius
+ * @param float $celsius The celsius.
  *
  * @throws \Exception
  *
@@ -85,7 +85,7 @@ function CelsiusToKelvin($celsius): float
  *
  * @author Marco https://github.com/MaarcooC
  *
- * @param float $kelvin
+ * @param float $kelvin The kelvin.
  *
  * @throws \Exception
  *
@@ -107,7 +107,7 @@ function KelvinToCelsius($kelvin): float
  *
  * @author Marco https://github.com/MaarcooC
  *
- * @param float $kelvin
+ * @param float $kelvin The kelvin.
  *
  * @throws \Exception
  *
@@ -129,7 +129,7 @@ function KelvinToFahrenheit($kelvin): float
  *
  * @author Marco https://github.com/MaarcooC
  *
- * @param float $fahrenheit
+ * @param float $fahrenheit The fahrenheit.
  *
  * @throws \Exception
  *

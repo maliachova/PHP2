@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -34,10 +34,10 @@ class AVLTreeNode
     /**
      * Construct.
      *
-     * @param int|string $key
-     * @param mixed $value
-     * @param ?AVLTreeNode $left
-     * @param ?AVLTreeNode $right
+     * @param int|string   $key   The key.
+     * @param mixed        $value The value.
+     * @param ?AVLTreeNode $left  The left.
+     * @param ?AVLTreeNode $right The right.
      */
     public function __construct(
         public $key,

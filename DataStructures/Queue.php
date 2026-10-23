@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -26,7 +26,7 @@ class Queue
     /**
      * Enqueue.
      *
-     * @param mixed $element
+     * @param mixed $element The element.
      *
      * @return void
      */
@@ -105,7 +105,7 @@ class Queue
     /**
      * To string.
      *
-     * @param string $delimiter
+     * @param string $delimiter The delimiter.
      *
      * @return string
      */

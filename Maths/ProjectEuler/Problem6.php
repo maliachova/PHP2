@@ -24,8 +24,8 @@ declare(strict_types=1);
  * PHP version 8.2
  *
  * @category ProjectEuler
- * @link https://projecteuler.net/problem=6
- * @license https://opensource.org/licenses/MIT MIT License
+ * @link     https://projecteuler.net/problem=6
+ * @license  https://opensource.org/licenses/MIT MIT License
  *
  * @param int $maxNumber Range from 1 to <maxNumber>
  *

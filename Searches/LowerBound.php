@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Searches
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -24,8 +24,8 @@ require_once __DIR__ . '/../Utils/ArrayHelpers.php';
  * It is assumed that an integer array is provided
  * and the second parameter is also an integer
  *
- * @param array $arr  of sorted integers
- * @param integer $elem  whose lower bound is to be found
+ * @param array   $arr  of sorted integers
+ * @param integer $elem whose lower bound is to be found
  *
  * @return int the index of lower bound of the given element
  */

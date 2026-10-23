@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 /*
@@ -70,9 +70,9 @@ class SegmentTreeTest extends TestCase
      *
      * @dataProvider sumQueryProvider
      *
-     * @param int $expected
-     * @param int $startIndex
-     * @param int $endIndex
+     * @param int $expected   The expected.
+     * @param int $startIndex The start index.
+     * @param int $endIndex   The end index.
      *
      * @return void
      */
@@ -111,9 +111,9 @@ class SegmentTreeTest extends TestCase
      *
      * @dataProvider maxQueryProvider
      *
-     * @param int $expected
-     * @param int $startIndex
-     * @param int $endIndex
+     * @param int $expected   The expected.
+     * @param int $startIndex The start index.
+     * @param int $endIndex   The end index.
      *
      * @return void
      */
@@ -151,9 +151,9 @@ class SegmentTreeTest extends TestCase
      *
      * @dataProvider minQueryProvider
      *
-     * @param int $expected
-     * @param int $startIndex
-     * @param int $endIndex
+     * @param int $expected   The expected.
+     * @param int $startIndex The start index.
+     * @param int $endIndex   The end index.
      *
      * @return void
      */

@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 /*
@@ -828,8 +828,8 @@ class BSTreeTest extends TestCase
      *
      * @dataProvider traversalProvider
      *
-     * @param string $traversalType
-     * @param array $expected
+     * @param string $traversalType The traversal type.
+     * @param array  $expected      The expected.
      *
      * @return void
      */

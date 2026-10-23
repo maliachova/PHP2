@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -28,7 +28,7 @@ class LinkedListItem
     /**
      * Set next.
      *
-     * @param ?LinkedListItem $next
+     * @param ?LinkedListItem $next The next.
      *
      * @return static
      */
@@ -51,7 +51,7 @@ class LinkedListItem
     /**
      * Set prev.
      *
-     * @param ?LinkedListItem $prev
+     * @param ?LinkedListItem $prev The prev.
      *
      * @return static
      */
@@ -74,7 +74,7 @@ class LinkedListItem
     /**
      * Set value.
      *
-     * @param mixed $value
+     * @param mixed $value The value.
      *
      * @return static
      */

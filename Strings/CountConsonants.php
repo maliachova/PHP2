@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Strings
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -16,7 +16,7 @@ declare(strict_types=1);
  * Function returns the total number of consonants present in the given
  * string using a linear search through the string
  *
- * @param string $string
+ * @param string $string The string.
  *
  * @throws \Exception
  *

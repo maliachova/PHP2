@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -38,7 +38,7 @@ class TrieNode
     /**
      * Add a child node for a character.
      *
-     * @param string $char
+     * @param string $char The char.
      *
      * @return TrieNode
      */
@@ -55,7 +55,7 @@ class TrieNode
     /**
      * Check if a character has a child node.
      *
-     * @param string $char
+     * @param string $char The char.
      *
      * @return bool
      */
@@ -68,7 +68,7 @@ class TrieNode
     /**
      * Get the child node corresponding to a character.
      *
-     * @param string $char
+     * @param string $char The char.
      *
      * @return ?TrieNode
      */
@@ -81,7 +81,7 @@ class TrieNode
     /**
      * Normalize the character to lowercase.
      *
-     * @param string $char
+     * @param string $char The char.
      *
      * @return string
      */

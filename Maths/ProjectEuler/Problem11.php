@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Maths
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -52,9 +52,9 @@ declare(strict_types=1);
 /**
  * Horizontal product.
  *
- * @param array $grid
- * @param mixed $row
- * @param mixed $col
+ * @param array $grid The grid.
+ * @param mixed $row  The row.
+ * @param mixed $col  The col.
  *
  * @return int|float
  */
@@ -71,9 +71,9 @@ function horizontalProduct(array $grid, $row, $col): int|float
 /**
  * Vertical product.
  *
- * @param array $grid
- * @param mixed $row
- * @param mixed $col
+ * @param array $grid The grid.
+ * @param mixed $row  The row.
+ * @param mixed $col  The col.
  *
  * @return int|float
  */
@@ -90,9 +90,9 @@ function verticalProduct(array $grid, $row, $col): int|float
 /**
  * Diagonal right product.
  *
- * @param array $grid
- * @param mixed $row
- * @param mixed $col
+ * @param array $grid The grid.
+ * @param mixed $row  The row.
+ * @param mixed $col  The col.
  *
  * @return int|float
  */
@@ -109,9 +109,9 @@ function diagonalRightProduct(array $grid, $row, $col): int|float
 /**
  * Diagonal left product.
  *
- * @param array $grid
- * @param mixed $row
- * @param mixed $col
+ * @param array $grid The grid.
+ * @param mixed $row  The row.
+ * @param mixed $col  The col.
  *
  * @return int|float
  */

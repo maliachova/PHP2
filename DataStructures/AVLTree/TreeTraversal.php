@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -33,7 +33,7 @@ abstract class TreeTraversal
      * Perform an in-order traversal of the subtree.
      * Recursively traverses the subtree rooted at the given node.
      *
-     * @param ?AVLTreeNode $node
+     * @param ?AVLTreeNode $node The node.
      *
      * @return array
      */
@@ -53,7 +53,7 @@ abstract class TreeTraversal
      * Perform a pre-order traversal of the subtree.
      * Recursively traverses the subtree rooted at the given node.
      *
-     * @param ?AVLTreeNode $node
+     * @param ?AVLTreeNode $node The node.
      *
      * @return array
      */
@@ -73,7 +73,7 @@ abstract class TreeTraversal
      * Perform a post-order traversal of the subtree.
      * Recursively traverses the subtree rooted at the given node.
      *
-     * @param ?AVLTreeNode $node
+     * @param ?AVLTreeNode $node The node.
      *
      * @return array
      */
@@ -92,7 +92,7 @@ abstract class TreeTraversal
     /**
      * Perform a breadth-first traversal of the AVL Tree.
      *
-     * @param ?AVLTreeNode $root
+     * @param ?AVLTreeNode $root The root.
      *
      * @return array
      */

@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category Utils
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -15,7 +15,7 @@ declare(strict_types=1);
 /**
  * Is sorted ascending ints.
  *
- * @param array $arr  array of integers
+ * @param array $arr array of integers
  *
  * @return void array sorted in ascending
  */

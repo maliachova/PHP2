@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -69,7 +69,7 @@ class AVLTree
     /**
      * Insert a key-value pair into the AVL Tree.
      *
-     * @param mixed $key The key to insert.
+     * @param mixed $key   The key to insert.
      * @param mixed $value The value associated with the key.
      *
      * @return void
@@ -168,9 +168,9 @@ class AVLTree
     /**
      * Insert a node into the AVL Tree and balance the tree.
      *
-     * @param ?AVLTreeNode $node The current node.
-     * @param mixed $key The key to insert.
-     * @param mixed $value The value to insert.
+     * @param ?AVLTreeNode $node  The current node.
+     * @param mixed        $key   The key to insert.
+     * @param mixed        $value The value to insert.
      *
      * @return AVLTreeNode The new root of the subtree.
      */
@@ -199,7 +199,7 @@ class AVLTree
      * Delete a node by its key and balance the tree.
      *
      * @param ?AVLTreeNode $node The current node.
-     * @param mixed $key The key of the node to delete.
+     * @param mixed        $key  The key of the node to delete.
      *
      * @return ?AVLTreeNode The new root of the subtree.
      */
@@ -236,7 +236,7 @@ class AVLTree
      * Search for a node by its key.
      *
      * @param ?AVLTreeNode $node The current node.
-     * @param mixed $key The key to search for.
+     * @param mixed        $key  The key to search for.
      *
      * @return ?AVLTreeNode The node with the specified key, or null if not found.
      */
@@ -381,7 +381,7 @@ class AVLTree
     /**
      * Recursively serializes the AVL Tree.
      *
-     * @param ?AVLTreeNode $node
+     * @param ?AVLTreeNode $node The node.
      *
      * @return array
      */

@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -22,7 +22,7 @@ class SinglyLinkedList
     /**
      * Construct.
      *
-     * @param mixed $data
+     * @param mixed $data The data.
      */
     public function __construct(public $data)
     {
@@ -31,7 +31,7 @@ class SinglyLinkedList
     /**
      * Append.
      *
-     * @param mixed $data
+     * @param mixed $data The data.
      *
      * @return void
      */
@@ -51,7 +51,7 @@ class SinglyLinkedList
     /**
      * Delete.
      *
-     * @param mixed $data
+     * @param mixed $data The data.
      *
      * @return SinglyLinkedList
      */

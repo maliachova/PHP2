@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 /*
@@ -332,9 +332,9 @@ class SplayTreeTest extends TestCase
      *
      * @dataProvider splayInsertionDataProvider
      *
-     * @param mixed $insertions
-     * @param mixed $expectedInOrderKeys
-     * @param mixed $expectedRootKey
+     * @param mixed $insertions          The insertions.
+     * @param mixed $expectedInOrderKeys The expected in order keys.
+     * @param mixed $expectedRootKey     The expected root key.
      *
      * @return void
      */
@@ -382,7 +382,7 @@ class SplayTreeTest extends TestCase
     /**
      *  Helper function to extract keys from the in-order traversal array.
      *
-     * @param array $inOrderArray
+     * @param array $inOrderArray The in order array.
      *
      * @return array
      */

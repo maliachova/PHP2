@@ -6,8 +6,8 @@
  * PHP version 8.2
  *
  * @category DataStructures
- * @license https://opensource.org/licenses/MIT MIT License
- * @link https://github.com/TheAlgorithms/PHP
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/TheAlgorithms/PHP
  */
 
 declare(strict_types=1);
@@ -32,8 +32,8 @@ abstract class SplayTreeRotations
     /**
      * Splay.
      *
-     * @param ?SplayTreeNode $node
-     * @param int $key
+     * @param ?SplayTreeNode $node The node.
+     * @param int            $key  The key.
      *
      * @return ?SplayTreeNode
      */
@@ -45,7 +45,7 @@ abstract class SplayTreeRotations
     /**
      * Set root.
      *
-     * @param SplayTreeNode $node
+     * @param SplayTreeNode $node The node.
      *
      * @return void
      */
