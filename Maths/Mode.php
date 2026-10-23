@@ -8,6 +8,7 @@ declare(strict_types=1);
  * numbers provided
  *
  * @param decimal $numbers A variable sized number input
+ *
  * @return array $modes Array of mode(s) of provided numbers
  * @throws \Exception
  */

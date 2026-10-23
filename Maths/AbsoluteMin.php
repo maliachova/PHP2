@@ -9,6 +9,7 @@ declare(strict_types=1);
  * provided.
  *
  * @param  decimal  $numbers  A variable sized number input
+ *
  * @return decimal $absoluteMin Absolute min value
  * @throws \Exception
  */

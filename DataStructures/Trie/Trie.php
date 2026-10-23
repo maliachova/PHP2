@@ -24,6 +24,8 @@ class Trie
 
     /**
      * Get the root node of the Trie.
+     *
+     * @return TrieNode
      */
     public function getRoot(): TrieNode
     {
@@ -32,6 +34,8 @@ class Trie
 
     /**
      * Insert a word into the Trie.
+     *
+     * @return void
      */
     public function insert(string $word): void
     {
@@ -46,6 +50,8 @@ class Trie
 
     /**
      * Search for a word in the Trie.
+     *
+     * @return bool
      */
     public function search(string $word): bool
     {
@@ -64,6 +70,8 @@ class Trie
 
     /**
      * Find all words that start with a given prefix.
+     *
+     * @return array
      */
     public function startsWith(string $prefix): array
     {
@@ -83,6 +91,8 @@ class Trie
 
     /**
      * Helper function to find all words from a given node.
+     *
+     * @return array
      */
     private function findWordsFromNode(TrieNode $node, string $prefix): array
     {
@@ -103,6 +113,7 @@ class Trie
      * Recursively traverses the Trie and removes nodes
      *
      * @param string $word The word to delete.
+     *
      * @return bool Returns true if the word was successfully deleted, otherwise false.
      */
     public function delete(string $word): bool
@@ -117,6 +128,7 @@ class Trie
      * @param TrieNode $node The current node in the Trie.
      * @param string $word The word being deleted.
      * @param int $index The current index in the word.
+     *
      * @return bool Returns true if the current node should be deleted, otherwise false.
      */
     private function deleteHelper(TrieNode $node, string &$word, int $index): bool
@@ -152,6 +164,7 @@ class Trie
      *
      * @param TrieNode $node The starting node for traversal.
      * @param string $prefix The prefix of the current path in the Trie.
+     *
      * @return array An array of words found in the Trie starting from the given node.
      */
     public function traverseTrieNode(TrieNode $node, string $prefix = ''): array

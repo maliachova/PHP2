@@ -39,6 +39,8 @@ class BSTreeTest extends TestCase
 
     /**
      * Test: Insert a single node
+     *
+     * @return void
      */
     public function testInsertSingleNode(): void
     {
@@ -54,6 +56,8 @@ class BSTreeTest extends TestCase
 
     /**
      * Test: Insert multiple nodes and validate small structure
+     *
+     * @return void
      */
     public function testInsertMultipleNodes(): void
     {
@@ -69,6 +73,7 @@ class BSTreeTest extends TestCase
     /**
      * Test: Insert multiple nodes from array and validate structure
      *
+     * @return mixed
      */
     public function testInsertMultipleNodesFromArray()
     {
@@ -90,6 +95,8 @@ class BSTreeTest extends TestCase
 
     /**
      * Test: Duplicate key insertion should throw an exception
+     *
+     * @return void
      */
     public function testInsertDuplicateKey(): void
     {
@@ -100,6 +107,8 @@ class BSTreeTest extends TestCase
 
     /**
      * Checks the empty state of the tree before and after insertions.
+     *
+     * @return mixed
      */
     public function testIsEmpty()
     {
@@ -126,6 +135,8 @@ class BSTreeTest extends TestCase
      * *     50    115
      * *    /
      * *  70
+     *
+     * @return void
      */
     private function populateTree(): void
     {
@@ -153,6 +164,8 @@ class BSTreeTest extends TestCase
 
     /**
      * Test: Search for an existing node
+     *
+     * @return void
      */
     public function testSearchNodeExists(): void
     {
@@ -168,6 +181,8 @@ class BSTreeTest extends TestCase
 
     /**
      * Test: Search for a non-existing node
+     *
+     * @return void
      */
     public function testSearchNodeNotExists(): void
     {
@@ -182,6 +197,8 @@ class BSTreeTest extends TestCase
 
     /**
      * Test: Remove a leaf node
+     *
+     * @return void
      */
     public function testRemoveLeafNode(): void
     {
@@ -215,6 +232,8 @@ class BSTreeTest extends TestCase
 
     /**
      * Test: Remove a node with one child
+     *
+     * @return void
      */
     public function testRemoveNodeWithOneChild(): void
     {
@@ -253,6 +272,8 @@ class BSTreeTest extends TestCase
 
     /**
      * Test: Remove a node with two children
+     *
+     * @return void
      */
     public function testRemoveNodeWithTwoChildren(): void
     {
@@ -308,6 +329,8 @@ class BSTreeTest extends TestCase
 
     /**
      * Test: Verify all operations on a large tree.
+     *
+     * @return void
      */
     public function testOperationsOnLargeTree(): void
     {
@@ -334,6 +357,8 @@ class BSTreeTest extends TestCase
 
     /**
      * Test: Check tree size
+     *
+     * @return void
      */
     public function testTreeSize(): void
     {
@@ -356,6 +381,8 @@ class BSTreeTest extends TestCase
 
     /**
      * Test depth for various nodes
+     *
+     * @return void
      */
     public function testGetDepth(): void
     {
@@ -375,6 +402,8 @@ class BSTreeTest extends TestCase
 
     /**
      * Test height for various nodes
+     *
+     * @return void
      */
     public function testGetHeight(): void
     {
@@ -396,6 +425,8 @@ class BSTreeTest extends TestCase
 
     /**
      * Test: In-order traversal
+     *
+     * @return void
      */
     public function testInOrderTraversal(): void
     {
@@ -422,6 +453,8 @@ class BSTreeTest extends TestCase
 
     /**
      * Test: Pre-order traversal
+     *
+     * @return void
      */
     public function testPreOrderTraversal(): void
     {
@@ -448,6 +481,8 @@ class BSTreeTest extends TestCase
 
     /**
      * Test: Post-order traversal
+     *
+     * @return void
      */
     public function testPostOrderTraversal(): void
     {
@@ -474,6 +509,8 @@ class BSTreeTest extends TestCase
 
     /**
      * Test: Breadth-first traversal
+     *
+     * @return void
      */
     public function testBreadthFirstTraversal(): void
     {
@@ -500,6 +537,8 @@ class BSTreeTest extends TestCase
 
     /**
      * Test: Serialize and deserialize
+     *
+     * @return void
      */
     public function testSerializationAndDeserialization(): void
     {
@@ -522,6 +561,8 @@ class BSTreeTest extends TestCase
 
     /**
      * Provides traversal types and expected results for the iterator test.
+     *
+     * @return array
      */
     public static function traversalProvider(): array
     {
@@ -569,6 +610,8 @@ class BSTreeTest extends TestCase
      * Test: Iterating over the tree with inOrder, preOrder, and postOrder Traversals.
      *
      * @dataProvider traversalProvider
+     *
+     * @return void
      */
     public function testIteratorWithTraversalTypes(string $traversalType, array $expected): void
     {

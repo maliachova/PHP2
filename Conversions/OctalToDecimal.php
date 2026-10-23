@@ -13,6 +13,7 @@ declare(strict_types=1);
  * (8 + 0) base 10
  * 9 base 10
  * @param  string  $octalNumber
+ *
  * @return int
  * @throws \Exception
  */
@@ -39,6 +40,8 @@ function octalToDecimal($octalNumber): int|float
  *
  * @param  string  $decimalNumber
  * @throws \Exception
+ *
+ * @return string
  */
 function decimalToOctal($decimalNumber): string
 {

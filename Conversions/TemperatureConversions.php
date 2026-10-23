@@ -10,7 +10,9 @@ declare(strict_types=1);
 * @author Marco https://github.com/MaarcooC
 * @param float $celsius
 * @throws \Exception
-*/
+ *
+ * @return float
+ */
 function CelsiusToFahrenheit($celsius): float
 {
     if (!is_numeric($celsius)) {
@@ -28,7 +30,9 @@ function CelsiusToFahrenheit($celsius): float
 * @author Marco https://github.com/MaarcooC
 * @param float $fahrenheit
 * @throws \Exception
-*/
+ *
+ * @return float
+ */
 function FahrenheitToCelsius($fahrenheit): float
 {
     if (!is_numeric($fahrenheit)) {
@@ -46,7 +50,9 @@ function FahrenheitToCelsius($fahrenheit): float
 * @author Marco https://github.com/MaarcooC
 * @param float $celsius
 * @throws \Exception
-*/
+ *
+ * @return float
+ */
 function CelsiusToKelvin($celsius): float
 {
     if (!is_numeric($celsius)) {
@@ -64,7 +70,9 @@ function CelsiusToKelvin($celsius): float
 * @author Marco https://github.com/MaarcooC
 * @param float $kelvin
 * @throws \Exception
-*/
+ *
+ * @return float
+ */
 function KelvinToCelsius($kelvin): float
 {
     if (!is_numeric($kelvin)) {
@@ -82,7 +90,9 @@ function KelvinToCelsius($kelvin): float
 * @author Marco https://github.com/MaarcooC
 * @param float $kelvin
 * @throws \Exception
-*/
+ *
+ * @return float
+ */
 function KelvinToFahrenheit($kelvin): float
 {
     if (!is_numeric($kelvin)) {
@@ -100,7 +110,9 @@ function KelvinToFahrenheit($kelvin): float
 * @author Marco https://github.com/MaarcooC
 * @param float $fahrenheit
 * @throws \Exception
-*/
+ *
+ * @return float
+ */
 function FahrenheitToKelvin($fahrenheit): float
 {
     if (!is_numeric($fahrenheit)) {

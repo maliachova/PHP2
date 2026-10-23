@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 /**
  * Checks if a string is a palindrome
+ *
+ * @return bool
  */
 function isPalindrome(string $string, bool $caseInsensitive = true): bool
 {

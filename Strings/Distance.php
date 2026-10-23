@@ -10,6 +10,7 @@ declare(strict_types=1);
  *
  * @param string $str1
  * @param string $str2
+ *
  * @return int the minimum number of changes to transform one string into another
  */
 function findDistance($str1, $str2): int
@@ -44,7 +45,10 @@ function findDistance($str1, $str2): int
             $substitutionCost = 0;
             $substitutionCost = $str1[$j] == $str2[$i] ? $distanceVectorInit[$j] : $distanceVectorInit[$j] + 1;
 
-            $distanceVectorFinal[$j + 1] = min($distanceVectorInit[$j + 1] + 1, min($distanceVectorFinal[$j] + 1, $substitutionCost));
+            $distanceVectorFinal[$j + 1] = min(
+                $distanceVectorInit[$j + 1] + 1,
+                min($distanceVectorFinal[$j] + 1, $substitutionCost)
+            );
         }
 
         $distanceVectorInit = $distanceVectorFinal;

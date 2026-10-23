@@ -17,6 +17,8 @@ declare(strict_types=1);
  * The conversion is made using kilometers as base
  *
  * @throws \Exception
+ *
+ * @return float
  */
 function convertSpeed(float $speed, string $unitFrom, string $unitTo): float
 {

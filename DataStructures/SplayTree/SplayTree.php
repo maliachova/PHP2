@@ -27,6 +27,8 @@ class SplayTree extends SplayTreeRotations
      * Otherwise, with manual insert() after initialization.
      *
      * @param array $initialData The input array for the splay tree
+     *
+     * @return mixed
      */
     public function __construct(array $initialData = [])
     {
@@ -45,6 +47,8 @@ class SplayTree extends SplayTreeRotations
 
     /**
      * Set the root node of the Splay Tree.
+     *
+     * @return void
      */
     protected function setRoot(SplayTreeNode $node): void
     {
@@ -53,6 +57,8 @@ class SplayTree extends SplayTreeRotations
 
     /**
      * Get the number of nodes in the Splay Tree.
+     *
+     * @return int
      */
     public function size(): int
     {
@@ -61,6 +67,8 @@ class SplayTree extends SplayTreeRotations
 
     /**
      * Check if current splay tree is empty
+     *
+     * @return bool
      */
     public function isEmpty(): bool
     {
@@ -75,6 +83,7 @@ class SplayTree extends SplayTreeRotations
      *
      * @param SplayTreeNode|NULL $node The current node being splayed
      * @param int $key The node's key being searched for and splayed
+     *
      * @return SplayTreeNode|NULL Returns the new root after splaying
      */
     protected function splay(?SplayTreeNode $node, int $key): ?SplayTreeNode
@@ -96,6 +105,7 @@ class SplayTree extends SplayTreeRotations
      *
      * @param SplayTreeNode|null $node The root node of the subtree to splay
      * @param int $key The key to splay to the root
+     *
      * @return SplayTreeNode|null Returns the new root after splaying
     */
     private function splayLeft(?SplayTreeNode $node, int $key): ?SplayTreeNode
@@ -131,6 +141,7 @@ class SplayTree extends SplayTreeRotations
      *
      * @param SplayTreeNode|null $node The root node of the subtree to splay
      * @param int $key The key to splay to the root
+     *
      * @return SplayTreeNode|null Returns the new root after splaying
     */
     private function splayRight(?SplayTreeNode $node, int $key): ?SplayTreeNode
@@ -166,6 +177,7 @@ class SplayTree extends SplayTreeRotations
      *
      * @param int $key The node's key to insert
      * @param mixed $value The value associated with the key
+     *
      * @return SplayTreeNode|null Returns the new root after insertion and splaying
      * @throws LogicException If the key already exists
      */
@@ -186,6 +198,7 @@ class SplayTree extends SplayTreeRotations
      * @param SplayTreeNode|null $node The (sub)tree's root node to start inserting after
      * @param int $key The node's key to insert
      * @param mixed $value The value associated with the key
+     *
      * @return SplayTreeNode|null Returns the new root after insertion
      * @throws LogicException If the key already exists
      */
@@ -216,6 +229,7 @@ class SplayTree extends SplayTreeRotations
      * Time complexity: O(log n) for the splay operation.
      *
      * @param int $key The node's key being searched
+     *
      * @return SplayTreeNode|null Returns the new root of either the found node or the last visited
      */
     public function search(int $key): ?SplayTreeNode
@@ -244,6 +258,7 @@ class SplayTree extends SplayTreeRotations
      * @param SplayTreeNode|null $node The (sub)tree's root node to start searching from
      * @param int $key  The node's key being searched
      * @param SplayTreeNode|null $lastVisited Keep track of the last visited node
+     *
      * @return SplayTreeNode|null Returns the new root of the found node or Null
      */
     private function searchNode(?SplayTreeNode $node, int $key, ?SplayTreeNode &$lastVisited): ?SplayTreeNode
@@ -271,6 +286,7 @@ class SplayTree extends SplayTreeRotations
      * Time complexity: O(log n) for the splay operation.
      *
      * @param int $key The key of the node being searched
+     *
      * @return bool True if the node exists, false otherwise
      */
     public function isFound(int $key): bool
@@ -288,6 +304,7 @@ class SplayTree extends SplayTreeRotations
      *
      * @param int $key The key of the node to update
      * @param mixed $value The new value to set
+     *
      * @return SplayTreeNode|null Returns the root of the tree after the update or the last visited
      */
     public function update(int $key, mixed $value): ?SplayTreeNode
@@ -307,6 +324,7 @@ class SplayTree extends SplayTreeRotations
      * Time complexity: O(log n) for the splay operation and O(log n) for restructuring the tree.
      *
      * @param int $key The key of the node to delete
+     *
      * @return SplayTreeNode|null The new root after the deletion
      * @throws LogicException If the key is not found in the tree
      */
@@ -326,6 +344,8 @@ class SplayTree extends SplayTreeRotations
 
     /**
      * Isolates the root node by breaking its connections.
+     *
+     * @return void
      */
     private function isolateRoot(): void
     {
@@ -359,6 +379,7 @@ class SplayTree extends SplayTreeRotations
      * Handles the case when the left subtree is empty after deletion.
      *
      * @param SplayTreeNode|null $rightSubtreeRoot The root of the right subtree
+     *
      * @return SplayTreeNode|null The new root
      */
     private function handleEmptyLeftSubtree(?SplayTreeNode $rightSubtreeRoot): ?SplayTreeNode
@@ -376,6 +397,7 @@ class SplayTree extends SplayTreeRotations
      *
      * @param SplayTreeNode $leftSubtreeRoot The root of the left subtree
      * @param SplayTreeNode|null $rightSubtreeRoot The root of the right subtree
+     *
      * @return SplayTreeNode The new root after merging
      */
     private function mergeSubtrees(SplayTreeNode $leftSubtreeRoot, ?SplayTreeNode $rightSubtreeRoot): SplayTreeNode
@@ -394,6 +416,8 @@ class SplayTree extends SplayTreeRotations
      *
      * @param SplayTreeNode $maxLeftNode The max node of the left subtree
      * @param SplayTreeNode $leftSubtreeRoot The root of the left subtree
+     *
+     * @return void
      */
     private function detachMaxNodeFromLeftSubtree(SplayTreeNode $maxLeftNode, SplayTreeNode $leftSubtreeRoot): void
     {
@@ -411,6 +435,8 @@ class SplayTree extends SplayTreeRotations
      * Attaches the right subtree to the new root.
      *
      * @param SplayTreeNode|null $rightSubtreeRoot The root of the right subtree
+     *
+     * @return void
      */
     private function attachRightSubtree(?SplayTreeNode $rightSubtreeRoot): void
     {
@@ -426,6 +452,7 @@ class SplayTree extends SplayTreeRotations
      * Time complexity: O(log n) for finding the maximum node in the subtree.
      *
      * @param SplayTreeNode|null $node The subtree to search for the maximum node
+     *
      * @return SplayTreeNode|null The node with the maximum key, or null if the subtree is empty
      */
     public function maxNode(?SplayTreeNode $node): ?SplayTreeNode
@@ -443,6 +470,7 @@ class SplayTree extends SplayTreeRotations
      *  Perform an in-order traversal of the Splay Tree.
      *
      * @param SplayTreeNode|null $node The root node to start traversing from
+     *
      * @return array Representation of the traversed nodes
      */
     public function inOrderTraversal(?SplayTreeNode $node): array

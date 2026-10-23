@@ -9,6 +9,7 @@ declare(strict_types=1);
  * provided
  *
  * @param  decimal  $numbers  A variable sized number input
+ *
  * @return decimal $absoluteMax Absolute max value
  * @throws \Exception
  */

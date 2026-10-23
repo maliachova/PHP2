@@ -19,8 +19,12 @@ class AVLTreeNode
     /**
      * @param int|string $key
      */
-    public function __construct(public $key, public mixed $value, public ?AVLTreeNode $left = null, public ?AVLTreeNode $right = null)
-    {
+    public function __construct(
+        public $key,
+        public mixed $value,
+        public ?AVLTreeNode $left = null,
+        public ?AVLTreeNode $right = null
+    ) {
         // New node is initially at height 1
     }
 

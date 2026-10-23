@@ -11,6 +11,7 @@ declare(strict_types=1);
  *
  * @param string $input_string The input string.
  * @param string $key The key to use.
+ *
  * @return string The encrypted string.
  */
 function xorCipher(string $input_string, string $key): string

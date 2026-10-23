@@ -5,6 +5,8 @@ declare(strict_types=1);
 /**
  * This function checks if given number is palindromic
  * e.g. 121
+ *
+ * @return bool
  */
 function isNumberPalindromic(int $input): bool
 {

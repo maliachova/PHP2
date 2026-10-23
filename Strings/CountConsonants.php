@@ -7,6 +7,8 @@ declare(strict_types=1);
  * string using a linear search through the string
  *
  * @throws \Exception
+ *
+ * @return int
  */
 function countConsonants(string $string): int
 {

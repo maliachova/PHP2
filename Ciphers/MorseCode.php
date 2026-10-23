@@ -6,6 +6,7 @@ declare(strict_types=1);
  * Encode text to Morse Code.
  *
  * @param  string  $text  text to encode
+ *
  * @return string encoded text
  * @throws \Exception
  */
@@ -70,6 +71,8 @@ function encode(string $text): string
  * Decode Morse Code to text.
  * @param  string  $text  text to decode
  * @throws \Exception
+ *
+ * @return string
  */
 function decode(string $text): string
 {

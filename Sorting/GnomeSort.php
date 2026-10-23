@@ -7,9 +7,12 @@ declare(strict_types=1);
  * References:
  * https://www.geeksforgeeks.org/gnome-sort-a-stupid-one/
  *
- * The Gnome algorithm works by locating the first instance in which two adjoining elements are arranged incorrectly and swaps with each other.
+ * The Gnome algorithm works by locating the first instance in which two adjoining elements are arranged incorrectly
+ * and swaps with each other.
  *
  * @param array $array refers to the array to be sorted
+ *
+ * @return array
  */
 function gnomeSort(array $array): array
 {

@@ -8,6 +8,7 @@ declare(strict_types=1);
  *
  * @param string $plaintext The plaintext to be encrypted.
  * @param string $key The encryption key.
+ *
  * @return string The encrypted text.
  */
 function vigenere_encrypt($plaintext, $key): string
@@ -40,6 +41,7 @@ function vigenere_encrypt($plaintext, $key): string
  *
  * @param string $ciphertext The ciphertext to be decrypted.
  * @param string $key The decryption key.
+ *
  * @return string The decrypted text.
  */
 function vigenere_decrypt($ciphertext, $key): string

@@ -11,6 +11,7 @@ declare(strict_types=1);
  * @param array $verticesNames An array of vertices names
  * @param GraphEdge[] $edges An array of edges
  * @param string $start The starting vertex
+ *
  * @return array An array of shortest paths from $start to all other vertices
  */
 function bellmanFord(array $verticesNames, array $edges, string $start, bool $verbose = false): array

@@ -17,6 +17,8 @@ abstract class TreeTraversal
     /**
      * Perform an in-order traversal of the subtree.
      * Recursively traverses the subtree rooted at the given node.
+     *
+     * @return array
      */
     public static function inOrder(?AVLTreeNode $node): array
     {
@@ -33,6 +35,8 @@ abstract class TreeTraversal
     /**
      * Perform a pre-order traversal of the subtree.
      * Recursively traverses the subtree rooted at the given node.
+     *
+     * @return array
      */
     public static function preOrder(?AVLTreeNode $node): array
     {
@@ -49,6 +53,8 @@ abstract class TreeTraversal
     /**
      * Perform a post-order traversal of the subtree.
      * Recursively traverses the subtree rooted at the given node.
+     *
+     * @return array
      */
     public static function postOrder(?AVLTreeNode $node): array
     {
@@ -64,6 +70,8 @@ abstract class TreeTraversal
 
     /**
      * Perform a breadth-first traversal of the AVL Tree.
+     *
+     * @return array
      */
     public static function breadthFirst(?AVLTreeNode $root): array
     {

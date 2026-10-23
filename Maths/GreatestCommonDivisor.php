@@ -5,6 +5,8 @@ declare(strict_types=1);
 /**
  * This function finds the greatest common division using Euclidean algorithm
  * example: gcd(30, 24) => 6
+ *
+ * @return int
  */
 function gcd(int $a, int $b): int
 {

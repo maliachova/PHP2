@@ -8,6 +8,7 @@ declare(strict_types=1);
  * numbers provided
  *
  * @param  float|int  $numbers  A variable sized number input
+ *
  * @return float|int $median Median of provided numbers
  * @throws \Exception
  */

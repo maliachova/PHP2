@@ -17,6 +17,7 @@ declare(strict_types=1);
  * @author Aryansh Bhargavan https://github.com/aryanshb
  * @param array $adjList An array representing the grapth as an Adjacent List
  * @param int|string $start The starting vertex
+ *
  * @return bool if path between start and end vertex exists
  */
 

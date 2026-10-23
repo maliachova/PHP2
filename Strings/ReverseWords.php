@@ -5,6 +5,8 @@ declare(strict_types=1);
 /**
  * This function returns a given sentence with its words
  * in reverse order
+ *
+ * @return string
  */
 function reverseWords(string $text): string
 {

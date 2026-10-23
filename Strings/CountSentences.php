@@ -5,6 +5,8 @@ declare(strict_types=1);
 /**
  * This is a simple way to count sentence
  * using php preg_match_all() function
+ *
+ * @return int
  */
 function countSentences(string $sentence): int
 {

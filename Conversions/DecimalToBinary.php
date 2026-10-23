@@ -9,6 +9,8 @@ declare(strict_types=1);
  *
  * @param  string  $decimalNumber
  * @throws \Exception
+ *
+ * @return string
  */
 function decimalToBinary($decimalNumber): string
 {

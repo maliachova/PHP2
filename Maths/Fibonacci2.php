@@ -9,6 +9,8 @@ declare(strict_types=1);
 /**
  * @param int $i number of Fibonacci numbers to generate
  * @param Generator $set Fibonacci calculator
+ *
+ * @return mixed
  */
 function loop($i, Generator $set)
 {

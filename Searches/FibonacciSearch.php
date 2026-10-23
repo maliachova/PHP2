@@ -10,6 +10,8 @@ declare(strict_types=1);
 /**
  * @param int $n position to check
  * @param array $m array to store solved trees
+ *
+ * @return mixed
  */
 function fibonacciPosition(int $n, array &$m = [])
 {

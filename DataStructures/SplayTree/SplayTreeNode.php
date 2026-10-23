@@ -30,7 +30,8 @@ class SplayTreeNode
 
     public function isLeaf(): bool
     {
-        return !$this->left instanceof \DataStructures\SplayTree\SplayTreeNode && !$this->right instanceof \DataStructures\SplayTree\SplayTreeNode;
+        return !$this->left instanceof \DataStructures\SplayTree\SplayTreeNode
+            && !$this->right instanceof \DataStructures\SplayTree\SplayTreeNode;
     }
 
     public function isRoot(): bool

@@ -8,6 +8,7 @@ declare(strict_types=1);
  * Time complexity of the Shell Sort algorithm depends on the gap sequence used.
  * With Knuth's sequence, the time complexity is O(n^(3/2)).
  *
+ * @return array
  */
 function shellSort(array $array): array
 {
@@ -35,6 +36,8 @@ function shellSort(array $array): array
  * Calculate Knuth's series
  *
  * @param int $n Size of the array
+ *
+ * @return array
  */
 function calculateKnuthSeries(int $n): array
 {

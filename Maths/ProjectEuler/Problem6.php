@@ -21,6 +21,8 @@ declare(strict_types=1);
  *
  * Answer: 25164150
  *
+ * @category ProjectEuler
+ *
  * @param int $maxNumber Range from 1 to <maxNumber>
  *
  * @return int Difference between the sum of the squares and

@@ -9,6 +9,7 @@ declare(strict_types=1);
  * Non-alphabet characters are not modified.
  *
  * @param string $plainText The plaintext to encrypt.
+ *
  * @return string The encrypted message.
  */
 function atbash_encrypt($plainText): string
@@ -35,6 +36,7 @@ function atbash_encrypt($plainText): string
  * Since the Atbash Cipher is its own inverse, decryption is the same as encryption.
  *
  * @param string $cipherText The ciphertext to decrypt.
+ *
  * @return string The decrypted message.
  */
 function atbash_decrypt($cipherText): string

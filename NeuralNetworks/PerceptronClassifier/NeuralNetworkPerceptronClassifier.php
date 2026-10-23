@@ -46,6 +46,7 @@ class NeuralNetworkPerceptronClassifier
 
     /**
      * Stage 1. Prepare dataset
+     *
      * @return array[]
      */
     public function generateTrainingSet(): array
@@ -72,6 +73,7 @@ class NeuralNetworkPerceptronClassifier
     /**
      * Stage 2. Initialize model parameters
      * @param int $n Number of features
+     *
      * @return array [$W, $b] Weight and bias arrays
      */
     private function initParams(int $n): array
@@ -87,6 +89,8 @@ class NeuralNetworkPerceptronClassifier
 
     /**
      * Sigmoid Activation Function
+     *
+     * @return float
      */
     private function sigmoid(float $z): float
     {
@@ -95,6 +99,8 @@ class NeuralNetworkPerceptronClassifier
 
     /**
      * Stage 3. Forward Propagation
+     *
+     * @return array
      */
     private function forwardPropagation(array $X, array $W, float $b): array
     {
@@ -114,6 +120,8 @@ class NeuralNetworkPerceptronClassifier
 
     /**
      * Stage 4. Compute Cost Function (Binary Cross-Entropy Loss)
+     *
+     * @return float
      */
     private function computeCost(array $A, array $Y): float
     {
@@ -128,6 +136,8 @@ class NeuralNetworkPerceptronClassifier
 
     /**
      * Stage 5. Backward Propagation
+     *
+     * @return array
      */
     private function backwardPropagation(array $A, array $X, array $Y): array
     {
@@ -160,6 +170,8 @@ class NeuralNetworkPerceptronClassifier
 
     /**
      * STage 6. Update Parameters
+     *
+     * @return array
      */
     private function updateParams(array $W, float $b, array $dW, float $db, float $learningRate): array
     {

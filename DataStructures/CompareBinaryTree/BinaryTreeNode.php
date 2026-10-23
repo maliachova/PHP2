@@ -6,7 +6,10 @@ namespace DataStructures\CompareBinaryTree;
 
 class BinaryTreeNode
 {
-    public function __construct(public $value, public ?BinaryTreeNode $left = null, public ?BinaryTreeNode $right = null)
-    {
+    public function __construct(
+        public $value,
+        public ?BinaryTreeNode $left = null,
+        public ?BinaryTreeNode $right = null
+    ) {
     }
 }

@@ -5,6 +5,8 @@ declare(strict_types=1);
 /**
  * Count homogenous substrings
  * @param String $s
+ *
+ * @return int
  */
 function countHomogenous($s): int
 {

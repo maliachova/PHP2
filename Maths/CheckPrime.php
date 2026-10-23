@@ -8,6 +8,7 @@ declare(strict_types=1);
  * number or not.
  *
  * @param Integer $number An integer input
+ *
  * @return boolean whether the number is prime or not
  */
 function isPrime(int $number): bool

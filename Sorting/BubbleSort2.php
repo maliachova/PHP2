@@ -8,6 +8,7 @@ declare(strict_types=1);
  * Compare numbers in an array 2 at a time and switch them if the second number is smaller
  *
  * @param array $input array of random numbers
+ *
  * @return array sorted array of numbers
  */
 function bubbleSort2(array $input)

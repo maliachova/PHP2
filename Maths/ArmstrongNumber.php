@@ -5,6 +5,8 @@ declare(strict_types=1);
 /**
  * This function checks if given number is Armstrong
  * e.g. 153
+ *
+ * @return bool
  */
 function isNumberArmstrong(int $input): bool
 {

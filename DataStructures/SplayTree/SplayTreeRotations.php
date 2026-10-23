@@ -24,6 +24,7 @@ abstract class SplayTreeRotations
      * A case where the node is directly a left child of its parent.
      *
      * @param SplayTreeNode $node The node to be rotated.
+     *
      * @return SplayTreeNode The new root of the subtree after rotation.
      */
     protected function zig(SplayTreeNode $node): SplayTreeNode
@@ -37,6 +38,7 @@ abstract class SplayTreeRotations
      * A case where the node is directly a right child of its parent.
      *
      * @param SplayTreeNode $node The node to be rotated.
+     *
      * @return SplayTreeNode The new root of the subtree after rotation.
      */
     protected function zag(SplayTreeNode $node): SplayTreeNode
@@ -50,6 +52,7 @@ abstract class SplayTreeRotations
      * the node’s parent, and the second one to the node’s new parent (the previous grandparent).
      *
      * @param SplayTreeNode $node The node to be rotated.
+     *
      * @return SplayTreeNode The new root of the subtree after the rotations.
      */
     protected function zigZig(SplayTreeNode $node): SplayTreeNode
@@ -64,6 +67,7 @@ abstract class SplayTreeRotations
      * the node’s parent, and the second one to the node’s new parent (the previous grandparent).
      *
      * @param SplayTreeNode $node The node to be rotated.
+     *
      * @return SplayTreeNode The new root of the subtree after the rotations.
      */
     protected function zagZag(SplayTreeNode $node): SplayTreeNode
@@ -79,6 +83,7 @@ abstract class SplayTreeRotations
      * A case when the target key is in the right subtree of the left child.
      *
      * @param SplayTreeNode $node The node to be rotated.
+     *
      * @return SplayTreeNode The new root of the subtree after the rotations.
      */
     protected function zigZag(SplayTreeNode $node): SplayTreeNode
@@ -94,6 +99,7 @@ abstract class SplayTreeRotations
      * A case when the target key is in the left subtree of the right child.
      *
      * @param SplayTreeNode $node The node to be rotated.
+     *
      * @return SplayTreeNode The new root of the subtree after the rotations.
      */
     protected function zagZig(SplayTreeNode $node): SplayTreeNode
@@ -107,6 +113,7 @@ abstract class SplayTreeRotations
      * The left subtree of the node's right child will become the new right subtree of the node.
      *
      * @param SplayTreeNode $node The node to be rotated.
+     *
      * @return SplayTreeNode The new root of the subtree after the rotation (the former right child).
      */
     private function rotateLeft(SplayTreeNode $node): SplayTreeNode
@@ -144,6 +151,7 @@ abstract class SplayTreeRotations
      * The right subtree of the node's left child will become the new left subtree of the node.
      *
      * @param SplayTreeNode $node The node to be rotated.
+     *
      * @return SplayTreeNode The new root of the subtree after the rotation (the former left child).
      */
     private function rotateRight(SplayTreeNode $node): SplayTreeNode

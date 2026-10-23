@@ -15,6 +15,7 @@ declare(strict_types=1);
  * 171 base 10
  *
  * @param string $octalNumber
+ *
  * @return int
  */
 function hexToDecimal($hexNumber): int|float
@@ -57,6 +58,8 @@ function hexToDecimal($hexNumber): int|float
  * Hexadecimal Number.
  *
  * @param string $decimalNumber
+ *
+ * @return string
  */
 function decimalToHex($decimalNumber): string
 {

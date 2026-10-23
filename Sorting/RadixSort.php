@@ -6,6 +6,7 @@ declare(strict_types=1);
  * Radix Sort
  *
  * @param $nums
+ *
  * @return array
  */
 function radixSort($nums)
@@ -34,6 +35,8 @@ function radixSort($nums)
  *
  * @param $num
  * @param $i
+ *
+ * @return int
  */
 function getDigit($num, $i): int
 {
@@ -44,6 +47,7 @@ function getDigit($num, $i): int
  * Get the digits count
  *
  * @param $num
+ *
  * @return int
  */
 function digitsCount($num): int|float
@@ -59,6 +63,7 @@ function digitsCount($num): int|float
  * Get the max digits count
  *
  * @param $arr
+ *
  * @return int
  */
 function maxDigits($arr)
@@ -75,6 +80,8 @@ function maxDigits($arr)
 
 /**
  * Concat the array
+ *
+ * @return array
  */
 function concat(array $array): array
 {

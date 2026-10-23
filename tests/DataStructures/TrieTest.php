@@ -29,7 +29,9 @@ class TrieTest extends TestCase
 
     /**
      * Test insertion and search functionality of the Trie.
-    */
+     *
+     * @return mixed
+     */
     public function testInsertAndSearch()
     {
         $this->trie->insert('the');
@@ -49,6 +51,8 @@ class TrieTest extends TestCase
 
     /**
      * Test insertion and search functionality with mixed case words.
+     *
+     * @return mixed
      */
     public function testInsertAndSearchMixedCase()
     {
@@ -60,6 +64,8 @@ class TrieTest extends TestCase
 
     /**
      * Test insertion and search functionality with special characters.
+     *
+     * @return mixed
      */
     public function testInsertAndSearchWithSpecialCharacters()
     {
@@ -78,6 +84,8 @@ class TrieTest extends TestCase
 
     /**
      * Test insertion and search functionality with long strings.
+     *
+     * @return mixed
      */
     public function testInsertAndSearchLongStrings()
     {
@@ -88,6 +96,8 @@ class TrieTest extends TestCase
 
     /**
      * Test the startsWith functionality of the Trie.
+     *
+     * @return mixed
      */
     public function testStartsWith()
     {
@@ -107,6 +117,8 @@ class TrieTest extends TestCase
 
     /**
      * Test startsWith functionality with mixed case prefixes.
+     *
+     * @return mixed
      */
     public function testStartsWithMixedCase()
     {
@@ -127,6 +139,8 @@ class TrieTest extends TestCase
 
     /**
      * Test deletion of existing words from the Trie.
+     *
+     * @return mixed
      */
     public function testDelete()
     {
@@ -151,6 +165,8 @@ class TrieTest extends TestCase
 
     /**
      * Test deletion of mixed case words from the Trie.
+     *
+     * @return mixed
      */
     public function testDeleteMixedCase()
     {
@@ -166,6 +182,8 @@ class TrieTest extends TestCase
 
     /**
      * Test deletion of words with special characters.
+     *
+     * @return mixed
      */
     public function testDeleteWithSpecialCharacters()
     {
@@ -184,6 +202,8 @@ class TrieTest extends TestCase
 
     /**
      * Test deletion of a non-existent word from the Trie.
+     *
+     * @return mixed
      */
     public function testDeleteNonExistentWord()
     {
@@ -193,6 +213,8 @@ class TrieTest extends TestCase
 
     /**
      * Test traversal of the Trie and retrieval of words.
+     *
+     * @return mixed
      */
     public function testTraverseTrieNode()
     {
@@ -209,6 +231,8 @@ class TrieTest extends TestCase
 
     /**
      * Test behavior of an empty Trie.
+     *
+     * @return mixed
      */
     public function testEmptyTrie()
     {
@@ -217,6 +241,8 @@ class TrieTest extends TestCase
 
     /**
      * Test retrieval of words from the Trie.
+     *
+     * @return mixed
      */
     public function testGetWords()
     {
@@ -233,6 +259,8 @@ class TrieTest extends TestCase
 
     /**
      * Test insertion of an empty string into the Trie.
+     *
+     * @return mixed
      */
     public function testInsertEmptyString()
     {
@@ -242,6 +270,8 @@ class TrieTest extends TestCase
 
     /**
      * Test deletion of an empty string from the Trie.
+     *
+     * @return mixed
      */
     public function testDeleteEmptyString()
     {
@@ -252,6 +282,8 @@ class TrieTest extends TestCase
 
     /**
      * Test the startsWith functionality with a common prefix.
+     *
+     * @return mixed
      */
     public function testStartsWithWithCommonPrefix()
     {
@@ -268,6 +300,8 @@ class TrieTest extends TestCase
 
     /**
      * Test retrieval of the root node of the Trie.
+     *
+     * @return mixed
      */
     public function testGetRoot()
     {
@@ -279,6 +313,8 @@ class TrieTest extends TestCase
 
     /**
      * Test retrieval of the root node after populating the Trie with words.
+     *
+     * @return mixed
      */
     public function testGetRootAfterPopulation()
     {

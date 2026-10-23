@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 /**
  * Selection Sort
+ *
+ * @return array
  */
 function selectionSort(array $array): array
 {

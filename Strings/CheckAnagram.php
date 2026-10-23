@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 /**
  * Checks if two strings are anagrams of each other.
+ *
+ * @return bool
  */
 function isAnagram(string $originalString, string $testString, bool $caseInsensitive = true): bool
 {

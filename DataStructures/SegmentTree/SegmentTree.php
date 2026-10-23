@@ -96,6 +96,7 @@ class SegmentTree
      * @param array $arr The input array.
      * @param int $start The starting index of the segment.
      * @param int $end The ending index of the segment.
+     *
      * @return SegmentTreeNode The root node of the constructed segment.
      */
     private function buildTree(array $arr, int $start, int $end): SegmentTreeNode
@@ -127,6 +128,7 @@ class SegmentTree
      *
      * @param int $start The starting index of the range.
      * @param int $end The ending index of the range.
+     *
      * @return int|float The aggregated value for the range.
      * @throws OutOfBoundsException if the range is invalid.
      */
@@ -146,6 +148,7 @@ class SegmentTree
      * @param SegmentTreeNode $node The current node.
      * @param int $start The starting index of the query range.
      * @param int $end The ending index of the query range.
+     *
      * @return int|float The aggregated value for the range.
      */
     private function queryTree(SegmentTreeNode $node, int $start, int $end)
@@ -289,6 +292,7 @@ class SegmentTree
      * Recursively serializes the segment tree.
      *
      * @param SegmentTreeNode|null $node The current node.
+     *
      * @return array The serialized representation of the node.
      */
     private function serializeTree(?SegmentTreeNode $node): array
@@ -310,6 +314,7 @@ class SegmentTree
      * Deserializes a JSON string into a SegmentTree object.
      *
      * @param string $data The JSON string to deserialize.
+     *
      * @return SegmentTree The deserialized segment tree.
      */
     public static function deserialize(string $data): self
@@ -327,6 +332,7 @@ class SegmentTree
      * Recursively deserializes a segment tree from an array representation.
      *
      * @param array $data The serialized data for the node.
+     *
      * @return SegmentTreeNode|null The deserialized node.
      */
     private function deserializeTree(array $data): ?SegmentTreeNode

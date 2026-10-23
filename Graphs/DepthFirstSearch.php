@@ -16,6 +16,7 @@ declare(strict_types=1);
  * @author Andre Alves https://github.com/andremralves
  * @param array $adjList An array representing the grapth as an Adjacent List
  * @param int|string $start The starting vertex
+ *
  * @return array The visited vertices
  */
 function dfs(array $adjList, $start): array

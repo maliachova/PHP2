@@ -7,6 +7,7 @@ declare(strict_types=1);
  *
  * @param Integer $base the base
  * @param Integer $exponent the exponent (ie the number of times that the base is multiplied by itself)
+ *
  * @return Integer
  */
 function fastExponentiation(int $base, int $exponent)

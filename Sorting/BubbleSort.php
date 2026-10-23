@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 /**
  * Bubble Sort
+ *
+ * @return array
  */
 function bubbleSort(array $array): array
 {

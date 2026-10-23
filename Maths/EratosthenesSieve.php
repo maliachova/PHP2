@@ -8,6 +8,7 @@ declare(strict_types=1);
  *
  * @author Michał Żarnecki https://github.com/rzarno
  * @param int $number the limit of prime numbers to generate
+ *
  * @return string[] prime numbers up to the given limit
  */
 function eratosthenesSieve(int $number): array

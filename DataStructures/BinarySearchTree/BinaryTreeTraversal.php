@@ -36,6 +36,8 @@ class BinaryTreeTraversal implements Iterator
 
     /**
      * Helps switch traversal type of the binary tree for the Iterator interface
+     *
+     * @return void
      */
     public function setTraversalType(string $traversalType): void
     {
@@ -47,6 +49,8 @@ class BinaryTreeTraversal implements Iterator
 
     /**
      * Helper to populate iteration nodes per traversal ype
+     *
+     * @return void
      */
     private function loadTraversedNodes(): void
     {
@@ -59,6 +63,8 @@ class BinaryTreeTraversal implements Iterator
 
     /**
      * Returns a flat associative array structure for inOrder Traversal
+     *
+     * @return array
      */
     protected function inOrder(?BSTNode $node): array
     {
@@ -74,6 +80,8 @@ class BinaryTreeTraversal implements Iterator
 
     /**
      * Returns a flat associative array structure for preOrder Traversal
+     *
+     * @return array
      */
     protected function preOrder(?BSTNode $node): array
     {
@@ -89,6 +97,8 @@ class BinaryTreeTraversal implements Iterator
 
     /**
      * Returns a flat associative array structure for postOrder Traversal
+     *
+     * @return array
      */
     protected function postOrder(?BSTNode $node): array
     {
@@ -104,6 +114,8 @@ class BinaryTreeTraversal implements Iterator
 
     /**
      *  Returns a flat associative array structure for BFT Traversal
+     *
+     * @return array
      */
     protected function breadthFirst(?BSTNode $node): array
     {
@@ -133,6 +145,8 @@ class BinaryTreeTraversal implements Iterator
 
     /**
      * Rewind the iterator to the first element.
+     *
+     * @return void
      */
     public function rewind(): void
     {
@@ -145,6 +159,8 @@ class BinaryTreeTraversal implements Iterator
 
     /**
      * Return the current element if exists
+     *
+     * @return ?BSTNode
      */
     public function current(): ?BSTNode
     {
@@ -153,6 +169,8 @@ class BinaryTreeTraversal implements Iterator
 
     /**
      * Return the key of the current element.
+     *
+     * @return int
      */
     public function key(): int
     {
@@ -161,6 +179,8 @@ class BinaryTreeTraversal implements Iterator
 
     /**
      * Move forward to the next element.
+     *
+     * @return void
      */
     public function next(): void
     {
@@ -169,6 +189,8 @@ class BinaryTreeTraversal implements Iterator
 
     /**
      * Check if the current position is valid.
+     *
+     * @return bool
      */
     public function valid(): bool
     {
@@ -177,6 +199,8 @@ class BinaryTreeTraversal implements Iterator
 
     /**
      * Helper function to traverse the tree in-order and fill the $inOrderNodes array.
+     *
+     * @return void
      */
     private function inOrderIterator(?BSTNode $node): void
     {
@@ -189,6 +213,8 @@ class BinaryTreeTraversal implements Iterator
 
     /**
      * Helper function to traverse the tree in-order and fill the $preOrderNodes array.
+     *
+     * @return void
      */
     private function preOrderIterator(?BSTNode $node): void
     {
@@ -201,6 +227,8 @@ class BinaryTreeTraversal implements Iterator
 
     /**
      * Helper function to traverse the tree in-order and fill the $postOrderNodes array.
+     *
+     * @return void
      */
     private function postOrderIterator(?BSTNode $node): void
     {

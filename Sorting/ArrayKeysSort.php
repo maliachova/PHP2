@@ -14,10 +14,15 @@ class ArrayKeysSort
 
     /**
      * @param $collection
+     *
      * @return mixed
      */
-    public static function sort($collection, array $keys, string $order = self::ORDER_ASC, bool $isCaseSensitive = false)
-    {
+    public static function sort(
+        $collection,
+        array $keys,
+        string $order = self::ORDER_ASC,
+        bool $isCaseSensitive = false
+    ) {
         if (!empty($collection) && $keys !== []) {
             try {
                 usort($collection, function ($a, $b) use ($keys, $order, $isCaseSensitive): int {

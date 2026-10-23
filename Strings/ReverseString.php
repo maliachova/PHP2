@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 /**
  * This function returns a given string in reverse order
+ *
+ * @return string
  */
 function reverseString(string $string): string
 {

@@ -7,6 +7,8 @@ declare(strict_types=1);
  * times in the given string.
  *
  * @throws \Exception
+ *
+ * @return string
  */
 function maxCharacter(string $string): string
 {

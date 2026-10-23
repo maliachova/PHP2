@@ -15,6 +15,7 @@ This function returns true
 *
 * @author Marco https://github.com/MaarcooC
 * @param int $number
+*
 * @return bool
 */
 function perfect_number($number)

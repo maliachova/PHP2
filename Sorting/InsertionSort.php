@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 /**
  * Insertion Sort
+ *
+ * @return array
  */
 function insertionSort(array $array): array
 {

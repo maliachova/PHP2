@@ -6,6 +6,8 @@ declare(strict_types=1);
  * Fibonacci recursive
  *
  * @throws \Exception
+ *
+ * @return array
  */
 function fibonacciRecursive(int $num): array
 {
@@ -39,6 +41,7 @@ function recursive(int $num): float|int
 
 /**
  * @throws \Exception
+ *
  * @return int[]
  */
 function fibonacciWithBinetFormula(int $num): array
@@ -46,7 +49,8 @@ function fibonacciWithBinetFormula(int $num): array
     /*
      * Fibonacci series using Binet's formula given below
      * binet's formula =  ((1 + sqrt(5) / 2 ) ^ n - (1 - sqrt(5) / 2 ) ^ n ) ) / sqrt(5)
-     * More about Binet's formula found at http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibFormula.html#section1
+     * More about Binet's formula found at
+     * http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibFormula.html#section1
      */
 
     $fib_series = [];

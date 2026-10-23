@@ -12,6 +12,8 @@ class SinglyLinkedListTest extends TestCase
 {
     /**
      * Create a SinglyLinkedList node
+     *
+     * @return SinglyLinkedList
      */
     private function createNode(string $string): SinglyLinkedList
     {
@@ -26,6 +28,8 @@ class SinglyLinkedListTest extends TestCase
 
     /**
      * Provider of SinglyLinkedList nodes
+     *
+     * @return mixed
      */
     public static function provideNodes()
     {
@@ -53,6 +57,8 @@ class SinglyLinkedListTest extends TestCase
      * Test the if a SinglyLinkedList is a palindrome
      *
      * @dataProvider provideNodes
+     *
+     * @return void
      */
     public function testIsPalindrome($string, $expected): void
     {
@@ -62,6 +68,8 @@ class SinglyLinkedListTest extends TestCase
 
     /**
      * Supporting method for testing if a linked list is palindrome
+     *
+     * @return bool
      */
     private function isPalindrome(SinglyLinkedList $node): bool
     {
@@ -82,6 +90,8 @@ class SinglyLinkedListTest extends TestCase
 
     /**
      * Supporting method for testing if a linked list is palindrome
+     *
+     * @return bool
      */
     private function hasPair($node, string $data): bool
     {
@@ -104,6 +114,8 @@ class SinglyLinkedListTest extends TestCase
 
     /**
      * Supporting method for testing if a linked list is palindrome
+     *
+     * @return int
      */
     private function length(SinglyLinkedList $node): int
     {
@@ -120,6 +132,8 @@ class SinglyLinkedListTest extends TestCase
 
     /**
      * Test SinglyLinkedList's delete functionality
+     *
+     * @return void
      */
     public function testDelete(): void
     {

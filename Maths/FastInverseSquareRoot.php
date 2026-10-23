@@ -9,6 +9,7 @@ declare(strict_types=1);
  * using the famous Quake III algorithm, originally developed by id Software.
  *
  * @param float $x The input number for which to calculate the inverse square root.
+ *
  * @return float The fast inverse square root of the input number.
  */
 function fastInvSqrt($x): float

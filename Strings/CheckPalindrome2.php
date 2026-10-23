@@ -8,6 +8,8 @@ declare(strict_types=1);
  * make it simple
  *
  * @throws \Exception
+ *
+ * @return string
  */
 function checkPalindromeString(string $string, bool $caseInsensitive = true): string
 {

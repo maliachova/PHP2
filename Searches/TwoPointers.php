@@ -8,6 +8,8 @@ declare(strict_types=1);
  * loop instead of just one, thereby reducing both time and space complexity
  * The technique involves using two pointers, which can start from the beginning and the end of the array
  * or list, or one pointer moving at a slower pace while the other moves at a faster pace.
+ *
+ * @category Searches
  */
 
 /**

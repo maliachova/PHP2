@@ -13,6 +13,8 @@ class DoublyLinkedListTest extends TestCase
 {
     /**
      * Constructor test
+     *
+     * @return mixed
      */
     public function testConstructor()
     {
@@ -22,6 +24,8 @@ class DoublyLinkedListTest extends TestCase
 
     /**
      * Test for the append method
+     *
+     * @return mixed
      */
     public function testAppend()
     {
@@ -34,6 +38,8 @@ class DoublyLinkedListTest extends TestCase
 
     /**
      * Test for the insert method
+     *
+     * @return mixed
      */
     public function testInsert()
     {
@@ -47,6 +53,8 @@ class DoublyLinkedListTest extends TestCase
 
     /**
      * Test for the delete method
+     *
+     * @return mixed
      */
     public function testDelete()
     {
@@ -60,6 +68,8 @@ class DoublyLinkedListTest extends TestCase
 
     /**
      * Test for the deleteAt method
+     *
+     * @return mixed
      */
     public function testDeleteAt()
     {
@@ -73,6 +83,8 @@ class DoublyLinkedListTest extends TestCase
 
     /**
      * Test for printList method
+     *
+     * @return mixed
      */
     public function testPrintList()
     {
@@ -86,6 +98,8 @@ class DoublyLinkedListTest extends TestCase
 
     /**
      * Test for the printListReverse method
+     *
+     * @return mixed
      */
     public function testPrintListReverse()
     {
@@ -99,6 +113,8 @@ class DoublyLinkedListTest extends TestCase
 
     /**
      * Test for the reverse method
+     *
+     * @return mixed
      */
     public function testReverse()
     {
@@ -113,6 +129,8 @@ class DoublyLinkedListTest extends TestCase
 
     /**
      * Test for the length method
+     *
+     * @return mixed
      */
     public function testLength()
     {
@@ -124,6 +142,8 @@ class DoublyLinkedListTest extends TestCase
     }
     /**
      * Test for the Search method
+     *
+     * @return mixed
      */
     public function testSearch()
     {
@@ -137,6 +157,8 @@ class DoublyLinkedListTest extends TestCase
 
     /**
      * Test for the isEmpty method
+     *
+     * @return mixed
      */
     public function testIsEmpty()
     {
@@ -146,6 +168,8 @@ class DoublyLinkedListTest extends TestCase
 
     /**
      * Test for __toString method
+     *
+     * @return mixed
      */
     public function testToString()
     {
@@ -159,6 +183,8 @@ class DoublyLinkedListTest extends TestCase
 
     /**
      * Test for the toArray method
+     *
+     * @return mixed
      */
     public function testToArray()
     {

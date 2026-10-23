@@ -32,7 +32,9 @@ function problem8(): int
         $currentProduct = 0;
 
         for ($j = 0; $j < strlen($currentSubstring); $j++) {
-            $currentProduct = ($currentProduct == 0 ? (int)$currentSubstring[$j] : $currentProduct * (int)$currentSubstring[$j]);
+            $currentProduct = ($currentProduct == 0
+                ? (int)$currentSubstring[$j]
+                : $currentProduct * (int)$currentSubstring[$j]);
         }
 
         $greatestProduct = (max($currentProduct, $greatestProduct));

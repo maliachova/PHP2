@@ -9,6 +9,7 @@ declare(strict_types=1);
  * number.
  *
  * @param  Integer  $number  Integer input
+ *
  * @return Integer Factorial of the input
  * @throws \Exception
  */

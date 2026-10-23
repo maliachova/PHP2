@@ -25,6 +25,8 @@ class AVLTree
 
     /**
      * Get the root node of the AVL Tree.
+     *
+     * @return ?AVLTreeNode
      */
     public function getRoot(): ?AVLTreeNode
     {
@@ -35,6 +37,7 @@ class AVLTree
      * Retrieve a node by its key.
      *
      * @param mixed $key The key of the node to retrieve.
+     *
      * @return ?AVLTreeNode The node with the specified key, or null if not found.
      */
     public function getNode(mixed $key): ?AVLTreeNode
@@ -44,6 +47,8 @@ class AVLTree
 
     /**
      * Get the number of nodes in the AVL Tree.
+     *
+     * @return int
      */
     public function size(): int
     {
@@ -55,6 +60,8 @@ class AVLTree
      *
      * @param mixed $key The key to insert.
      * @param mixed $value The value associated with the key.
+     *
+     * @return void
      */
     public function insert(mixed $key, mixed $value): void
     {
@@ -66,6 +73,8 @@ class AVLTree
      * Delete a node by its key from the AVL Tree.
      *
      * @param mixed $key The key of the node to delete.
+     *
+     * @return void
      */
     public function delete(mixed $key): void
     {
@@ -77,6 +86,7 @@ class AVLTree
      * Search for a value by its key.
      *
      * @param mixed $key The key to search for.
+     *
      * @return mixed The value associated with the key, or null if not found.
      */
     public function search(mixed $key)
@@ -88,6 +98,8 @@ class AVLTree
     /**
      * Perform an in-order traversal of the AVL Tree.
      * Initiates the traversal on the root node directly and returns the array of key-value pairs.
+     *
+     * @return array
      */
     public function inOrderTraversal(): array
     {
@@ -97,6 +109,8 @@ class AVLTree
     /**
      * Perform a pre-order traversal of the AVL Tree.
      * Initiates the traversal on the root node directly and returns the array of key-value pairs.
+     *
+     * @return array
      */
     public function preOrderTraversal(): array
     {
@@ -106,6 +120,8 @@ class AVLTree
     /**
      * Perform a post-order traversal of the AVL Tree.
      * Initiates the traversal on the root node directly and returns the array of key-value pairs.
+     *
+     * @return array
      */
     public function postOrderTraversal(): array
     {
@@ -114,6 +130,8 @@ class AVLTree
 
     /**
      * Perform a breadth-first traversal of the AVL Tree.
+     *
+     * @return array
      */
     public function breadthFirstTraversal(): array
     {
@@ -123,6 +141,8 @@ class AVLTree
     /**
      * Check if the AVL Tree is balanced.
      * This method check balance starting from the root node directly
+     *
+     * @return bool
      */
     public function isBalanced(): bool
     {
@@ -135,6 +155,7 @@ class AVLTree
      * @param ?AVLTreeNode $node The current node.
      * @param mixed $key The key to insert.
      * @param mixed $value The value to insert.
+     *
      * @return AVLTreeNode The new root of the subtree.
      */
     private function insertNode(?AVLTreeNode $node, mixed $key, mixed $value): AVLTreeNode
@@ -160,6 +181,7 @@ class AVLTree
      *
      * @param ?AVLTreeNode $node The current node.
      * @param mixed $key The key of the node to delete.
+     *
      * @return ?AVLTreeNode The new root of the subtree.
      */
     private function deleteNode(?AVLTreeNode $node, mixed $key): ?AVLTreeNode
@@ -196,6 +218,7 @@ class AVLTree
      *
      * @param ?AVLTreeNode $node The current node.
      * @param mixed $key The key to search for.
+     *
      * @return ?AVLTreeNode The node with the specified key, or null if not found.
      */
     private function searchNode(?AVLTreeNode $node, mixed $key): ?AVLTreeNode
@@ -218,6 +241,7 @@ class AVLTree
      * Helper method to check if a subtree is balanced.
      *
      * @param ?AVLTreeNode $node The current node.
+     *
      * @return bool True if the subtree is balanced, false otherwise.
      */
     private function isBalancedHelper(?AVLTreeNode $node): bool
@@ -241,6 +265,7 @@ class AVLTree
      * Balance the subtree rooted at the given node.
      *
      * @param ?AVLTreeNode $node The current node.
+     *
      * @return ?AVLTreeNode The new root of the subtree.
      */
     private function balance(?AVLTreeNode $node): ?AVLTreeNode
@@ -268,6 +293,7 @@ class AVLTree
      * Perform a left rotation on the given node.
      *
      * @param AVLTreeNode $node The node to rotate.
+     *
      * @return AVLTreeNode The new root of the rotated subtree.
      */
     private function rotateLeft(AVLTreeNode $node): AVLTreeNode
@@ -286,6 +312,7 @@ class AVLTree
      * Perform a right rotation on the given node.
      *
      * @param AVLTreeNode $node The node to rotate.
+     *
      * @return AVLTreeNode The new root of the rotated subtree.
      */
     private function rotateRight(AVLTreeNode $node): AVLTreeNode
@@ -304,6 +331,7 @@ class AVLTree
      * Get the node with the minimum key in the given subtree.
      *
      * @param AVLTreeNode $node The root of the subtree.
+     *
      * @return AVLTreeNode The node with the minimum key.
      */
     private function getMinNode(AVLTreeNode $node): AVLTreeNode
@@ -327,6 +355,8 @@ class AVLTree
 
     /**
      * Recursively serializes the AVL Tree.
+     *
+     * @return array
      */
     private function serializeTree(?AVLTreeNode $node): array
     {
@@ -347,6 +377,8 @@ class AVLTree
      * Deserializes a JSON string into an AVL Tree object
      *
      * @param string $data The JSON representation of an AVL Tree to deserialize.
+     *
+     * @return void
      */
     public function deserialize(string $data): void
     {
@@ -359,6 +391,7 @@ class AVLTree
      * Recursively deserializes an AVL Tree from an array representation.
      *
      * @param array $data The serialized data for the node.
+     *
      * @return AVLTreeNode|null The root node of the deserialized tree.
      */
     private function deserializeTree(array $data): ?AVLTreeNode
@@ -380,6 +413,8 @@ class AVLTree
      * Updates the deserialized tree size.
      *
      * @param AVLTreeNode|null $node The root node of the deserialized tree.
+     *
+     * @return void
      */
     private function updateNodeCount(?AVLTreeNode $node): void
     {

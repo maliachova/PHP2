@@ -14,6 +14,7 @@ declare(strict_types=1);
  * @param  int  $value
  * @param  int  $floor
  * @param  int  $ceiling
+ *
  * @return int
  **/
 function binarySearch(array $arr, $value, $floor, $ceiling)
@@ -42,6 +43,7 @@ function binarySearch(array $arr, $value, $floor, $ceiling)
 
 /**
  * @param  int  $value
+ *
  * @return int
  */
 function exponentialSearch(array $arr, $value)

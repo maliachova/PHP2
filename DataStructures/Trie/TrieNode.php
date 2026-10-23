@@ -22,6 +22,8 @@ class TrieNode
 
     /**
      * Add a child node for a character.
+     *
+     * @return TrieNode
      */
     public function addChild(string $char): TrieNode
     {
@@ -35,6 +37,8 @@ class TrieNode
 
     /**
      * Check if a character has a child node.
+     *
+     * @return bool
      */
     public function hasChild(string $char): bool
     {
@@ -44,6 +48,8 @@ class TrieNode
 
     /**
      * Get the child node corresponding to a character.
+     *
+     * @return ?TrieNode
      */
     public function getChild(string $char): ?TrieNode
     {
@@ -53,6 +59,8 @@ class TrieNode
 
     /**
      * Normalize the character to lowercase.
+     *
+     * @return string
      */
     private function normalizeChar(string $char): string
     {

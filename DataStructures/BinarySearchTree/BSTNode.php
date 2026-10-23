@@ -35,7 +35,8 @@ class BSTNode
 
     public function isLeaf(): bool
     {
-        return !$this->left instanceof \DataStructures\BinarySearchTree\BSTNode && !$this->right instanceof \DataStructures\BinarySearchTree\BSTNode;
+        return !$this->left instanceof \DataStructures\BinarySearchTree\BSTNode
+            && !$this->right instanceof \DataStructures\BinarySearchTree\BSTNode;
     }
 
     public function getChildren(): array

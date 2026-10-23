@@ -53,6 +53,8 @@ class SplayTreeTest extends TestCase
 
     /**
      * Checks if the root node is correctly set after one insertion.
+     *
+     * @return mixed
      */
     public function testInsertSingleElement()
     {
@@ -71,6 +73,8 @@ class SplayTreeTest extends TestCase
 
     /**
      * Inserts multiple nodes and checks if the last inserted node is splayed to the root.
+     *
+     * @return mixed
      */
     public function testInsertMultiple()
     {
@@ -90,6 +94,8 @@ class SplayTreeTest extends TestCase
 
     /**
      * Inserts multiple nodes from an associative array and checks if the last inserted node is splayed to the root.
+     *
+     * @return mixed
      */
     public function testInsertMultipleFromArray()
     {
@@ -117,6 +123,8 @@ class SplayTreeTest extends TestCase
 
     /**
      * Checks the empty state of the tree before and after insertions.
+     *
+     * @return mixed
      */
     public function testIsEmpty()
     {
@@ -129,6 +137,8 @@ class SplayTreeTest extends TestCase
      * Data provider for splay insertion and inOrder traversal test.
      * Provides different sets of insertions and expected results.
      * Format: [nodesInserted, InOrderNodeKeys, rootNodeKey]
+     *
+     * @return array
      */
     public static function splayInsertionDataProvider(): array
     {
@@ -205,6 +215,8 @@ class SplayTreeTest extends TestCase
     /**
      * Test tree structure with inOrder Traversal after insertion and splaying nodes.
      * @dataProvider splayInsertionDataProvider
+     *
+     * @return void
      */
     public function testSplayWithInOderTraversal($insertions, $expectedInOrderKeys, $expectedRootKey): void
     {
@@ -237,6 +249,8 @@ class SplayTreeTest extends TestCase
 
     /**
      *  Helper function to extract keys from the in-order traversal array.
+     *
+     * @return array
      */
     private function getInOrderKeys(array $inOrderArray): array
     {
@@ -252,6 +266,8 @@ class SplayTreeTest extends TestCase
     /**
      * Verifies that searching for an existing key returns the correct node
      * and ensures that it is splayed to the root.
+     *
+     * @return mixed
      */
     public function testSearchExistingKey()
     {
@@ -277,6 +293,8 @@ class SplayTreeTest extends TestCase
     /**
      * Verifies that checking for an existing key returns true
      * and ensures that its node is splayed to the root.
+     *
+     * @return mixed
      */
     public function testIsFoundExistingKey()
     {
@@ -297,6 +315,8 @@ class SplayTreeTest extends TestCase
     /**
      * Ensures that searching for a non-existing key returns the last visit node
      * and ensures that it is splayed to the root.
+     *
+     * @return mixed
      */
     public function testSearchNonExistingKey()
     {
@@ -327,6 +347,8 @@ class SplayTreeTest extends TestCase
     /**
      * Verifies that checking for a non-existing key returns false
      * and ensures that the last visited node is splayed to the root.
+     *
+     * @return mixed
      */
     public function testIsFoundNonExistingKey()
     {
@@ -350,6 +372,8 @@ class SplayTreeTest extends TestCase
 
     /**
      * Tests the update functionality on an existing key and ensures its node is splayed to the root.
+     *
+     * @return mixed
      */
     public function testUpdateExistingKey()
     {
@@ -370,6 +394,8 @@ class SplayTreeTest extends TestCase
 
     /**
      * Checks that updating a non-existing key splays the last visited node only.
+     *
+     * @return mixed
      */
     public function testUpdateNonExistingKey()
     {
@@ -397,6 +423,8 @@ class SplayTreeTest extends TestCase
 
     /**
      * Tests deletion of a node and checks if the correct new root is set after merging the two subtrees.
+     *
+     * @return mixed
      */
     public function testDeleteExistingKey()
     {
@@ -423,6 +451,8 @@ class SplayTreeTest extends TestCase
 
     /**
      * Tests correct subtree merging after deletion of a splayed node to the root.
+     *
+     * @return mixed
      */
     public function testMergeAfterDeleteExistingKey()
     {
@@ -452,6 +482,8 @@ class SplayTreeTest extends TestCase
 
     /**
      * Tests deletion of multiple nodes and checks if the tree size is updated.
+     *
+     * @return mixed
      */
     public function testDeleteMultipleKeys()
     {
@@ -482,6 +514,8 @@ class SplayTreeTest extends TestCase
 
     /**
      * Ensures that attempting to delete a non-existing key throws an exception and keeps the tree intact.
+     *
+     * @return mixed
      */
     public function testDeleteNonExistingKey()
     {
@@ -498,6 +532,8 @@ class SplayTreeTest extends TestCase
 
     /**
      * Tests update, search, size, isFound and delete operations on an empty tree.
+     *
+     * @return mixed
      */
     public function testOperationsOnEmptyTree()
     {
@@ -519,6 +555,8 @@ class SplayTreeTest extends TestCase
 
     /**
      * Test insert, search, delete on large trees
+     *
+     * @return void
      */
     public function testLargeTree(): void
     {
@@ -544,6 +582,8 @@ class SplayTreeTest extends TestCase
 
     /**
      * Verify the structure after the Zig rotation
+     *
+     * @return void
      */
     public function testZigRotation(): void
     {
@@ -561,6 +601,8 @@ class SplayTreeTest extends TestCase
 
     /**
      * Verify the structure after the Zag rotation
+     *
+     * @return void
      */
     public function testZagRotation(): void
     {
@@ -577,6 +619,8 @@ class SplayTreeTest extends TestCase
 
     /**
      * Verify the structure after the Zig-Zig rotation
+     *
+     * @return void
      */
     public function testZigZigRotation(): void
     {
@@ -595,6 +639,8 @@ class SplayTreeTest extends TestCase
 
     /**
      * Verify the structure after the Zag-Zag rotation
+     *
+     * @return void
      */
     public function testZagZagRotation(): void
     {
@@ -613,6 +659,8 @@ class SplayTreeTest extends TestCase
 
     /**
      * Verify the structure after the Zig-Zag rotation
+     *
+     * @return void
      */
     public function testZigZagRotation(): void
     {
@@ -631,6 +679,8 @@ class SplayTreeTest extends TestCase
 
     /**
      * Verify the structure after the Zag-Zig rotation
+     *
+     * @return void
      */
     public function testZagZigRotation(): void
     {

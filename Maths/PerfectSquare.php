@@ -8,6 +8,7 @@ declare(strict_types=1);
  * perfect square or not.
  *
  * @param Decimal $number A decimal input
+ *
  * @return boolean whether the number is perfect square or not
  */
 function isPerfectSquare($number): bool

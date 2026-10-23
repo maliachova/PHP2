@@ -17,6 +17,7 @@ declare(strict_types=1);
  * binarySearchIterative([0, 5, 7, 10, 15], 6);
  *
  * @param int $target
+ *
  * @return int
  */
 function binarySearchIterative(array $list, $target): ?int
@@ -60,6 +61,7 @@ function binarySearchIterative(array $list, $target): ?int
  * @param integer $target an integer number to search for in the list
  * @param integer $start an integer number where to start searching in the list
  * @param integer $end an integer number where to end searching in the list
+ *
  * @return integer the index where the target is found (or null if not found)
  */
 function binarySearchByRecursion(array $list, $target, $start, $end)

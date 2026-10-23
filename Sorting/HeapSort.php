@@ -10,6 +10,8 @@ declare(strict_types=1);
  * and "heapifying" the heap again.
  *
  * @throws \UnexpectedValueException
+ *
+ * @return array
  */
 function heapSort(array $arr): array
 {
@@ -41,6 +43,8 @@ function heapSort(array $arr): array
 
 /**
  * Ensures that the array satisfies the heap property
+ *
+ * @return void
  */
 function heapify(array &$arr, int $n, int $i): void
 {

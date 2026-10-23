@@ -17,6 +17,8 @@ declare(strict_types=1);
  * if the (value of index in array) is < key increase the low index
  * if the (value of index in array) is > key decrease the high index
  * repeat the loop
+ *
+ * @return ?int
  */
 function interpolationSearch(array $arr, $key): ?int
 {

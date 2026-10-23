@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 /* Ternary search is similar to binary search
  * It rather divides the sorted array into three parts rather than.two parts by using two middle points, $mid1  $mid2.
- * The value of the $key will first be compared with the two $mid points, the value will be returned if there is a match.
+ * The value of the $key will first be compared with the two $mid points,
+ * the value will be returned if there is a match.
  * Then, if the value of the $key is less than $mid1, narrow the interval to the first part.
  * Else, if the value of the $key is greater than $mid2, narrow the interval to the third part.
  * Otherwise, narrow the interval to the $middle part.

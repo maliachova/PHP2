@@ -14,14 +14,19 @@ class CompareBinaryTree
 {
     /**
      * compare two binary trees
+     *
+     * @return bool
      */
     public function areTreesEqual(?BinaryTreeNode $a, ?BinaryTreeNode $b): bool
     {
-        if (!$a instanceof \DataStructures\CompareBinaryTree\BinaryTreeNode  &&  $b instanceof \DataStructures\CompareBinaryTree\BinaryTreeNode || $a instanceof \DataStructures\CompareBinaryTree\BinaryTreeNode && !$b instanceof \DataStructures\CompareBinaryTree\BinaryTreeNode) {
+        if (
+            !$a instanceof BinaryTreeNode && $b instanceof BinaryTreeNode
+            || $a instanceof BinaryTreeNode && !$b instanceof BinaryTreeNode
+        ) {
             return false;
         }
 
-        if (!$a instanceof \DataStructures\CompareBinaryTree\BinaryTreeNode && !$b instanceof \DataStructures\CompareBinaryTree\BinaryTreeNode) {
+        if (!$a instanceof BinaryTreeNode && !$b instanceof BinaryTreeNode) {
             return true;
         }
 

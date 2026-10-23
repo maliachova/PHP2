@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 /**
  * @param  array  $arr  array of integers
+ *
  * @return void array sorted in ascending
  */
 function isSortedAscendingInts(array $arr): void

@@ -16,6 +16,8 @@ class DisjointSet
 {
     /**
      * Finds the representative of the set that contains the node.
+     *
+     * @return DisjointSetNode
      */
     public function findSet(DisjointSetNode $node): DisjointSetNode
     {
@@ -29,6 +31,8 @@ class DisjointSet
 
     /**
      * Unites the sets that contain x and y.
+     *
+     * @return void
      */
     public function unionSet(DisjointSetNode $nodeX, DisjointSetNode $nodeY): void
     {
