@@ -1,7 +1,22 @@
 <?php
 
+/**
+ * Problem8.
+ *
+ * PHP version 8.2
+ *
+ * @category Maths
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
+/**
+ * Problem8.
+ *
+ * @return int
+ */
 function problem8(): int
 {
     $theNumber = "73167176531330624919225119674426574742355349194934" .

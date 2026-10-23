@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Test cases for trie.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 /*
  * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request
  * #162 and #172
@@ -20,10 +30,18 @@ use DataStructures\Trie\Trie;
 use DataStructures\Trie\TrieNode;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Test cases for trie.
+ */
 class TrieTest extends TestCase
 {
     private Trie $trie;
 
+    /**
+     * Set up.
+     *
+     * @return void
+     */
     protected function setUp(): void
     {
         $this->trie = new Trie();

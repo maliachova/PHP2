@@ -1,12 +1,22 @@
 <?php
 
+/**
+ * Caesar cipher.
+ *
+ * PHP version 8.2
+ *
+ * @category Ciphers
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
  * Encrypt given text using caesar cipher.
  *
- * @param string  $text  text text to be encrypted
- * @param int  $shift  shift number of shifts to be applied
+ * @param string $text  text text to be encrypted
+ * @param int $shift  shift number of shifts to be applied
  *
  * @return string new encrypted text
  */
@@ -32,8 +42,9 @@ function encrypt(string $text, int $shift): string
 
 /**
  * Decrypt given text using caesar cipher.
- * @param string  $text  text text to be decrypted
- * @param int  $shift  shift number of shifts to be applied
+ *
+ * @param string $text  text text to be decrypted
+ * @param int $shift  shift number of shifts to be applied
  *
  * @return string new decrypted text
  */

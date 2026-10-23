@@ -21,17 +21,21 @@ declare(strict_types=1);
  *
  * Answer: 25164150
  *
+ * PHP version 8.2
+ *
  * @category ProjectEuler
+ * @link https://projecteuler.net/problem=6
+ * @license https://opensource.org/licenses/MIT MIT License
  *
  * @param int $maxNumber Range from 1 to <maxNumber>
  *
  * @return int Difference between the sum of the squares and
  * the square of the sum
- *
- * @link https://projecteuler.net/problem=6
  */
 
 /**
+ * Problem6.
+ *
  * @param int $maxNumber Range from 1 to <maxNumber>
  *
  * @return int Difference between the sum of the squares and

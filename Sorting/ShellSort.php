@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Shell sort.
+ *
+ * PHP version 8.2
+ *
+ * @category Sorting
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
@@ -7,6 +17,8 @@ declare(strict_types=1);
  * This function sorts an array in ascending order using the Shell Sort algorithm.
  * Time complexity of the Shell Sort algorithm depends on the gap sequence used.
  * With Knuth's sequence, the time complexity is O(n^(3/2)).
+ *
+ * @param array $array
  *
  * @return array
  */

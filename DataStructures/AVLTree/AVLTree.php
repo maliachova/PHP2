@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Avl tree.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /*
@@ -370,6 +380,8 @@ class AVLTree
 
     /**
      * Recursively serializes the AVL Tree.
+     *
+     * @param ?AVLTreeNode $node
      *
      * @return array
      */

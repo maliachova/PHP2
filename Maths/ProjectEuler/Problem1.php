@@ -1,7 +1,22 @@
 <?php
 
+/**
+ * Problem1.
+ *
+ * PHP version 8.2
+ *
+ * @category Maths
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
+/**
+ * Problem1a.
+ *
+ * @return int
+ */
 function problem1a(): int
 {
     $maxNumber = 999; // below 1000
@@ -14,6 +29,11 @@ function problem1a(): int
     });
 }
 
+/**
+ * Problem1b.
+ *
+ * @return int
+ */
 function problem1b(): int
 {
     $maxNumber = 999; // below 1000

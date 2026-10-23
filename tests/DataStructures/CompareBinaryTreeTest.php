@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Test cases for compare binary tree.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 namespace DataStructures;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -11,8 +21,16 @@ use DataStructures\CompareBinaryTree\BinaryTreeNode;
 use DataStructures\CompareBinaryTree\CompareBinaryTree;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Test cases for compare binary tree.
+ */
 class CompareBinaryTreeTest extends TestCase
 {
+    /**
+     * Test binary trees are equal when are equal in reality.
+     *
+     * @return mixed
+     */
     public function testBinaryTreesAreEqualWhenAreEqualInReality()
     {
         $tree1 = new BinaryTreeNode(
@@ -42,6 +60,11 @@ class CompareBinaryTreeTest extends TestCase
         $this->assertTrue($sut->areTreesEqual($tree1, $tree2));
     }
 
+    /**
+     * Test binary trees are not equal when are not equal in reality.
+     *
+     * @return mixed
+     */
     public function testBinaryTreesAreNotEqualWhenAreNotEqualInReality()
     {
 

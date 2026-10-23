@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Test cases for doubly linked list.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../vendor/autoload.php';

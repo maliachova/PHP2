@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Speed conversion.
+ *
+ * PHP version 8.2
+ *
+ * @category Conversions
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
@@ -15,6 +25,10 @@ declare(strict_types=1);
  * ft/s -> feet per second
  * kn -> 1 knot which is equal to 1 nautical mile (1852 km/h)
  * The conversion is made using kilometers as base
+ *
+ * @param float $speed
+ * @param string $unitFrom
+ * @param string $unitTo
  *
  * @throws \Exception
  *

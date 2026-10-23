@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Test cases for strings.
+ *
+ * PHP version 8.2
+ *
+ * @category Strings
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -16,8 +26,16 @@ require_once __DIR__ . '/../../Strings/MaxCharacter.php';
 require_once __DIR__ . '/../../Strings/ReverseString.php';
 require_once __DIR__ . '/../../Strings/ReverseWords.php';
 
+/**
+ * Test cases for strings.
+ */
 class StringsTest extends TestCase
 {
+    /**
+     * Test is palindrome.
+     *
+     * @return mixed
+     */
     public function testIsPalindrome()
     {
         $this->assertTrue(isPalindrome('MaDam')); // true
@@ -29,6 +47,11 @@ class StringsTest extends TestCase
         // case-sensitive check
     }
 
+    /**
+     * Test count sentences.
+     *
+     * @return mixed
+     */
     public function testCountSentences()
     {
         $this->assertEquals(2, countSentences('Hi! Hello world.'));
@@ -36,6 +59,11 @@ class StringsTest extends TestCase
         $this->assertEquals(1, countSentences('How are you?'));
     }
 
+    /**
+     * Test reverse string.
+     *
+     * @return mixed
+     */
     public function testReverseString()
     {
         $this->assertEquals('txet emos si sihT', reverseString('This is some text'));
@@ -43,6 +71,11 @@ class StringsTest extends TestCase
         $this->assertNotEquals('MaDAm', reverseString('MaDAm'));
     }
 
+    /**
+     * Test reverse words.
+     *
+     * @return mixed
+     */
     public function testReverseWords()
     {
         $this->assertEquals('Fun is Coding PHP', reverseWords('PHP Coding is Fun'));
@@ -53,6 +86,11 @@ class StringsTest extends TestCase
         );
     }
 
+    /**
+     * Test is anagram.
+     *
+     * @return mixed
+     */
     public function testIsAnagram()
     {
         // By default it's case-insensitive
@@ -65,6 +103,11 @@ class StringsTest extends TestCase
         $this->assertTrue(isAnagram("ScRamble", "SRlmcaeb", false));
     }
 
+    /**
+     * Test max character.
+     *
+     * @return mixed
+     */
     public function testMaxCharacter()
     {
         $this->assertEquals(
@@ -79,6 +122,11 @@ class StringsTest extends TestCase
         $this->assertEquals('0', maxCharacter("c00l"));
     }
 
+    /**
+     * Test count vowels.
+     *
+     * @return mixed
+     */
     public function testCountVowels()
     {
         $this->assertEquals(7, countVowelsSimple("This is a string with 7 vowels"));
@@ -90,6 +138,11 @@ class StringsTest extends TestCase
         $this->assertEquals(16, countVowelsRegex("Just A list of somE aaaaaaaaaa"));
     }
 
+    /**
+     * Test count consonants.
+     *
+     * @return mixed
+     */
     public function testCountConsonants()
     {
         $this->assertEquals(
@@ -99,12 +152,22 @@ class StringsTest extends TestCase
         $this->assertEquals(7, countConsonants("hello world"));
         $this->assertEquals(9, countConsonants("Just A list of somE aaaaaaaaaa"));
     }
+    /**
+     * Test count homogenous.
+     *
+     * @return mixed
+     */
     public function testCountHomogenous()
     {
         $this->assertEquals(4, countHomogenous("abbcccaa"));
         $this->assertEquals(2, countHomogenous("xy"));
     }
 
+    /**
+     * Test find distance.
+     *
+     * @return mixed
+     */
     public function testFindDistance()
     {
         $this->assertEquals(1, findDistance("hello", "hallo"));

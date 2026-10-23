@@ -1,13 +1,31 @@
 <?php
 
+/**
+ * Test cases for bellman ford.
+ *
+ * PHP version 8.2
+ *
+ * @category Graphs
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../Graphs/GraphEdge.php';
 require_once __DIR__ . '/../../Graphs/BellmanFord.php';
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Test cases for bellman ford.
+ */
 class BellmanFordTest extends TestCase
 {
+    /**
+     * Test bellman ford.
+     *
+     * @return mixed
+     */
     public function testBellmanFord()
     {
         $edgesRaw = [

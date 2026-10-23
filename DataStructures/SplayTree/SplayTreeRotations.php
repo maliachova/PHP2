@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Splay tree rotations.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /*
@@ -14,13 +24,31 @@ declare(strict_types=1);
 
 namespace DataStructures\SplayTree;
 
+/**
+ * Splay tree rotations class.
+ */
 abstract class SplayTreeRotations
 {
+    /**
+     * Splay.
+     *
+     * @param ?SplayTreeNode $node
+     * @param int $key
+     *
+     * @return ?SplayTreeNode
+     */
     abstract protected function splay(
         ?SplayTreeNode $node,
         int $key
     ): ?SplayTreeNode;
 
+    /**
+     * Set root.
+     *
+     * @param SplayTreeNode $node
+     *
+     * @return void
+     */
     abstract protected function setRoot(SplayTreeNode $node): void;
 
     /**

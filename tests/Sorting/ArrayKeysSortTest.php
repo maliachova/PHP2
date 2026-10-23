@@ -1,12 +1,30 @@
 <?php
 
+/**
+ * Test cases for array keys sort.
+ *
+ * PHP version 8.2
+ *
+ * @category Sorting
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../Sorting/ArrayKeysSort.php';
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Test cases for array keys sort.
+ */
 class ArrayKeysSortTest extends TestCase
 {
+    /**
+     * Test array keys sort.
+     *
+     * @return mixed
+     */
     public function testArrayKeysSort()
     {
         //test array of arrays

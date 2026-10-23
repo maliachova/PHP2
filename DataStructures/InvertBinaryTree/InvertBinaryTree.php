@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Invert binary tree.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 namespace DataStructures\InvertBinaryTree;
@@ -12,6 +22,13 @@ namespace DataStructures\InvertBinaryTree;
  */
 class InvertBinaryTree
 {
+    /**
+     * Invert.
+     *
+     * @param ?BinaryTree $b
+     *
+     * @return void
+     */
     public function invert(?BinaryTree $b): void
     {
         if (!$b instanceof \DataStructures\InvertBinaryTree\BinaryTree) {

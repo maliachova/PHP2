@@ -1,14 +1,22 @@
 <?php
 
+/**
+ * Interpolation search.
+ *
+ * PHP version 8.2
+ *
+ * @category Searches
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
  * Interpolation Search********
  *
- *
  * Description***********
  * Searches for a key in a sorted array
- *
  *
  * How************
  * Loop through the array:
@@ -17,6 +25,9 @@ declare(strict_types=1);
  * if the (value of index in array) is < key increase the low index
  * if the (value of index in array) is > key decrease the high index
  * repeat the loop
+ *
+ * @param array $arr
+ * @param mixed $key
  *
  * @return ?int
  */

@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Doubly linked list.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 require_once __DIR__ . '/Node.php';
@@ -14,6 +24,9 @@ class DoublyLinkedList implements \Stringable
     public ?Node $tail = null;
 
     // Destructor
+    /**
+     * Destruct.
+     */
     public function __destruct()
     {
         $this->head = null;
@@ -21,6 +34,13 @@ class DoublyLinkedList implements \Stringable
     }
 
     // Append to the end of the list
+    /**
+     * Append.
+     *
+     * @param mixed $data
+     *
+     * @return void
+     */
     public function append($data): void
     {
         $newNode = new Node($data);
@@ -43,6 +63,14 @@ class DoublyLinkedList implements \Stringable
     }
 
     // Insert a node after a given position
+    /**
+     * Insert.
+     *
+     * @param mixed $data
+     * @param mixed $position
+     *
+     * @return void
+     */
     public function insert($data, $position): void
     {
         $newNode = new Node($data);
@@ -95,6 +123,13 @@ class DoublyLinkedList implements \Stringable
     }
 
     // Delete a node from the list
+    /**
+     * Delete.
+     *
+     * @param mixed $data
+     *
+     * @return void
+     */
     public function delete($data): void
     {
         // If the list is empty, return
@@ -133,6 +168,13 @@ class DoublyLinkedList implements \Stringable
     }
 
     // Delete a node from a given position
+    /**
+     * Delete at.
+     *
+     * @param mixed $position
+     *
+     * @return void
+     */
     public function deleteAt($position): void
     {
         // If the list is empty, return
@@ -176,6 +218,11 @@ class DoublyLinkedList implements \Stringable
     }
 
     // Print the list
+    /**
+     * Print list.
+     *
+     * @return void
+     */
     public function printList(): void
     {
         // If the list is empty, return
@@ -197,6 +244,11 @@ class DoublyLinkedList implements \Stringable
     }
 
     // Print the list in reverse
+    /**
+     * Print list reverse.
+     *
+     * @return void
+     */
     public function printListReverse(): void
     {
         // If the list is empty, return
@@ -218,6 +270,11 @@ class DoublyLinkedList implements \Stringable
     }
 
     // Reverse the list
+    /**
+     * Reverse.
+     *
+     * @return void
+     */
     public function reverse(): void
     {
         // If the list is empty, return
@@ -254,6 +311,11 @@ class DoublyLinkedList implements \Stringable
     }
 
     // Get the length of the list
+    /**
+     * Length.
+     *
+     * @return int
+     */
     public function length(): int
     {
         // If the list is empty, return 0
@@ -281,6 +343,13 @@ class DoublyLinkedList implements \Stringable
     }
 
     // Search for a node
+    /**
+     * Search.
+     *
+     * @param mixed $data
+     *
+     * @return ?Node
+     */
     public function search($data): ?Node
     {
         // If the list is empty, return null
@@ -308,6 +377,11 @@ class DoublyLinkedList implements \Stringable
     }
 
     // Is the list empty?
+    /**
+     * Is empty.
+     *
+     * @return bool
+     */
     public function isEmpty(): bool
     {
         // If the head is null, return true
@@ -316,6 +390,11 @@ class DoublyLinkedList implements \Stringable
     }
 
     // To String
+    /**
+     * To string.
+     *
+     * @return string
+     */
     public function __toString(): string
     {
         // If the list is empty, return an empty string
@@ -349,6 +428,11 @@ class DoublyLinkedList implements \Stringable
     }
 
     // To Array
+    /**
+     * To array.
+     *
+     * @return array
+     */
     public function toArray(): array
     {
         // If the list is empty, return an empty array

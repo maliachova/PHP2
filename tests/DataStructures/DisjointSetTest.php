@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Test cases for disjoint set.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 /*
  * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request:
  * #160
@@ -19,11 +29,19 @@ use DataStructures\DisjointSets\DisjointSet;
 use DataStructures\DisjointSets\DisjointSetNode;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Test cases for disjoint set.
+ */
 class DisjointSetTest extends TestCase
 {
     private DisjointSet $ds;
     private array $nodes;
 
+    /**
+     * Set up.
+     *
+     * @return void
+     */
     protected function setUp(): void
     {
         $this->ds = new DisjointSet();
@@ -56,6 +74,11 @@ class DisjointSetTest extends TestCase
         $this->ds->unionSet($this->nodes[18], $this->nodes[19]);
     }
 
+    /**
+     * Test find set.
+     *
+     * @return void
+     */
     public function testFindSet(): void
     {
         // Nodes in the same sets should have the same root
@@ -81,6 +104,14 @@ class DisjointSetTest extends TestCase
         }
     }
 
+    /**
+     * In same set.
+     *
+     * @param int $i
+     * @param int $j
+     *
+     * @return bool
+     */
     private function inSameSet(int $i, int $j): bool
     {
         // Define which nodes should be in the same set based on union operations

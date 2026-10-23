@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Eratosthenes sieve.
+ *
+ * PHP version 8.2
+ *
+ * @category Maths
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
@@ -8,6 +18,7 @@ declare(strict_types=1);
  * https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
  *
  * @author Michał Żarnecki https://github.com/rzarno
+ *
  * @param int $number the limit of prime numbers to generate
  *
  * @return string[] prime numbers up to the given limit

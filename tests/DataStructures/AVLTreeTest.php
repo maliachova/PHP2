@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Test cases for avl tree.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 /*
  * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed)
  * in Pull Request #163: https://github.com/TheAlgorithms/PHP/pull/163
@@ -22,15 +32,28 @@ use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionException;
 
+/**
+ * Test cases for avl tree.
+ */
 class AVLTreeTest extends TestCase
 {
     private AVLTree $tree;
 
+    /**
+     * Set up.
+     *
+     * @return void
+     */
     protected function setUp(): void
     {
         $this->tree = new AVLTree();
     }
 
+    /**
+     * Populate tree.
+     *
+     * @return void
+     */
     private function populateTree(): void
     {
         $this->tree->insert(10, 'Value 10');
@@ -41,6 +64,8 @@ class AVLTreeTest extends TestCase
 
     /**
      * Tests the insert and search operations in the AVLTree.
+     *
+     * @return void
      */
     public function testInsertAndSearch(): void
     {
@@ -70,6 +95,8 @@ class AVLTreeTest extends TestCase
     /**
      * Tests the deletion of nodes and ensures the AVLTree maintains
      * its integrity after deletions.
+     *
+     * @return void
      */
     public function testDelete(): void
     {
@@ -115,6 +142,11 @@ class AVLTreeTest extends TestCase
         );
     }
 
+    /**
+     * Test in order traversal.
+     *
+     * @return void
+     */
     public function testInOrderTraversal(): void
     {
         $this->populateTree();
@@ -134,6 +166,11 @@ class AVLTreeTest extends TestCase
         );
     }
 
+    /**
+     * Test pre order traversal.
+     *
+     * @return void
+     */
     public function testPreOrderTraversal(): void
     {
         $this->populateTree();
@@ -153,6 +190,11 @@ class AVLTreeTest extends TestCase
         );
     }
 
+    /**
+     * Test post order traversal.
+     *
+     * @return void
+     */
     public function testPostOrderTraversal(): void
     {
         $this->populateTree();
@@ -172,6 +214,11 @@ class AVLTreeTest extends TestCase
         );
     }
 
+    /**
+     * Test breadth first traversal.
+     *
+     * @return void
+     */
     public function testBreadthFirstTraversal(): void
     {
         $this->populateTree();
@@ -191,6 +238,11 @@ class AVLTreeTest extends TestCase
         );
     }
 
+    /**
+     * Test insert and delete single node.
+     *
+     * @return void
+     */
     public function testInsertAndDeleteSingleNode(): void
     {
         $this->tree = new AVLTree();
@@ -208,6 +260,11 @@ class AVLTreeTest extends TestCase
         );
     }
 
+    /**
+     * Test delete from empty tree.
+     *
+     * @return void
+     */
     public function testDeleteFromEmptyTree(): void
     {
         $this->tree = new AVLTree();
@@ -219,6 +276,11 @@ class AVLTreeTest extends TestCase
         );
     }
 
+    /**
+     * Test insert duplicate keys.
+     *
+     * @return void
+     */
     public function testInsertDuplicateKeys(): void
     {
         $this->tree = new AVLTree();
@@ -234,6 +296,8 @@ class AVLTreeTest extends TestCase
 
     /**
      * Tests the insertion and deletion of a large number of nodes.
+     *
+     * @return void
      */
     public function testLargeTree(): void
     {
@@ -263,6 +327,8 @@ class AVLTreeTest extends TestCase
 
     /**
      * Tests whether the AVLTree remains balanced after insertions.
+     *
+     * @return void
      */
     public function testBalance(): void
     {
@@ -279,6 +345,11 @@ class AVLTreeTest extends TestCase
         );
     }
 
+    /**
+     * Test right rotation.
+     *
+     * @return void
+     */
     public function testRightRotation(): void
     {
         $this->populateTreeForRightRotation();
@@ -301,6 +372,11 @@ class AVLTreeTest extends TestCase
         );
     }
 
+    /**
+     * Populate tree for right rotation.
+     *
+     * @return void
+     */
     private function populateTreeForRightRotation(): void
     {
         // Insert nodes in a way that requires a right rotation
@@ -310,6 +386,11 @@ class AVLTreeTest extends TestCase
         $this->tree->insert(30, 'Value 30');
     }
 
+    /**
+     * Test left rotation.
+     *
+     * @return void
+     */
     public function testLeftRotation(): void
     {
         $this->populateTreeForLeftRotation();
@@ -328,6 +409,11 @@ class AVLTreeTest extends TestCase
         );
     }
 
+    /**
+     * Populate tree for left rotation.
+     *
+     * @return void
+     */
     private function populateTreeForLeftRotation(): void
     {
         $this->tree->insert(30, 'Value 30');
@@ -337,7 +423,11 @@ class AVLTreeTest extends TestCase
     }
 
     /**
+     * Test get min node.
+     *
      * @throws ReflectionException
+     *
+     * @return void
      */
     public function testGetMinNode(): void
     {
@@ -359,6 +449,11 @@ class AVLTreeTest extends TestCase
         );
     }
 
+    /**
+     * Test size after insertions.
+     *
+     * @return void
+     */
     public function testSizeAfterInsertions(): void
     {
         $this->tree = new AVLTree();
@@ -384,6 +479,11 @@ class AVLTreeTest extends TestCase
         );
     }
 
+    /**
+     * Test size after multiple insertions and deletions.
+     *
+     * @return void
+     */
     public function testSizeAfterMultipleInsertionsAndDeletions(): void
     {
         $this->tree = new AVLTree();
@@ -410,6 +510,11 @@ class AVLTreeTest extends TestCase
         );
     }
 
+    /**
+     * Test size on empty tree.
+     *
+     * @return void
+     */
     public function testSizeOnEmptyTree(): void
     {
         $this->tree = new AVLTree();
@@ -422,6 +527,8 @@ class AVLTreeTest extends TestCase
 
     /**
      * Test serialization and deserialization
+     *
+     * @return void
      */
     public function testAVLTreeSerialization(): void
     {

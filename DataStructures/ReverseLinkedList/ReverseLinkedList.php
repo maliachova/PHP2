@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Reverse linked list.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 namespace DataStructures\ReverseLinkedList;
@@ -12,6 +22,13 @@ namespace DataStructures\ReverseLinkedList;
  */
 class ReverseLinkedList
 {
+    /**
+     * Reverse.
+     *
+     * @param LinkedListItem $item
+     *
+     * @return LinkedListItem
+     */
     public function reverse(LinkedListItem $item): LinkedListItem
     {
         $next = $item->getNext();

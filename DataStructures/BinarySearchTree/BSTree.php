@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Bs tree.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /*
@@ -16,6 +26,9 @@ namespace DataStructures\BinarySearchTree;
 
 require_once __DIR__ . '/BinaryTreeTraversal.php';
 
+/**
+ * Bs tree class.
+ */
 class BSTree extends BinaryTreeTraversal
 {
     private ?BSTNode $root = null;
@@ -27,6 +40,9 @@ class BSTree extends BinaryTreeTraversal
      * from.
      * Optionally set the traversal algorithm for the Iterator interface.
      * Otherwise, with manual insert() and setTraversalType() after initialization.
+     *
+     * @param array $initialData
+     * @param string $traversalType
      *
      * @return mixed
      */
@@ -52,11 +68,21 @@ class BSTree extends BinaryTreeTraversal
         return $this->root;
     }
 
+    /**
+     * Size.
+     *
+     * @return int
+     */
     public function size(): int
     {
         return $this->counter;
     }
 
+    /**
+     * Is empty.
+     *
+     * @return bool
+     */
     public function isEmpty(): bool
     {
         return !$this->root instanceof \DataStructures\BinarySearchTree\BSTNode;
@@ -67,6 +93,9 @@ class BSTree extends BinaryTreeTraversal
      *
      * Time complexity: O(log n) for binary search tree insertion.
      *
+     * @param int $key
+     * @param mixed $value
+     *
      * @return ?BSTNode
      */
     public function insert(int $key, $value): ?BSTNode
@@ -76,6 +105,15 @@ class BSTree extends BinaryTreeTraversal
         return $this->root;
     }
 
+    /**
+     * Insert node.
+     *
+     * @param ?BSTNode $rootPtr
+     * @param int $key
+     * @param mixed $value
+     *
+     * @return void
+     */
     private function insertNode(?BSTNode &$rootPtr, int $key, $value): void
     {
         if (!$rootPtr instanceof \DataStructures\BinarySearchTree\BSTNode) {
@@ -100,6 +138,8 @@ class BSTree extends BinaryTreeTraversal
      *
      * Time complexity: O(log n) for binary search tree node removal.
      *
+     * @param int $key
+     *
      * @return ?BSTNode
      */
     public function remove(int $key): ?BSTNode
@@ -112,6 +152,14 @@ class BSTree extends BinaryTreeTraversal
         return $discardedNode;
     }
 
+    /**
+     * Remove node.
+     *
+     * @param ?BSTNode $rootPtr
+     * @param int $key
+     *
+     * @return ?BSTNode
+     */
     private function removeNode(?BSTNode &$rootPtr, int $key): ?BSTNode
     {
         if (!$rootPtr instanceof \DataStructures\BinarySearchTree\BSTNode) {
@@ -134,6 +182,8 @@ class BSTree extends BinaryTreeTraversal
 
     /**
      * handle deletion when found node has 2 children.
+     *
+     * @param BSTNode $rootPtr
      *
      * @return ?BSTNode
      */
@@ -158,6 +208,8 @@ class BSTree extends BinaryTreeTraversal
 
     /**
      * Handle deletion when found node has 1 or 0 child.
+     *
+     * @param BSTNode $rootPtr
      *
      * @return ?BSTNode
      */
@@ -189,6 +241,8 @@ class BSTree extends BinaryTreeTraversal
     /**
      * Return the minimum node in the BST.
      *
+     * @param ?BSTNode $node
+     *
      * @return ?BSTNode
      */
     public function minNode(?BSTNode $node): ?BSTNode
@@ -207,6 +261,8 @@ class BSTree extends BinaryTreeTraversal
      *
      * Time complexity: O(log n) for the splay operation.
      *
+     * @param int $key
+     *
      * @return ?BSTNode
      */
     public function search(int $key): ?BSTNode
@@ -218,6 +274,14 @@ class BSTree extends BinaryTreeTraversal
         return $this->searchNode($this->root, $key);
     }
 
+    /**
+     * Search node.
+     *
+     * @param ?BSTNode $node
+     * @param int $key
+     *
+     * @return ?BSTNode
+     */
     private function searchNode(?BSTNode $node, int $key): ?BSTNode
     {
         if (!$node instanceof \DataStructures\BinarySearchTree\BSTNode) {
@@ -401,6 +465,7 @@ class BSTree extends BinaryTreeTraversal
      * Recursively deserializes a BST from an array representation.
      *
      * @param array $data The serialized data for the node.
+     * @param ?BSTNode $parent
      *
      * @return BSTNode|null The deserialized node.
      */
@@ -421,6 +486,8 @@ class BSTree extends BinaryTreeTraversal
 
     /**
      * Recursively updates the BST size after deserialization.
+     *
+     * @param ?BSTNode $node
      *
      * @return void
      */

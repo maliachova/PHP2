@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Test cases for splay tree.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 /*
  * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed)
  * in Pull Request #168: https://github.com/TheAlgorithms/PHP/pull/168
@@ -20,15 +30,28 @@ use DataStructures\SplayTree\SplayTree;
 use LogicException;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Test cases for splay tree.
+ */
 class SplayTreeTest extends TestCase
 {
     private SplayTree $tree;
 
+    /**
+     * Set up.
+     *
+     * @return void
+     */
     protected function setUp(): void
     {
         $this->tree = new SplayTree();
     }
 
+    /**
+     * Populate tree.
+     *
+     * @return void
+     */
     private function populateTree(): void
     {
         $this->tree->insert(20, "Value 20");
@@ -43,6 +66,11 @@ class SplayTreeTest extends TestCase
         $this->tree->insert(5, "Value 5");
     }
 
+    /**
+     * Test tree initialization.
+     *
+     * @return mixed
+     */
     public function testTreeInitialization()
     {
         $tree = new SplayTree();
@@ -206,70 +234,93 @@ class SplayTreeTest extends TestCase
         return [
             // Test case 1: Insert 20
             [
-                'insertions' => [20 => "Value 20"],
+                'insertions' => [
+                    20 => "Value 20",
+                ],
                 'expectedInOrderKeys' => [20],
                 'expectedRootKey' => 20,
             ],
             // Test case 2: Insert 20, 15
             [
-                'insertions' => [20 => "Value 20", 15 => "Value 15"],
+                'insertions' => [
+                    20 => "Value 20", 15 => "Value 15",
+                ],
                 'expectedInOrderKeys' => [15, 20],
                 'expectedRootKey' => 15,
             ],
             // Test case 3: Insert 20, 15, 17
             [
-                'insertions' => [20 => "Value 20", 15 => "Value 15", 17 => "Value 17"],
+                'insertions' => [
+                    20 => "Value 20", 15 => "Value 15", 17 => "Value 17",
+                ],
                 'expectedInOrderKeys' => [15, 17, 20],
                 'expectedRootKey' => 17,
             ],
             // Test case 25: Insert 20, 15, 17, 25
             [
-                'insertions' => [20 => "Value 20", 15 => "Value 15", 17 => "Value 17", 25 => "Value 25"],
+                'insertions' => [
+                    20 => "Value 20", 15 => "Value 15", 17 => "Value 17",
+                    25 => "Value 25",
+                ],
                 'expectedInOrderKeys' => [15, 17, 20, 25],
                 'expectedRootKey' => 25,
             ],
             // Test case 30: Insert 20, 15, 17, 25, 30
             [
-                'insertions' => [20 => "Value 20", 15 => "Value 15", 17 => "Value 17", 25 => "Value 25",
-                    30 => "Value 30"],
+                'insertions' => [
+                    20 => "Value 20", 15 => "Value 15", 17 => "Value 17",
+                    25 => "Value 25", 30 => "Value 30",
+                ],
                 'expectedInOrderKeys' => [15, 17, 20, 25, 30],
                 'expectedRootKey' => 30,
             ],
             // Test case 36: Insert 20, 15, 17, 25, 30, 36
             [
-                'insertions' => [20 => "Value 20", 15 => "Value 15", 17 => "Value 17", 25 => "Value 25",
-                    30 => "Value 30", 36 => "Value 36"],
+                'insertions' => [
+                    20 => "Value 20", 15 => "Value 15", 17 => "Value 17",
+                    25 => "Value 25", 30 => "Value 30", 36 => "Value 36",
+                ],
                 'expectedInOrderKeys' => [15, 17, 20, 25, 30, 36],
                 'expectedRootKey' => 36,
             ],
             // Test case 23: Insert 20, 15, 17, 25, 30, 36, 23
             [
-                'insertions' => [20 => "Value 20", 15 => "Value 15", 17 => "Value 17", 25 => "Value 25",
-                    30 => "Value 30", 36 => "Value 36", 23 => "Value 23"],
+                'insertions' => [
+                    20 => "Value 20", 15 => "Value 15", 17 => "Value 17",
+                    25 => "Value 25", 30 => "Value 30", 36 => "Value 36",
+                    23 => "Value 23",
+                ],
                 'expectedInOrderKeys' => [15, 17, 20, 23, 25, 30, 36],
                 'expectedRootKey' => 23,
             ],
             // Test case 24: Insert 20, 15, 17, 25, 30, 36, 23, 24
             [
-                'insertions' => [20 => "Value 20", 15 => "Value 15", 17 => "Value 17", 25 => "Value 25",
-                    30 => "Value 30", 36 => "Value 36", 23 => "Value 23",
-                    24 => "Value 24"],
+                'insertions' => [
+                    20 => "Value 20", 15 => "Value 15", 17 => "Value 17",
+                    25 => "Value 25", 30 => "Value 30", 36 => "Value 36",
+                    23 => "Value 23", 24 => "Value 24",
+                ],
                 'expectedInOrderKeys' => [15, 17, 20, 23, 24, 25, 30, 36],
                 'expectedRootKey' => 24,
             ],
             // Test case 22: Insert 20, 15, 17, 25, 30, 36, 23, 24, 22
             [
-                'insertions' => [20 => "Value 20", 15 => "Value 15", 17 => "Value 17", 25 => "Value 25",
-                    30 => "Value 30", 36 => "Value 36", 23 => "Value 23",
-                    24 => "Value 24", 22 => "Value 22"],
+                'insertions' => [
+                    20 => "Value 20", 15 => "Value 15", 17 => "Value 17",
+                    25 => "Value 25", 30 => "Value 30", 36 => "Value 36",
+                    23 => "Value 23", 24 => "Value 24", 22 => "Value 22",
+                ],
                 'expectedInOrderKeys' => [15, 17, 20, 22, 23, 24, 25, 30, 36],
                 'expectedRootKey' => 22,
             ],
             // Test case 5: Insert 20, 15, 17, 25, 30, 36, 23, 24, 22, 5
             [
-                'insertions' => [20 => "Value 20", 15 => "Value 15", 17 => "Value 17", 25 => "Value 25", 30 =>
-                    "Value 30", 36 => "Value 36", 23 => "Value 23", 24 => "Value 24",
-                    22 => "Value 22", 5 => "Value 5"],
+                'insertions' => [
+                    20 => "Value 20", 15 => "Value 15", 17 => "Value 17",
+                    25 => "Value 25", 30 => "Value 30", 36 => "Value 36",
+                    23 => "Value 23", 24 => "Value 24", 22 => "Value 22",
+                    5 => "Value 5",
+                ],
                 'expectedInOrderKeys' => [5, 15, 17, 20, 22, 23, 24, 25, 30, 36],
                 'expectedRootKey' => 5,
             ],
@@ -278,7 +329,12 @@ class SplayTreeTest extends TestCase
 
     /**
      * Test tree structure with inOrder Traversal after insertion and splaying nodes.
+     *
      * @dataProvider splayInsertionDataProvider
+     *
+     * @param mixed $insertions
+     * @param mixed $expectedInOrderKeys
+     * @param mixed $expectedRootKey
      *
      * @return void
      */
@@ -310,7 +366,10 @@ class SplayTreeTest extends TestCase
         // Assert the root key matches the expected root after the last insertion for
         // every dataProvider case
         $this->assertTrue(
-            $tree->getRoot()->key === $inOrderArrayKeys[array_search($expectedRootKey, $expectedInOrderKeys)],
+            $tree->getRoot()->key
+                === $inOrderArrayKeys[
+                    array_search($expectedRootKey, $expectedInOrderKeys)
+                ],
             "Node was not splayed to root successfully"
         );
         // Assert the new root is correctly set
@@ -322,6 +381,8 @@ class SplayTreeTest extends TestCase
 
     /**
      *  Helper function to extract keys from the in-order traversal array.
+     *
+     * @param array $inOrderArray
      *
      * @return array
      */
@@ -570,7 +631,10 @@ class SplayTreeTest extends TestCase
 
         $this->assertEquals(
             17,
-            $node->key === $inOrderArrayKeys[array_search($node->key, $expectedInOrderKeys)],
+            $node->key
+                === $inOrderArrayKeys[
+                    array_search($node->key, $expectedInOrderKeys)
+                ],
             "After deleting 20, the new root should be the node with key 17."
         );
 

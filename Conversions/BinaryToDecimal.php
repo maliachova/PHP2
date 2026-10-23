@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Binary to decimal.
+ *
+ * PHP version 8.2
+ *
+ * @category Conversions
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
@@ -13,10 +23,11 @@ declare(strict_types=1);
  * (2 + 0) base 10
  * 2 base 10
  *
- * @param  string  $binaryNumber
+ * @param string $binaryNumber
+ *
+ * @throws \Exception
  *
  * @return int
- * @throws \Exception
  */
 function binaryToDecimal($binaryNumber): int|float
 {

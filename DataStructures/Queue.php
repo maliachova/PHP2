@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Queue.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
@@ -13,12 +23,24 @@ class Queue
 
     private int $lowestCount = 0;
 
+    /**
+     * Enqueue.
+     *
+     * @param mixed $element
+     *
+     * @return void
+     */
     public function enqueue($element): void
     {
         $this->elements[$this->count] = $element;
         $this->count++;
     }
 
+    /**
+     * Dequeue.
+     *
+     * @return mixed
+     */
     public function dequeue()
     {
         if ($this->isEmpty()) {
@@ -34,16 +56,31 @@ class Queue
         return $element;
     }
 
+    /**
+     * Is empty.
+     *
+     * @return bool
+     */
     public function isEmpty(): bool
     {
         return $this->count - $this->lowestCount === 0;
     }
 
+    /**
+     * Size.
+     *
+     * @return int
+     */
     public function size(): int
     {
         return $this->count - $this->lowestCount;
     }
 
+    /**
+     * Peek.
+     *
+     * @return mixed
+     */
     public function peek()
     {
         if ($this->isEmpty()) {
@@ -53,6 +90,11 @@ class Queue
         return $this->elements[$this->lowestCount];
     }
 
+    /**
+     * Clear.
+     *
+     * @return void
+     */
     public function clear(): void
     {
         $this->elements = [];
@@ -60,6 +102,13 @@ class Queue
         $this->lowestCount = 0;
     }
 
+    /**
+     * To string.
+     *
+     * @param string $delimiter
+     *
+     * @return string
+     */
     public function toString(string $delimiter = ''): string
     {
         if ($this->isEmpty()) {

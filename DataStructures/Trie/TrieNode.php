@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Trie node.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /*
@@ -15,6 +25,9 @@ declare(strict_types=1);
 
 namespace DataStructures\Trie;
 
+/**
+ * Trie node class.
+ */
 class TrieNode
 {
     /** @var array<string, TrieNode> */
@@ -24,6 +37,8 @@ class TrieNode
 
     /**
      * Add a child node for a character.
+     *
+     * @param string $char
      *
      * @return TrieNode
      */
@@ -40,6 +55,8 @@ class TrieNode
     /**
      * Check if a character has a child node.
      *
+     * @param string $char
+     *
      * @return bool
      */
     public function hasChild(string $char): bool
@@ -51,6 +68,8 @@ class TrieNode
     /**
      * Get the child node corresponding to a character.
      *
+     * @param string $char
+     *
      * @return ?TrieNode
      */
     public function getChild(string $char): ?TrieNode
@@ -61,6 +80,8 @@ class TrieNode
 
     /**
      * Normalize the character to lowercase.
+     *
+     * @param string $char
      *
      * @return string
      */

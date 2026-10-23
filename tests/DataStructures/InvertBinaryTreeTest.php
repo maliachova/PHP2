@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Test cases for invert binary tree.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 namespace DataStructures;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -10,8 +20,16 @@ use DataStructures\InvertBinaryTree\BinaryTree;
 use DataStructures\InvertBinaryTree\InvertBinaryTree;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Test cases for invert binary tree.
+ */
 class InvertBinaryTreeTest extends TestCase
 {
+    /**
+     * Test invert binary tree.
+     *
+     * @return mixed
+     */
     public function testInvertBinaryTree()
     {
         $b = (new BinaryTree())->setValue(1);

@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Bubble sort2.
+ *
+ * PHP version 8.2
+ *
+ * @category Sorting
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /*
@@ -11,6 +21,13 @@ declare(strict_types=1);
  * @param array $input array of random numbers
  *
  * @return array sorted array of numbers
+ */
+/**
+ * Bubble sort2.
+ *
+ * @param array $input
+ *
+ * @return mixed
  */
 function bubbleSort2(array $input)
 {

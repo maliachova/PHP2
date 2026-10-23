@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Ternary search.
+ *
+ * PHP version 8.2
+ *
+ * @category Searches
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /* Ternary search is similar to binary search
@@ -14,6 +24,16 @@ declare(strict_types=1);
  * Otherwise, narrow the interval to the $middle part.
  * Repeat the steps until the value is found or the interval is empty (value not
  * found after checking all elements).
+ */
+/**
+ * Ternary search by recursion.
+ *
+ * @param array $arr
+ * @param mixed $key
+ * @param mixed $low
+ * @param mixed $high
+ *
+ * @return mixed
  */
 function ternarySearchByRecursion(array $arr, $key, $low, $high)
 {
@@ -51,6 +71,14 @@ function ternarySearchByRecursion(array $arr, $key, $low, $high)
     return null;
 }
 
+/**
+ * Ternary search iterative.
+ *
+ * @param array $arr
+ * @param mixed $key
+ *
+ * @return ?float
+ */
 function ternarySearchIterative(array $arr, $key): ?float
 {
     // Initialize low and high pointers.

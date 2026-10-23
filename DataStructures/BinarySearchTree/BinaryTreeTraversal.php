@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Binary tree traversal.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /*
@@ -40,6 +50,8 @@ class BinaryTreeTraversal implements Iterator
     /**
      * Helps switch traversal type of the binary tree for the Iterator interface
      *
+     * @param string $traversalType
+     *
      * @return void
      */
     public function setTraversalType(string $traversalType): void
@@ -67,6 +79,8 @@ class BinaryTreeTraversal implements Iterator
     /**
      * Returns a flat associative array structure for inOrder Traversal
      *
+     * @param ?BSTNode $node
+     *
      * @return array
      */
     protected function inOrder(?BSTNode $node): array
@@ -83,6 +97,8 @@ class BinaryTreeTraversal implements Iterator
 
     /**
      * Returns a flat associative array structure for preOrder Traversal
+     *
+     * @param ?BSTNode $node
      *
      * @return array
      */
@@ -101,6 +117,8 @@ class BinaryTreeTraversal implements Iterator
     /**
      * Returns a flat associative array structure for postOrder Traversal
      *
+     * @param ?BSTNode $node
+     *
      * @return array
      */
     protected function postOrder(?BSTNode $node): array
@@ -117,6 +135,8 @@ class BinaryTreeTraversal implements Iterator
 
     /**
      *  Returns a flat associative array structure for BFT Traversal
+     *
+     * @param ?BSTNode $node
      *
      * @return array
      */
@@ -204,6 +224,8 @@ class BinaryTreeTraversal implements Iterator
      * Helper function to traverse the tree in-order and fill the $inOrderNodes
      * array.
      *
+     * @param ?BSTNode $node
+     *
      * @return void
      */
     private function inOrderIterator(?BSTNode $node): void
@@ -219,6 +241,8 @@ class BinaryTreeTraversal implements Iterator
      * Helper function to traverse the tree in-order and fill the $preOrderNodes
      * array.
      *
+     * @param ?BSTNode $node
+     *
      * @return void
      */
     private function preOrderIterator(?BSTNode $node): void
@@ -233,6 +257,8 @@ class BinaryTreeTraversal implements Iterator
     /**
      * Helper function to traverse the tree in-order and fill the $postOrderNodes
      * array.
+     *
+     * @param ?BSTNode $node
      *
      * @return void
      */

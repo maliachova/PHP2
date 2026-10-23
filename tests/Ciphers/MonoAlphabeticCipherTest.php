@@ -1,12 +1,30 @@
 <?php
 
+/**
+ * Test cases for mono alphabetic cipher.
+ *
+ * PHP version 8.2
+ *
+ * @category Ciphers
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../Ciphers/MonoAlphabeticCipher.php';
 
+/**
+ * Test cases for mono alphabetic cipher.
+ */
 class MonoAlphabeticCipherTest extends TestCase
 {
+    /**
+     * Test mono alphabetic cipher.
+     *
+     * @return mixed
+     */
     public function testMonoAlphabeticCipher()
     {
         $alphabet = "abcdefghijklmnopqrstuvwxyz";

@@ -1,23 +1,34 @@
 <?php
 
+/**
+ * Perfect number.
+ *
+ * PHP version 8.2
+ *
+ * @category Maths
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
-This function returns true
-* if the submitted number is perfect,
-* false if it is not.
-*
-* A perfect number is a positive integer that is
-* equal to the sum of its positive proper
-* divisors, excluding the number itself.
-*
-* About perfect numbers: https://en.wikipedia.org/wiki/Perfect_number
-*
-* @author Marco https://github.com/MaarcooC
-* @param int $number
-*
-* @return bool
-*/
+ * This function returns true
+ * if the submitted number is perfect,
+ * false if it is not.
+ *
+ * A perfect number is a positive integer that is
+ * equal to the sum of its positive proper
+ * divisors, excluding the number itself.
+ *
+ * About perfect numbers: https://en.wikipedia.org/wiki/Perfect_number
+ *
+ * @author Marco https://github.com/MaarcooC
+ *
+ * @param int $number
+ *
+ * @return bool
+ */
 function perfect_number($number)
 {
     /*Input validation*/

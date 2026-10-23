@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Test cases for conversions.
+ *
+ * PHP version 8.2
+ *
+ * @category Conversions
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -11,8 +21,16 @@ require_once __DIR__ . '/../../Conversions/HexadecimalToDecimal.php';
 require_once __DIR__ . '/../../Conversions/SpeedConversion.php';
 require_once __DIR__ . '/../../Conversions/TemperatureConversions.php';
 
+/**
+ * Test cases for conversions.
+ */
 class ConversionsTest extends TestCase
 {
+    /**
+     * Test binary to decimal.
+     *
+     * @return mixed
+     */
     public function testBinaryToDecimal()
     {
         $this->assertEquals(7, binaryToDecimal(111));
@@ -25,6 +43,11 @@ class ConversionsTest extends TestCase
         binaryToDecimal("this is a string");
     }
 
+    /**
+     * Test decimal to binary.
+     *
+     * @return mixed
+     */
     public function testDecimalToBinary()
     {
         $this->assertEquals(111, decimalToBinary(7));
@@ -38,6 +61,11 @@ class ConversionsTest extends TestCase
         decimalToBinary("this is a string");
     }
 
+    /**
+     * Test octal to decimal.
+     *
+     * @return mixed
+     */
     public function testOctalToDecimal()
     {
         $this->assertEquals(8, octalToDecimal(10));
@@ -50,6 +78,11 @@ class ConversionsTest extends TestCase
         octalToDecimal("this is a string");
     }
 
+    /**
+     * Test decimal to octal.
+     *
+     * @return mixed
+     */
     public function testDecimalToOctal()
     {
         $this->assertEquals(10, decimalToOctal(8));
@@ -63,6 +96,11 @@ class ConversionsTest extends TestCase
         decimalToOctal("this is a string");
     }
 
+    /**
+     * Test decimal to hex.
+     *
+     * @return mixed
+     */
     public function testDecimalToHex()
     {
         $this->assertEquals('A', decimalToHex(10));
@@ -76,6 +114,11 @@ class ConversionsTest extends TestCase
         decimalToHex("this is a string");
     }
 
+    /**
+     * Test hex to decimal.
+     *
+     * @return mixed
+     */
     public function testHexToDecimal()
     {
         $this->assertEquals(10, hexToDecimal('A'));
@@ -89,6 +132,11 @@ class ConversionsTest extends TestCase
         hexToDecimal("this is a string");
     }
 
+    /**
+     * Test speed conversion.
+     *
+     * @return mixed
+     */
     public function testSpeedConversion()
     {
         $this->assertEquals(11.18, convertSpeed(5, 'm/s', 'mph'));
@@ -104,6 +152,11 @@ class ConversionsTest extends TestCase
         convertSpeed(1, 'km/h', 'miles');
     }
 
+    /**
+     * Test celsius to fahrenheit.
+     *
+     * @return mixed
+     */
     public function testCelsiusToFahrenheit()
     {
         $this->assertEquals(32.0, CelsiusToFahrenheit(0));
@@ -114,6 +167,11 @@ class ConversionsTest extends TestCase
         CelsiusToFahrenheit("non-numeric");
     }
 
+    /**
+     * Test fahrenheit to celsius.
+     *
+     * @return mixed
+     */
     public function testFahrenheitToCelsius()
     {
         $this->assertEquals(0.0, FahrenheitToCelsius(32));
@@ -124,6 +182,11 @@ class ConversionsTest extends TestCase
         FahrenheitToCelsius("non-numeric");
     }
 
+    /**
+     * Test celsius to kelvin.
+     *
+     * @return mixed
+     */
     public function testCelsiusToKelvin()
     {
         $this->assertEquals(273.15, CelsiusToKelvin(0));
@@ -133,6 +196,11 @@ class ConversionsTest extends TestCase
         CelsiusToKelvin("non-numeric");
     }
 
+    /**
+     * Test kelvin to celsius.
+     *
+     * @return mixed
+     */
     public function testKelvinToCelsius()
     {
         $this->assertEquals(0.0, KelvinToCelsius(273.15));
@@ -142,6 +210,11 @@ class ConversionsTest extends TestCase
         KelvinToCelsius("non-numeric");
     }
 
+    /**
+     * Test kelvin to fahrenheit.
+     *
+     * @return mixed
+     */
     public function testKelvinToFahrenheit()
     {
         $this->assertEquals(32.0, KelvinToFahrenheit(273.15));
@@ -151,6 +224,11 @@ class ConversionsTest extends TestCase
         KelvinToFahrenheit("non-numeric");
     }
 
+    /**
+     * Test fahrenheit to kelvin.
+     *
+     * @return mixed
+     */
     public function testFahrenheitToKelvin()
     {
         $this->assertEquals(273.15, FahrenheitToKelvin(32));

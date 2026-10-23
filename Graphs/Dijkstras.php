@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Dijkstras.
+ *
+ * PHP version 8.2
+ *
+ * @category Graphs
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
@@ -8,6 +18,7 @@ declare(strict_types=1);
  * (https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm).
  *
  * @author Michał Żarnecki https://github.com/rzarno
+ *
  * @param array $verticesNames An array of vertices names
  * @param GraphEdge[] $edges An array of edges
  * @param string $start The starting vertex

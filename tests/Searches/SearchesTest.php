@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Test cases for searches.
+ *
+ * PHP version 8.2
+ *
+ * @category Searches
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -16,8 +26,16 @@ require_once __DIR__ . '/../../Searches/SentinelSearch.php';
 require_once __DIR__ . '/../../Searches/TwoPointers.php';
 
 
+/**
+ * Test cases for searches.
+ */
 class SearchesTest extends TestCase
 {
+    /**
+     * Test binary search iterative.
+     *
+     * @return mixed
+     */
     public function testBinarySearchIterative()
     {
         $list = [0, 5, 7, 10, 15];
@@ -35,6 +53,11 @@ class SearchesTest extends TestCase
         $this->assertEquals(null, $result);
     }
 
+    /**
+     * Test binary search by recursion.
+     *
+     * @return mixed
+     */
     public function testBinarySearchByRecursion()
     {
         $list = [0, 5, 7, 10, 15];
@@ -52,6 +75,11 @@ class SearchesTest extends TestCase
         $this->assertEquals(null, $result);
     }
 
+    /**
+     * Test binary search by recursion with empty list.
+     *
+     * @return mixed
+     */
     public function testBinarySearchByRecursionWithEmptyList()
     {
         $list = [];
@@ -60,6 +88,11 @@ class SearchesTest extends TestCase
         $this->assertEquals(null, $result);
     }
 
+    /**
+     * Test binary search by recursion with one element list.
+     *
+     * @return mixed
+     */
     public function testBinarySearchByRecursionWithOneElementList()
     {
         $list = [0];
@@ -71,6 +104,11 @@ class SearchesTest extends TestCase
         $this->assertEquals(null, $result);
     }
 
+    /**
+     * Test binary search by recursion with two element list.
+     *
+     * @return mixed
+     */
     public function testBinarySearchByRecursionWithTwoElementList()
     {
         $list = [0, 1];
@@ -85,6 +123,11 @@ class SearchesTest extends TestCase
         $this->assertEquals(null, $result);
     }
 
+    /**
+     * Test binary search by recursion with three element list.
+     *
+     * @return mixed
+     */
     public function testBinarySearchByRecursionWithThreeElementList()
     {
         $list = [0, 1, 2];
@@ -102,6 +145,11 @@ class SearchesTest extends TestCase
         $this->assertEquals(null, $result);
     }
 
+    /**
+     * Test fibonacci search.
+     *
+     * @return mixed
+     */
     public function testFibonacciSearch()
     {
         $test1 = fibonacciPosition(6);
@@ -114,6 +162,11 @@ class SearchesTest extends TestCase
         $this->assertEquals(1548008755920, $test3);
     }
 
+    /**
+     * Test linear search.
+     *
+     * @return mixed
+     */
     public function testLinearSearch()
     {
         $list = [5, 7, 8, 11, 12, 15, 17, 18, 20];
@@ -122,6 +175,11 @@ class SearchesTest extends TestCase
         $this->assertEquals(6, $result);
     }
 
+    /**
+     * Test lower bound.
+     *
+     * @return mixed
+     */
     public function testLowerBound()
     {
         $list = [1, 2, 3, 3, 3, 4, 5, 9];
@@ -130,6 +188,11 @@ class SearchesTest extends TestCase
         $this->assertEquals(2, $result);
     }
 
+    /**
+     * Test upper bound.
+     *
+     * @return mixed
+     */
     public function testUpperBound()
     {
         $list = [1, 2, 3, 3, 3, 4, 5, 9];
@@ -138,6 +201,11 @@ class SearchesTest extends TestCase
         $this->assertEquals(5, $result);
     }
 
+    /**
+     * Test jump search.
+     *
+     * @return mixed
+     */
     public function testJumpSearch()
     {
         $list = array( 3,5,6,7,9,10,12,20,22,24);
@@ -146,6 +214,11 @@ class SearchesTest extends TestCase
         $this->assertEquals(6, $result);
     }
 
+    /**
+     * Test exponential search.
+     *
+     * @return mixed
+     */
     public function testExponentialSearch()
     {
         $list = array(2,3,4,7,28,35,63,98);
@@ -154,6 +227,11 @@ class SearchesTest extends TestCase
         $this->assertEquals(5, $result);
     }
 
+    /**
+     * Test ternary search iterative.
+     *
+     * @return mixed
+     */
     public function testTernarySearchIterative()
     {
         $list = [0, 5, 7, 10, 15];
@@ -171,6 +249,11 @@ class SearchesTest extends TestCase
         $this->assertEquals(null, $result);
     }
 
+    /**
+     * Test ternary search by recursion.
+     *
+     * @return mixed
+     */
     public function testTernarySearchByRecursion()
     {
         $list = [0, 5, 7, 10, 15];
@@ -188,6 +271,11 @@ class SearchesTest extends TestCase
         $this->assertEquals(null, $result);
     }
 
+    /**
+     * Test interpolation search.
+     *
+     * @return mixed
+     */
     public function testInterpolationSearch()
     {
         $list = [2, 6, 8, 10, 12, 14, 16, 18, 20, 22, 26, 34, 39];
@@ -205,6 +293,11 @@ class SearchesTest extends TestCase
         $this->assertEquals(12, $result);
     }
 
+    /**
+     * Test sentinel search.
+     *
+     * @return mixed
+     */
     public function testSentinelSearch()
     {
         $list = [1,3,5,2,4,13,18,23,25,30];
@@ -222,6 +315,11 @@ class SearchesTest extends TestCase
         $this->assertEquals(-1, $result);
     }
 
+    /**
+     * Test two pointers.
+     *
+     * @return mixed
+     */
     public function testTwoPointers()
     {
         $list = [1, 2, 4, 7, 8, 10, 11, 12, 15];

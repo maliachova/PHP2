@@ -1,10 +1,22 @@
 <?php
 
+/**
+ * Max character.
+ *
+ * PHP version 8.2
+ *
+ * @category Strings
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
  * This function returns the character which is repeated maximum number of
  * times in the given string.
+ *
+ * @param string $string
  *
  * @throws \Exception
  *

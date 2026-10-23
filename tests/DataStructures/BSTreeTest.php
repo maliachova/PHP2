@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Test cases for bs tree.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 /*
  * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request:
  * #174
@@ -22,17 +32,30 @@ use DataStructures\BinarySearchTree\BSTree;
 use DataStructures\BinarySearchTree\DuplicateKeyException;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Test cases for bs tree.
+ */
 class BSTreeTest extends TestCase
 {
     private BSTree $tree;
 
 
+    /**
+     * Set up.
+     *
+     * @return void
+     */
     protected function setUp(): void
     {
         // Initialize an empty tree before each test
         $this->tree = new BSTree();
     }
 
+    /**
+     * Test tree initialization.
+     *
+     * @return mixed
+     */
     public function testTreeInitialization()
     {
         $this->assertNull(
@@ -429,6 +452,11 @@ class BSTreeTest extends TestCase
         );
     }
 
+    /**
+     * Test remove non existing node.
+     *
+     * @return void
+     */
     public function testRemoveNonExistingNode(): void
     {
         $this->populateTree();
@@ -591,6 +619,11 @@ class BSTreeTest extends TestCase
         );
     }
 
+    /**
+     * Get expected in order.
+     *
+     * @return array
+     */
     private function getExpectedInOrder(): array
     {
         $this->populateTree();
@@ -621,6 +654,11 @@ class BSTreeTest extends TestCase
         );
     }
 
+    /**
+     * Get expected pre order.
+     *
+     * @return array
+     */
     private function getExpectedPreOrder(): array
     {
         $this->populateTree();
@@ -651,6 +689,11 @@ class BSTreeTest extends TestCase
         );
     }
 
+    /**
+     * Get expected post order.
+     *
+     * @return array
+     */
     private function getExpectedPostOrder(): array
     {
         $this->populateTree();
@@ -681,6 +724,11 @@ class BSTreeTest extends TestCase
         );
     }
 
+    /**
+     * Get expected bft.
+     *
+     * @return array
+     */
     private function getExpectedBFT(): array
     {
         $this->populateTree();
@@ -779,6 +827,9 @@ class BSTreeTest extends TestCase
      * Traversals.
      *
      * @dataProvider traversalProvider
+     *
+     * @param string $traversalType
+     * @param array $expected
      *
      * @return void
      */

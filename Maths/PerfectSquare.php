@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Perfect square.
+ *
+ * PHP version 8.2
+ *
+ * @category Maths
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**

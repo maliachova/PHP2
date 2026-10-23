@@ -1,7 +1,22 @@
 <?php
 
+/**
+ * Problem5.
+ *
+ * PHP version 8.2
+ *
+ * @category Maths
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
+/**
+ * Problem5.
+ *
+ * @return int
+ */
 function problem5(): int
 {
     $number = 20;

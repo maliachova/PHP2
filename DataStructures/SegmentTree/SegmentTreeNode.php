@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Segment tree node.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /*
@@ -14,6 +24,9 @@ declare(strict_types=1);
 
 namespace DataStructures\SegmentTree;
 
+/**
+ * Segment tree node class.
+ */
 class SegmentTreeNode
 {
     public ?SegmentTreeNode $left = null;
@@ -21,6 +34,8 @@ class SegmentTreeNode
     public ?SegmentTreeNode $right = null;
 
     /**
+     * Construct.
+     *
      * @param int $start The starting index of the range.
      * @param int $end The ending index of the range.
      * @param int|float $value The initial aggregated value for this range (e.g. sum,

@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Array keys sort.
+ *
+ * PHP version 8.2
+ *
+ * @category Sorting
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
@@ -13,7 +23,12 @@ class ArrayKeysSort
     public const ORDER_DESC = 'DESC';
 
     /**
+     * Sort.
+     *
      * @param $collection
+     * @param array $keys
+     * @param string $order
+     * @param bool $isCaseSensitive
      *
      * @return mixed
      */

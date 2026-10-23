@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Xor cipher.
+ *
+ * PHP version 8.2
+ *
+ * @category Ciphers
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**

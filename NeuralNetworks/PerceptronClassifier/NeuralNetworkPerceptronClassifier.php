@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Neural network perceptron classifier.
+ *
+ * PHP version 8.2
+ *
+ * @category NeuralNetworks
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 namespace NeuralNetworks\PerceptronClassifier;
@@ -15,6 +25,16 @@ namespace NeuralNetworks\PerceptronClassifier;
  */
 class NeuralNetworkPerceptronClassifier
 {
+    /**
+     * Train model.
+     *
+     * @param array $X
+     * @param array $Y
+     * @param int $iterations
+     * @param float $learningRate
+     *
+     * @return array
+     */
     public function trainModel(
         array $X,
         array $Y,
@@ -44,6 +64,15 @@ class NeuralNetworkPerceptronClassifier
         return [$W, $b];
     }
 
+    /**
+     * Predict.
+     *
+     * @param array $X
+     * @param array $W
+     * @param float $b
+     *
+     * @return array
+     */
     public function predict(array $X, array $W, float $b): array
     {
         $A = $this->forwardPropagation($X, $W, $b);
@@ -78,6 +107,7 @@ class NeuralNetworkPerceptronClassifier
 
     /**
      * Stage 2. Initialize model parameters
+     *
      * @param int $n Number of features
      *
      * @return array [$W, $b] Weight and bias arrays
@@ -96,6 +126,8 @@ class NeuralNetworkPerceptronClassifier
     /**
      * Sigmoid Activation Function
      *
+     * @param float $z
+     *
      * @return float
      */
     private function sigmoid(float $z): float
@@ -105,6 +137,10 @@ class NeuralNetworkPerceptronClassifier
 
     /**
      * Stage 3. Forward Propagation
+     *
+     * @param array $X
+     * @param array $W
+     * @param float $b
      *
      * @return array
      */
@@ -127,6 +163,9 @@ class NeuralNetworkPerceptronClassifier
     /**
      * Stage 4. Compute Cost Function (Binary Cross-Entropy Loss)
      *
+     * @param array $A
+     * @param array $Y
+     *
      * @return float
      */
     private function computeCost(array $A, array $Y): float
@@ -142,6 +181,10 @@ class NeuralNetworkPerceptronClassifier
 
     /**
      * Stage 5. Backward Propagation
+     *
+     * @param array $A
+     * @param array $X
+     * @param array $Y
      *
      * @return array
      */
@@ -176,6 +219,12 @@ class NeuralNetworkPerceptronClassifier
 
     /**
      * STage 6. Update Parameters
+     *
+     * @param array $W
+     * @param float $b
+     * @param array $dW
+     * @param float $db
+     * @param float $learningRate
      *
      * @return array
      */

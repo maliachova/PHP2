@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Mean.
+ *
+ * PHP version 8.2
+ *
+ * @category Maths
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
@@ -7,10 +17,11 @@ declare(strict_types=1);
  * The mean value of
  * numbers provided
  *
- * @param  decimal  $numbers  A variable sized number input
+ * @param decimal $numbers  A variable sized number input
+ *
+ * @throws \Exception
  *
  * @return decimal $mean Mean of provided numbers
- * @throws \Exception
  */
 function mean(...$numbers): int|float
 {

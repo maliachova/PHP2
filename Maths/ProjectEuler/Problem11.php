@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Problem11.
+ *
+ * PHP version 8.2
+ *
+ * @category Maths
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /*
@@ -39,6 +49,15 @@ declare(strict_types=1);
  */
 
 
+/**
+ * Horizontal product.
+ *
+ * @param array $grid
+ * @param mixed $row
+ * @param mixed $col
+ *
+ * @return int|float
+ */
 function horizontalProduct(array $grid, $row, $col): int|float
 {
     $product = 1;
@@ -49,6 +68,15 @@ function horizontalProduct(array $grid, $row, $col): int|float
     return $product;
 }
 
+/**
+ * Vertical product.
+ *
+ * @param array $grid
+ * @param mixed $row
+ * @param mixed $col
+ *
+ * @return int|float
+ */
 function verticalProduct(array $grid, $row, $col): int|float
 {
     $product = 1;
@@ -59,6 +87,15 @@ function verticalProduct(array $grid, $row, $col): int|float
     return $product;
 }
 
+/**
+ * Diagonal right product.
+ *
+ * @param array $grid
+ * @param mixed $row
+ * @param mixed $col
+ *
+ * @return int|float
+ */
 function diagonalRightProduct(array $grid, $row, $col): int|float
 {
     $product = 1;
@@ -69,6 +106,15 @@ function diagonalRightProduct(array $grid, $row, $col): int|float
     return $product;
 }
 
+/**
+ * Diagonal left product.
+ *
+ * @param array $grid
+ * @param mixed $row
+ * @param mixed $col
+ *
+ * @return int|float
+ */
 function diagonalLeftProduct(array $grid, $row, $col): int|float
 {
     $product = 1;
@@ -79,6 +125,11 @@ function diagonalLeftProduct(array $grid, $row, $col): int|float
     return $product;
 }
 
+/**
+ * Problem11.
+ *
+ * @return int|float
+ */
 function problem11(): int|float
 {
     $grid = "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08 

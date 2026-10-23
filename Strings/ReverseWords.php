@@ -1,10 +1,22 @@
 <?php
 
+/**
+ * Reverse words.
+ *
+ * PHP version 8.2
+ *
+ * @category Strings
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
  * This function returns a given sentence with its words
  * in reverse order
+ *
+ * @param string $text
  *
  * @return string
  */

@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Sentinel search.
+ *
+ * PHP version 8.2
+ *
+ * @category Searches
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /* SentinelSearch
@@ -10,6 +20,14 @@ declare(strict_types=1);
     Output : -
     Returns index of element if found, else -1
 */
+/**
+ * Sentinel search.
+ *
+ * @param mixed $list
+ * @param mixed $target
+ *
+ * @return int
+ */
 function SentinelSearch($list, $target): int
 {
     //Length of array

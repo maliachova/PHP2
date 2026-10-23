@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Heap sort.
+ *
+ * PHP version 8.2
+ *
+ * @category Sorting
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
@@ -10,6 +20,8 @@ declare(strict_types=1);
  * iteratively swapping the maximum element from the heap with the last unsorted
  * element
  * and "heapifying" the heap again.
+ *
+ * @param array $arr
  *
  * @throws \UnexpectedValueException
  *
@@ -48,6 +60,10 @@ function heapSort(array $arr): array
 
 /**
  * Ensures that the array satisfies the heap property
+ *
+ * @param array $arr
+ * @param int $n
+ * @param int $i
  *
  * @return void
  */

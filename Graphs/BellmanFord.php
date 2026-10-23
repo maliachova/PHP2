@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Bellman ford.
+ *
+ * PHP version 8.2
+ *
+ * @category Graphs
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
@@ -9,9 +19,11 @@ declare(strict_types=1);
  * (https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm).
  *
  * @author Michał Żarnecki https://github.com/rzarno
+ *
  * @param array $verticesNames An array of vertices names
  * @param GraphEdge[] $edges An array of edges
  * @param string $start The starting vertex
+ * @param bool $verbose
  *
  * @return array An array of shortest paths from $start to all other vertices
  */
@@ -46,7 +58,8 @@ function bellmanFord(
             foreach ($edges[$vertice] as $edge) {
                 if ($vertices[$edge->end] > $vertices[$vertice] + $edge->weight) {
                     if ($verbose) {
-                        echo sprintf('replace %s ', $vertice) . $vertices[$edge->end] . " with "
+                        echo sprintf('replace %s ', $vertice)
+                            . $vertices[$edge->end] . " with "
                             . ($vertices[$vertice] + $edge->weight) . "\n ";
                     }
 

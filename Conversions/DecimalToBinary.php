@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Decimal to binary.
+ *
+ * PHP version 8.2
+ *
+ * @category Conversions
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
@@ -7,7 +17,8 @@ declare(strict_types=1);
  * submitted Decimal Number to
  * Binary Number.
  *
- * @param  string  $decimalNumber
+ * @param string $decimalNumber
+ *
  * @throws \Exception
  *
  * @return string

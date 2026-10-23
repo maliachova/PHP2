@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Splay tree node.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /*
@@ -14,6 +24,9 @@ declare(strict_types=1);
 
 namespace DataStructures\SplayTree;
 
+/**
+ * Splay tree node class.
+ */
 class SplayTreeNode
 {
     public ?SplayTreeNode $left = null;
@@ -23,6 +36,8 @@ class SplayTreeNode
     public ?SplayTreeNode $parent = null;
 
     /**
+     * Construct.
+     *
      * @param int $key The key of the node.
      * @param mixed $value The associated value.
      */
@@ -30,12 +45,22 @@ class SplayTreeNode
     {
     }
 
+    /**
+     * Is leaf.
+     *
+     * @return bool
+     */
     public function isLeaf(): bool
     {
         return !$this->left instanceof \DataStructures\SplayTree\SplayTreeNode
             && !$this->right instanceof \DataStructures\SplayTree\SplayTreeNode;
     }
 
+    /**
+     * Is root.
+     *
+     * @return bool
+     */
     public function isRoot(): bool
     {
         return !$this->parent instanceof \DataStructures\SplayTree\SplayTreeNode;

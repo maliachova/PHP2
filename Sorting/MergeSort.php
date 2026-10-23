@@ -1,9 +1,21 @@
 <?php
 
+/**
+ * Merge sort.
+ *
+ * PHP version 8.2
+ *
+ * @category Sorting
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
  * Merge Sort
+ *
+ * @param array $arr
  *
  * @return array
  */
@@ -20,6 +32,14 @@ function mergeSort(array $arr)
     return merge($leftArray, $rightArray);
 }
 
+/**
+ * Merge.
+ *
+ * @param array $leftArray
+ * @param array $rightArray
+ *
+ * @return array
+ */
 function merge(array $leftArray, array $rightArray): array
 {
     $result = [];

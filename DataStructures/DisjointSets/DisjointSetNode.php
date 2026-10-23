@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Disjoint set node.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /*
@@ -14,6 +24,9 @@ declare(strict_types=1);
 
 namespace DataStructures\DisjointSets;
 
+/**
+ * Disjoint set node class.
+ */
 class DisjointSetNode
 {
     # replace with type hint "mixed" as of PHP 8.0^.
@@ -22,6 +35,8 @@ class DisjointSetNode
     public DisjointSetNode $parent;
 
     /**
+     * Construct.
+     *
      * @param int|string|float|null $data
      */
     public function __construct(public $data = null)

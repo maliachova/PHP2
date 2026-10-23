@@ -12,7 +12,11 @@ declare(strict_types=1);
  * or list, or one pointer moving at a slower pace while the other moves at a faster
  * pace.
  *
+ * PHP version 8.2
+ *
  * @category Searches
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
  */
 
 /**
@@ -27,16 +31,24 @@ declare(strict_types=1);
  *
  * If we solve this problem using two nested loops, the time complexity would be
  * O(n^2),
-        for($i=0; $i<sizeof($list); ++$i){
-            for($j=$i+1; $j<sizeof($list); ++$j){
-                if($list[$i] + $list[$j] == $target)
-                    $ans++;
-            }
-        }
+ * for($i=0; $i<sizeof($list); ++$i){
+ * for($j=$i+1; $j<sizeof($list); ++$j){
+ * if($list[$i] + $list[$j] == $target)
+ * $ans++;
+ * }
+ * }
  * To reduce the time complexity to O(n), we need Two Pointers technique.
  */
 
 // Two Pointers step by step solution to that problem is given below:
+/**
+ * Two pointers.
+ *
+ * @param mixed $list
+ * @param mixed $target
+ *
+ * @return int
+ */
 function twoPointers($list, $target): int
 {
     // First we need to sort the array so that we can take advantage of the order

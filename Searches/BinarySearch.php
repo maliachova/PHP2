@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Binary search.
+ *
+ * PHP version 8.2
+ *
+ * @category Searches
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
@@ -18,6 +28,7 @@ declare(strict_types=1);
  * binarySearchIterative([0, 5, 7, 10, 15], 6);
  *
  * @param int $target
+ * @param array $list
  *
  * @return int
  */

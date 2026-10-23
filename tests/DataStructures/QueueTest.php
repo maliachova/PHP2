@@ -1,14 +1,31 @@
 <?php
 
+/**
+ * Test cases for queue.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . "/../../DataStructures/Queue.php";
 
+/**
+ * Test cases for queue.
+ */
 class QueueTest extends TestCase
 {
     /**
+     * Should add element to queue.
+     *
      * @test
+     *
+     * @return void
      */
     public function shouldAddElementToQueue(): void
     {
@@ -22,7 +39,11 @@ class QueueTest extends TestCase
     }
 
     /**
+     * Should remove element from queue.
+     *
      * @test
+     *
+     * @return void
      */
     public function shouldRemoveElementFromQueue(): void
     {
@@ -37,7 +58,11 @@ class QueueTest extends TestCase
     }
 
     /**
+     * Should return correct value when dequeue.
+     *
      * @test
+     *
+     * @return void
      */
     public function shouldReturnCorrectValueWhenDequeue(): void
     {
@@ -52,7 +77,11 @@ class QueueTest extends TestCase
     }
 
     /**
+     * Should return null when dequeue empty queue.
+     *
      * @test
+     *
+     * @return void
      */
     public function shouldReturnNullWhenDequeueEmptyQueue(): void
     {
@@ -62,7 +91,11 @@ class QueueTest extends TestCase
     }
 
     /**
+     * Should return true if queue is empty.
+     *
      * @test
+     *
+     * @return void
      */
     public function shouldReturnTrueIfQueueIsEmpty(): void
     {
@@ -72,7 +105,11 @@ class QueueTest extends TestCase
     }
 
     /**
+     * Should return false if queue is not empty.
+     *
      * @test
+     *
+     * @return void
      */
     public function shouldReturnFalseIfQueueIsNotEmpty(): void
     {
@@ -83,7 +120,11 @@ class QueueTest extends TestCase
     }
 
     /**
+     * Should return queue size.
+     *
      * @test
+     *
+     * @return void
      */
     public function shouldReturnQueueSize(): void
     {
@@ -97,7 +138,11 @@ class QueueTest extends TestCase
     }
 
     /**
+     * Should return front element.
+     *
      * @test
+     *
+     * @return void
      */
     public function shouldReturnFrontElement(): void
     {
@@ -111,7 +156,11 @@ class QueueTest extends TestCase
     }
 
     /**
+     * Should return null when peek empty queue.
+     *
      * @test
+     *
+     * @return void
      */
     public function shouldReturnNullWhenPeekEmptyQueue(): void
     {
@@ -121,7 +170,11 @@ class QueueTest extends TestCase
     }
 
     /**
+     * Should clear queue.
+     *
      * @test
+     *
+     * @return void
      */
     public function shouldClearQueue(): void
     {
@@ -138,7 +191,11 @@ class QueueTest extends TestCase
     }
 
     /**
+     * Should return string representation.
+     *
      * @test
+     *
+     * @return void
      */
     public function shouldReturnStringRepresentation(): void
     {
@@ -152,7 +209,11 @@ class QueueTest extends TestCase
     }
 
     /**
+     * Should return string representation for single element.
+     *
      * @test
+     *
+     * @return void
      */
     public function shouldReturnStringRepresentationForSingleElement(): void
     {

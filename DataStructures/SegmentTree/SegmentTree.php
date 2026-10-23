@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Segment tree.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /*
@@ -17,6 +27,9 @@ namespace DataStructures\SegmentTree;
 use InvalidArgumentException;
 use OutOfBoundsException;
 
+/**
+ * Segment tree class.
+ */
 class SegmentTree
 {
     private SegmentTreeNode $root;
@@ -36,6 +49,7 @@ class SegmentTree
      * @param array $currentArray The input array for the segment tree
      * @param callable|null $callback Optional callback function for custom
      * aggregation logic.
+     *
      * @throws InvalidArgumentException if the array is empty, contains non-numeric
      * values, or is associative.
      */
@@ -47,13 +61,20 @@ class SegmentTree
         $this->callback = $callback;
 
         if ($this->isUnsupportedArray()) {
-            throw new InvalidArgumentException("Array must not be empty, must contain numeric values 
-            and must be non-associative.");
+            throw new InvalidArgumentException(
+                "Array must not be empty, must contain numeric values \n"
+                . "            and must be non-associative."
+            );
         }
 
         $this->root = $this->buildTree($this->currentArray, 0, $this->arraySize - 1);
     }
 
+    /**
+     * Is unsupported array.
+     *
+     * @return bool
+     */
     private function isUnsupportedArray(): bool
     {
         if ($this->currentArray === []) {
@@ -66,6 +87,8 @@ class SegmentTree
     }
 
     /**
+     * Is non numeric.
+     *
      * @return bool True if any element is non-numeric, false otherwise.
      */
     private function isNonNumeric(): bool
@@ -78,6 +101,8 @@ class SegmentTree
     }
 
     /**
+     * Is associative.
+     *
      * @return bool True if the array is associative, false otherwise.
      */
     private function isAssociative(): bool
@@ -86,6 +111,8 @@ class SegmentTree
     }
 
     /**
+     * Get root.
+     *
      * @return SegmentTreeNode The root node of the segment tree.
      */
     public function getRoot(): SegmentTreeNode
@@ -94,6 +121,8 @@ class SegmentTree
     }
 
     /**
+     * Get current array.
+     *
      * @return array The original or the current array (after any update) stored in
      * the segment tree.
      */
@@ -141,14 +170,17 @@ class SegmentTree
      * @param int $start The starting index of the range.
      * @param int $end The ending index of the range.
      *
-     * @return int|float The aggregated value for the range.
      * @throws OutOfBoundsException if the range is invalid.
+     *
+     * @return int|float The aggregated value for the range.
      */
     public function query(int $start, int $end)
     {
         if ($start > $end || $start < 0 || $end > ($this->root->end)) {
-            throw new OutOfBoundsException("Index out of bounds: start = {$start}, end = {$end}. 
-            Must be between 0 and " . ($this->arraySize - 1));
+            throw new OutOfBoundsException(
+                "Index out of bounds: start = {$start}, end = {$end}. \n"
+                . "            Must be between 0 and " . ($this->arraySize - 1)
+            );
         }
 
         return $this->queryTree($this->root, $start, $end);
@@ -195,7 +227,10 @@ class SegmentTree
      *
      * @param int $index The index to update.
      * @param int|float $value The new value to set.
+     *
      * @throws OutOfBoundsException if the index is out of bounds.
+     *
+     * @return void
      */
     public function update(int $index, int $value): void
     {
@@ -218,6 +253,8 @@ class SegmentTree
      * @param SegmentTreeNode $node The current node.
      * @param int $index The index to update.
      * @param int|float $value The new value.
+     *
+     * @return void
      */
     private function updateTree(SegmentTreeNode $node, int $index, $value): void
     {
@@ -248,7 +285,10 @@ class SegmentTree
      * @param int $start The starting index of the range.
      * @param int $end The ending index of the range.
      * @param int|float $value The value to set for the range.
+     *
      * @throws OutOfBoundsException if the range is invalid.
+     *
+     * @return void
      */
     public function rangeUpdate(int $start, int $end, $value): void
     {
@@ -274,6 +314,8 @@ class SegmentTree
      * @param int $start The starting index of the range.
      * @param int $end The ending index of the range.
      * @param int|float $value The new value for the range.
+     *
+     * @return void
      */
     private function rangeUpdateTree(
         SegmentTreeNode $node,

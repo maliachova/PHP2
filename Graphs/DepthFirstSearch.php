@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Depth first search.
+ *
+ * PHP version 8.2
+ *
+ * @category Graphs
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
@@ -15,6 +25,7 @@ declare(strict_types=1);
  * https://the-algorithms.com/algorithm/depth-first-search?lang=python
  *
  * @author Andre Alves https://github.com/andremralves
+ *
  * @param array $adjList An array representing the grapth as an Adjacent List
  * @param int|string $start The starting vertex
  *

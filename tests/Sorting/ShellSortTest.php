@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Test cases for shell sort.
+ *
+ * PHP version 8.2
+ *
+ * @category Sorting
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 namespace Sorting;
 
 use PHPUnit\Framework\TestCase;
@@ -7,8 +17,16 @@ use PHPUnit\Framework\TestCase;
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../Sorting/ShellSort.php';
 
+/**
+ * Test cases for shell sort.
+ */
 class ShellSortTest extends TestCase
 {
+    /**
+     * Test shell sort.
+     *
+     * @return mixed
+     */
     public function testShellSort()
     {
         $array = [
@@ -102,6 +120,11 @@ class ShellSortTest extends TestCase
         ], $sorted);
     }
 
+    /**
+     * Test shell sort with empty input.
+     *
+     * @return mixed
+     */
     public function testShellSortWithEmptyInput()
     {
         $array = [];
@@ -109,6 +132,11 @@ class ShellSortTest extends TestCase
         $this->assertEmpty($sorted);
     }
 
+    /**
+     * Test shell sort performance.
+     *
+     * @return mixed
+     */
     public function testShellSortPerformance()
     {
         $array = range(1, 10000);

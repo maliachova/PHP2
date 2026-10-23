@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Linear search.
+ *
+ * PHP version 8.2
+ *
+ * @category Searches
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
@@ -18,6 +28,11 @@ declare(strict_types=1);
  *  @param Array $list an array of integers to search
  *  @param integer $target an integer number to search for in the list
  *  @return integer the index where the target is found (or -1 if not found)
+ *
+ * @param array $list
+ * @param mixed $target
+ *
+ * @return int
  */
 function linearSearch(array $list, $target): int
 {

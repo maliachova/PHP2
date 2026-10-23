@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Test cases for maths.
+ *
+ * PHP version 8.2
+ *
+ * @category Maths
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -24,8 +34,16 @@ require_once __DIR__ . '/../../Maths/FastInverseSquareRoot.php';
 require_once __DIR__ . '/../../Maths/BaseX.php';
 require_once __DIR__ . '/../../Maths/PerfectNumber.php';
 
+/**
+ * Test cases for maths.
+ */
 class MathsTest extends TestCase
 {
+    /**
+     * Test base x.
+     *
+     * @return mixed
+     */
     public function testBaseX()
     {
         $this->assertEquals(11, baseX(3, 2));
@@ -34,6 +52,11 @@ class MathsTest extends TestCase
         $this->assertEquals(20, baseX(16, 8));
     }
 
+    /**
+     * Test factorial.
+     *
+     * @return mixed
+     */
     public function testFactorial()
     {
         $this->assertEquals(1, factorial(1));
@@ -43,6 +66,11 @@ class MathsTest extends TestCase
         factorial(-25);
     }
 
+    /**
+     * Test is even.
+     *
+     * @return mixed
+     */
     public function testIsEven()
     {
         $this->assertTrue(isEven(2));
@@ -52,6 +80,11 @@ class MathsTest extends TestCase
         $this->assertTrue(isEven(-4));
     }
 
+    /**
+     * Test is number armstrong.
+     *
+     * @return mixed
+     */
     public function testIsNumberArmstrong()
     {
         $this->assertTrue(isNumberArmstrong(153));
@@ -60,6 +93,11 @@ class MathsTest extends TestCase
         $this->assertFalse(isNumberArmstrong(2468));
     }
 
+    /**
+     * Test is number palindromic.
+     *
+     * @return mixed
+     */
     public function testIsNumberPalindromic()
     {
         $this->assertTrue(isNumberPalindromic(121));
@@ -68,6 +106,11 @@ class MathsTest extends TestCase
         $this->assertFalse(isNumberPalindromic(2468));
     }
 
+    /**
+     * Test is odd.
+     *
+     * @return mixed
+     */
     public function testIsOdd()
     {
         $this->assertTrue(isOdd(3));
@@ -77,6 +120,11 @@ class MathsTest extends TestCase
         $this->assertTrue(isOdd(-5));
     }
 
+    /**
+     * Test is prime.
+     *
+     * @return mixed
+     */
     public function testIsPrime()
     {
         $this->assertTrue(isPrime(73));
@@ -85,6 +133,11 @@ class MathsTest extends TestCase
         $this->assertTrue(isPrime(997));
     }
 
+    /**
+     * Test absolute max.
+     *
+     * @return mixed
+     */
     public function testAbsoluteMax()
     {
         $this->assertEquals(50, absolute_max(12, 20, 35, 50, 50, 23));
@@ -94,6 +147,11 @@ class MathsTest extends TestCase
         absolute_max();
     }
 
+    /**
+     * Test absolute min.
+     *
+     * @return mixed
+     */
     public function testAbsoluteMin()
     {
         $this->assertEquals(12, absolute_min(12, 20, 35, 50, 50, 23));
@@ -103,6 +161,11 @@ class MathsTest extends TestCase
         absolute_min();
     }
 
+    /**
+     * Test perfect square.
+     *
+     * @return mixed
+     */
     public function testPerfectSquare()
     {
         $this->assertTrue(isPerfectSquare(25));
@@ -111,6 +174,11 @@ class MathsTest extends TestCase
         $this->assertTrue(isPerfectSquare(225));
     }
 
+    /**
+     * Test fast exponentiation.
+     *
+     * @return mixed
+     */
     public function testFastExponentiation()
     {
         $this->assertEquals(1, fastExponentiation(10, 0));
@@ -120,6 +188,11 @@ class MathsTest extends TestCase
         $this->assertEquals(3200000, fastExponentiation(20, 5));
     }
 
+    /**
+     * Test fibonacci series.
+     *
+     * @return mixed
+     */
     public function testFibonacciSeries()
     {
         $this->assertEquals([0, 1, 1, 2, 3], fibonacciRecursive(5));
@@ -135,6 +208,11 @@ class MathsTest extends TestCase
         );
     }
 
+    /**
+     * Test neon number.
+     *
+     * @return mixed
+     */
     public function testNeonNumber()
     {
         $this->assertTrue(isNumberNeon(1));
@@ -143,6 +221,11 @@ class MathsTest extends TestCase
         $this->assertTrue(isNumberNeon(9));
     }
 
+    /**
+     * Test fibonacci generator.
+     *
+     * @return mixed
+     */
     public function testFibonacciGenerator()
     {
         $this->assertEquals([0, 1, 1, 2, 3], iterator_to_array(loop(5, fib())));
@@ -158,6 +241,11 @@ class MathsTest extends TestCase
         );
     }
 
+    /**
+     * Test mean.
+     *
+     * @return mixed
+     */
     public function testMean()
     {
         $this->assertEquals(
@@ -173,6 +261,11 @@ class MathsTest extends TestCase
         $this->assertEquals(-1, mean(-1));
     }
 
+    /**
+     * Test median.
+     *
+     * @return mixed
+     */
     public function testMedian()
     {
         $this->assertEquals(3, median(1, 2, 3, 4, 5));
@@ -180,6 +273,11 @@ class MathsTest extends TestCase
         $this->assertEquals(3, median(5, 3, 1, 2, 4));
     }
 
+    /**
+     * Test median rejects non numeric values.
+     *
+     * @return mixed
+     */
     public function testMedianRejectsNonNumericValues()
     {
         $this->expectException(\Exception::class);
@@ -187,6 +285,11 @@ class MathsTest extends TestCase
         median('a', 'b', 'c');
     }
 
+    /**
+     * Test mode.
+     *
+     * @return mixed
+     */
     public function testMode()
     {
         $this->assertEquals([3], mode(1, 2, 3, 3, 4, 5));
@@ -195,6 +298,11 @@ class MathsTest extends TestCase
         $this->assertEquals([2, 3, 4], mode(2, 2, 3, 3, 4, 4));
     }
 
+    /**
+     * Test greatest common divisor.
+     *
+     * @return mixed
+     */
     public function testGreatestCommonDivisor()
     {
         $this->assertEquals(8, gcd(24, 16));
@@ -205,6 +313,11 @@ class MathsTest extends TestCase
         $this->assertEquals(3, gcd(9, 12));
     }
 
+    /**
+     * Test perfect number.
+     *
+     * @return mixed
+     */
     public function testPerfectNumber()
     {
         $this->assertTrue(perfect_number(6));
@@ -221,6 +334,11 @@ class MathsTest extends TestCase
         $this->assertFalse(perfect_number("string"));
     }
 
+    /**
+     * Test fast inverse square root.
+     *
+     * @return mixed
+     */
     public function testFastInverseSquareRoot()
     {
         $this->assertEqualsWithDelta(0.31568579235273, fastInvSqrt(10), 0.00001);

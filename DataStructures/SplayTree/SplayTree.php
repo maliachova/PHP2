@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Splay tree.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /*
@@ -18,6 +28,9 @@ require_once __DIR__ . '/SplayTreeRotations.php';
 
 use LogicException;
 
+/**
+ * Splay tree class.
+ */
 class SplayTree extends SplayTreeRotations
 {
     protected ?SplayTreeNode $root = null;
@@ -40,6 +53,8 @@ class SplayTree extends SplayTreeRotations
     }
 
     /**
+     * Get root.
+     *
      * @return SplayTreeNode|NULL The root node of the Splay Tree.
      */
     public function getRoot(): ?SplayTreeNode
@@ -49,6 +64,8 @@ class SplayTree extends SplayTreeRotations
 
     /**
      * Set the root node of the Splay Tree.
+     *
+     * @param SplayTreeNode $node
      *
      * @return void
      */
@@ -112,7 +129,7 @@ class SplayTree extends SplayTreeRotations
      * @param int $key The key to splay to the root
      *
      * @return SplayTreeNode|null Returns the new root after splaying
-    */
+     */
     private function splayLeft(?SplayTreeNode $node, int $key): ?SplayTreeNode
     {
         if ($node->left === null) {
@@ -151,7 +168,7 @@ class SplayTree extends SplayTreeRotations
      * @param int $key The key to splay to the root
      *
      * @return SplayTreeNode|null Returns the new root after splaying
-    */
+     */
     private function splayRight(?SplayTreeNode $node, int $key): ?SplayTreeNode
     {
         if ($node->right === null) {
@@ -190,8 +207,9 @@ class SplayTree extends SplayTreeRotations
      * @param int $key The node's key to insert
      * @param mixed $value The value associated with the key
      *
-     * @return SplayTreeNode|null Returns the new root after insertion and splaying
      * @throws LogicException If the key already exists
+     *
+     * @return SplayTreeNode|null Returns the new root after insertion and splaying
      */
     public function insert(int $key, mixed $value): ?SplayTreeNode
     {
@@ -212,8 +230,9 @@ class SplayTree extends SplayTreeRotations
      * @param int $key The node's key to insert
      * @param mixed $value The value associated with the key
      *
-     * @return SplayTreeNode|null Returns the new root after insertion
      * @throws LogicException If the key already exists
+     *
+     * @return SplayTreeNode|null Returns the new root after insertion
      */
     private function insertNode(
         ?SplayTreeNode $node,
@@ -353,8 +372,9 @@ class SplayTree extends SplayTreeRotations
      *
      * @param int $key The key of the node to delete
      *
-     * @return SplayTreeNode|null The new root after the deletion
      * @throws LogicException If the key is not found in the tree
+     *
+     * @return SplayTreeNode|null The new root after the deletion
      */
     public function delete(int $key): ?SplayTreeNode
     {
@@ -393,6 +413,9 @@ class SplayTree extends SplayTreeRotations
 
     /**
      * Restructures the tree after the root node has been isolated for deletion.
+     *
+     * @param ?SplayTreeNode $leftSubtree
+     * @param ?SplayTreeNode $rightSubtree
      *
      * @return SplayTreeNode|null The new root after restructuring
      */

@@ -1,17 +1,27 @@
 <?php
 
+/**
+ * Jump search.
+ *
+ * PHP version 8.2
+ *
+ * @category Searches
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
-   * Jump Search algorithm in PHP
-   * References: https://www.geeksforgeeks.org/jump-search/
-   * The list must be sorted in ascending order before performing jumpSearch
-   *
-   * @param Array $list refers to a sorted list of integer
-   * @param integer $key refers to the integer target to be searched from the sorted
-   * list
-   *
-   * @return int index of $key if found, otherwise -1 is returned
+ * Jump Search algorithm in PHP
+ * References: https://www.geeksforgeeks.org/jump-search/
+ * The list must be sorted in ascending order before performing jumpSearch
+ *
+ * @param Array $list refers to a sorted list of integer
+ * @param integer $key refers to the integer target to be searched from the sorted
+ * list
+ *
+ * @return int index of $key if found, otherwise -1 is returned
  */
 
 function jumpSearch(array $list, $key): int

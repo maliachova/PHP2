@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Mode.
+ *
+ * PHP version 8.2
+ *
+ * @category Maths
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
@@ -9,8 +19,9 @@ declare(strict_types=1);
  *
  * @param decimal $numbers A variable sized number input
  *
- * @return array $modes Array of mode(s) of provided numbers
  * @throws \Exception
+ *
+ * @return array $modes Array of mode(s) of provided numbers
  */
 function mode(...$numbers): array
 {

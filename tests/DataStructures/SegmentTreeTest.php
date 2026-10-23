@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Test cases for segment tree.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 /*
  * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request
  * #166
@@ -20,10 +30,18 @@ use InvalidArgumentException;
 use OutOfBoundsException;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Test cases for segment tree.
+ */
 class SegmentTreeTest extends TestCase
 {
     private array $testArray;
 
+    /**
+     * Set up.
+     *
+     * @return void
+     */
     protected function setUp(): void
     {
         $this->testArray = [
@@ -31,6 +49,11 @@ class SegmentTreeTest extends TestCase
         ];
     }
 
+    /**
+     * Sum query provider.
+     *
+     * @return array
+     */
     public static function sumQueryProvider(): array
     {
         return [
@@ -44,7 +67,14 @@ class SegmentTreeTest extends TestCase
 
     /**
      * Test sum queries using data provider.
+     *
      * @dataProvider sumQueryProvider
+     *
+     * @param int $expected
+     * @param int $startIndex
+     * @param int $endIndex
+     *
+     * @return void
      */
     public function testSegmentTreeSumQuery(
         int $expected,
@@ -61,6 +91,11 @@ class SegmentTreeTest extends TestCase
         );
     }
 
+    /**
+     * Max query provider.
+     *
+     * @return array
+     */
     public static function maxQueryProvider(): array
     {
         return [
@@ -73,7 +108,14 @@ class SegmentTreeTest extends TestCase
 
     /**
      * Test max queries using data provider.
+     *
      * @dataProvider maxQueryProvider
+     *
+     * @param int $expected
+     * @param int $startIndex
+     * @param int $endIndex
+     *
+     * @return void
      */
     public function testSegmentTreeMaxQuery(
         int $expected,
@@ -89,6 +131,11 @@ class SegmentTreeTest extends TestCase
         );
     }
 
+    /**
+     * Min query provider.
+     *
+     * @return array
+     */
     public static function minQueryProvider(): array
     {
         return [
@@ -101,7 +148,14 @@ class SegmentTreeTest extends TestCase
 
     /**
      * Test min queries using data provider.
+     *
      * @dataProvider minQueryProvider
+     *
+     * @param int $expected
+     * @param int $startIndex
+     * @param int $endIndex
+     *
+     * @return void
      */
     public function testSegmentTreeMinQuery(
         int $expected,
@@ -121,6 +175,8 @@ class SegmentTreeTest extends TestCase
 
     /**
      * Test update functionality for different query types.
+     *
+     * @return void
      */
     public function testSegmentTreeUpdate(): void
     {
@@ -160,6 +216,8 @@ class SegmentTreeTest extends TestCase
 
     /**
      * Test range update functionality for different query types.
+     *
+     * @return void
      */
     public function testSegmentTreeRangeUpdate(): void
     {
@@ -199,6 +257,8 @@ class SegmentTreeTest extends TestCase
 
     /**
      * Test array updates reflections.
+     *
+     * @return void
      */
     public function testGetCurrentArray(): void
     {
@@ -225,6 +285,8 @@ class SegmentTreeTest extends TestCase
 
     /**
      * Test serialization and deserialization of the segment tree.
+     *
+     * @return void
      */
     public function testSegmentTreeSerialization(): void
     {
@@ -241,6 +303,8 @@ class SegmentTreeTest extends TestCase
 
     /**
      * Testing EdgeCases: first and last indices functionality on the Segment Tree
+     *
+     * @return void
      */
     public function testEdgeCases(): void
     {
@@ -317,20 +381,26 @@ class SegmentTreeTest extends TestCase
 
     /**
      * Test empty or unsupported arrays.
+     *
+     * @return void
      */
     public function testUnsupportedOrEmptyArrayInitialization(): void
     {
         // Test empty array
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage("Array must not be empty, must contain numeric values 
-            and must be non-associative.");
+        $this->expectExceptionMessage(
+            "Array must not be empty, must contain numeric values \n"
+            . "            and must be non-associative."
+        );
 
         $segmentTreeEmpty = new SegmentTree([]);        // expecting an exception
 
         // Test unsupported array (e.g., with non-numeric values)
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage("Array must not be empty, must contain numeric values 
-            and must be non-associative.");
+        $this->expectExceptionMessage(
+            "Array must not be empty, must contain numeric values \n"
+            . "            and must be non-associative."
+        );
 
         // Mix of numeric and non-numeric
         $segmentTreeUnsupported = new SegmentTree([1, "two", 3]);
@@ -339,6 +409,8 @@ class SegmentTreeTest extends TestCase
 
     /**
      * Test exception for invalid update index.
+     *
+     * @return void
      */
     public function testInvalidUpdateIndex(): void
     {
@@ -348,8 +420,10 @@ class SegmentTreeTest extends TestCase
 
         // Expect an exception for range update with invalid indices
         $this->expectException(OutOfBoundsException::class);
-        $this->expectExceptionMessage("Index out of bounds: $index. Must be between 0 and "
-            . (count($this->testArray) - 1));
+        $this->expectExceptionMessage(
+            "Index out of bounds: $index. Must be between 0 and "
+            . (count($this->testArray) - 1)
+        );
 
         // non-existing index, should trigger exception
         $segmentTree->update($index, 100);
@@ -357,6 +431,8 @@ class SegmentTreeTest extends TestCase
 
     /**
      *  Test exception for invalid update index.
+     *
+     * @return void
      */
     public function testOutOfBoundsQuery(): void
     {
@@ -366,14 +442,18 @@ class SegmentTreeTest extends TestCase
         $end = count($this->testArray);
 
         $this->expectException(OutOfBoundsException::class);
-        $this->expectExceptionMessage("Index out of bounds: start = $start, end = $end. 
-            Must be between 0 and " . (count($this->testArray) - 1));
+        $this->expectExceptionMessage(
+            "Index out of bounds: start = $start, end = $end. \n"
+            . "            Must be between 0 and " . (count($this->testArray) - 1)
+        );
 
         $segmentTree->query(0, count($this->testArray));  // expecting an exception
     }
 
     /**
      *  Test exception for invalid range update.
+     *
+     * @return void
      */
     public function testInvalidRangeUpdate(): void
     {

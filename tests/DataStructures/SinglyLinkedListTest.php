@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Test cases for singly linked list.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -12,6 +22,8 @@ class SinglyLinkedListTest extends TestCase
 {
     /**
      * Create a SinglyLinkedList node
+     *
+     * @param string $string
      *
      * @return SinglyLinkedList
      */
@@ -58,6 +70,9 @@ class SinglyLinkedListTest extends TestCase
      *
      * @dataProvider provideNodes
      *
+     * @param mixed $string
+     * @param mixed $expected
+     *
      * @return void
      */
     public function testIsPalindrome($string, $expected): void
@@ -68,6 +83,8 @@ class SinglyLinkedListTest extends TestCase
 
     /**
      * Supporting method for testing if a linked list is palindrome
+     *
+     * @param SinglyLinkedList $node
      *
      * @return bool
      */
@@ -90,6 +107,9 @@ class SinglyLinkedListTest extends TestCase
 
     /**
      * Supporting method for testing if a linked list is palindrome
+     *
+     * @param mixed $node
+     * @param string $data
      *
      * @return bool
      */
@@ -114,6 +134,8 @@ class SinglyLinkedListTest extends TestCase
 
     /**
      * Supporting method for testing if a linked list is palindrome
+     *
+     * @param SinglyLinkedList $node
      *
      * @return int
      */

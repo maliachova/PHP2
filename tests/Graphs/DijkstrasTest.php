@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Test cases for dijkstras.
+ *
+ * PHP version 8.2
+ *
+ * @category Graphs
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 namespace Graphs;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -9,8 +19,16 @@ require_once __DIR__ . '/../../Graphs/Dijkstras.php';
 use GraphEdge;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Test cases for dijkstras.
+ */
 class DijkstrasTest extends TestCase
 {
+    /**
+     * Test dijkstras.
+     *
+     * @return mixed
+     */
     public function testDijkstras()
     {
         $edgesRaw = [

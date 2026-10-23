@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Problem10.
+ *
+ * PHP version 8.2
+ *
+ * @category Maths
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /*
@@ -8,6 +18,11 @@ declare(strict_types=1);
  * Problem description:
  * The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
  * Find the sum of all the primes below two million.
+ */
+/**
+ * Problem10.
+ *
+ * @return int
  */
 function problem10(): int
 {

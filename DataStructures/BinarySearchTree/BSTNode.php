@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Bst node.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /*
@@ -14,6 +24,9 @@ declare(strict_types=1);
 
 namespace DataStructures\BinarySearchTree;
 
+/**
+ * Bst node class.
+ */
 class BSTNode
 {
     public ?BSTNode $left = null;
@@ -23,6 +36,8 @@ class BSTNode
     public ?BSTNode $parent = null;
 
     /**
+     * Construct.
+     *
      * @param int $key The key of the node.
      * @param mixed $value The associated value.
      */
@@ -30,17 +45,32 @@ class BSTNode
     {
     }
 
+    /**
+     * Is root.
+     *
+     * @return bool
+     */
     public function isRoot(): bool
     {
         return !$this->parent instanceof \DataStructures\BinarySearchTree\BSTNode;
     }
 
+    /**
+     * Is leaf.
+     *
+     * @return bool
+     */
     public function isLeaf(): bool
     {
         return !$this->left instanceof \DataStructures\BinarySearchTree\BSTNode
             && !$this->right instanceof \DataStructures\BinarySearchTree\BSTNode;
     }
 
+    /**
+     * Get children.
+     *
+     * @return array
+     */
     public function getChildren(): array
     {
         if ($this->isLeaf()) {
@@ -59,6 +89,11 @@ class BSTNode
         return $children;
     }
 
+    /**
+     * Get children count.
+     *
+     * @return int
+     */
     public function getChildrenCount(): int
     {
         return count($this->getChildren());

@@ -1,9 +1,21 @@
 <?php
 
+/**
+ * Insertion sort.
+ *
+ * PHP version 8.2
+ *
+ * @category Sorting
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
  * Insertion Sort
+ *
+ * @param array $array
  *
  * @return array
  */

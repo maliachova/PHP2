@@ -1,9 +1,21 @@
 <?php
 
+/**
+ * Fibonacci.
+ *
+ * PHP version 8.2
+ *
+ * @category Maths
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
  * Fibonacci recursive
+ *
+ * @param int $num
  *
  * @throws \Exception
  *
@@ -24,8 +36,13 @@ function fibonacciRecursive(int $num): array
 }
 
 /**
- * @return int|float
+ * Recursive.
+ *
+ * @param int $num
+ *
  * @throws \Exception
+ *
+ * @return int|float
  */
 function recursive(int $num): float|int
 {
@@ -40,6 +57,10 @@ function recursive(int $num): float|int
 }
 
 /**
+ * Fibonacci with binet formula.
+ *
+ * @param int $num
+ *
  * @throws \Exception
  *
  * @return int[]

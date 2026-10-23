@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Disjoint set.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /*
@@ -14,10 +24,15 @@ declare(strict_types=1);
 
 namespace DataStructures\DisjointSets;
 
+/**
+ * Disjoint set class.
+ */
 class DisjointSet
 {
     /**
      * Finds the representative of the set that contains the node.
+     *
+     * @param DisjointSetNode $node
      *
      * @return DisjointSetNode
      */
@@ -33,6 +48,9 @@ class DisjointSet
 
     /**
      * Unites the sets that contain x and y.
+     *
+     * @param DisjointSetNode $nodeX
+     * @param DisjointSetNode $nodeY
      *
      * @return void
      */

@@ -1,9 +1,23 @@
 <?php
 
+/**
+ * Check anagram.
+ *
+ * PHP version 8.2
+ *
+ * @category Strings
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /**
  * Checks if two strings are anagrams of each other.
+ *
+ * @param string $originalString
+ * @param string $testString
+ * @param bool $caseInsensitive
  *
  * @return bool
  */

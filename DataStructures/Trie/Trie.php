@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Trie.
+ *
+ * PHP version 8.2
+ *
+ * @category DataStructures
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /*
@@ -15,10 +25,16 @@ declare(strict_types=1);
 
 namespace DataStructures\Trie;
 
+/**
+ * Trie class.
+ */
 class Trie
 {
     private readonly TrieNode $root;
 
+    /**
+     * Construct.
+     */
     public function __construct()
     {
         $this->root = new TrieNode();
@@ -37,6 +53,8 @@ class Trie
     /**
      * Insert a word into the Trie.
      *
+     * @param string $word
+     *
      * @return void
      */
     public function insert(string $word): void
@@ -52,6 +70,8 @@ class Trie
 
     /**
      * Search for a word in the Trie.
+     *
+     * @param string $word
      *
      * @return bool
      */
@@ -73,6 +93,8 @@ class Trie
     /**
      * Find all words that start with a given prefix.
      *
+     * @param string $prefix
+     *
      * @return array
      */
     public function startsWith(string $prefix): array
@@ -93,6 +115,9 @@ class Trie
 
     /**
      * Helper function to find all words from a given node.
+     *
+     * @param TrieNode $node
+     * @param string $prefix
      *
      * @return array
      */

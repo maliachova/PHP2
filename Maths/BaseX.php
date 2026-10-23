@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Base x.
+ *
+ * PHP version 8.2
+ *
+ * @category Maths
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /*
@@ -14,6 +24,14 @@ declare(strict_types=1);
  * @return string The base-x representation of the given number
  * @author Sevada797 https://github.com/sevada797
 
+ */
+/**
+ * Base x.
+ *
+ * @param mixed $k
+ * @param mixed $x
+ *
+ * @return string
  */
 function baseX($k, $x): string
 {

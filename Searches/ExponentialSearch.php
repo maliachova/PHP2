@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Exponential search.
+ *
+ * PHP version 8.2
+ *
+ * @category Searches
+ * @license https://opensource.org/licenses/MIT MIT License
+ * @link https://github.com/TheAlgorithms/PHP
+ */
+
 declare(strict_types=1);
 
 /*
@@ -11,12 +21,15 @@ declare(strict_types=1);
  * In the second stage, a binary search is performed on this range.
  */
 /**
- * @param  int  $value
- * @param  int  $floor
- * @param  int  $ceiling
+ * Binary search.
+ *
+ * @param int $value
+ * @param int $floor
+ * @param int $ceiling
+ * @param array $arr
  *
  * @return int
- **/
+ */
 function binarySearch(array $arr, $value, $floor, $ceiling)
 {
     // Get $middle index
@@ -43,7 +56,10 @@ function binarySearch(array $arr, $value, $floor, $ceiling)
 }
 
 /**
- * @param  int  $value
+ * Exponential search.
+ *
+ * @param int $value
+ * @param array $arr
  *
  * @return int
  */
