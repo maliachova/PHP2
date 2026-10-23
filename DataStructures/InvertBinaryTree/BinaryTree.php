@@ -19,11 +19,11 @@ namespace DataStructures\InvertBinaryTree;
  */
 class BinaryTree
 {
-    private ?BinaryTree $left = null;
+    private ?BinaryTree $_left = null;
 
-    private ?BinaryTree $right = null;
+    private ?BinaryTree $_right = null;
 
-    private $value;
+    private $_value;
 
     /**
      * Set left.
@@ -34,7 +34,7 @@ class BinaryTree
      */
     public function setLeft(?BinaryTree $left): static
     {
-        $this->left = $left;
+        $this->_left = $left;
         return $this;
     }
 
@@ -45,7 +45,7 @@ class BinaryTree
      */
     public function getLeft(): ?BinaryTree
     {
-        return $this->left;
+        return $this->_left;
     }
 
     /**
@@ -57,7 +57,7 @@ class BinaryTree
      */
     public function setRight(?BinaryTree $right): static
     {
-        $this->right = $right;
+        $this->_right = $right;
         return $this;
     }
 
@@ -68,7 +68,7 @@ class BinaryTree
      */
     public function getRight(): ?BinaryTree
     {
-        return $this->right;
+        return $this->_right;
     }
 
     /**
@@ -80,7 +80,7 @@ class BinaryTree
      */
     public function setValue($value): static
     {
-        $this->value = $value;
+        $this->_value = $value;
         return $this;
     }
 
@@ -91,6 +91,6 @@ class BinaryTree
      */
     public function getValue()
     {
-        return $this->value;
+        return $this->_value;
     }
 }

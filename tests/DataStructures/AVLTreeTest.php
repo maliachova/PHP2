@@ -37,7 +37,7 @@ use ReflectionException;
  */
 class AVLTreeTest extends TestCase
 {
-    private AVLTree $tree;
+    private AVLTree $_tree;
 
     /**
      * Set up.
@@ -46,7 +46,7 @@ class AVLTreeTest extends TestCase
      */
     protected function setUp(): void
     {
-        $this->tree = new AVLTree();
+        $this->_tree = new AVLTree();
     }
 
     /**
@@ -54,12 +54,12 @@ class AVLTreeTest extends TestCase
      *
      * @return void
      */
-    private function populateTree(): void
+    private function _populateTree(): void
     {
-        $this->tree->insert(10, 'Value 10');
-        $this->tree->insert(20, 'Value 20');
-        $this->tree->insert(5, 'Value 5');
-        $this->tree->insert(15, 'Value 15');
+        $this->_tree->insert(10, 'Value 10');
+        $this->_tree->insert(20, 'Value 20');
+        $this->_tree->insert(5, 'Value 5');
+        $this->_tree->insert(15, 'Value 15');
     }
 
     /**
@@ -69,25 +69,25 @@ class AVLTreeTest extends TestCase
      */
     public function testInsertAndSearch(): void
     {
-        $this->populateTree();
+        $this->_populateTree();
 
         $this->assertEquals(
             'Value 10',
-            $this->tree->search(10),
+            $this->_tree->search(10),
             'Value for key 10 should be "Value 10"'
         );
         $this->assertEquals(
             'Value 20',
-            $this->tree->search(20),
+            $this->_tree->search(20),
             'Value for key 20 should be "Value 20"'
         );
         $this->assertEquals(
             'Value 5',
-            $this->tree->search(5),
+            $this->_tree->search(5),
             'Value for key 5 should be "Value 5"'
         );
         $this->assertNull(
-            $this->tree->search(25),
+            $this->_tree->search(25),
             'Value for non-existent key 25 should be null'
         );
     }
@@ -100,32 +100,32 @@ class AVLTreeTest extends TestCase
      */
     public function testDelete(): void
     {
-        $this->populateTree();
+        $this->_populateTree();
 
-        $this->tree->delete(20);
-        $this->tree->delete(5);
+        $this->_tree->delete(20);
+        $this->_tree->delete(5);
 
         $this->assertNull(
-            $this->tree->search(20),
+            $this->_tree->search(20),
             'Value for deleted key 20 should be null'
         );
         $this->assertNull(
-            $this->tree->search(5),
+            $this->_tree->search(5),
             'Value for deleted key 5 should be null'
         );
 
-        $this->tree->delete(50);
+        $this->_tree->delete(50);
 
         $this->assertNotNull(
-            $this->tree->search(10),
+            $this->_tree->search(10),
             'Value for key 10 should still exist'
         );
         $this->assertNotNull(
-            $this->tree->search(15),
+            $this->_tree->search(15),
             'Value for key 15 should still exist'
         );
         $this->assertNull(
-            $this->tree->search(50),
+            $this->_tree->search(50),
             'Value for non-existent key 50 should be null'
         );
 
@@ -134,7 +134,7 @@ class AVLTreeTest extends TestCase
             [15 => 'Value 15']
         ];
 
-        $result = TreeTraversal::inOrder($this->tree->getRoot());
+        $result = TreeTraversal::inOrder($this->_tree->getRoot());
         $this->assertEquals(
             $expectedInOrderAfterDelete,
             $result,
@@ -149,7 +149,7 @@ class AVLTreeTest extends TestCase
      */
     public function testInOrderTraversal(): void
     {
-        $this->populateTree();
+        $this->_populateTree();
 
         $expectedInOrder = [
             [5 => 'Value 5'],
@@ -158,7 +158,7 @@ class AVLTreeTest extends TestCase
             [20 => 'Value 20']
         ];
 
-        $result = $this->tree->inOrderTraversal();
+        $result = $this->_tree->inOrderTraversal();
         $this->assertEquals(
             $expectedInOrder,
             $result,
@@ -173,7 +173,7 @@ class AVLTreeTest extends TestCase
      */
     public function testPreOrderTraversal(): void
     {
-        $this->populateTree();
+        $this->_populateTree();
 
         $expectedPreOrder = [
             [10 => 'Value 10'],
@@ -182,7 +182,7 @@ class AVLTreeTest extends TestCase
             [15 => 'Value 15']
         ];
 
-        $result = $this->tree->preOrderTraversal();
+        $result = $this->_tree->preOrderTraversal();
         $this->assertEquals(
             $expectedPreOrder,
             $result,
@@ -197,7 +197,7 @@ class AVLTreeTest extends TestCase
      */
     public function testPostOrderTraversal(): void
     {
-        $this->populateTree();
+        $this->_populateTree();
 
         $expectedPostOrder = [
             [5 => 'Value 5'],
@@ -206,7 +206,7 @@ class AVLTreeTest extends TestCase
             [10 => 'Value 10']
         ];
 
-        $result = TreeTraversal::postOrder($this->tree->getRoot());
+        $result = TreeTraversal::postOrder($this->_tree->getRoot());
         $this->assertEquals(
             $expectedPostOrder,
             $result,
@@ -221,7 +221,7 @@ class AVLTreeTest extends TestCase
      */
     public function testBreadthFirstTraversal(): void
     {
-        $this->populateTree();
+        $this->_populateTree();
 
         $expectedBFT = [
             [10 => 'Value 10'],
@@ -230,7 +230,7 @@ class AVLTreeTest extends TestCase
             [15 => 'Value 15']
         ];
 
-        $result = TreeTraversal::breadthFirst($this->tree->getRoot());
+        $result = TreeTraversal::breadthFirst($this->_tree->getRoot());
         $this->assertEquals(
             $expectedBFT,
             $result,
@@ -245,17 +245,17 @@ class AVLTreeTest extends TestCase
      */
     public function testInsertAndDeleteSingleNode(): void
     {
-        $this->tree = new AVLTree();
+        $this->_tree = new AVLTree();
 
-        $this->tree->insert(1, 'One');
+        $this->_tree->insert(1, 'One');
         $this->assertEquals(
             'One',
-            $this->tree->search(1),
+            $this->_tree->search(1),
             'Value for key 1 should be "One"'
         );
-        $this->tree->delete(1);
+        $this->_tree->delete(1);
         $this->assertNull(
-            $this->tree->search(1),
+            $this->_tree->search(1),
             'Value for key 1 should be null after deletion'
         );
     }
@@ -267,11 +267,11 @@ class AVLTreeTest extends TestCase
      */
     public function testDeleteFromEmptyTree(): void
     {
-        $this->tree = new AVLTree();
+        $this->_tree = new AVLTree();
 
-        $this->tree->delete(1);
+        $this->_tree->delete(1);
         $this->assertNull(
-            $this->tree->search(1),
+            $this->_tree->search(1),
             'Value for key 1 should be null as it was never inserted'
         );
     }
@@ -283,13 +283,13 @@ class AVLTreeTest extends TestCase
      */
     public function testInsertDuplicateKeys(): void
     {
-        $this->tree = new AVLTree();
+        $this->_tree = new AVLTree();
 
-        $this->tree->insert(1, 'One');
-        $this->tree->insert(1, 'One Updated');
+        $this->_tree->insert(1, 'One');
+        $this->_tree->insert(1, 'One Updated');
         $this->assertEquals(
             'One Updated',
-            $this->tree->search(1),
+            $this->_tree->search(1),
             'Value for key 1 should be "One Updated" after updating'
         );
     }
@@ -303,23 +303,23 @@ class AVLTreeTest extends TestCase
     {
         // Inserting a large number of nodes
         for ($i = 1; $i <= 1000; $i++) {
-            $this->tree->insert($i, "Value $i");
+            $this->_tree->insert($i, "Value $i");
         }
 
         // Verify that all inserted nodes can be searched
         for ($i = 1; $i <= 1000; $i++) {
             $this->assertEquals(
                 "Value $i",
-                $this->tree->search($i),
+                $this->_tree->search($i),
                 "Value for key $i should be 'Value $i'"
             );
         }
 
         // Verify that all inserted nodes can be deleted
         for ($i = 1; $i <= 5; $i++) {
-            $this->tree->delete($i);
+            $this->_tree->delete($i);
             $this->assertNull(
-                $this->tree->search($i),
+                $this->_tree->search($i),
                 "Value for key $i should be null after deletion"
             );
         }
@@ -332,15 +332,15 @@ class AVLTreeTest extends TestCase
      */
     public function testBalance(): void
     {
-        $this->populateTree();
+        $this->_populateTree();
 
         // Perform operations that may unbalance the tree
-        $this->tree->insert(30, 'Value 30');
-        $this->tree->insert(25, 'Value 25');
+        $this->_tree->insert(30, 'Value 30');
+        $this->_tree->insert(25, 'Value 25');
 
         // After insertions, check the balance
         $this->assertTrue(
-            $this->tree->isBalanced(),
+            $this->_tree->isBalanced(),
             'Tree should be balanced after insertions'
         );
     }
@@ -352,13 +352,13 @@ class AVLTreeTest extends TestCase
      */
     public function testRightRotation(): void
     {
-        $this->populateTreeForRightRotation();
+        $this->_populateTreeForRightRotation();
 
         // Insert a node that will trigger a right rotation
-        $this->tree->insert(40, 'Value 40');
+        $this->_tree->insert(40, 'Value 40');
 
         // Verify the tree structure after rotation
-        $root = $this->tree->getRoot();
+        $root = $this->_tree->getRoot();
         $this->assertEquals(
             20,
             $root->key,
@@ -377,13 +377,13 @@ class AVLTreeTest extends TestCase
      *
      * @return void
      */
-    private function populateTreeForRightRotation(): void
+    private function _populateTreeForRightRotation(): void
     {
         // Insert nodes in a way that requires a right rotation
-        $this->tree->insert(10, 'Value 10');
-        $this->tree->insert(20, 'Value 20');
+        $this->_tree->insert(10, 'Value 10');
+        $this->_tree->insert(20, 'Value 20');
         // This should trigger a right rotation around 10
-        $this->tree->insert(30, 'Value 30');
+        $this->_tree->insert(30, 'Value 30');
     }
 
     /**
@@ -393,13 +393,13 @@ class AVLTreeTest extends TestCase
      */
     public function testLeftRotation(): void
     {
-        $this->populateTreeForLeftRotation();
+        $this->_populateTreeForLeftRotation();
 
         // Insert a node that will trigger a left rotation
-        $this->tree->insert(5, 'Value 5');
+        $this->_tree->insert(5, 'Value 5');
 
         // Verify the tree structure after rotation
-        $root = $this->tree->getRoot();
+        $root = $this->_tree->getRoot();
         $this->assertEquals(20, $root->key, 'Root should be 20 after left rotation');
         $this->assertEquals(10, $root->left->key, 'Left child of root should be 10');
         $this->assertEquals(
@@ -414,12 +414,12 @@ class AVLTreeTest extends TestCase
      *
      * @return void
      */
-    private function populateTreeForLeftRotation(): void
+    private function _populateTreeForLeftRotation(): void
     {
-        $this->tree->insert(30, 'Value 30');
-        $this->tree->insert(20, 'Value 20');
+        $this->_tree->insert(30, 'Value 30');
+        $this->_tree->insert(20, 'Value 20');
         // This should trigger a left rotation around 30
-        $this->tree->insert(10, 'Value 10');
+        $this->_tree->insert(10, 'Value 10');
     }
 
     /**
@@ -431,14 +431,14 @@ class AVLTreeTest extends TestCase
      */
     public function testGetMinNode(): void
     {
-        $this->populateTree();
+        $this->_populateTree();
 
         // Using Reflection to access the private getMinNode method
-        $reflection = new ReflectionClass($this->tree);
-        $method = $reflection->getMethod('getMinNode');
+        $reflection = new ReflectionClass($this->_tree);
+        $method = $reflection->getMethod('_getMinNode');
         $method->setAccessible(true);
 
-        $minNode = $method->invoke($this->tree, $this->tree->getRoot());
+        $minNode = $method->invoke($this->_tree, $this->_tree->getRoot());
 
         // Verify the minimum node
         $this->assertEquals(5, $minNode->key, 'Minimum key in the tree should be 5');
@@ -456,25 +456,25 @@ class AVLTreeTest extends TestCase
      */
     public function testSizeAfterInsertions(): void
     {
-        $this->tree = new AVLTree();
+        $this->_tree = new AVLTree();
 
-        $this->assertEquals(0, $this->tree->size(), 'Size should be 0 initially');
+        $this->assertEquals(0, $this->_tree->size(), 'Size should be 0 initially');
 
-        $this->tree->insert(10, 'Value 10');
-        $this->tree->insert(20, 'Value 20');
-        $this->tree->insert(5, 'Value 5');
+        $this->_tree->insert(10, 'Value 10');
+        $this->_tree->insert(20, 'Value 20');
+        $this->_tree->insert(5, 'Value 5');
 
         $this->assertEquals(
             3,
-            $this->tree->size(),
+            $this->_tree->size(),
             'Size should be 3 after 3 insertions'
         );
 
-        $this->tree->delete(20);
+        $this->_tree->delete(20);
 
         $this->assertEquals(
             2,
-            $this->tree->size(),
+            $this->_tree->size(),
             'Size should be 2 after deleting 1 node'
         );
     }
@@ -486,26 +486,26 @@ class AVLTreeTest extends TestCase
      */
     public function testSizeAfterMultipleInsertionsAndDeletions(): void
     {
-        $this->tree = new AVLTree();
+        $this->_tree = new AVLTree();
 
         // Insert nodes
         for ($i = 1; $i <= 10; $i++) {
-            $this->tree->insert($i, "Value $i");
+            $this->_tree->insert($i, "Value $i");
         }
 
         $this->assertEquals(
             10,
-            $this->tree->size(),
+            $this->_tree->size(),
             'Size should be 10 after 10 insertions'
         );
 
         for ($i = 1; $i <= 5; $i++) {
-            $this->tree->delete($i);
+            $this->_tree->delete($i);
         }
 
         $this->assertEquals(
             5,
-            $this->tree->size(),
+            $this->_tree->size(),
             'Size should be 5 after deleting 5 nodes'
         );
     }
@@ -517,10 +517,10 @@ class AVLTreeTest extends TestCase
      */
     public function testSizeOnEmptyTree(): void
     {
-        $this->tree = new AVLTree();
+        $this->_tree = new AVLTree();
         $this->assertEquals(
             0,
-            $this->tree->size(),
+            $this->_tree->size(),
             'Size should be 0 for an empty tree'
         );
     }

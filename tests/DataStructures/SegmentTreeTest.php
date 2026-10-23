@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  */
 class SegmentTreeTest extends TestCase
 {
-    private array $testArray;
+    private array $_testArray;
 
     /**
      * Set up.
@@ -44,7 +44,7 @@ class SegmentTreeTest extends TestCase
      */
     protected function setUp(): void
     {
-        $this->testArray = [
+        $this->_testArray = [
             1, 3, 5, 7, 9, 11, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
         ];
     }
@@ -82,7 +82,7 @@ class SegmentTreeTest extends TestCase
         int $endIndex
     ): void {
         // Test the default case: sum query
-        $segmentTree = new SegmentTree($this->testArray);
+        $segmentTree = new SegmentTree($this->_testArray);
         $this->assertEquals(
             $expected,
             $segmentTree->query($startIndex, $endIndex),
@@ -122,7 +122,7 @@ class SegmentTreeTest extends TestCase
         int $startIndex,
         int $endIndex
     ): void {
-        $segmentTree = new SegmentTree($this->testArray, fn($a, $b) => max($a, $b));
+        $segmentTree = new SegmentTree($this->_testArray, fn($a, $b) => max($a, $b));
         $this->assertEquals(
             $expected,
             $segmentTree->query($startIndex, $endIndex),
@@ -162,7 +162,7 @@ class SegmentTreeTest extends TestCase
         int $startIndex,
         int $endIndex
     ): void {
-        $segmentTree = new SegmentTree($this->testArray, function ($a, $b) {
+        $segmentTree = new SegmentTree($this->_testArray, function ($a, $b) {
             return min($a, $b);
         });
         $this->assertEquals(
@@ -181,7 +181,7 @@ class SegmentTreeTest extends TestCase
     public function testSegmentTreeUpdate(): void
     {
         // Sum Query
-        $segmentTreeSum = new SegmentTree($this->testArray);
+        $segmentTreeSum = new SegmentTree($this->_testArray);
         $segmentTreeSum->update(2, 10);  // Update index 2 to 10
         $this->assertEquals(
             29,
@@ -191,7 +191,7 @@ class SegmentTreeTest extends TestCase
 
         // Max Query: with callback
         $segmentTreeMax = new SegmentTree(
-            $this->testArray,
+            $this->_testArray,
             fn($a, $b) => max($a, $b)
         );
         $segmentTreeMax->update(12, -1);  // Update index 12 to -1
@@ -203,7 +203,7 @@ class SegmentTreeTest extends TestCase
 
         // Min Query: with callback
         $segmentTreeMin = new SegmentTree(
-            $this->testArray,
+            $this->_testArray,
             fn($a, $b) => min($a, $b)
         );
         $segmentTreeMin->update(9, -5);  // Update index 9 to -5
@@ -222,7 +222,7 @@ class SegmentTreeTest extends TestCase
     public function testSegmentTreeRangeUpdate(): void
     {
         // Sum Query
-        $segmentTreeSum = new SegmentTree($this->testArray);
+        $segmentTreeSum = new SegmentTree($this->_testArray);
         $segmentTreeSum->rangeUpdate(3, 7, 0);      // Set indices 3 to 7 to 0
         $this->assertEquals(
             55,
@@ -232,7 +232,7 @@ class SegmentTreeTest extends TestCase
 
         // Max Query: with callback
         $segmentTreeMax = new SegmentTree(
-            $this->testArray,
+            $this->_testArray,
             fn($a, $b) => max($a, $b)
         );
         $segmentTreeMax->rangeUpdate(3, 7, 0);      // Set indices 3 to 7 to 0
@@ -244,7 +244,7 @@ class SegmentTreeTest extends TestCase
 
         // Min Query: with callback
         $segmentTreeMin = new SegmentTree(
-            $this->testArray,
+            $this->_testArray,
             fn($a, $b) => min($a, $b)
         );
         $segmentTreeMin->rangeUpdate(3, 9, 0);      // Set indices 3 to 9 to 0
@@ -262,18 +262,18 @@ class SegmentTreeTest extends TestCase
      */
     public function testGetCurrentArray(): void
     {
-        $segmentTree = new SegmentTree($this->testArray);
+        $segmentTree = new SegmentTree($this->_testArray);
 
         // Ensure the initial array matches the input array
         $this->assertEquals(
-            $this->testArray,
+            $this->_testArray,
             $segmentTree->getCurrentArray(),
             "getCurrentArray() should return the initial array."
         );
 
         // Perform an update and test again
         $segmentTree->update(2, 10);  // Update index 2 to 10
-        $updatedArray = $this->testArray;
+        $updatedArray = $this->_testArray;
         $updatedArray[2] = 10;
 
         $this->assertEquals(
@@ -290,7 +290,7 @@ class SegmentTreeTest extends TestCase
      */
     public function testSegmentTreeSerialization(): void
     {
-        $segmentTree = new SegmentTree($this->testArray);
+        $segmentTree = new SegmentTree($this->_testArray);
         $serialized = $segmentTree->serialize();
 
         $deserializedTree = SegmentTree::deserialize($serialized);
@@ -308,20 +308,21 @@ class SegmentTreeTest extends TestCase
      */
     public function testEdgeCases(): void
     {
-        $segmentTree = new SegmentTree($this->testArray);
+        $segmentTree = new SegmentTree($this->_testArray);
         $firstIndex = 0;
-        $lastIndex = count($this->testArray) - 1;
+        $lastIndex = count($this->_testArray) - 1;
 
         // Test querying the first and last indices
         $this->assertEquals(
-            $this->testArray[$firstIndex],
+            $this->_testArray[$firstIndex],
             $segmentTree->query($firstIndex, $firstIndex),
-            "Query at the first index should return {$this->testArray[$firstIndex]}."
+            "Query at the first index should return "
+            . "{$this->_testArray[$firstIndex]}."
         );
         $this->assertEquals(
-            $this->testArray[$lastIndex],
+            $this->_testArray[$lastIndex],
             $segmentTree->query($lastIndex, $lastIndex),
-            "Query at the last index should return {$this->testArray[$lastIndex]}."
+            "Query at the last index should return {$this->_testArray[$lastIndex]}."
         );
 
 
@@ -331,7 +332,7 @@ class SegmentTreeTest extends TestCase
             100,
             $segmentTree->query($firstIndex, $firstIndex),
             "After update, query at the first index should return " .
-            "{$this->testArray[$firstIndex]}."
+            "{$this->_testArray[$firstIndex]}."
         );
 
         // Test updating the last index
@@ -340,7 +341,7 @@ class SegmentTreeTest extends TestCase
             200,
             $segmentTree->query($lastIndex, $lastIndex),
             "After update, query at the last index should return " .
-            "{$this->testArray[$lastIndex]}."
+            "{$this->_testArray[$lastIndex]}."
         );
 
         // Test range update that includes the first index
@@ -372,8 +373,8 @@ class SegmentTreeTest extends TestCase
         $this->assertEquals(
             10,
             $segmentTree->query(
-                count($this->testArray) - 2,
-                count($this->testArray) - 2
+                count($this->_testArray) - 2,
+                count($this->_testArray) - 2
             ),
             "After range update, query at the second last index should return 10."
         );
@@ -414,15 +415,15 @@ class SegmentTreeTest extends TestCase
      */
     public function testInvalidUpdateIndex(): void
     {
-        $segmentTree = new SegmentTree($this->testArray);
+        $segmentTree = new SegmentTree($this->_testArray);
 
-        $index = count($this->testArray) + 5;
+        $index = count($this->_testArray) + 5;
 
         // Expect an exception for range update with invalid indices
         $this->expectException(OutOfBoundsException::class);
         $this->expectExceptionMessage(
             "Index out of bounds: $index. Must be between 0 and "
-            . (count($this->testArray) - 1)
+            . (count($this->_testArray) - 1)
         );
 
         // non-existing index, should trigger exception
@@ -436,18 +437,18 @@ class SegmentTreeTest extends TestCase
      */
     public function testOutOfBoundsQuery(): void
     {
-        $segmentTree = new SegmentTree($this->testArray);
+        $segmentTree = new SegmentTree($this->_testArray);
 
         $start = 0;
-        $end = count($this->testArray);
+        $end = count($this->_testArray);
 
         $this->expectException(OutOfBoundsException::class);
         $this->expectExceptionMessage(
             "Index out of bounds: start = $start, end = $end. \n"
-            . "            Must be between 0 and " . (count($this->testArray) - 1)
+            . "            Must be between 0 and " . (count($this->_testArray) - 1)
         );
 
-        $segmentTree->query(0, count($this->testArray));  // expecting an exception
+        $segmentTree->query(0, count($this->_testArray));  // expecting an exception
     }
 
     /**
@@ -457,7 +458,7 @@ class SegmentTreeTest extends TestCase
      */
     public function testInvalidRangeUpdate(): void
     {
-        $segmentTree = new SegmentTree($this->testArray);
+        $segmentTree = new SegmentTree($this->_testArray);
 
         $start = -1;
         $end = 5;

@@ -62,7 +62,7 @@ abstract class SplayTreeRotations
      */
     protected function zig(SplayTreeNode $node): SplayTreeNode
     {
-        return $this->rotateRight($node);
+        return $this->_rotateRight($node);
     }
 
     /**
@@ -76,7 +76,7 @@ abstract class SplayTreeRotations
      */
     protected function zag(SplayTreeNode $node): SplayTreeNode
     {
-        return $this->rotateLeft($node);
+        return $this->_rotateLeft($node);
     }
 
     /**
@@ -92,8 +92,8 @@ abstract class SplayTreeRotations
      */
     protected function zigZig(SplayTreeNode $node): SplayTreeNode
     {
-        $node = $this->rotateRight($node);
-        return $this->rotateRight($node);
+        $node = $this->_rotateRight($node);
+        return $this->_rotateRight($node);
     }
 
     /**
@@ -109,8 +109,8 @@ abstract class SplayTreeRotations
      */
     protected function zagZag(SplayTreeNode $node): SplayTreeNode
     {
-        $node = $this->rotateLeft($node);
-        return $this->rotateLeft($node);
+        $node = $this->_rotateLeft($node);
+        return $this->_rotateLeft($node);
     }
 
     /**
@@ -126,8 +126,8 @@ abstract class SplayTreeRotations
      */
     protected function zigZag(SplayTreeNode $node): SplayTreeNode
     {
-        $node->left = $this->rotateLeft($node->left);
-        return $this->rotateRight($node);
+        $node->left = $this->_rotateLeft($node->left);
+        return $this->_rotateRight($node);
     }
 
     /**
@@ -143,8 +143,8 @@ abstract class SplayTreeRotations
      */
     protected function zagZig(SplayTreeNode $node): SplayTreeNode
     {
-        $node->right = $this->rotateRight($node->right);
-        return $this->rotateLeft($node);
+        $node->right = $this->_rotateRight($node->right);
+        return $this->_rotateLeft($node);
     }
 
     /**
@@ -158,7 +158,7 @@ abstract class SplayTreeRotations
      * @return SplayTreeNode The new root of the subtree after the rotation (the
      * former right child).
      */
-    private function rotateLeft(SplayTreeNode $node): SplayTreeNode
+    private function _rotateLeft(SplayTreeNode $node): SplayTreeNode
     {
         $rightChild = $node->right;
 
@@ -199,7 +199,7 @@ abstract class SplayTreeRotations
      * @return SplayTreeNode The new root of the subtree after the rotation (the
      * former left child).
      */
-    private function rotateRight(SplayTreeNode $node): SplayTreeNode
+    private function _rotateRight(SplayTreeNode $node): SplayTreeNode
     {
         $leftChild = $node->left;
 

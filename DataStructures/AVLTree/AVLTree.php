@@ -30,9 +30,9 @@ namespace DataStructures\AVLTree;
  */
 class AVLTree
 {
-    private ?AVLTreeNode $root = null;
+    private ?AVLTreeNode $_root = null;
 
-    private int $counter = 0;
+    private int $_counter = 0;
 
     /**
      * Get the root node of the AVL Tree.
@@ -41,7 +41,7 @@ class AVLTree
      */
     public function getRoot(): ?AVLTreeNode
     {
-        return $this->root;
+        return $this->_root;
     }
 
     /**
@@ -53,7 +53,7 @@ class AVLTree
      */
     public function getNode(mixed $key): ?AVLTreeNode
     {
-        return $this->searchNode($this->root, $key);
+        return $this->_searchNode($this->_root, $key);
     }
 
     /**
@@ -63,7 +63,7 @@ class AVLTree
      */
     public function size(): int
     {
-        return $this->counter;
+        return $this->_counter;
     }
 
     /**
@@ -76,8 +76,8 @@ class AVLTree
      */
     public function insert(mixed $key, mixed $value): void
     {
-        $this->root = $this->insertNode($this->root, $key, $value);
-        $this->counter++;
+        $this->_root = $this->_insertNode($this->_root, $key, $value);
+        $this->_counter++;
     }
 
     /**
@@ -89,8 +89,8 @@ class AVLTree
      */
     public function delete(mixed $key): void
     {
-        $this->root = $this->deleteNode($this->root, $key);
-        $this->counter--;
+        $this->_root = $this->_deleteNode($this->_root, $key);
+        $this->_counter--;
     }
 
     /**
@@ -102,7 +102,7 @@ class AVLTree
      */
     public function search(mixed $key)
     {
-        $node = $this->searchNode($this->root, $key);
+        $node = $this->_searchNode($this->_root, $key);
         return $node instanceof \DataStructures\AVLTree\AVLTreeNode
             ? $node->value
             : null;
@@ -117,7 +117,7 @@ class AVLTree
      */
     public function inOrderTraversal(): array
     {
-        return TreeTraversal::inOrder($this->root);
+        return TreeTraversal::inOrder($this->_root);
     }
 
     /**
@@ -129,7 +129,7 @@ class AVLTree
      */
     public function preOrderTraversal(): array
     {
-        return TreeTraversal::preOrder($this->root);
+        return TreeTraversal::preOrder($this->_root);
     }
 
     /**
@@ -141,7 +141,7 @@ class AVLTree
      */
     public function postOrderTraversal(): array
     {
-        return TreeTraversal::postOrder($this->root);
+        return TreeTraversal::postOrder($this->_root);
     }
 
     /**
@@ -151,7 +151,7 @@ class AVLTree
      */
     public function breadthFirstTraversal(): array
     {
-        return TreeTraversal::breadthFirst($this->root);
+        return TreeTraversal::breadthFirst($this->_root);
     }
 
     /**
@@ -162,7 +162,7 @@ class AVLTree
      */
     public function isBalanced(): bool
     {
-        return $this->isBalancedHelper($this->root);
+        return $this->_isBalancedHelper($this->_root);
     }
 
     /**
@@ -174,7 +174,7 @@ class AVLTree
      *
      * @return AVLTreeNode The new root of the subtree.
      */
-    private function insertNode(
+    private function _insertNode(
         ?AVLTreeNode $node,
         mixed $key,
         mixed $value
@@ -184,15 +184,15 @@ class AVLTree
         }
 
         if ($key < $node->key) {
-            $node->left = $this->insertNode($node->left, $key, $value);
+            $node->left = $this->_insertNode($node->left, $key, $value);
         } elseif ($key > $node->key) {
-            $node->right = $this->insertNode($node->right, $key, $value);
+            $node->right = $this->_insertNode($node->right, $key, $value);
         } else {
             $node->value = $value; // Update existing value
         }
 
         $node->updateHeight();
-        return $this->balance($node);
+        return $this->_balance($node);
     }
 
     /**
@@ -203,16 +203,16 @@ class AVLTree
      *
      * @return ?AVLTreeNode The new root of the subtree.
      */
-    private function deleteNode(?AVLTreeNode $node, mixed $key): ?AVLTreeNode
+    private function _deleteNode(?AVLTreeNode $node, mixed $key): ?AVLTreeNode
     {
         if (!$node instanceof \DataStructures\AVLTree\AVLTreeNode) {
             return null;
         }
 
         if ($key < $node->key) {
-            $node->left = $this->deleteNode($node->left, $key);
+            $node->left = $this->_deleteNode($node->left, $key);
         } elseif ($key > $node->key) {
-            $node->right = $this->deleteNode($node->right, $key);
+            $node->right = $this->_deleteNode($node->right, $key);
         } else {
             if (!$node->left instanceof \DataStructures\AVLTree\AVLTreeNode) {
                 return $node->right;
@@ -222,14 +222,14 @@ class AVLTree
                 return $node->left;
             }
 
-            $minNode = $this->getMinNode($node->right);
+            $minNode = $this->_getMinNode($node->right);
             $node->key = $minNode->key;
             $node->value = $minNode->value;
-            $node->right = $this->deleteNode($node->right, $minNode->key);
+            $node->right = $this->_deleteNode($node->right, $minNode->key);
         }
 
         $node->updateHeight();
-        return $this->balance($node);
+        return $this->_balance($node);
     }
 
     /**
@@ -240,17 +240,17 @@ class AVLTree
      *
      * @return ?AVLTreeNode The node with the specified key, or null if not found.
      */
-    private function searchNode(?AVLTreeNode $node, mixed $key): ?AVLTreeNode
+    private function _searchNode(?AVLTreeNode $node, mixed $key): ?AVLTreeNode
     {
         if (!$node instanceof \DataStructures\AVLTree\AVLTreeNode) {
             return null;
         }
         if ($key < $node->key) {
-            return $this->searchNode($node->left, $key);
+            return $this->_searchNode($node->left, $key);
         }
 
         if ($key > $node->key) {
-            return $this->searchNode($node->right, $key);
+            return $this->_searchNode($node->right, $key);
         } else {
             return $node;
         }
@@ -263,7 +263,7 @@ class AVLTree
      *
      * @return bool True if the subtree is balanced, false otherwise.
      */
-    private function isBalancedHelper(?AVLTreeNode $node): bool
+    private function _isBalancedHelper(?AVLTreeNode $node): bool
     {
         if (!$node instanceof \DataStructures\AVLTree\AVLTreeNode) {
             return true;
@@ -281,7 +281,7 @@ class AVLTree
             return false;
         }
 
-        return $this->isBalancedHelper($node->left) && $this->isBalancedHelper(
+        return $this->_isBalancedHelper($node->left) && $this->_isBalancedHelper(
             $node->right
         );
     }
@@ -293,22 +293,22 @@ class AVLTree
      *
      * @return ?AVLTreeNode The new root of the subtree.
      */
-    private function balance(?AVLTreeNode $node): ?AVLTreeNode
+    private function _balance(?AVLTreeNode $node): ?AVLTreeNode
     {
         if ($node->balanceFactor() > 1) {
             if ($node->left && $node->left->balanceFactor() < 0) {
-                $node->left = $this->rotateLeft($node->left);
+                $node->left = $this->_rotateLeft($node->left);
             }
 
-            return $this->rotateRight($node);
+            return $this->_rotateRight($node);
         }
 
         if ($node->balanceFactor() < -1) {
             if ($node->right && $node->right->balanceFactor() > 0) {
-                $node->right = $this->rotateRight($node->right);
+                $node->right = $this->_rotateRight($node->right);
             }
 
-            return $this->rotateLeft($node);
+            return $this->_rotateLeft($node);
         }
 
         return $node;
@@ -321,7 +321,7 @@ class AVLTree
      *
      * @return AVLTreeNode The new root of the rotated subtree.
      */
-    private function rotateLeft(AVLTreeNode $node): AVLTreeNode
+    private function _rotateLeft(AVLTreeNode $node): AVLTreeNode
     {
         $newRoot = $node->right;
         $node->right = $newRoot->left;
@@ -340,7 +340,7 @@ class AVLTree
      *
      * @return AVLTreeNode The new root of the rotated subtree.
      */
-    private function rotateRight(AVLTreeNode $node): AVLTreeNode
+    private function _rotateRight(AVLTreeNode $node): AVLTreeNode
     {
         $newRoot = $node->left;
         $node->left = $newRoot->right;
@@ -359,7 +359,7 @@ class AVLTree
      *
      * @return AVLTreeNode The node with the minimum key.
      */
-    private function getMinNode(AVLTreeNode $node): AVLTreeNode
+    private function _getMinNode(AVLTreeNode $node): AVLTreeNode
     {
         while ($node->left instanceof \DataStructures\AVLTree\AVLTreeNode) {
             $node = $node->left;
@@ -375,7 +375,7 @@ class AVLTree
      */
     public function serialize(): string
     {
-        return json_encode($this->serializeTree($this->root));
+        return json_encode($this->_serializeTree($this->_root));
     }
 
     /**
@@ -385,7 +385,7 @@ class AVLTree
      *
      * @return array
      */
-    private function serializeTree(?AVLTreeNode $node): array
+    private function _serializeTree(?AVLTreeNode $node): array
     {
         if (!$node instanceof \DataStructures\AVLTree\AVLTreeNode) {
             return [];
@@ -394,8 +394,8 @@ class AVLTree
         return [
             'key' => $node->key,
             'value' => $node->value,
-            'left' => $this->serializeTree($node->left),
-            'right' => $this->serializeTree($node->right),
+            'left' => $this->_serializeTree($node->left),
+            'right' => $this->_serializeTree($node->right),
             'height' => $node->height,
         ];
     }
@@ -409,9 +409,9 @@ class AVLTree
      */
     public function deserialize(string $data): void
     {
-        $this->root = $this->deserializeTree(json_decode($data, true));
-        $this->counter = 0;
-        $this->updateNodeCount($this->root);
+        $this->_root = $this->_deserializeTree(json_decode($data, true));
+        $this->_counter = 0;
+        $this->_updateNodeCount($this->_root);
     }
 
     /**
@@ -421,7 +421,7 @@ class AVLTree
      *
      * @return AVLTreeNode|null The root node of the deserialized tree.
      */
-    private function deserializeTree(array $data): ?AVLTreeNode
+    private function _deserializeTree(array $data): ?AVLTreeNode
     {
         if ($data === []) {
             return null;
@@ -430,8 +430,8 @@ class AVLTree
         $node = new AVLTreeNode($data['key'], $data['value']);
         $node->height = $data['height'];
 
-        $node->left = $this->deserializeTree($data['left']);
-        $node->right = $this->deserializeTree($data['right']);
+        $node->left = $this->_deserializeTree($data['left']);
+        $node->right = $this->_deserializeTree($data['right']);
 
         return $node;
     }
@@ -443,12 +443,12 @@ class AVLTree
      *
      * @return void
      */
-    private function updateNodeCount(?AVLTreeNode $node): void
+    private function _updateNodeCount(?AVLTreeNode $node): void
     {
         if ($node instanceof \DataStructures\AVLTree\AVLTreeNode) {
-            $this->counter++;
-            $this->updateNodeCount($node->left);
-            $this->updateNodeCount($node->right);
+            $this->_counter++;
+            $this->_updateNodeCount($node->left);
+            $this->_updateNodeCount($node->right);
         }
     }
 }

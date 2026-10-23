@@ -34,7 +34,7 @@ use Iterator;
  */
 class BinaryTreeTraversal implements Iterator
 {
-    private array $iterationNodes = [];
+    private array $_iterationNodes = [];
 
     // To store nodes for iteration
     protected const IN_ORDER = 'inOrder';
@@ -45,7 +45,7 @@ class BinaryTreeTraversal implements Iterator
 
     protected string $traversalType;
 
-    private int $currentPosition = 0;
+    private int $_currentPosition = 0;
 
     /**
      * Helps switch traversal type of the binary tree for the Iterator interface
@@ -67,12 +67,12 @@ class BinaryTreeTraversal implements Iterator
      *
      * @return void
      */
-    private function loadTraversedNodes(): void
+    private function _loadTraversedNodes(): void
     {
         match ($this->traversalType) {
-            self::PRE_ORDER => $this->preOrderIterator(static::getRoot()),
-            self::POST_ORDER => $this->postOrderIterator(static::getRoot()),
-            default => $this->inOrderIterator(static::getRoot()),
+            self::PRE_ORDER => $this->_preOrderIterator(static::getRoot()),
+            self::POST_ORDER => $this->_postOrderIterator(static::getRoot()),
+            default => $this->_inOrderIterator(static::getRoot()),
         };
     }
 
@@ -173,11 +173,11 @@ class BinaryTreeTraversal implements Iterator
      */
     public function rewind(): void
     {
-        $this->iterationNodes = [];
-        $this->currentPosition = 0;
+        $this->_iterationNodes = [];
+        $this->_currentPosition = 0;
 
         // Load nodes based on traversal type
-        $this->loadTraversedNodes();
+        $this->_loadTraversedNodes();
     }
 
     /**
@@ -187,7 +187,7 @@ class BinaryTreeTraversal implements Iterator
      */
     public function current(): ?BSTNode
     {
-        return $this->iterationNodes[$this->currentPosition] ?? null;
+        return $this->_iterationNodes[$this->_currentPosition] ?? null;
     }
 
     /**
@@ -197,7 +197,7 @@ class BinaryTreeTraversal implements Iterator
      */
     public function key(): int
     {
-        return $this->currentPosition;
+        return $this->_currentPosition;
     }
 
     /**
@@ -207,7 +207,7 @@ class BinaryTreeTraversal implements Iterator
      */
     public function next(): void
     {
-        $this->currentPosition++;
+        $this->_currentPosition++;
     }
 
     /**
@@ -217,7 +217,7 @@ class BinaryTreeTraversal implements Iterator
      */
     public function valid(): bool
     {
-        return isset($this->iterationNodes[$this->currentPosition]);
+        return isset($this->_iterationNodes[$this->_currentPosition]);
     }
 
     /**
@@ -228,12 +228,12 @@ class BinaryTreeTraversal implements Iterator
      *
      * @return void
      */
-    private function inOrderIterator(?BSTNode $node): void
+    private function _inOrderIterator(?BSTNode $node): void
     {
         if ($node instanceof \DataStructures\BinarySearchTree\BSTNode) {
-            $this->inOrderIterator($node->left);
-            $this->iterationNodes[] = $node;
-            $this->inOrderIterator($node->right);
+            $this->_inOrderIterator($node->left);
+            $this->_iterationNodes[] = $node;
+            $this->_inOrderIterator($node->right);
         }
     }
 
@@ -245,12 +245,12 @@ class BinaryTreeTraversal implements Iterator
      *
      * @return void
      */
-    private function preOrderIterator(?BSTNode $node): void
+    private function _preOrderIterator(?BSTNode $node): void
     {
         if ($node instanceof \DataStructures\BinarySearchTree\BSTNode) {
-            $this->iterationNodes[] = $node;
-            $this->preOrderIterator($node->left);
-            $this->preOrderIterator($node->right);
+            $this->_iterationNodes[] = $node;
+            $this->_preOrderIterator($node->left);
+            $this->_preOrderIterator($node->right);
         }
     }
 
@@ -262,12 +262,12 @@ class BinaryTreeTraversal implements Iterator
      *
      * @return void
      */
-    private function postOrderIterator(?BSTNode $node): void
+    private function _postOrderIterator(?BSTNode $node): void
     {
         if ($node instanceof \DataStructures\BinarySearchTree\BSTNode) {
-            $this->postOrderIterator($node->left);
-            $this->postOrderIterator($node->right);
-            $this->iterationNodes[] = $node;
+            $this->_postOrderIterator($node->left);
+            $this->_postOrderIterator($node->right);
+            $this->_iterationNodes[] = $node;
         }
     }
 }

@@ -32,12 +32,12 @@ use OutOfBoundsException;
  */
 class SegmentTree
 {
-    private SegmentTreeNode $root;
+    private SegmentTreeNode $_root;
     // holds the original array and updates reflections
-    private readonly int $arraySize;
+    private readonly int $_arraySize;
 
     // Size of the original array
-    private $callback;              // Callback function for aggregation
+    private $_callback;              // Callback function for aggregation
     /**
      * Initializes the segment tree with the provided array and optional callback for
      * aggregation.
@@ -57,17 +57,21 @@ class SegmentTree
         private array $currentArray,
         ?callable $callback = null
     ) {
-        $this->arraySize = count($this->currentArray);
-        $this->callback = $callback;
+        $this->_arraySize = count($this->currentArray);
+        $this->_callback = $callback;
 
-        if ($this->isUnsupportedArray()) {
+        if ($this->_isUnsupportedArray()) {
             throw new InvalidArgumentException(
                 "Array must not be empty, must contain numeric values \n"
                 . "            and must be non-associative."
             );
         }
 
-        $this->root = $this->buildTree($this->currentArray, 0, $this->arraySize - 1);
+        $this->_root = $this->_buildTree(
+            $this->currentArray,
+            0,
+            $this->_arraySize - 1
+        );
     }
 
     /**
@@ -75,15 +79,15 @@ class SegmentTree
      *
      * @return bool
      */
-    private function isUnsupportedArray(): bool
+    private function _isUnsupportedArray(): bool
     {
         if ($this->currentArray === []) {
             return true;
         }
-        if ($this->isNonNumeric()) {
+        if ($this->_isNonNumeric()) {
             return true;
         }
-        return $this->isAssociative();
+        return $this->_isAssociative();
     }
 
     /**
@@ -91,7 +95,7 @@ class SegmentTree
      *
      * @return bool True if any element is non-numeric, false otherwise.
      */
-    private function isNonNumeric(): bool
+    private function _isNonNumeric(): bool
     {
         return !array_reduce(
             $this->currentArray,
@@ -105,9 +109,9 @@ class SegmentTree
      *
      * @return bool True if the array is associative, false otherwise.
      */
-    private function isAssociative(): bool
+    private function _isAssociative(): bool
     {
-        return array_keys($this->currentArray) !== range(0, $this->arraySize - 1);
+        return array_keys($this->currentArray) !== range(0, $this->_arraySize - 1);
     }
 
     /**
@@ -117,7 +121,7 @@ class SegmentTree
      */
     public function getRoot(): SegmentTreeNode
     {
-        return $this->root;
+        return $this->_root;
     }
 
     /**
@@ -140,7 +144,7 @@ class SegmentTree
      *
      * @return SegmentTreeNode The root node of the constructed segment.
      */
-    private function buildTree(array $arr, int $start, int $end): SegmentTreeNode
+    private function _buildTree(array $arr, int $start, int $end): SegmentTreeNode
     {
         // Leaf node
         if ($start === $end) {
@@ -150,11 +154,11 @@ class SegmentTree
         $mid = $start + (int)(($end - $start) / 2);
 
         // Recursively build left and right children
-        $leftChild = $this->buildTree($arr, $start, $mid);
-        $rightChild = $this->buildTree($arr, $mid + 1, $end);
+        $leftChild = $this->_buildTree($arr, $start, $mid);
+        $rightChild = $this->_buildTree($arr, $mid + 1, $end);
 
-        $node = new SegmentTreeNode($start, $end, $this->callback
-            ? ($this->callback)($leftChild->value, $rightChild->value)
+        $node = new SegmentTreeNode($start, $end, $this->_callback
+            ? ($this->_callback)($leftChild->value, $rightChild->value)
             : $leftChild->value + $rightChild->value);
 
         // Link the children to the parent node
@@ -176,14 +180,14 @@ class SegmentTree
      */
     public function query(int $start, int $end)
     {
-        if ($start > $end || $start < 0 || $end > ($this->root->end)) {
+        if ($start > $end || $start < 0 || $end > ($this->_root->end)) {
             throw new OutOfBoundsException(
                 "Index out of bounds: start = {$start}, end = {$end}. \n"
-                . "            Must be between 0 and " . ($this->arraySize - 1)
+                . "            Must be between 0 and " . ($this->_arraySize - 1)
             );
         }
 
-        return $this->queryTree($this->root, $start, $end);
+        return $this->_queryTree($this->_root, $start, $end);
     }
 
     /**
@@ -195,7 +199,7 @@ class SegmentTree
      *
      * @return int|float The aggregated value for the range.
      */
-    private function queryTree(SegmentTreeNode $node, int $start, int $end)
+    private function _queryTree(SegmentTreeNode $node, int $start, int $end)
     {
         if ($node->start === $start && $node->end === $end) {
             return $node->value;
@@ -206,17 +210,17 @@ class SegmentTree
         // Determine which segment of the tree to query
         if ($end <= $mid) {
             // Query left child
-            return $this->queryTree($node->left, $start, $end);
+            return $this->_queryTree($node->left, $start, $end);
         } elseif ($start > $mid) {
             // Query right child
-            return $this->queryTree($node->right, $start, $end);
+            return $this->_queryTree($node->right, $start, $end);
         } else {
             // Split query between left and right children
-            $leftResult = $this->queryTree($node->left, $start, $mid);
-            $rightResult = $this->queryTree($node->right, $mid + 1, $end);
+            $leftResult = $this->_queryTree($node->left, $start, $mid);
+            $rightResult = $this->_queryTree($node->right, $mid + 1, $end);
 
-            return $this->callback
-                ? ($this->callback)($leftResult, $rightResult)
+            return $this->_callback
+                ? ($this->_callback)($leftResult, $rightResult)
                 // Default sum if no callback
                 : $leftResult + $rightResult;
         }
@@ -234,15 +238,15 @@ class SegmentTree
      */
     public function update(int $index, int $value): void
     {
-        if ($index < 0 || $index >= $this->arraySize) {
+        if ($index < 0 || $index >= $this->_arraySize) {
             throw new OutOfBoundsException(sprintf(
                 'Index out of bounds: %d. Must be between 0 and ',
                 $index
             )
-                . ($this->arraySize - 1));
+                . ($this->_arraySize - 1));
         }
 
-        $this->updateTree($this->root, $index, $value);
+        $this->_updateTree($this->_root, $index, $value);
         // Reflect the update in the original array
         $this->currentArray[$index] = $value;
     }
@@ -256,7 +260,7 @@ class SegmentTree
      *
      * @return void
      */
-    private function updateTree(SegmentTreeNode $node, int $index, $value): void
+    private function _updateTree(SegmentTreeNode $node, int $index, $value): void
     {
         // Leaf node
         if ($node->start === $node->end) {
@@ -268,14 +272,14 @@ class SegmentTree
 
         // Decide whether to go to the left or right child
         if ($index <= $mid) {
-            $this->updateTree($node->left, $index, $value);
+            $this->_updateTree($node->left, $index, $value);
         } else {
-            $this->updateTree($node->right, $index, $value);
+            $this->_updateTree($node->right, $index, $value);
         }
 
         // Recompute the value of the current node after the update
-        $node->value = $this->callback
-            ? ($this->callback)($node->left->value, $node->right->value)
+        $node->value = $this->_callback
+            ? ($this->_callback)($node->left->value, $node->right->value)
             : $node->left->value + $node->right->value;
     }
 
@@ -292,13 +296,13 @@ class SegmentTree
      */
     public function rangeUpdate(int $start, int $end, $value): void
     {
-        if ($start < 0 || $end >= $this->arraySize || $start > $end) {
+        if ($start < 0 || $end >= $this->_arraySize || $start > $end) {
             throw new OutOfBoundsException(
                 sprintf('Invalid range: start = %d, end = %d.', $start, $end)
             );
         }
 
-        $this->rangeUpdateTree($this->root, $start, $end, $value);
+        $this->_rangeUpdateTree($this->_root, $start, $end, $value);
 
         // Update the original array to reflect the range update
         $this->currentArray = array_replace(
@@ -317,7 +321,7 @@ class SegmentTree
      *
      * @return void
      */
-    private function rangeUpdateTree(
+    private function _rangeUpdateTree(
         SegmentTreeNode $node,
         int $start,
         int $end,
@@ -335,19 +339,19 @@ class SegmentTree
         // respectively)
         if ($end <= $mid) {
             // Entire range is in the left child
-            $this->rangeUpdateTree($node->left, $start, $end, $value);
+            $this->_rangeUpdateTree($node->left, $start, $end, $value);
         } elseif ($start > $mid) {
             // Entire range is in the right child
-            $this->rangeUpdateTree($node->right, $start, $end, $value);
+            $this->_rangeUpdateTree($node->right, $start, $end, $value);
         } else {
             // Range is split between left and right children
-            $this->rangeUpdateTree($node->left, $start, $mid, $value);
-            $this->rangeUpdateTree($node->right, $mid + 1, $end, $value);
+            $this->_rangeUpdateTree($node->left, $start, $mid, $value);
+            $this->_rangeUpdateTree($node->right, $mid + 1, $end, $value);
         }
 
         // Recompute the value of the current node after the update
-        $node->value = $this->callback
-            ? ($this->callback)($node->left->value, $node->right->value)
+        $node->value = $this->_callback
+            ? ($this->_callback)($node->left->value, $node->right->value)
             : $node->left->value + $node->right->value;
     }
 
@@ -358,7 +362,7 @@ class SegmentTree
      */
     public function serialize(): string
     {
-        return json_encode($this->serializeTree($this->root));
+        return json_encode($this->_serializeTree($this->_root));
     }
 
     /**
@@ -368,7 +372,7 @@ class SegmentTree
      *
      * @return array The serialized representation of the node.
      */
-    private function serializeTree(?SegmentTreeNode $node): array
+    private function _serializeTree(?SegmentTreeNode $node): array
     {
         if (!$node instanceof \DataStructures\SegmentTree\SegmentTreeNode) {
             return [];
@@ -378,8 +382,8 @@ class SegmentTree
             'start' => $node->start,
             'end' => $node->end,
             'value' => $node->value,
-            'left' => $this->serializeTree($node->left),
-            'right' => $this->serializeTree($node->right),
+            'left' => $this->_serializeTree($node->left),
+            'right' => $this->_serializeTree($node->right),
         ];
     }
 
@@ -397,7 +401,7 @@ class SegmentTree
         $initialiseArray = array_fill(0, $array['end'] + 1, 0);
         $segmentTree = new self($initialiseArray);
 
-        $segmentTree->root = $segmentTree->deserializeTree($array);
+        $segmentTree->_root = $segmentTree->_deserializeTree($array);
         return $segmentTree;
     }
 
@@ -408,7 +412,7 @@ class SegmentTree
      *
      * @return SegmentTreeNode|null The deserialized node.
      */
-    private function deserializeTree(array $data): ?SegmentTreeNode
+    private function _deserializeTree(array $data): ?SegmentTreeNode
     {
         if ($data === []) {
             return null;
@@ -416,8 +420,8 @@ class SegmentTree
 
         $node = new SegmentTreeNode($data['start'], $data['end'], $data['value']);
 
-        $node->left = $this->deserializeTree($data['left']);
-        $node->right = $this->deserializeTree($data['right']);
+        $node->left = $this->_deserializeTree($data['left']);
+        $node->right = $this->_deserializeTree($data['right']);
         return $node;
     }
 }

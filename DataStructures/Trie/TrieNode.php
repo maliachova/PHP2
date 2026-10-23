@@ -44,7 +44,7 @@ class TrieNode
      */
     public function addChild(string $char): TrieNode
     {
-        $char = $this->normalizeChar($char);
+        $char = $this->_normalizeChar($char);
         if (!isset($this->children[$char])) {
             $this->children[$char] = new TrieNode();
         }
@@ -61,7 +61,7 @@ class TrieNode
      */
     public function hasChild(string $char): bool
     {
-        $char = $this->normalizeChar($char);
+        $char = $this->_normalizeChar($char);
         return isset($this->children[$char]);
     }
 
@@ -74,7 +74,7 @@ class TrieNode
      */
     public function getChild(string $char): ?TrieNode
     {
-        $char = $this->normalizeChar($char);
+        $char = $this->_normalizeChar($char);
         return $this->children[$char] ?? null;
     }
 
@@ -85,7 +85,7 @@ class TrieNode
      *
      * @return string
      */
-    private function normalizeChar(string $char): string
+    private function _normalizeChar(string $char): string
     {
         return strtolower($char);
     }

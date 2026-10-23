@@ -22,18 +22,18 @@ declare(strict_types=1);
  */
 class ExecutionTime
 {
-    private readonly string|float $start_time;
+    private readonly string|float $_start_time;
 
-    private $end_time = 0;
+    private $_end_time = 0;
 
-    private $execution_time = 0;
+    private $_execution_time = 0;
 
     /**
      * Construct.
      */
     public function __construct()
     {
-        $this->start_time = microtime(true);
+        $this->_start_time = microtime(true);
     }
 
     /**
@@ -41,8 +41,8 @@ class ExecutionTime
      */
     public function __destruct()
     {
-        $this->end_time = microtime(true);
-        $this->execution_time = $this->end_time - $this->start_time;
-        echo "Executed in $this->execution_time seconds\n";
+        $this->_end_time = microtime(true);
+        $this->_execution_time = $this->_end_time - $this->_start_time;
+        echo "Executed in $this->_execution_time seconds\n";
     }
 }

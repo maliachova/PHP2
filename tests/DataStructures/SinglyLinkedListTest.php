@@ -27,7 +27,7 @@ class SinglyLinkedListTest extends TestCase
      *
      * @return SinglyLinkedList
      */
-    private function createNode(string $string): SinglyLinkedList
+    private function _createNode(string $string): SinglyLinkedList
     {
         $node = new SinglyLinkedList($string[0]);
 
@@ -77,8 +77,8 @@ class SinglyLinkedListTest extends TestCase
      */
     public function testIsPalindrome($string, $expected): void
     {
-        $node = $this->createNode($string);
-        $this->assertEquals($expected, $this->isPalindrome($node));
+        $node = $this->_createNode($string);
+        $this->assertEquals($expected, $this->_isPalindrome($node));
     }
 
     /**
@@ -88,14 +88,14 @@ class SinglyLinkedListTest extends TestCase
      *
      * @return bool
      */
-    private function isPalindrome(SinglyLinkedList $node): bool
+    private function _isPalindrome(SinglyLinkedList $node): bool
     {
-        $length = $this->length($node);
+        $length = $this->_length($node);
         $pairs = 0;
         $curr = $node;
 
         while ($curr instanceof SinglyLinkedList) {
-            if ($this->hasPair($curr->next, $curr->data)) {
+            if ($this->_hasPair($curr->next, $curr->data)) {
                 $pairs++;
             }
 
@@ -113,7 +113,7 @@ class SinglyLinkedListTest extends TestCase
      *
      * @return bool
      */
-    private function hasPair($node, string $data): bool
+    private function _hasPair($node, string $data): bool
     {
         if (! $node instanceof SinglyLinkedList) {
             return false;
@@ -139,7 +139,7 @@ class SinglyLinkedListTest extends TestCase
      *
      * @return int
      */
-    private function length(SinglyLinkedList $node): int
+    private function _length(SinglyLinkedList $node): int
     {
         $curr = $node;
         $counter = 0;
@@ -160,13 +160,13 @@ class SinglyLinkedListTest extends TestCase
     public function testDelete(): void
     {
         $this->assertEquals(
-            $this->createNode('hanah'), // expected node
-            $this->createNode('hannah')->delete('n'), // actual node
+            $this->_createNode('hanah'), // expected node
+            $this->_createNode('hannah')->delete('n'), // actual node
         );
 
         $this->assertNotEquals(
-            $this->createNode('hanah'), // expected node
-            $this->createNode('hannah')->delete('h'), // actual node
+            $this->_createNode('hanah'), // expected node
+            $this->_createNode('hannah')->delete('h'), // actual node
         );
     }
 }

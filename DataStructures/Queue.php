@@ -17,11 +17,11 @@ declare(strict_types=1);
  */
 class Queue
 {
-    private array $elements = [];
+    private array $_elements = [];
 
-    private int $count = 0;
+    private int $_count = 0;
 
-    private int $lowestCount = 0;
+    private int $_lowestCount = 0;
 
     /**
      * Enqueue.
@@ -32,8 +32,8 @@ class Queue
      */
     public function enqueue($element): void
     {
-        $this->elements[$this->count] = $element;
-        $this->count++;
+        $this->_elements[$this->_count] = $element;
+        $this->_count++;
     }
 
     /**
@@ -47,11 +47,11 @@ class Queue
             return null;
         }
 
-        $element = $this->elements[$this->lowestCount];
+        $element = $this->_elements[$this->_lowestCount];
 
-        unset($this->elements[$this->lowestCount]);
+        unset($this->_elements[$this->_lowestCount]);
 
-        $this->lowestCount++;
+        $this->_lowestCount++;
 
         return $element;
     }
@@ -63,7 +63,7 @@ class Queue
      */
     public function isEmpty(): bool
     {
-        return $this->count - $this->lowestCount === 0;
+        return $this->_count - $this->_lowestCount === 0;
     }
 
     /**
@@ -73,7 +73,7 @@ class Queue
      */
     public function size(): int
     {
-        return $this->count - $this->lowestCount;
+        return $this->_count - $this->_lowestCount;
     }
 
     /**
@@ -87,7 +87,7 @@ class Queue
             return null;
         }
 
-        return $this->elements[$this->lowestCount];
+        return $this->_elements[$this->_lowestCount];
     }
 
     /**
@@ -97,9 +97,9 @@ class Queue
      */
     public function clear(): void
     {
-        $this->elements = [];
-        $this->count = 0;
-        $this->lowestCount = 0;
+        $this->_elements = [];
+        $this->_count = 0;
+        $this->_lowestCount = 0;
     }
 
     /**
@@ -115,10 +115,10 @@ class Queue
             return '';
         }
 
-        $result = (string) $this->elements[$this->lowestCount];
+        $result = (string) $this->_elements[$this->_lowestCount];
 
-        for ($i = $this->lowestCount + 1; $i < $this->count; $i++) {
-            $result .= $delimiter . $this->elements[$i];
+        for ($i = $this->_lowestCount + 1; $i < $this->_count; $i++) {
+            $result .= $delimiter . $this->_elements[$i];
         }
 
         return $result;

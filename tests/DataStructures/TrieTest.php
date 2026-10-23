@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  */
 class TrieTest extends TestCase
 {
-    private Trie $trie;
+    private Trie $_trie;
 
     /**
      * Set up.
@@ -44,7 +44,7 @@ class TrieTest extends TestCase
      */
     protected function setUp(): void
     {
-        $this->trie = new Trie();
+        $this->_trie = new Trie();
     }
 
     /**
@@ -54,29 +54,29 @@ class TrieTest extends TestCase
      */
     public function testInsertAndSearch()
     {
-        $this->trie->insert('the');
-        $this->trie->insert('universe');
-        $this->trie->insert('is');
-        $this->trie->insert('vast');
+        $this->_trie->insert('the');
+        $this->_trie->insert('universe');
+        $this->_trie->insert('is');
+        $this->_trie->insert('vast');
 
         $this->assertTrue(
-            $this->trie->search('the'),
+            $this->_trie->search('the'),
             'Expected "the" to be found in the Trie.'
         );
         $this->assertTrue(
-            $this->trie->search('universe'),
+            $this->_trie->search('universe'),
             'Expected "universe" to be found in the Trie.'
         );
         $this->assertTrue(
-            $this->trie->search('is'),
+            $this->_trie->search('is'),
             'Expected "is" to be found in the Trie.'
         );
         $this->assertTrue(
-            $this->trie->search('vast'),
+            $this->_trie->search('vast'),
             'Expected "vast" to be found in the Trie.'
         );
         $this->assertFalse(
-            $this->trie->search('the universe'),
+            $this->_trie->search('the universe'),
             'Expected "the universe" not to be found in the Trie.'
         );
     }
@@ -88,14 +88,14 @@ class TrieTest extends TestCase
      */
     public function testInsertAndSearchMixedCase()
     {
-        $this->trie->insert('Apple');
-        $this->trie->insert('aPPle');
+        $this->_trie->insert('Apple');
+        $this->_trie->insert('aPPle');
         $this->assertTrue(
-            $this->trie->search('apple'),
+            $this->_trie->search('apple'),
             'Expected "apple" to be found in the Trie.'
         );
         $this->assertTrue(
-            $this->trie->search('APPLE'),
+            $this->_trie->search('APPLE'),
             'Expected "APPLE" to be found in the Trie.'
         );
     }
@@ -107,18 +107,18 @@ class TrieTest extends TestCase
      */
     public function testInsertAndSearchWithSpecialCharacters()
     {
-        $this->trie->insert('hello123');
-        $this->trie->insert('user@domain.com');
+        $this->_trie->insert('hello123');
+        $this->_trie->insert('user@domain.com');
         $this->assertTrue(
-            $this->trie->search('hello123'),
+            $this->_trie->search('hello123'),
             'Expected "hello123" to be found in the Trie.'
         );
         $this->assertTrue(
-            $this->trie->search('UseR@domain.CoM'),
+            $this->_trie->search('UseR@domain.CoM'),
             'Expected "user@domain.com" to be found in the Trie.'
         );
         $this->assertTrue(
-            $this->trie->search('HELLO123'),
+            $this->_trie->search('HELLO123'),
             'Expected "HELLO123" not to be found in the Trie (case-sensitive).'
         );
     }
@@ -131,9 +131,9 @@ class TrieTest extends TestCase
     public function testInsertAndSearchLongStrings()
     {
         $longString = str_repeat('a', 1000);
-        $this->trie->insert($longString);
+        $this->_trie->insert($longString);
         $this->assertTrue(
-            $this->trie->search($longString),
+            $this->_trie->search($longString),
             'Expected the long string to be found in the Trie.'
         );
     }
@@ -145,20 +145,20 @@ class TrieTest extends TestCase
      */
     public function testStartsWith()
     {
-        $this->trie->insert('hello');
+        $this->_trie->insert('hello');
         $this->assertEquals(
             ['hello'],
-            $this->trie->startsWith('he'),
+            $this->_trie->startsWith('he'),
             'Expected words starting with "he" to be found.'
         );
         $this->assertEquals(
             ['hello'],
-            $this->trie->startsWith('hello'),
+            $this->_trie->startsWith('hello'),
             'Expected words starting with "hello" to be found.'
         );
         $this->assertEquals(
             [],
-            $this->trie->startsWith('world'),
+            $this->_trie->startsWith('world'),
             'Expected no words starting with "world" to be found.'
         );
     }
@@ -170,18 +170,18 @@ class TrieTest extends TestCase
      */
     public function testStartsWithMixedCase()
     {
-        $this->trie->insert('PrefixMatch');
-        $this->trie->insert('PreFixTesting');
+        $this->_trie->insert('PrefixMatch');
+        $this->_trie->insert('PreFixTesting');
         $this->assertEquals(
             ['prefixmatch', 'prefixtesting'],
-            $this->trie->startsWith('prefix'),
+            $this->_trie->startsWith('prefix'),
             'Expected words starting with "prefix" to be found in the Trie ' .
             '(case-insensitive).'
         );
 
         $this->assertEquals(
             ['prefixmatch', 'prefixtesting'],
-            $this->trie->startsWith('PREFIX'),
+            $this->_trie->startsWith('PREFIX'),
             'Expected words starting with "PREFIX" to be found in the Trie ' .
             '(case-insensitive).'
         );
@@ -194,33 +194,36 @@ class TrieTest extends TestCase
      */
     public function testDelete()
     {
-        $this->trie->insert('the');
-        $this->trie->insert('universe');
-        $this->trie->insert('is');
-        $this->trie->insert('vast');
-        $this->trie->insert('big');
-        $this->trie->insert('rather');
+        $this->_trie->insert('the');
+        $this->_trie->insert('universe');
+        $this->_trie->insert('is');
+        $this->_trie->insert('vast');
+        $this->_trie->insert('big');
+        $this->_trie->insert('rather');
 
         // Test deleting an existing word
-        $this->trie->delete('the');
+        $this->_trie->delete('the');
         $this->assertFalse(
-            $this->trie->search('the'),
+            $this->_trie->search('the'),
             'Expected "the" not to be found after deletion.'
         );
 
         // Test that other words are still present
         $this->assertTrue(
-            $this->trie->search('universe'),
+            $this->_trie->search('universe'),
             'Expected "universe" to be found.'
         );
-        $this->assertTrue($this->trie->search('is'), 'Expected "is" to be found.');
+        $this->assertTrue($this->_trie->search('is'), 'Expected "is" to be found.');
         $this->assertTrue(
-            $this->trie->search('vast'),
+            $this->_trie->search('vast'),
             'Expected "vast" to be found.'
         );
-        $this->assertTrue($this->trie->search('big'), 'Expected "big" to be found.');
         $this->assertTrue(
-            $this->trie->search('rather'),
+            $this->_trie->search('big'),
+            'Expected "big" to be found.'
+        );
+        $this->assertTrue(
+            $this->_trie->search('rather'),
             'Expected "rather" to be found.'
         );
     }
@@ -232,15 +235,15 @@ class TrieTest extends TestCase
      */
     public function testDeleteMixedCase()
     {
-        $this->trie->insert('MixedCase');
+        $this->_trie->insert('MixedCase');
         $this->assertTrue(
-            $this->trie->search('mixedcase'),
+            $this->_trie->search('mixedcase'),
             'Expected "mixedcase" to be found before deletion.'
         );
 
-        $this->trie->delete('MIXEDCASE');
+        $this->_trie->delete('MIXEDCASE');
         $this->assertFalse(
-            $this->trie->search('MixedCase'),
+            $this->_trie->search('MixedCase'),
             'Expected "MixedCase" not to be found after deletion (case-insensitive).'
         );
     }
@@ -252,15 +255,15 @@ class TrieTest extends TestCase
      */
     public function testDeleteWithSpecialCharacters()
     {
-        $this->trie->insert('spec!@l#chars');
+        $this->_trie->insert('spec!@l#chars');
         $this->assertTrue(
-            $this->trie->search('spec!@l#chars'),
+            $this->_trie->search('spec!@l#chars'),
             'Expected "spec!@l#chars" to be found before deletion.'
         );
 
-        $this->trie->delete('SPEC!@L#CHARS');
+        $this->_trie->delete('SPEC!@L#CHARS');
         $this->assertFalse(
-            $this->trie->search('spec!@l#chars'),
+            $this->_trie->search('spec!@l#chars'),
             'Expected "spec!@l#chars" not to be found after deletion.'
         );
     }
@@ -272,9 +275,9 @@ class TrieTest extends TestCase
      */
     public function testDeleteNonExistentWord()
     {
-        $this->trie->delete('nonexistent');
+        $this->_trie->delete('nonexistent');
         $this->assertFalse(
-            $this->trie->search('nonexistent'),
+            $this->_trie->search('nonexistent'),
             'Expected "nonexistent" to not be found.'
         );
     }
@@ -286,11 +289,11 @@ class TrieTest extends TestCase
      */
     public function testTraverseTrieNode()
     {
-        $this->trie->insert('hello');
-        $this->trie->insert('helium');
-        $this->trie->insert('helicopter');
+        $this->_trie->insert('hello');
+        $this->_trie->insert('helium');
+        $this->_trie->insert('helicopter');
 
-        $words = $this->trie->getWords();
+        $words = $this->_trie->getWords();
         $this->assertContains(
             'hello',
             $words,
@@ -318,7 +321,7 @@ class TrieTest extends TestCase
     {
         $this->assertEquals(
             [],
-            $this->trie->getWords(),
+            $this->_trie->getWords(),
             'Expected an empty Trie to return an empty array.'
         );
     }
@@ -330,11 +333,11 @@ class TrieTest extends TestCase
      */
     public function testGetWords()
     {
-        $this->trie->insert('apple');
-        $this->trie->insert('app');
-        $this->trie->insert('applet');
+        $this->_trie->insert('apple');
+        $this->_trie->insert('app');
+        $this->_trie->insert('applet');
 
-        $words = $this->trie->getWords();
+        $words = $this->_trie->getWords();
         $this->assertContains(
             'apple',
             $words,
@@ -360,9 +363,9 @@ class TrieTest extends TestCase
      */
     public function testInsertEmptyString()
     {
-        $this->trie->insert('');
+        $this->_trie->insert('');
         $this->assertTrue(
-            $this->trie->search(''),
+            $this->_trie->search(''),
             'Expected empty string to be found in the Trie.'
         );
     }
@@ -374,10 +377,10 @@ class TrieTest extends TestCase
      */
     public function testDeleteEmptyString()
     {
-        $this->trie->insert('');
-        $this->trie->delete('');
+        $this->_trie->insert('');
+        $this->_trie->delete('');
         $this->assertFalse(
-            $this->trie->search(''),
+            $this->_trie->search(''),
             'Expected empty string not to be found after deletion.'
         );
     }
@@ -389,11 +392,11 @@ class TrieTest extends TestCase
      */
     public function testStartsWithWithCommonPrefix()
     {
-        $this->trie->insert('trie');
-        $this->trie->insert('tried');
-        $this->trie->insert('trier');
+        $this->_trie->insert('trie');
+        $this->_trie->insert('tried');
+        $this->_trie->insert('trier');
 
-        $words = $this->trie->startsWith('tri');
+        $words = $this->_trie->startsWith('tri');
         $this->assertContains(
             'trie',
             $words,
@@ -419,7 +422,7 @@ class TrieTest extends TestCase
      */
     public function testGetRoot()
     {
-        $root = $this->trie->getRoot();
+        $root = $this->_trie->getRoot();
         $this->assertInstanceOf(
             TrieNode::class,
             $root,
@@ -443,11 +446,11 @@ class TrieTest extends TestCase
      */
     public function testGetRootAfterPopulation()
     {
-        $this->trie->insert('TheAlgorithms');
-        $this->trie->insert('PHP');
-        $this->trie->insert('DSA');
+        $this->_trie->insert('TheAlgorithms');
+        $this->_trie->insert('PHP');
+        $this->_trie->insert('DSA');
 
-        $root = $this->trie->getRoot();
+        $root = $this->_trie->getRoot();
 
         $this->assertInstanceOf(
             TrieNode::class,

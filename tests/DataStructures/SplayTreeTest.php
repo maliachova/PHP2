@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  */
 class SplayTreeTest extends TestCase
 {
-    private SplayTree $tree;
+    private SplayTree $_tree;
 
     /**
      * Set up.
@@ -44,7 +44,7 @@ class SplayTreeTest extends TestCase
      */
     protected function setUp(): void
     {
-        $this->tree = new SplayTree();
+        $this->_tree = new SplayTree();
     }
 
     /**
@@ -52,18 +52,18 @@ class SplayTreeTest extends TestCase
      *
      * @return void
      */
-    private function populateTree(): void
+    private function _populateTree(): void
     {
-        $this->tree->insert(20, "Value 20");
-        $this->tree->insert(15, "Value 15");
-        $this->tree->insert(17, "Value 17");
-        $this->tree->insert(25, "Value 25");
-        $this->tree->insert(30, "Value 30");
-        $this->tree->insert(36, "Value 36");
-        $this->tree->insert(23, "Value 23");
-        $this->tree->insert(24, "Value 24");
-        $this->tree->insert(22, "Value 22");
-        $this->tree->insert(5, "Value 5");
+        $this->_tree->insert(20, "Value 20");
+        $this->_tree->insert(15, "Value 15");
+        $this->_tree->insert(17, "Value 17");
+        $this->_tree->insert(25, "Value 25");
+        $this->_tree->insert(30, "Value 30");
+        $this->_tree->insert(36, "Value 36");
+        $this->_tree->insert(23, "Value 23");
+        $this->_tree->insert(24, "Value 24");
+        $this->_tree->insert(22, "Value 22");
+        $this->_tree->insert(5, "Value 5");
     }
 
     /**
@@ -97,11 +97,11 @@ class SplayTreeTest extends TestCase
      */
     public function testInsertSingleElement()
     {
-        $this->tree->insert(10, "Value 10");
-        $root = $this->tree->getRoot();
+        $this->_tree->insert(10, "Value 10");
+        $root = $this->_tree->getRoot();
 
         $this->assertFalse(
-            $this->tree->isEmpty(),
+            $this->_tree->isEmpty(),
             "Tree cannot be empty. Insertion failed."
         );
         $this->assertNotNull($root, "Tree has one node and its root cannot be Null");
@@ -129,15 +129,15 @@ class SplayTreeTest extends TestCase
      */
     public function testInsertMultiple()
     {
-        $this->populateTree();
+        $this->_populateTree();
 
-        $root = $this->tree->getRoot();
+        $root = $this->_tree->getRoot();
 
         $this->assertFalse(
-            $this->tree->isEmpty(),
+            $this->_tree->isEmpty(),
             "Tree was not populated correctly"
         );
-        $this->assertSame(10, $this->tree->size(), "Failed to insert all 10 nodes");
+        $this->assertSame(10, $this->_tree->size(), "Failed to insert all 10 nodes");
 
         $this->assertEquals(
             5,
@@ -217,9 +217,9 @@ class SplayTreeTest extends TestCase
      */
     public function testIsEmpty()
     {
-        $this->assertTrue($this->tree->isEmpty(), "Tree should be empty.");
-        $this->tree->insert(120, "Value 120");
-        $this->assertFalse($this->tree->isEmpty(), "Tree should not be empty.");
+        $this->assertTrue($this->_tree->isEmpty(), "Tree should be empty.");
+        $this->_tree->insert(120, "Value 120");
+        $this->assertFalse($this->_tree->isEmpty(), "Tree should not be empty.");
     }
 
     /**
@@ -352,7 +352,7 @@ class SplayTreeTest extends TestCase
 
         // Traverse the tree structure wit inOrder Traversal
         $inOrderArray = $tree->inOrderTraversal($tree->getRoot());
-        $inOrderArrayKeys = $this->getInOrderKeys($inOrderArray);
+        $inOrderArrayKeys = $this->_getInOrderKeys($inOrderArray);
 
         // Assert the in-order traversal keys match the expected keys for every
         // dataProvider case
@@ -386,7 +386,7 @@ class SplayTreeTest extends TestCase
      *
      * @return array
      */
-    private function getInOrderKeys(array $inOrderArray): array
+    private function _getInOrderKeys(array $inOrderArray): array
     {
         $inOrderArrayKeys = [];
         foreach ($inOrderArray as $node) {
@@ -405,9 +405,9 @@ class SplayTreeTest extends TestCase
      */
     public function testSearchExistingKey()
     {
-        $this->populateTree();
+        $this->_populateTree();
 
-        $node = $this->tree->search(22);
+        $node = $this->_tree->search(22);
 
         $this->assertNotNull($node, "Returned node cannot be Null.");
         $this->assertNull(
@@ -441,10 +441,10 @@ class SplayTreeTest extends TestCase
      */
     public function testIsFoundExistingKey()
     {
-        $this->populateTree();
+        $this->_populateTree();
 
-        $isFound = $this->tree->isFound(25);
-        $node = $this->tree->getRoot();
+        $isFound = $this->_tree->isFound(25);
+        $node = $this->_tree->getRoot();
 
         $this->assertTrue($isFound, "Node with key 25 exists.");
         $this->assertEquals(
@@ -468,9 +468,9 @@ class SplayTreeTest extends TestCase
      */
     public function testSearchNonExistingKey()
     {
-        $this->populateTree();
+        $this->_populateTree();
 
-        $node = $this->tree->search(250);   // Search for a non-existing key
+        $node = $this->_tree->search(250);   // Search for a non-existing key
 
         $this->assertNotNull($node, "Returned node cannot be Null.");
         $this->assertEquals(
@@ -501,10 +501,10 @@ class SplayTreeTest extends TestCase
      */
     public function testIsFoundNonExistingKey()
     {
-        $this->populateTree();
+        $this->_populateTree();
 
-        $isFound = $this->tree->isFound(18);
-        $node = $this->tree->getRoot();
+        $isFound = $this->_tree->isFound(18);
+        $node = $this->_tree->getRoot();
 
         $this->assertFalse($isFound, "Node with key 18 does not exist.");
         $this->assertEquals(
@@ -528,11 +528,11 @@ class SplayTreeTest extends TestCase
      */
     public function testUpdateExistingKey()
     {
-        $this->populateTree();
+        $this->_populateTree();
 
-        $this->tree->update(36, 360);
+        $this->_tree->update(36, 360);
 
-        $node = $this->tree->search(36);
+        $node = $this->_tree->search(36);
 
         $this->assertNotNull($node, "Node with key 36 should exist after update.");
         $this->assertEquals(
@@ -559,9 +559,9 @@ class SplayTreeTest extends TestCase
      */
     public function testUpdateNonExistingKey()
     {
-        $this->populateTree();
+        $this->_populateTree();
 
-        $node = $this->tree->update(60, "Value 60");    // Update a non-existing key
+        $node = $this->_tree->update(60, "Value 60");    // Update a non-existing key
 
         $this->assertNotNull($node, "Returned node cannot be Null");
         $this->assertEquals(
@@ -590,17 +590,17 @@ class SplayTreeTest extends TestCase
      */
     public function testDeleteExistingKey()
     {
-        $this->populateTree();
+        $this->_populateTree();
 
-        $nodesNumber = $this->tree->size();
-        $node = $this->tree->delete(22);
+        $nodesNumber = $this->_tree->size();
+        $node = $this->_tree->delete(22);
 
-        $isFound = $this->tree->isFound(22);
+        $isFound = $this->_tree->isFound(22);
         $this->assertFalse($isFound, "Node with key 22 was not deleted.");
 
         $this->assertEquals(
             $nodesNumber - 1,
-            $this->tree->size(),
+            $this->_tree->size(),
             "After deletion, total nodes count was not updated correctly."
         );
 
@@ -618,14 +618,14 @@ class SplayTreeTest extends TestCase
      */
     public function testMergeAfterDeleteExistingKey()
     {
-        $this->populateTree();
+        $this->_populateTree();
 
-        $node = $this->tree->delete(20);
+        $node = $this->_tree->delete(20);
 
-        $inOrderTraversalNodes = $this->tree->inOrderTraversal(
-            $this->tree->getRoot()
+        $inOrderTraversalNodes = $this->_tree->inOrderTraversal(
+            $this->_tree->getRoot()
         );
-        $inOrderArrayKeys = $this->getInOrderKeys($inOrderTraversalNodes);
+        $inOrderArrayKeys = $this->_getInOrderKeys($inOrderTraversalNodes);
 
         $expectedInOrderKeys = [5, 15, 17, 22, 23, 24, 25, 30, 36];
 
@@ -670,7 +670,7 @@ class SplayTreeTest extends TestCase
 
         foreach ($nodesToDelete as $key) {
             $splayTree->delete($key);
-            $isFound = $this->tree->isFound($key);
+            $isFound = $this->_tree->isFound($key);
             $this->assertFalse($isFound, "Node with key $key was not deleted.");
         }
 
@@ -689,16 +689,16 @@ class SplayTreeTest extends TestCase
      */
     public function testDeleteNonExistingKey()
     {
-        $this->populateTree();
+        $this->_populateTree();
 
-        $root = $this->tree->getRoot();
+        $root = $this->_tree->getRoot();
 
         $this->expectException(LogicException::class);
         $this->expectExceptionMessage(
             "Key: 90 not found in tree. Splayed the last visited node."
         );
 
-        $this->tree->delete(90);    // Delete a non-existing key
+        $this->_tree->delete(90);    // Delete a non-existing key
         $this->assertEquals(
             5,
             $root->key,
@@ -713,28 +713,28 @@ class SplayTreeTest extends TestCase
      */
     public function testOperationsOnEmptyTree()
     {
-        $this->assertEquals(0, $this->tree->size(), "Tree should be empty.");
+        $this->assertEquals(0, $this->_tree->size(), "Tree should be empty.");
 
-        $rootNode1 = $this->tree->search(100);
+        $rootNode1 = $this->_tree->search(100);
         $this->assertNull(
             $rootNode1,
             "Searching for a key in an empty tree should return null."
         );
 
-        $rootNode2 = $this->tree->isFound(200);
+        $rootNode2 = $this->_tree->isFound(200);
         $this->assertFalse(
             $rootNode2,
             "Searching for a key in an empty tree should return null."
         );
 
-        $rootNode3 = $this->tree->update(100, "Value 100");
+        $rootNode3 = $this->_tree->update(100, "Value 100");
         $this->assertNull(
             $rootNode3,
             "Updating a key in an empty tree should return null."
         );
 
         $this->expectException(LogicException::class);
-        $rootNode4 = $this->tree->delete(100);
+        $rootNode4 = $this->_tree->delete(100);
         $this->assertNull(
             $rootNode4,
             "Deleting a key in an empty tree should return null."
@@ -750,23 +750,23 @@ class SplayTreeTest extends TestCase
     {
         // Inserting a large number of nodes
         for ($i = 1; $i <= 1000; $i++) {
-            $this->tree->insert($i, "Value $i");
+            $this->_tree->insert($i, "Value $i");
         }
 
         // Verify that all inserted nodes can be searched
         for ($i = 1; $i <= 1000; $i++) {
             $this->assertEquals(
                 "Value $i",
-                $this->tree->search($i)->value,
+                $this->_tree->search($i)->value,
                 "Value for key $i should be 'Value $i'"
             );
         }
 
         // Verify that all inserted nodes can be deleted
         for ($i = 1; $i <= 5; $i++) {
-            $this->tree->delete($i);
+            $this->_tree->delete($i);
             $this->assertFalse(
-                $this->tree->isFound($i),
+                $this->_tree->isFound($i),
                 "Node was not deleted correctly"
             );
         }
@@ -783,7 +783,7 @@ class SplayTreeTest extends TestCase
     public function testZigRotation(): void
     {
         $tree = new SplayTree();
-        $this->populateTree();
+        $this->_populateTree();
 
         $tree->insert(20, 'A');
         $tree->insert(10, 'B');  // Trigger a Zig rotation when 10 is splayed

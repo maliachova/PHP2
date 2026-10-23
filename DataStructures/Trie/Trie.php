@@ -30,14 +30,14 @@ namespace DataStructures\Trie;
  */
 class Trie
 {
-    private readonly TrieNode $root;
+    private readonly TrieNode $_root;
 
     /**
      * Construct.
      */
     public function __construct()
     {
-        $this->root = new TrieNode();
+        $this->_root = new TrieNode();
     }
 
     /**
@@ -47,7 +47,7 @@ class Trie
      */
     public function getRoot(): TrieNode
     {
-        return $this->root;
+        return $this->_root;
     }
 
     /**
@@ -59,7 +59,7 @@ class Trie
      */
     public function insert(string $word): void
     {
-        $node = $this->root;
+        $node = $this->_root;
         for ($i = 0; $i < strlen($word); $i++) {
             $char = $word[$i];
             $node = $node->addChild($char);
@@ -77,7 +77,7 @@ class Trie
      */
     public function search(string $word): bool
     {
-        $node = $this->root;
+        $node = $this->_root;
         for ($i = 0; $i < strlen($word); $i++) {
             $char = $word[$i];
             if (!$node->hasChild($char)) {
@@ -100,7 +100,7 @@ class Trie
     public function startsWith(string $prefix): array
     {
         $prefix = strtolower($prefix);  // Normalize the prefix to lowercase
-        $node = $this->root;
+        $node = $this->_root;
         for ($i = 0; $i < strlen($prefix); $i++) {
             $char = $prefix[$i];
             if (!$node->hasChild($char)) {
@@ -110,7 +110,7 @@ class Trie
             $node = $node->getChild($char);
         }
 
-        return $this->findWordsFromNode($node, $prefix);
+        return $this->_findWordsFromNode($node, $prefix);
     }
 
     /**
@@ -121,7 +121,7 @@ class Trie
      *
      * @return array
      */
-    private function findWordsFromNode(TrieNode $node, string $prefix): array
+    private function _findWordsFromNode(TrieNode $node, string $prefix): array
     {
         $words = [];
         if ($node->isEndOfWord) {
@@ -131,7 +131,7 @@ class Trie
         foreach ($node->children as $char => $childNode) {
             $words = array_merge(
                 $words,
-                $this->findWordsFromNode($childNode, $prefix . $char)
+                $this->_findWordsFromNode($childNode, $prefix . $char)
             );
         }
 
@@ -149,7 +149,7 @@ class Trie
      */
     public function delete(string $word): bool
     {
-        return $this->deleteHelper($this->root, $word, 0);
+        return $this->_deleteHelper($this->_root, $word, 0);
     }
 
     /**
@@ -163,7 +163,7 @@ class Trie
      * @return bool Returns true if the current node should be deleted, otherwise
      * false.
      */
-    private function deleteHelper(TrieNode $node, string &$word, int $index): bool
+    private function _deleteHelper(TrieNode $node, string &$word, int $index): bool
     {
         if ($index === strlen($word)) {
             if (!$node->isEndOfWord) {
@@ -181,7 +181,7 @@ class Trie
         }
 
         // Recursively delete the child node
-        $shouldDeleteCurrentNode = $this->deleteHelper(
+        $shouldDeleteCurrentNode = $this->_deleteHelper(
             $childNode,
             $word,
             $index + 1
@@ -231,6 +231,6 @@ class Trie
      */
     public function getWords(): array
     {
-        return $this->traverseTrieNode($this->root);
+        return $this->traverseTrieNode($this->_root);
     }
 }

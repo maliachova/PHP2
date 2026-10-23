@@ -41,20 +41,20 @@ class NeuralNetworkPerceptronClassifier
         int $iterations,
         float $learningRate
     ): array {
-        [$W, $b] = $this->initParams(count($X));
+        [$W, $b] = $this->_initParams(count($X));
 
         for ($i = 0; $i < $iterations; $i++) {
             // Forward propagation
-            $A = $this->forwardPropagation($X, $W, $b);
+            $A = $this->_forwardPropagation($X, $W, $b);
 
             // Compute cost
-            $cost = $this->computeCost($A, $Y);
+            $cost = $this->_computeCost($A, $Y);
 
             // Backward propagation
-            [$dW, $db] = $this->backwardPropagation($A, $X, $Y);
+            [$dW, $db] = $this->_backwardPropagation($A, $X, $Y);
 
             // Update parameters
-            [$W, $b] = $this->updateParams($W, $b, $dW, $db, $learningRate);
+            [$W, $b] = $this->_updateParams($W, $b, $dW, $db, $learningRate);
 
             if ($i % 100 == 0) {
                 echo sprintf('Iteration %d - Cost: %s%s', $i, $cost, PHP_EOL);
@@ -75,7 +75,7 @@ class NeuralNetworkPerceptronClassifier
      */
     public function predict(array $X, array $W, float $b): array
     {
-        $A = $this->forwardPropagation($X, $W, $b);
+        $A = $this->_forwardPropagation($X, $W, $b);
         return array_map(fn ($a): int => $a > 0.5 ? 1 : 0, $A);
     }
 
@@ -112,7 +112,7 @@ class NeuralNetworkPerceptronClassifier
      *
      * @return array [$W, $b] Weight and bias arrays
      */
-    private function initParams(int $n): array
+    private function _initParams(int $n): array
     {
         $W = [];
         for ($i = 0; $i < $n; $i++) {
@@ -130,7 +130,7 @@ class NeuralNetworkPerceptronClassifier
      *
      * @return float
      */
-    private function sigmoid(float $z): float
+    private function _sigmoid(float $z): float
     {
         return 1 / (1 + exp(-$z));
     }
@@ -144,7 +144,7 @@ class NeuralNetworkPerceptronClassifier
      *
      * @return array
      */
-    private function forwardPropagation(array $X, array $W, float $b): array
+    private function _forwardPropagation(array $X, array $W, float $b): array
     {
         $Z = [];
         $counter = count($X[0]);
@@ -154,7 +154,7 @@ class NeuralNetworkPerceptronClassifier
                 $sum += $W[$i] * $X[$i][$j];
             }
 
-            $Z[$j] = $this->sigmoid($sum);
+            $Z[$j] = $this->_sigmoid($sum);
         }
 
         return $Z;
@@ -168,7 +168,7 @@ class NeuralNetworkPerceptronClassifier
      *
      * @return float
      */
-    private function computeCost(array $A, array $Y): float
+    private function _computeCost(array $A, array $Y): float
     {
         $m = count($Y);
         $cost = 0.0;
@@ -188,7 +188,7 @@ class NeuralNetworkPerceptronClassifier
      *
      * @return array
      */
-    private function backwardPropagation(array $A, array $X, array $Y): array
+    private function _backwardPropagation(array $A, array $X, array $Y): array
     {
         $m = count($Y);
         $dW = array_fill(0, count($X), 0.0);
@@ -228,7 +228,7 @@ class NeuralNetworkPerceptronClassifier
      *
      * @return array
      */
-    private function updateParams(
+    private function _updateParams(
         array $W,
         float $b,
         array $dW,
