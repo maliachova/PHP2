@@ -18,7 +18,9 @@ class ConversionsTest extends TestCase
         $this->assertEquals(7, binaryToDecimal(111));
         $this->assertEquals(5, binaryToDecimal(101));
         $this->expectException(\Exception::class);
-        $this->expectExceptionMessage('Please pass a valid Binary Number for Converting it to a Decimal Number.');
+        $this->expectExceptionMessage(
+            'Please pass a valid Binary Number for Converting it to a Decimal Number.'
+        );
         binaryToDecimal("this is a string");
     }
 
@@ -28,7 +30,9 @@ class ConversionsTest extends TestCase
         $this->assertEquals(101, decimalToBinary(5));
         $this->assertEquals(110, decimalToBinary(6));
         $this->expectException(\Exception::class);
-        $this->expectExceptionMessage('Please pass a valid Decimal Number for Converting it to a Binary Number.');
+        $this->expectExceptionMessage(
+            'Please pass a valid Decimal Number for Converting it to a Binary Number.'
+        );
         decimalToBinary("this is a string");
     }
 
@@ -38,7 +42,9 @@ class ConversionsTest extends TestCase
         $this->assertEquals(9, octalToDecimal(11));
         $this->assertEquals(589, octalToDecimal(1115));
         $this->expectException(\Exception::class);
-        $this->expectExceptionMessage('Please pass a valid Octal Number for Converting it to a Decimal Number.');
+        $this->expectExceptionMessage(
+            'Please pass a valid Octal Number for Converting it to a Decimal Number.'
+        );
         octalToDecimal("this is a string");
     }
 
@@ -48,7 +54,9 @@ class ConversionsTest extends TestCase
         $this->assertEquals(11, decimalToOctal(9));
         $this->assertEquals(1115, decimalToOctal(589));
         $this->expectException(\Exception::class);
-        $this->expectExceptionMessage('Please pass a valid Decimal Number for Converting it to an Octal Number.');
+        $this->expectExceptionMessage(
+            'Please pass a valid Decimal Number for Converting it to an Octal Number.'
+        );
         decimalToOctal("this is a string");
     }
 
@@ -58,7 +66,9 @@ class ConversionsTest extends TestCase
         $this->assertEquals('1D28A0D3', decimalToHex(489201875));
         $this->assertEquals('AB', decimalToHex(171));
         $this->expectException(\Exception::class);
-        $this->expectExceptionMessage('Please pass a valid Decimal Number for Converting it to a Hexadecimal Number.');
+        $this->expectExceptionMessage(
+            'Please pass a valid Decimal Number for Converting it to a Hexadecimal Number.'
+        );
         decimalToHex("this is a string");
     }
 
@@ -68,7 +78,9 @@ class ConversionsTest extends TestCase
         $this->assertEquals(489201875, hexToDecimal('1D28A0D3'));
         $this->assertEquals(171, hexToDecimal('AB'));
         $this->expectException(\Exception::class);
-        $this->expectExceptionMessage('Please pass a valid Hexadecimal Number for Converting it to a Decimal Number.');
+        $this->expectExceptionMessage(
+            'Please pass a valid Hexadecimal Number for Converting it to a Decimal Number.'
+        );
         hexToDecimal("this is a string");
     }
 

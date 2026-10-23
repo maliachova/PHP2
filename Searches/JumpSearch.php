@@ -8,7 +8,8 @@ declare(strict_types=1);
    * The list must be sorted in ascending order before performing jumpSearch
    *
    * @param Array $list refers to a sorted list of integer
-   * @param integer $key refers to the integer target to be searched from the sorted list
+   * @param integer $key refers to the integer target to be searched from the sorted
+   * list
    *
    * @return int index of $key if found, otherwise -1 is returned
  */

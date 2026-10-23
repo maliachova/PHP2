@@ -6,7 +6,8 @@ declare(strict_types=1);
  * This functions computes an exponent by doing repeated squares
  *
  * @param Integer $base the base
- * @param Integer $exponent the exponent (ie the number of times that the base is multiplied by itself)
+ * @param Integer $exponent the exponent (ie the number of times that the base is
+ * multiplied by itself)
  *
  * @return Integer
  */

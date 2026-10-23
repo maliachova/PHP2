@@ -4,10 +4,13 @@ declare(strict_types=1);
 
 /**
  * Two Pointers Approach
- * This method is designed to improve the efficiency of algorithms by processing two elements per
+ * This method is designed to improve the efficiency of algorithms by processing two
+ * elements per
  * loop instead of just one, thereby reducing both time and space complexity
- * The technique involves using two pointers, which can start from the beginning and the end of the array
- * or list, or one pointer moving at a slower pace while the other moves at a faster pace.
+ * The technique involves using two pointers, which can start from the beginning and
+ * the end of the array
+ * or list, or one pointer moving at a slower pace while the other moves at a faster
+ * pace.
  *
  * @category Searches
  */
@@ -15,12 +18,15 @@ declare(strict_types=1);
 /**
  * To understand the technique let's solve a simple problem,
  * Problem Statement:
- *     There is an array of distinct integers "$list" and a target integer "$target". We have to find how many pairs
+ *     There is an array of distinct integers "$list" and a target integer "$target".
+ *     We have to find how many pairs
  *     of elements of $list sum up to $target.
  *     For example: $list = [2,4,3,8,6,9,10], $target = 12
- *     in this array 2+10 = 12, 4+8 = 12, 3+9 = 12, therefore, there are 3 pairs which sum up to 12.
+ *     in this array 2+10 = 12, 4+8 = 12, 3+9 = 12, therefore, there are 3 pairs
+ *     which sum up to 12.
  *
- * If we solve this problem using two nested loops, the time complexity would be O(n^2),
+ * If we solve this problem using two nested loops, the time complexity would be
+ * O(n^2),
         for($i=0; $i<sizeof($list); ++$i){
             for($j=$i+1; $j<sizeof($list); ++$j){
                 if($list[$i] + $list[$j] == $target)

@@ -3,10 +3,12 @@
 declare(strict_types=1);
 
 /*
- * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request: #168
+ * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request:
+ * #168
  * https://github.com/TheAlgorithms/PHP/pull/168
  *
- * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing bugs/corrections to this file.
+ * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing
+ * bugs/corrections to this file.
  * Thank you!
  */
 
@@ -14,7 +16,10 @@ namespace DataStructures\SplayTree;
 
 abstract class SplayTreeRotations
 {
-    abstract protected function splay(?SplayTreeNode $node, int $key): ?SplayTreeNode;
+    abstract protected function splay(
+        ?SplayTreeNode $node,
+        int $key
+    ): ?SplayTreeNode;
 
     abstract protected function setRoot(SplayTreeNode $node): void;
 
@@ -48,8 +53,10 @@ abstract class SplayTreeRotations
 
     /**
      * Zig-Zig rotation (double right rotation).
-     * Performs two consecutive right rotations on the given node. The first right rotation is applied to
-     * the node’s parent, and the second one to the node’s new parent (the previous grandparent).
+     * Performs two consecutive right rotations on the given node. The first right
+     * rotation is applied to
+     * the node’s parent, and the second one to the node’s new parent (the previous
+     * grandparent).
      *
      * @param SplayTreeNode $node The node to be rotated.
      *
@@ -63,8 +70,10 @@ abstract class SplayTreeRotations
 
     /**
      * Zag-Zag rotation (double left rotation).
-     * Performs two consecutive left rotations on the given node. The first left rotation is applied to
-     * the node’s parent, and the second one to the node’s new parent (the previous grandparent).
+     * Performs two consecutive left rotations on the given node. The first left
+     * rotation is applied to
+     * the node’s parent, and the second one to the node’s new parent (the previous
+     * grandparent).
      *
      * @param SplayTreeNode $node The node to be rotated.
      *
@@ -78,7 +87,8 @@ abstract class SplayTreeRotations
 
     /**
      * Zig-Zag rotation (left-right rotation).
-     * Performs a left rotation on the left child followed by a right rotation on the node itself.
+     * Performs a left rotation on the left child followed by a right rotation on the
+     * node itself.
      *
      * A case when the target key is in the right subtree of the left child.
      *
@@ -94,7 +104,8 @@ abstract class SplayTreeRotations
 
     /**
      * Zag-Zig rotation (right-left rotation).
-     * Performs a right rotation on the right child followed by a left rotation on the node itself.
+     * Performs a right rotation on the right child followed by a left rotation on
+     * the node itself.
      *
      * A case when the target key is in the left subtree of the right child.
      *
@@ -109,12 +120,15 @@ abstract class SplayTreeRotations
     }
 
     /**
-     * Rotates the given node to the left, bringing its right child up to take its place.
-     * The left subtree of the node's right child will become the new right subtree of the node.
+     * Rotates the given node to the left, bringing its right child up to take its
+     * place.
+     * The left subtree of the node's right child will become the new right subtree
+     * of the node.
      *
      * @param SplayTreeNode $node The node to be rotated.
      *
-     * @return SplayTreeNode The new root of the subtree after the rotation (the former right child).
+     * @return SplayTreeNode The new root of the subtree after the rotation (the
+     * former right child).
      */
     private function rotateLeft(SplayTreeNode $node): SplayTreeNode
     {
@@ -147,12 +161,15 @@ abstract class SplayTreeRotations
     }
 
     /**
-     * Rotates the given node to the right, bringing its left child up to take its place.
-     * The right subtree of the node's left child will become the new left subtree of the node.
+     * Rotates the given node to the right, bringing its left child up to take its
+     * place.
+     * The right subtree of the node's left child will become the new left subtree of
+     * the node.
      *
      * @param SplayTreeNode $node The node to be rotated.
      *
-     * @return SplayTreeNode The new root of the subtree after the rotation (the former left child).
+     * @return SplayTreeNode The new root of the subtree after the rotation (the
+     * former left child).
      */
     private function rotateRight(SplayTreeNode $node): SplayTreeNode
     {

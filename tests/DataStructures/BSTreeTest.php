@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request: #174
+ * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request:
+ * #174
  * https://github.com/TheAlgorithms/PHP/pull/174
  *
- * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing bugs/corrections to this file.
+ * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing
+ * bugs/corrections to this file.
  * Thank you!
  */
 
@@ -32,9 +34,19 @@ class BSTreeTest extends TestCase
 
     public function testTreeInitialization()
     {
-        $this->assertNull($this->tree->getRoot(), "Tree root should be null upon initialization.");
-        $this->assertEquals(0, $this->tree->size(), "Tree size should be 0 upon initialization.");
-        $this->assertTrue($this->tree->isEmpty(), "Tree should be empty upon initialization.");
+        $this->assertNull(
+            $this->tree->getRoot(),
+            "Tree root should be null upon initialization."
+        );
+        $this->assertEquals(
+            0,
+            $this->tree->size(),
+            "Tree size should be 0 upon initialization."
+        );
+        $this->assertTrue(
+            $this->tree->isEmpty(),
+            "Tree should be empty upon initialization."
+        );
     }
 
     /**
@@ -45,8 +57,15 @@ class BSTreeTest extends TestCase
     public function testInsertSingleNode(): void
     {
         $this->tree->insert(10, 'value10');
-        $this->assertNotNull($this->tree->getRoot(), "Tree root should not be null after inserting.");
-        $this->assertEquals(10, $this->tree->getRoot()->key, "Node key does not match the key inserted in node");
+        $this->assertNotNull(
+            $this->tree->getRoot(),
+            "Tree root should not be null after inserting."
+        );
+        $this->assertEquals(
+            10,
+            $this->tree->getRoot()->key,
+            "Node key does not match the key inserted in node"
+        );
         $this->assertEquals(
             'value10',
             $this->tree->getRoot()->value,
@@ -65,9 +84,21 @@ class BSTreeTest extends TestCase
         $this->tree->insert(10, 'value10');
         $this->tree->insert(30, 'value30');
 
-        $this->assertEquals(20, $this->tree->getRoot()->key, "Root node was not set properly.");
-        $this->assertEquals(10, $this->tree->getRoot()->left->key, "Left node was not inserted properly");
-        $this->assertEquals(30, $this->tree->getRoot()->right->key, "Right node was not inserted properly");
+        $this->assertEquals(
+            20,
+            $this->tree->getRoot()->key,
+            "Root node was not set properly."
+        );
+        $this->assertEquals(
+            10,
+            $this->tree->getRoot()->left->key,
+            "Left node was not inserted properly"
+        );
+        $this->assertEquals(
+            30,
+            $this->tree->getRoot()->right->key,
+            "Right node was not inserted properly"
+        );
     }
 
     /**
@@ -78,19 +109,34 @@ class BSTreeTest extends TestCase
     public function testInsertMultipleNodesFromArray()
     {
         $arrayData = [200 => "Value 200", 150 => "Value 150", 170 => "Value 170",
-            250 => "Value 250", 300 => "Value 300", 360 => "Value 360", 230 => "Value 230",
-            240 => "Value 240", 220 => "Value 220", 50 => "Value 50", 28 => "Value 28", 164 => "Value 164",
-            321 => "Value 321", 40 => "Value 40", 9 => "Value 9", 32 => "Value 32", 64 => "Value 64",
+            250 => "Value 250", 300 => "Value 300", 360 => "Value 360",
+            230 => "Value 230",
+            240 => "Value 240", 220 => "Value 220", 50 => "Value 50",
+            28 => "Value 28", 164 => "Value 164",
+            321 => "Value 321", 40 => "Value 40", 9 => "Value 9", 32 => "Value 32",
+            64 => "Value 64",
         ];
 
         $bsTree = new BSTree($arrayData);
         $root = $bsTree->getRoot();
 
         $this->assertFalse($bsTree->isEmpty(), "Tree was not populated correctly");
-        $this->assertSame(count($arrayData), $bsTree->size(), "Failed to insert all " . count($arrayData) . " nodes");
+        $this->assertSame(
+            count($arrayData),
+            $bsTree->size(),
+            "Failed to insert all " . count($arrayData) . " nodes"
+        );
 
-        $this->assertEquals(200, $root->key, "The root should be the first inserted node");
-        $this->assertEquals("Value 200", $root->value, "The value of the new root must match the first inserted node");
+        $this->assertEquals(
+            200,
+            $root->key,
+            "The root should be the first inserted node"
+        );
+        $this->assertEquals(
+            "Value 200",
+            $root->value,
+            "The value of the new root must match the first inserted node"
+        );
     }
 
     /**
@@ -173,9 +219,16 @@ class BSTreeTest extends TestCase
         $node = $this->tree->search(115);
         $isFound = $this->tree->isFound($this->tree->getRoot(), 230);
 
-        $this->assertNotNull($node, "The node with key 115 exists. Should not be null.");
+        $this->assertNotNull(
+            $node,
+            "The node with key 115 exists. Should not be null."
+        );
         $this->assertEquals(115, $node->key, "The node key does not match");
-        $this->assertEquals('Value 115', $node->value, "The node value does not match");
+        $this->assertEquals(
+            'Value 115',
+            $node->value,
+            "The node value does not match"
+        );
         $this->assertTrue($isFound, "Node with key 230 exists.");
     }
 
@@ -204,18 +257,32 @@ class BSTreeTest extends TestCase
     {
         $this->populateTree();
 
-        $this->assertTrue($this->tree->search(360)->isLeaf(), "The node with key 360 is leaf.");
+        $this->assertTrue(
+            $this->tree->search(360)->isLeaf(),
+            "The node with key 360 is leaf."
+        );
         $parentNode = $this->tree->search(360)->parent->key;    // 300
 
         $removedNode = $this->tree->remove(360);
-        $this->assertNull($this->tree->search(360), "Node with key 360 should be gone");
+        $this->assertNull(
+            $this->tree->search(360),
+            "Node with key 360 should be gone"
+        );
         $this->assertNotNull(
             $this->tree->search($parentNode),
             "Parent node with key 300 should still exist. Tree was not merged correctly."
         );
 
-        $this->assertEquals(360, $removedNode->key, "The key of the removed node does not match");
-        $this->assertEquals('Value 360', $removedNode->value, "The value of the removed node does not match");
+        $this->assertEquals(
+            360,
+            $removedNode->key,
+            "The key of the removed node does not match"
+        );
+        $this->assertEquals(
+            'Value 360',
+            $removedNode->value,
+            "The value of the removed node does not match"
+        );
         $this->assertNull(
             $removedNode->left,
             "The left pointer was not broken from tree correctly. Node isolation failed."
@@ -239,12 +306,19 @@ class BSTreeTest extends TestCase
     {
         $this->populateTree();
 
-        $this->assertEquals(1, $this->tree->search(140)->getChildrenCount(), "The node with key 140 has one child.");
+        $this->assertEquals(
+            1,
+            $this->tree->search(140)->getChildrenCount(),
+            "The node with key 140 has one child."
+        );
         $parentNode = $this->tree->search(140)->parent->key;    // 150
         $leftNode = $this->tree->search(140)->left->key;    // 130
 
         $removedNode = $this->tree->remove(140);
-        $this->assertNull($this->tree->search(140), "Node with key 140 should be gone");
+        $this->assertNull(
+            $this->tree->search(140),
+            "Node with key 140 should be gone"
+        );
         $this->assertNotNull(
             $this->tree->search($parentNode),
             "Parent node with key 150 should still exist. Tree was not merged correctly."
@@ -254,8 +328,16 @@ class BSTreeTest extends TestCase
             "Left Node with key 130 should still exist. Tree was not merged correctly."
         );
 
-        $this->assertEquals(140, $removedNode->key, "The key of the removed node does not match");
-        $this->assertEquals('Value 140', $removedNode->value, "The value of the removed node does not match");
+        $this->assertEquals(
+            140,
+            $removedNode->key,
+            "The key of the removed node does not match"
+        );
+        $this->assertEquals(
+            'Value 140',
+            $removedNode->value,
+            "The value of the removed node does not match"
+        );
         $this->assertNull(
             $removedNode->left,
             "The left pointer was not broken from tree correctly. Node isolation failed."
@@ -290,7 +372,10 @@ class BSTreeTest extends TestCase
         $rightNode = $this->tree->search(230)->right->key;   // 240
 
         $removedNode = $this->tree->remove(230);
-        $this->assertNull($this->tree->search(230), "Node with key 230 should be gone");
+        $this->assertNull(
+            $this->tree->search(230),
+            "Node with key 230 should be gone"
+        );
         $this->assertNotNull(
             $this->tree->search($parentNode),
             "Parent Node with key 220 should still exist. Tree was not merged correctly."
@@ -304,8 +389,16 @@ class BSTreeTest extends TestCase
             "Parent Node with key 240 should still exist. Tree was not merged correctly."
         );
 
-        $this->assertEquals(230, $removedNode->key, "The key of the removed node does not match");
-        $this->assertEquals('Value 230', $removedNode->value, "The value of the removed node does not match");
+        $this->assertEquals(
+            230,
+            $removedNode->key,
+            "The key of the removed node does not match"
+        );
+        $this->assertEquals(
+            'Value 230',
+            $removedNode->value,
+            "The value of the removed node does not match"
+        );
         $this->assertNull(
             $removedNode->left,
             "The left pointer was not broken from tree correctly. Node isolation failed."
@@ -339,11 +432,18 @@ class BSTreeTest extends TestCase
         }
 
         for ($i = 1; $i <= 1000; $i++) {
-            $this->assertEquals("Value $i", $this->tree->search($i)->value, "Value for key $i should be 'Value $i'");
+            $this->assertEquals(
+                "Value $i",
+                $this->tree->search($i)->value,
+                "Value for key $i should be 'Value $i'"
+            );
         }
 
         for ($i = 1; $i <= 1000; $i++) {
-            $this->assertTrue($this->tree->isFound($this->tree->getRoot(), $i), "Node with key $i should exist");
+            $this->assertTrue(
+                $this->tree->isFound($this->tree->getRoot(), $i),
+                "Node with key $i should exist"
+            );
         }
 
         for ($i = 1; $i <= 5; $i++) {
@@ -365,8 +465,10 @@ class BSTreeTest extends TestCase
         $this->assertEquals(0, $this->tree->size());
 
         $arrayData = [200 => "Value 200", 150 => "Value 150", 170 => "Value 170",
-            250 => "Value 250", 300 => "Value 300", 360 => "Value 360", 230 => "Value 230",
-            240 => "Value 240", 220 => "Value 220", 50 => "Value 50", 28 => "Value 28",
+            250 => "Value 250", 300 => "Value 300", 360 => "Value 360",
+            230 => "Value 230",
+            240 => "Value 240", 220 => "Value 220", 50 => "Value 50",
+            28 => "Value 28",
             164 => "Value 164", 321 => "Value 321", 40 => "Value 40", 9 => "Value 9",
             32 => "Value 32", 64 => "Value 64", 116 => "Value 116"
         ];
@@ -394,10 +496,26 @@ class BSTreeTest extends TestCase
         $node110 = $this->tree->search(110);
         $node70 = $this->tree->search(70);
 
-        $this->assertEquals(0, $this->tree->getdepth($root), "The root node should have a depth of 0.");
-        $this->assertEquals(1, $this->tree->getdepth($node150), "Node 150 should have a depth of 1.");
-        $this->assertEquals(4, $this->tree->getdepth($node110), "Node 110 should have a depth of 4.");
-        $this->assertEquals(6, $this->tree->getdepth($node70), "Node 70 should have a depth of 6.");
+        $this->assertEquals(
+            0,
+            $this->tree->getdepth($root),
+            "The root node should have a depth of 0."
+        );
+        $this->assertEquals(
+            1,
+            $this->tree->getdepth($node150),
+            "Node 150 should have a depth of 1."
+        );
+        $this->assertEquals(
+            4,
+            $this->tree->getdepth($node110),
+            "Node 110 should have a depth of 4."
+        );
+        $this->assertEquals(
+            6,
+            $this->tree->getdepth($node70),
+            "Node 70 should have a depth of 6."
+        );
     }
 
     /**
@@ -416,11 +534,31 @@ class BSTreeTest extends TestCase
         $node70 = $this->tree->search(70);
         $node360 = $this->tree->search(360);
 
-        $this->assertEquals(6, $this->tree->getheight($root), "The root node should have a height of 6.");
-        $this->assertEquals(5, $this->tree->getheight($node150), "Node 150 should have a height of 5.");
-        $this->assertEquals(0, $this->tree->getheight($node70), "Node 70 should have a height of 0 (it's a leaf).");
-        $this->assertEquals(0, $this->tree->getheight($node360), "Node 360 should have a height of 0 (it's a leaf).");
-        $this->assertEquals(2, $this->tree->getheight($node110), "Node 110 should have a height of 2.");
+        $this->assertEquals(
+            6,
+            $this->tree->getheight($root),
+            "The root node should have a height of 6."
+        );
+        $this->assertEquals(
+            5,
+            $this->tree->getheight($node150),
+            "Node 150 should have a height of 5."
+        );
+        $this->assertEquals(
+            0,
+            $this->tree->getheight($node70),
+            "Node 70 should have a height of 0 (it's a leaf)."
+        );
+        $this->assertEquals(
+            0,
+            $this->tree->getheight($node360),
+            "Node 360 should have a height of 0 (it's a leaf)."
+        );
+        $this->assertEquals(
+            2,
+            $this->tree->getheight($node110),
+            "Node 110 should have a height of 2."
+        );
     }
 
     /**
@@ -445,8 +583,10 @@ class BSTreeTest extends TestCase
             50 => 'Value 50', 70 => 'Value 70', 110 => 'Value 110',
             115 => 'Value 115', 130 => 'Value 130', 140 => 'Value 140',
             150 => 'Value 150', 160 => 'Value 160', 170 => 'Value 170',
-            180 => 'Value 180', 185 => 'Value 185', 200 => 'Value 200', 215 => 'Value 215',
-            220 => 'Value 220', 225 => 'Value 225', 230 => 'Value 230', 240 => 'Value 240',
+            180 => 'Value 180', 185 => 'Value 185', 200 => 'Value 200',
+            215 => 'Value 215',
+            220 => 'Value 220', 225 => 'Value 225', 230 => 'Value 230',
+            240 => 'Value 240',
             250 => 'Value 250', 300 => 'Value 300', 360 => 'Value 360'
         ];
     }
@@ -473,8 +613,10 @@ class BSTreeTest extends TestCase
             200 => 'Value 200', 150 => 'Value 150', 140 => 'Value 140',
             130 => 'Value 130', 110 => 'Value 110', 50 => 'Value 50',
             70 => 'Value 70', 115 => 'Value 115', 170 => 'Value 170',
-            160 => 'Value 160', 180 => 'Value 180', 185 => 'Value 185', 250 => 'Value 250',
-            220 => 'Value 220', 215 => 'Value 215', 230 => 'Value 230', 225 => 'Value 225',
+            160 => 'Value 160', 180 => 'Value 180', 185 => 'Value 185',
+            250 => 'Value 250',
+            220 => 'Value 220', 215 => 'Value 215', 230 => 'Value 230',
+            225 => 'Value 225',
             240 => 'Value 240', 300 => 'Value 300', 360 => 'Value 360'
         ];
     }
@@ -501,8 +643,10 @@ class BSTreeTest extends TestCase
             70 => 'Value 70', 50 => 'Value 50', 115 => 'Value 115',
             110 => 'Value 110', 130 => 'Value 130', 140 => 'Value 140',
             160 => 'Value 160', 185 => 'Value 185', 180 => 'Value 180',
-            170 => 'Value 170', 150 => 'Value 150', 215 => 'Value 215', 225 => 'Value 225',
-            240 => 'Value 240', 230 => 'Value 230', 220 => 'Value 220', 360 => 'Value 360',
+            170 => 'Value 170', 150 => 'Value 150', 215 => 'Value 215',
+            225 => 'Value 225',
+            240 => 'Value 240', 230 => 'Value 230', 220 => 'Value 220',
+            360 => 'Value 360',
             300 => 'Value 300', 250 => 'Value 250', 200 => 'Value 200'
         ];
     }
@@ -529,8 +673,10 @@ class BSTreeTest extends TestCase
             200 => 'Value 200', 150 => 'Value 150', 250 => 'Value 250',
             140 => 'Value 140', 170 => 'Value 170', 220 => 'Value 220',
             300 => 'Value 300', 130 => 'Value 130', 160 => 'Value 160',
-            180 => 'Value 180', 215 => 'Value 215', 230 => 'Value 230', 360 => 'Value 360',
-            110 => 'Value 110', 185 => 'Value 185', 225 => 'Value 225', 240 => 'Value 240',
+            180 => 'Value 180', 215 => 'Value 215', 230 => 'Value 230',
+            360 => 'Value 360',
+            110 => 'Value 110', 185 => 'Value 185', 225 => 'Value 225',
+            240 => 'Value 240',
             50 => 'Value 50', 115 => 'Value 115', 70 => 'Value 70'
         ];
     }
@@ -574,8 +720,10 @@ class BSTreeTest extends TestCase
                     50 => 'Value 50', 70 => 'Value 70', 110 => 'Value 110',
                     115 => 'Value 115', 130 => 'Value 130', 140 => 'Value 140',
                     150 => 'Value 150', 160 => 'Value 160', 170 => 'Value 170',
-                    180 => 'Value 180', 185 => 'Value 185', 200 => 'Value 200', 215 => 'Value 215',
-                    220 => 'Value 220', 225 => 'Value 225', 230 => 'Value 230', 240 => 'Value 240',
+                    180 => 'Value 180', 185 => 'Value 185', 200 => 'Value 200',
+                    215 => 'Value 215',
+                    220 => 'Value 220', 225 => 'Value 225', 230 => 'Value 230',
+                    240 => 'Value 240',
                     250 => 'Value 250', 300 => 'Value 300', 360 => 'Value 360',
                 ],
             ],
@@ -586,8 +734,10 @@ class BSTreeTest extends TestCase
                     200 => 'Value 200', 150 => 'Value 150', 140 => 'Value 140',
                     130 => 'Value 130', 110 => 'Value 110', 50 => 'Value 50',
                     70 => 'Value 70', 115 => 'Value 115', 170 => 'Value 170',
-                    160 => 'Value 160', 180 => 'Value 180', 185 => 'Value 185', 250 => 'Value 250',
-                    220 => 'Value 220', 215 => 'Value 215', 230 => 'Value 230', 225 => 'Value 225',
+                    160 => 'Value 160', 180 => 'Value 180', 185 => 'Value 185',
+                    250 => 'Value 250',
+                    220 => 'Value 220', 215 => 'Value 215', 230 => 'Value 230',
+                    225 => 'Value 225',
                     240 => 'Value 240', 300 => 'Value 300', 360 => 'Value 360',
                 ],
             ],
@@ -598,8 +748,10 @@ class BSTreeTest extends TestCase
                     70 => 'Value 70', 50 => 'Value 50', 115 => 'Value 115',
                     110 => 'Value 110', 130 => 'Value 130', 140 => 'Value 140',
                     160 => 'Value 160', 185 => 'Value 185', 180 => 'Value 180',
-                    170 => 'Value 170', 150 => 'Value 150', 215 => 'Value 215', 225 => 'Value 225',
-                    240 => 'Value 240', 230 => 'Value 230', 220 => 'Value 220', 360 => 'Value 360',
+                    170 => 'Value 170', 150 => 'Value 150', 215 => 'Value 215',
+                    225 => 'Value 225',
+                    240 => 'Value 240', 230 => 'Value 230', 220 => 'Value 220',
+                    360 => 'Value 360',
                     300 => 'Value 300', 250 => 'Value 250', 200 => 'Value 200',
                 ],
             ],
@@ -607,14 +759,17 @@ class BSTreeTest extends TestCase
     }
 
     /**
-     * Test: Iterating over the tree with inOrder, preOrder, and postOrder Traversals.
+     * Test: Iterating over the tree with inOrder, preOrder, and postOrder
+     * Traversals.
      *
      * @dataProvider traversalProvider
      *
      * @return void
      */
-    public function testIteratorWithTraversalTypes(string $traversalType, array $expected): void
-    {
+    public function testIteratorWithTraversalTypes(
+        string $traversalType,
+        array $expected
+    ): void {
         $this->tree->setTraversalType($traversalType);
         $this->populateTree();
 
@@ -636,6 +791,10 @@ class BSTreeTest extends TestCase
             );
             $index++;
         }
-        $this->assertEquals(count($expected), $index, "Tree iteration did not visit the expected number of nodes.");
+        $this->assertEquals(
+            count($expected),
+            $index,
+            "Tree iteration did not visit the expected number of nodes."
+        );
     }
 }

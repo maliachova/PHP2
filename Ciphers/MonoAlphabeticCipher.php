@@ -21,7 +21,9 @@ function monoAlphabeticCipher(string $key, $alphabet, $text): false|string
         if ($text[$i] === " ") {
             $cipherText .= " ";
         } else {
-            $cipherText .= (ctype_upper($text[$i]) ? strtoupper($key[$index]) : $key[$index]);
+            $cipherText .= (
+                ctype_upper($text[$i]) ? strtoupper($key[$index]) : $key[$index]
+            );
         }
     }
 

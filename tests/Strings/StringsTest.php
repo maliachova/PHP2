@@ -24,7 +24,8 @@ class StringsTest extends TestCase
         $this->assertFalse(isPalindrome('ThisIsTest')); // false
         $this->assertFalse(isPalindrome('')); // false
         $this->assertTrue(isPalindrome('Sator Arepo Tenet Opera Rotas')); // true
-        $this->assertFalse(isPalindrome('Sator Arepo Tenet Opera Rotas', false)); // false since we are doing
+        // false since we are doing
+        $this->assertFalse(isPalindrome('Sator Arepo Tenet Opera Rotas', false));
         // case-sensitive check
     }
 
@@ -46,22 +47,34 @@ class StringsTest extends TestCase
     {
         $this->assertEquals('Fun is Coding PHP', reverseWords('PHP Coding is Fun'));
         $this->assertEquals('OneWord', reverseWords('OneWord'));
-        $this->assertEquals('Text different some is This', reverseWords('This is some different Text'));
+        $this->assertEquals(
+            'Text different some is This',
+            reverseWords('This is some different Text')
+        );
     }
 
     public function testIsAnagram()
     {
-        $this->assertTrue(isAnagram("php", "PHP")); // By default it's case-insensitive
-        $this->assertFalse(isAnagram("php", "PHP", false)); // Make case-sensitive check
+        // By default it's case-insensitive
+        $this->assertTrue(isAnagram("php", "PHP"));
+        // Make case-sensitive check
+        $this->assertFalse(isAnagram("php", "PHP", false));
         $this->assertTrue(isAnagram("php is fun", "pin hpf us"));
         $this->assertFalse(isAnagram("Hello", " Hello")); //Extra space character
-        $this->assertTrue(isAnagram("ScRamble", "SRlmcaeb", false)); // Check with a mixture of upper and lower case
+        // Check with a mixture of upper and lower case
+        $this->assertTrue(isAnagram("ScRamble", "SRlmcaeb", false));
     }
 
     public function testMaxCharacter()
     {
-        $this->assertEquals('t', maxCharacter("this is test for max character repetition"));
-        $this->assertEquals('t', maxCharacter("This is Test for max characTer repetition"));
+        $this->assertEquals(
+            't',
+            maxCharacter("this is test for max character repetition")
+        );
+        $this->assertEquals(
+            't',
+            maxCharacter("This is Test for max characTer repetition")
+        );
         $this->assertEquals(' ', maxCharacter("           "));
         $this->assertEquals('0', maxCharacter("c00l"));
     }
@@ -79,7 +92,10 @@ class StringsTest extends TestCase
 
     public function testCountConsonants()
     {
-        $this->assertEquals(19, countConsonants("This is a string with 19 consonants"));
+        $this->assertEquals(
+            19,
+            countConsonants("This is a string with 19 consonants")
+        );
         $this->assertEquals(7, countConsonants("hello world"));
         $this->assertEquals(9, countConsonants("Just A list of somE aaaaaaaaaa"));
     }

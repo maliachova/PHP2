@@ -18,7 +18,9 @@ function factorial(int $number)
     static $cache = []; //internal caching memory for speed
 
     if ($number < 0) {
-        throw new \Exception("Negative numbers are not allowed for calculating Factorial");
+        throw new \Exception(
+            "Negative numbers are not allowed for calculating Factorial"
+        );
     }
 
     // Factorial of 0 is 1

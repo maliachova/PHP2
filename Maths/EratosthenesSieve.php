@@ -3,7 +3,8 @@
 declare(strict_types=1);
 
 /**
- * The Sieve of Eratosthenes is an algorithm is an ancient algorithm for finding all prime numbers up to any given limit
+ * The Sieve of Eratosthenes is an algorithm is an ancient algorithm for finding all
+ * prime numbers up to any given limit
  * https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
  *
  * @author Michał Żarnecki https://github.com/rzarno

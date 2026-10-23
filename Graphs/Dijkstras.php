@@ -3,7 +3,8 @@
 declare(strict_types=1);
 
 /**
- * The Dijkstra's algorithm is an algorithm for finding the shortest paths between nodes in a weighted graph.
+ * The Dijkstra's algorithm is an algorithm for finding the shortest paths between
+ * nodes in a weighted graph.
  * (https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm).
  *
  * @author Michał Żarnecki https://github.com/rzarno
@@ -15,19 +16,28 @@ declare(strict_types=1);
  */
 function dijkstras(array $verticesNames, array $edges, string $start): array
 {
-    $vertices = array_combine($verticesNames, array_fill(0, count($verticesNames), PHP_INT_MAX));
+    $vertices = array_combine(
+        $verticesNames,
+        array_fill(0, count($verticesNames), PHP_INT_MAX)
+    );
     $visitedNodes = [];
 
     $nextVertex = $start;
     $vertices[$start] = 0;
-    while (count($visitedNodes) < count($verticesNames)) { //continue until all nodes are visited
+    //continue until all nodes are visited
+    while (count($visitedNodes) < count($verticesNames)) {
         foreach ($edges as $edge) {
-            if ($edge->start == $nextVertex) { //consider only nodes connected to current one
-                $vertices[$edge->end] = min($vertices[$edge->end], $vertices[$nextVertex] + $edge->weight);
+            //consider only nodes connected to current one
+            if ($edge->start == $nextVertex) {
+                $vertices[$edge->end] = min(
+                    $vertices[$edge->end],
+                    $vertices[$nextVertex] + $edge->weight
+                );
             }
         }
 
-        // find vertex with current lowest value to be starting point in next iteration
+        // find vertex with current lowest value to be starting point in next
+        // iteration
         $minVertexName = null;
         $minVertexWeight = PHP_INT_MAX;
         foreach ($vertices as $name => $weight) {

@@ -23,7 +23,10 @@ function Railencode($plainMessage, $rails): string
             }
 
             // Check if the character should go in the rail
-            if ($index % $position === $step || $index % $position == $position - $step) {
+            if (
+                $index % $position === $step
+                || $index % $position == $position - $step
+            ) {
                 $cipherMessage[$step] .= $plainMessage[$index];
             } else {
                 // Add a placeholder for empty spaces

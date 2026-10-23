@@ -3,10 +3,12 @@
 declare(strict_types=1);
 
 /*
- * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request: #174
+ * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request:
+ * #174
  * https://github.com/TheAlgorithms/PHP/pull/174
  *
- * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing bugs/corrections to this file.
+ * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing
+ * bugs/corrections to this file.
  * Thank you!
  */
 
@@ -17,7 +19,8 @@ use Iterator;
 /**
  * Provides tree nodes in several traversal algorithms.
  *
- * Implements the Iterator Interface. Allows tree traversal using loops in tree in-order manner.
+ * Implements the Iterator Interface. Allows tree traversal using loops in tree
+ * in-order manner.
  */
 class BinaryTreeTraversal implements Iterator
 {
@@ -198,7 +201,8 @@ class BinaryTreeTraversal implements Iterator
     }
 
     /**
-     * Helper function to traverse the tree in-order and fill the $inOrderNodes array.
+     * Helper function to traverse the tree in-order and fill the $inOrderNodes
+     * array.
      *
      * @return void
      */
@@ -212,7 +216,8 @@ class BinaryTreeTraversal implements Iterator
     }
 
     /**
-     * Helper function to traverse the tree in-order and fill the $preOrderNodes array.
+     * Helper function to traverse the tree in-order and fill the $preOrderNodes
+     * array.
      *
      * @return void
      */
@@ -226,7 +231,8 @@ class BinaryTreeTraversal implements Iterator
     }
 
     /**
-     * Helper function to traverse the tree in-order and fill the $postOrderNodes array.
+     * Helper function to traverse the tree in-order and fill the $postOrderNodes
+     * array.
      *
      * @return void
      */

@@ -5,7 +5,8 @@
  * in Pull Request #168: https://github.com/TheAlgorithms/PHP/pull/168
  * and #171: https://github.com/TheAlgorithms/PHP/pull/171
  *
- * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing bugs/corrections to this file.
+ * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing
+ * bugs/corrections to this file.
  * Thank you!
  */
 
@@ -46,9 +47,19 @@ class SplayTreeTest extends TestCase
     {
         $tree = new SplayTree();
 
-        $this->assertNull($tree->getRoot(), "Tree root should be null upon initialization.");
-        $this->assertEquals(0, $tree->size(), "Tree size should be 0 upon initialization.");
-        $this->assertTrue($tree->isEmpty(), "Tree should be empty upon initialization.");
+        $this->assertNull(
+            $tree->getRoot(),
+            "Tree root should be null upon initialization."
+        );
+        $this->assertEquals(
+            0,
+            $tree->size(),
+            "Tree size should be 0 upon initialization."
+        );
+        $this->assertTrue(
+            $tree->isEmpty(),
+            "Tree should be empty upon initialization."
+        );
     }
 
     /**
@@ -61,18 +72,30 @@ class SplayTreeTest extends TestCase
         $this->tree->insert(10, "Value 10");
         $root = $this->tree->getRoot();
 
-        $this->assertFalse($this->tree->isEmpty(), "Tree cannot be empty. Insertion failed.");
+        $this->assertFalse(
+            $this->tree->isEmpty(),
+            "Tree cannot be empty. Insertion failed."
+        );
         $this->assertNotNull($root, "Tree has one node and its root cannot be Null");
 
-        $this->assertEquals(10, $root->key, "The key must match the key of the inserted node");
-        $this->assertEquals("Value 10", $root->value, "The value must match the value of the inserted node");
+        $this->assertEquals(
+            10,
+            $root->key,
+            "The key must match the key of the inserted node"
+        );
+        $this->assertEquals(
+            "Value 10",
+            $root->value,
+            "The value must match the value of the inserted node"
+        );
 
         $this->assertTrue($root->isRoot(), "Tree root must not have a parent");
         $this->assertTrue($root->isLeaf(), "Root node has no children yet");
     }
 
     /**
-     * Inserts multiple nodes and checks if the last inserted node is splayed to the root.
+     * Inserts multiple nodes and checks if the last inserted node is splayed to the
+     * root.
      *
      * @return mixed
      */
@@ -82,43 +105,79 @@ class SplayTreeTest extends TestCase
 
         $root = $this->tree->getRoot();
 
-        $this->assertFalse($this->tree->isEmpty(), "Tree was not populated correctly");
+        $this->assertFalse(
+            $this->tree->isEmpty(),
+            "Tree was not populated correctly"
+        );
         $this->assertSame(10, $this->tree->size(), "Failed to insert all 10 nodes");
 
-        $this->assertEquals(5, $root->key, "After splay, the last inserted node should be the new root.");
-        $this->assertEquals("Value 5", $root->value, "The value of the new root must match the last inserted node");
+        $this->assertEquals(
+            5,
+            $root->key,
+            "After splay, the last inserted node should be the new root."
+        );
+        $this->assertEquals(
+            "Value 5",
+            $root->value,
+            "The value of the new root must match the last inserted node"
+        );
 
-        $this->assertTrue($root->isRoot(), "The last inserted node has no longer a parent. Failed to splay correctly.");
-        $this->assertFalse($root->isLeaf(), "The last inserted node is no longer a leaf. Failed to splay correctly.");
+        $this->assertTrue(
+            $root->isRoot(),
+            "The last inserted node has no longer a parent. Failed to splay correctly."
+        );
+        $this->assertFalse(
+            $root->isLeaf(),
+            "The last inserted node is no longer a leaf. Failed to splay correctly."
+        );
     }
 
     /**
-     * Inserts multiple nodes from an associative array and checks if the last inserted node is splayed to the root.
+     * Inserts multiple nodes from an associative array and checks if the last
+     * inserted node is splayed to the root.
      *
      * @return mixed
      */
     public function testInsertMultipleFromArray()
     {
         $arrayData = [200 => "Value 200", 150 => "Value 150", 170 => "Value 170",
-            250 => "Value 250", 300 => "Value 300", 360 => "Value 360", 230 => "Value 230",
+            250 => "Value 250", 300 => "Value 300", 360 => "Value 360",
+            230 => "Value 230",
             240 => "Value 240", 220 => "Value 220", 50 => "Value 50"
         ];
 
         $splayTree = new SplayTree($arrayData);
         $root = $splayTree->getRoot();
 
-        $this->assertFalse($splayTree->isEmpty(), "Tree was not populated correctly");
+        $this->assertFalse(
+            $splayTree->isEmpty(),
+            "Tree was not populated correctly"
+        );
         $this->assertSame(
             count($arrayData),
             $splayTree->size(),
             "Failed to insert all " . count($arrayData) . " nodes"
         );
 
-        $this->assertEquals(50, $root->key, "After splay, the new root should be the last inserted node");
-        $this->assertEquals("Value 50", $root->value, "The value of the new root must match the last inserted node");
+        $this->assertEquals(
+            50,
+            $root->key,
+            "After splay, the new root should be the last inserted node"
+        );
+        $this->assertEquals(
+            "Value 50",
+            $root->value,
+            "The value of the new root must match the last inserted node"
+        );
 
-        $this->assertTrue($root->isRoot(), "The last inserted node has no longer a parent. Failed to splay correctly.");
-        $this->assertFalse($root->isLeaf(), "The last inserted node is no longer a leaf. Failed to splay correctly.");
+        $this->assertTrue(
+            $root->isRoot(),
+            "The last inserted node has no longer a parent. Failed to splay correctly."
+        );
+        $this->assertFalse(
+            $root->isLeaf(),
+            "The last inserted node is no longer a leaf. Failed to splay correctly."
+        );
     }
 
     /**
@@ -191,21 +250,24 @@ class SplayTreeTest extends TestCase
             // Test case 24: Insert 20, 15, 17, 25, 30, 36, 23, 24
             [
                 'insertions' => [20 => "Value 20", 15 => "Value 15", 17 => "Value 17", 25 => "Value 25",
-                    30 => "Value 30", 36 => "Value 36", 23 => "Value 23", 24 => "Value 24"],
+                    30 => "Value 30", 36 => "Value 36", 23 => "Value 23",
+                    24 => "Value 24"],,
                 'expectedInOrderKeys' => [15, 17, 20, 23, 24, 25, 30, 36],
                 'expectedRootKey' => 24,
             ],
             // Test case 22: Insert 20, 15, 17, 25, 30, 36, 23, 24, 22
             [
                 'insertions' => [20 => "Value 20", 15 => "Value 15", 17 => "Value 17", 25 => "Value 25",
-                    30 => "Value 30", 36 => "Value 36", 23 => "Value 23", 24 => "Value 24", 22 => "Value 22"],
+                    30 => "Value 30", 36 => "Value 36", 23 => "Value 23",
+                    24 => "Value 24", 22 => "Value 22"],,
                 'expectedInOrderKeys' => [15, 17, 20, 22, 23, 24, 25, 30, 36],
                 'expectedRootKey' => 22,
             ],
             // Test case 5: Insert 20, 15, 17, 25, 30, 36, 23, 24, 22, 5
             [
                 'insertions' => [20 => "Value 20", 15 => "Value 15", 17 => "Value 17", 25 => "Value 25", 30 =>
-                    "Value 30", 36 => "Value 36", 23 => "Value 23", 24 => "Value 24", 22 => "Value 22", 5 => "Value 5"],
+                    "Value 30", 36 => "Value 36", 23 => "Value 23", 24 => "Value 24",
+                    22 => "Value 22", 5 => "Value 5"],,
                 'expectedInOrderKeys' => [5, 15, 17, 20, 22, 23, 24, 25, 30, 36],
                 'expectedRootKey' => 5,
             ],
@@ -218,8 +280,11 @@ class SplayTreeTest extends TestCase
      *
      * @return void
      */
-    public function testSplayWithInOderTraversal($insertions, $expectedInOrderKeys, $expectedRootKey): void
-    {
+    public function testSplayWithInOderTraversal(
+        $insertions,
+        $expectedInOrderKeys,
+        $expectedRootKey
+    ): void {
         $tree = new SplayTree();
 
         // Insert nodes and splay
@@ -231,20 +296,25 @@ class SplayTreeTest extends TestCase
         $inOrderArray = $tree->inOrderTraversal($tree->getRoot());
         $inOrderArrayKeys = $this->getInOrderKeys($inOrderArray);
 
-        // Assert the in-order traversal keys match the expected keys for every dataProvider case
+        // Assert the in-order traversal keys match the expected keys for every
+        // dataProvider case
         $this->assertEquals(
             $expectedInOrderKeys,
             $inOrderArrayKeys,
             'Tree structure after splay is not correct. The in-order traversal is not correct.'
         );
 
-        // Assert the root key matches the expected root after the last insertion for every dataProvider case
+        // Assert the root key matches the expected root after the last insertion for
+        // every dataProvider case
         $this->assertTrue(
             $tree->getRoot()->key === $inOrderArrayKeys[array_search($expectedRootKey, $expectedInOrderKeys)],
             "Node was not splayed to root successfully"
         );
         // Assert the new root is correctly set
-        $this->assertTrue($tree->getRoot()->isRoot(), "Node with key $expectedRootKey should be the new tree root");
+        $this->assertTrue(
+            $tree->getRoot()->isRoot(),
+            "Node with key $expectedRootKey should be the new tree root"
+        );
     }
 
     /**
@@ -276,13 +346,20 @@ class SplayTreeTest extends TestCase
         $node = $this->tree->search(22);
 
         $this->assertNotNull($node, "Returned node cannot be Null.");
-        $this->assertNull($node->parent, "The searched node must have become the new root which has no parent");
+        $this->assertNull(
+            $node->parent,
+            "The searched node must have become the new root which has no parent"
+        );
         $this->assertTrue(
             $node->isRoot(),
             "The searched node must have become the new root. Failed to splay it correctly."
         );
 
-        $this->assertEquals(22, $node->key, "Node with key 22 should be returned. Got a non-expected key: $node->key");
+        $this->assertEquals(
+            22,
+            $node->key,
+            "Node with key 22 should be returned. Got a non-expected key: $node->key"
+        );
         $this->assertEquals(
             "Value 22",
             $node->value,
@@ -304,7 +381,11 @@ class SplayTreeTest extends TestCase
         $node = $this->tree->getRoot();
 
         $this->assertTrue($isFound, "Node with key 25 exists.");
-        $this->assertEquals(25, $node->key, "Node with key 25 should be returned. Got a non-expected key: $node->key");
+        $this->assertEquals(
+            25,
+            $node->key,
+            "Node with key 25 should be returned. Got a non-expected key: $node->key"
+        );
 
         $this->assertTrue(
             $node->isRoot(),
@@ -371,7 +452,8 @@ class SplayTreeTest extends TestCase
     }
 
     /**
-     * Tests the update functionality on an existing key and ensures its node is splayed to the root.
+     * Tests the update functionality on an existing key and ensures its node is
+     * splayed to the root.
      *
      * @return mixed
      */
@@ -384,8 +466,16 @@ class SplayTreeTest extends TestCase
         $node = $this->tree->search(36);
 
         $this->assertNotNull($node, "Node with key 36 should exist after update.");
-        $this->assertEquals(360, $node->value, "Node with key 36 should have the updated value.");
-        $this->assertEquals(36, $node->key, "Node with key 36 should be returned. Got a non-expected key: $node->key");
+        $this->assertEquals(
+            360,
+            $node->value,
+            "Node with key 36 should have the updated value."
+        );
+        $this->assertEquals(
+            36,
+            $node->key,
+            "Node with key 36 should be returned. Got a non-expected key: $node->key"
+        );
         $this->assertTrue(
             $node->isRoot(),
             "The updated node must have become the new root. Failed to splay it correctly."
@@ -422,7 +512,8 @@ class SplayTreeTest extends TestCase
     }
 
     /**
-     * Tests deletion of a node and checks if the correct new root is set after merging the two subtrees.
+     * Tests deletion of a node and checks if the correct new root is set after
+     * merging the two subtrees.
      *
      * @return mixed
      */
@@ -460,7 +551,9 @@ class SplayTreeTest extends TestCase
 
         $node = $this->tree->delete(20);
 
-        $inOrderTraversalNodes = $this->tree->inOrderTraversal($this->tree->getRoot());
+        $inOrderTraversalNodes = $this->tree->inOrderTraversal(
+            $this->tree->getRoot()
+        );
         $inOrderArrayKeys = $this->getInOrderKeys($inOrderTraversalNodes);
 
         $expectedInOrderKeys = [5, 15, 17, 22, 23, 24, 25, 30, 36];
@@ -488,8 +581,10 @@ class SplayTreeTest extends TestCase
     public function testDeleteMultipleKeys()
     {
         $arrayData = [200 => "Value 200", 150 => "Value 150", 170 => "Value 170",
-            250 => "Value 250", 300 => "Value 300", 360 => "Value 360", 230 => "Value 230",
-            240 => "Value 240", 220 => "Value 220", 50 => "Value 50", 28 => "Value 28",
+            250 => "Value 250", 300 => "Value 300", 360 => "Value 360",
+            230 => "Value 230",
+            240 => "Value 240", 220 => "Value 220", 50 => "Value 50",
+            28 => "Value 28",
             164 => "Value 164", 321 => "Value 321", 40 => "Value 40"
         ];
 
@@ -513,7 +608,8 @@ class SplayTreeTest extends TestCase
     }
 
     /**
-     * Ensures that attempting to delete a non-existing key throws an exception and keeps the tree intact.
+     * Ensures that attempting to delete a non-existing key throws an exception and
+     * keeps the tree intact.
      *
      * @return mixed
      */
@@ -524,10 +620,16 @@ class SplayTreeTest extends TestCase
         $root = $this->tree->getRoot();
 
         $this->expectException(LogicException::class);
-        $this->expectExceptionMessage("Key: 90 not found in tree. Splayed the last visited node.");
+        $this->expectExceptionMessage(
+            "Key: 90 not found in tree. Splayed the last visited node."
+        );
 
         $this->tree->delete(90);    // Delete a non-existing key
-        $this->assertEquals(5, $root->key, "The tree root should not have been changed.");
+        $this->assertEquals(
+            5,
+            $root->key,
+            "The tree root should not have been changed."
+        );
     }
 
     /**
@@ -540,17 +642,29 @@ class SplayTreeTest extends TestCase
         $this->assertEquals(0, $this->tree->size(), "Tree should be empty.");
 
         $rootNode1 = $this->tree->search(100);
-        $this->assertNull($rootNode1, "Searching for a key in an empty tree should return null.");
+        $this->assertNull(
+            $rootNode1,
+            "Searching for a key in an empty tree should return null."
+        );
 
         $rootNode2 = $this->tree->isFound(200);
-        $this->assertFalse($rootNode2, "Searching for a key in an empty tree should return null.");
+        $this->assertFalse(
+            $rootNode2,
+            "Searching for a key in an empty tree should return null."
+        );
 
         $rootNode3 = $this->tree->update(100, "Value 100");
-        $this->assertNull($rootNode3, "Updating a key in an empty tree should return null.");
+        $this->assertNull(
+            $rootNode3,
+            "Updating a key in an empty tree should return null."
+        );
 
         $this->expectException(LogicException::class);
         $rootNode4 = $this->tree->delete(100);
-        $this->assertNull($rootNode4, "Deleting a key in an empty tree should return null.");
+        $this->assertNull(
+            $rootNode4,
+            "Deleting a key in an empty tree should return null."
+        );
     }
 
     /**
@@ -567,13 +681,20 @@ class SplayTreeTest extends TestCase
 
         // Verify that all inserted nodes can be searched
         for ($i = 1; $i <= 1000; $i++) {
-            $this->assertEquals("Value $i", $this->tree->search($i)->value, "Value for key $i should be 'Value $i'");
+            $this->assertEquals(
+                "Value $i",
+                $this->tree->search($i)->value,
+                "Value for key $i should be 'Value $i'"
+            );
         }
 
         // Verify that all inserted nodes can be deleted
         for ($i = 1; $i <= 5; $i++) {
             $this->tree->delete($i);
-            $this->assertFalse($this->tree->isFound($i), "Node was not deleted correctly");
+            $this->assertFalse(
+                $this->tree->isFound($i),
+                "Node was not deleted correctly"
+            );
         }
     }
 
@@ -596,7 +717,11 @@ class SplayTreeTest extends TestCase
         $root = $tree->getRoot();
         $this->assertSame(10, $root->key, 'Root should be 10 after Zig rotation');
         $this->assertNull($root->parent, "Root parent is Null after Zig rotation");
-        $this->assertSame(20, $root->right->key, '20 should be the right child of 10 after Zig rotation');
+        $this->assertSame(
+            20,
+            $root->right->key,
+            '20 should be the right child of 10 after Zig rotation'
+        );
     }
 
     /**
@@ -614,7 +739,11 @@ class SplayTreeTest extends TestCase
         $root = $tree->getRoot();
         $this->assertSame(20, $root->key, 'Root should be 20 after Zag rotation');
         $this->assertNull($root->parent, "Root parent is Null after Zig rotation");
-        $this->assertSame(10, $root->left->key, '10 should be the left child of 20 after Zag rotation');
+        $this->assertSame(
+            10,
+            $root->left->key,
+            '10 should be the left child of 20 after Zag rotation'
+        );
     }
 
     /**
@@ -631,10 +760,25 @@ class SplayTreeTest extends TestCase
         $tree->insert(10, 'C');  // Trigger a Zig-Zig rotation when 10 is splayed
 
         $root = $tree->getRoot();
-        $this->assertSame(10, $root->key, 'Root should be 10 after Zig-Zig rotation');
-        $this->assertTrue($root->isRoot(), "Root parent should be Null after Zig-Zig rotation");
-        $this->assertSame(20, $root->right->key, '20 should be the right child of 10 after Zig-Zig rotation');
-        $this->assertSame(30, $root->right->right->key, '30 should be the right child of 20 after Zig-Zig rotation');
+        $this->assertSame(
+            10,
+            $root->key,
+            'Root should be 10 after Zig-Zig rotation'
+        );
+        $this->assertTrue(
+            $root->isRoot(),
+            "Root parent should be Null after Zig-Zig rotation"
+        );
+        $this->assertSame(
+            20,
+            $root->right->key,
+            '20 should be the right child of 10 after Zig-Zig rotation'
+        );
+        $this->assertSame(
+            30,
+            $root->right->right->key,
+            '30 should be the right child of 20 after Zig-Zig rotation'
+        );
     }
 
     /**
@@ -651,10 +795,25 @@ class SplayTreeTest extends TestCase
         $tree->insert(30, 'C');  // Trigger a Zag-Zag rotation when 30 is splayed
 
         $root = $tree->getRoot();
-        $this->assertSame(30, $root->key, 'Root should be 30 after Zag-Zag rotation');
-        $this->assertTrue($root->isRoot(), "Root parent should be Null after Zag-Zag rotation");
-        $this->assertSame(20, $root->left->key, '20 should be the left child of 30 after Zag-Zag rotation');
-        $this->assertSame(10, $root->left->left->key, '10 should be the left child of 20 after Zag-Zag rotation');
+        $this->assertSame(
+            30,
+            $root->key,
+            'Root should be 30 after Zag-Zag rotation'
+        );
+        $this->assertTrue(
+            $root->isRoot(),
+            "Root parent should be Null after Zag-Zag rotation"
+        );
+        $this->assertSame(
+            20,
+            $root->left->key,
+            '20 should be the left child of 30 after Zag-Zag rotation'
+        );
+        $this->assertSame(
+            10,
+            $root->left->left->key,
+            '10 should be the left child of 20 after Zag-Zag rotation'
+        );
     }
 
     /**
@@ -671,10 +830,25 @@ class SplayTreeTest extends TestCase
         $tree->insert(20, 'C');  // Trigger Zig-Zag rotation when 20 is splayed
 
         $root = $tree->getRoot();
-        $this->assertSame(20, $root->key, 'Root should be 20 after Zig-Zag rotation');
-        $this->assertTrue($root->isRoot(), "Root parent should be Null after Zig-Zag rotation");
-        $this->assertSame(10, $root->left->key, '10 should be the left child of 20 after Zig-Zag rotation');
-        $this->assertSame(30, $root->right->key, '30 should be the right child of 20 after Zig-Zag rotation');
+        $this->assertSame(
+            20,
+            $root->key,
+            'Root should be 20 after Zig-Zag rotation'
+        );
+        $this->assertTrue(
+            $root->isRoot(),
+            "Root parent should be Null after Zig-Zag rotation"
+        );
+        $this->assertSame(
+            10,
+            $root->left->key,
+            '10 should be the left child of 20 after Zig-Zag rotation'
+        );
+        $this->assertSame(
+            30,
+            $root->right->key,
+            '30 should be the right child of 20 after Zig-Zag rotation'
+        );
     }
 
     /**
@@ -691,9 +865,24 @@ class SplayTreeTest extends TestCase
         $tree->insert(20, 'C');  // Trigger a Zag-Zig rotation when 20 is splayed
 
         $root = $tree->getRoot();
-        $this->assertSame(20, $root->key, 'Root should be 20 after Zag-Zig rotation');
-        $this->assertTrue($root->isRoot(), "Root parent should be Null after Zag-Zag rotation");
-        $this->assertSame(10, $root->left->key, '10 should be the left child of 20 after Zag-Zig rotation');
-        $this->assertSame(30, $root->right->key, '30 should be the right child of 20 after Zag-Zig rotation');
+        $this->assertSame(
+            20,
+            $root->key,
+            'Root should be 20 after Zag-Zig rotation'
+        );
+        $this->assertTrue(
+            $root->isRoot(),
+            "Root parent should be Null after Zag-Zag rotation"
+        );
+        $this->assertSame(
+            10,
+            $root->left->key,
+            '10 should be the left child of 20 after Zag-Zig rotation'
+        );
+        $this->assertSame(
+            30,
+            $root->right->key,
+            '30 should be the right child of 20 after Zag-Zig rotation'
+        );
     }
 }

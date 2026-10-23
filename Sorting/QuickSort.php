@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 /**
  * Quick Sort
- * Compare number in an array to the next number and sets to new array (greater than or less than)
+ * Compare number in an array to the next number and sets to new array (greater than
+ * or less than)
  *
  * @param array $input array of random numbers
  *

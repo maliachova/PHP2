@@ -5,16 +5,22 @@ declare(strict_types=1);
 namespace NeuralNetworks\PerceptronClassifier;
 
 /**
- * This class implements a simple neural network with one hidden layer and one output neuron.
- * The network uses the sigmoid activation function and performs binary classification.
+ * This class implements a simple neural network with one hidden layer and one output
+ * neuron.
+ * The network uses the sigmoid activation function and performs binary
+ * classification.
  * (https://cw.fel.cvut.cz/b211/courses/be5b33rpz/labs/07_perceptron/start)
  *
  * @author Michał Żarnecki https://github.com/rzarno
  */
 class NeuralNetworkPerceptronClassifier
 {
-    public function trainModel(array $X, array $Y, int $iterations, float $learningRate): array
-    {
+    public function trainModel(
+        array $X,
+        array $Y,
+        int $iterations,
+        float $learningRate
+    ): array {
         [$W, $b] = $this->initParams(count($X));
 
         for ($i = 0; $i < $iterations; $i++) {
@@ -173,8 +179,13 @@ class NeuralNetworkPerceptronClassifier
      *
      * @return array
      */
-    private function updateParams(array $W, float $b, array $dW, float $db, float $learningRate): array
-    {
+    private function updateParams(
+        array $W,
+        float $b,
+        array $dW,
+        float $db,
+        float $learningRate
+    ): array {
         $counter = count($W);
         for ($i = 0; $i < $counter; $i++) {
             $W[$i] -= $learningRate * $dW[$i];

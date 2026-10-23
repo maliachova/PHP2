@@ -16,7 +16,8 @@ function isPalindrome(string $string, bool $caseInsensitive = true): bool
     }
 
     if ($caseInsensitive) {
-        $string = strtolower($string); // Converting string to lowercase for case-insensitive check
+        // Converting string to lowercase for case-insensitive check
+        $string = strtolower($string);
     }
 
     $characters = str_split($string);

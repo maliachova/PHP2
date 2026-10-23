@@ -22,7 +22,9 @@ function hexToDecimal($hexNumber): int|float
 {
     // Using ctype to check all the digits are valid hex digits or not.
     if (!ctype_xdigit((string) $hexNumber)) {
-        throw new \Exception('Please pass a valid Hexadecimal Number for Converting it to a Decimal Number.');
+        throw new \Exception(
+            'Please pass a valid Hexadecimal Number for Converting it to a Decimal Number.'
+        );
     }
 
     $decimalNumber = 0;
@@ -75,7 +77,9 @@ function decimalToHex($decimalNumber): string
         15 => 'F',
     ];
     if (!is_numeric($decimalNumber)) {
-        throw new \Exception('Please pass a valid Decimal Number for Converting it to a Hexadecimal Number.');
+        throw new \Exception(
+            'Please pass a valid Decimal Number for Converting it to a Hexadecimal Number.'
+        );
     }
 
     $decimalNumber = (int) $decimalNumber;

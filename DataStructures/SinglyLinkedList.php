@@ -16,7 +16,10 @@ class SinglyLinkedList
     public function append($data): void
     {
         $current = $this;
-        while ($current instanceof SinglyLinkedList && $current->next instanceof \SinglyLinkedList) {
+        while (
+            $current instanceof SinglyLinkedList
+            && $current->next instanceof \SinglyLinkedList
+        ) {
             $current = $current->next;
         }
 
@@ -30,7 +33,10 @@ class SinglyLinkedList
             return $current->next;
         }
 
-        while ($current instanceof SinglyLinkedList && $current->next instanceof \SinglyLinkedList) {
+        while (
+            $current instanceof SinglyLinkedList
+            && $current->next instanceof \SinglyLinkedList
+        ) {
             if ($current->next->data === $data) {
                 $current->next = $current->next->next;
                 return $this;

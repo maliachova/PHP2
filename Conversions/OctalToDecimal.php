@@ -20,7 +20,9 @@ declare(strict_types=1);
 function octalToDecimal($octalNumber): int|float
 {
     if (!is_numeric($octalNumber)) {
-        throw new \Exception('Please pass a valid Octal Number for Converting it to a Decimal Number.');
+        throw new \Exception(
+            'Please pass a valid Octal Number for Converting it to a Decimal Number.'
+        );
     }
 
     $decimalNumber = 0;
@@ -46,7 +48,9 @@ function octalToDecimal($octalNumber): int|float
 function decimalToOctal($decimalNumber): string
 {
     if (!is_numeric($decimalNumber)) {
-        throw new \Exception('Please pass a valid Decimal Number for Converting it to an Octal Number.');
+        throw new \Exception(
+            'Please pass a valid Decimal Number for Converting it to an Octal Number.'
+        );
     }
 
     $octalNumber = '';

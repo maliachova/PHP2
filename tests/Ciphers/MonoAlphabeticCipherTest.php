@@ -14,6 +14,9 @@ class MonoAlphabeticCipherTest extends TestCase
         $text = "I love1234 GitHub";
         $encryptedText = "O ambg XojFdh";
         $this->assertEquals(maEncrypt($key, $alphabet, $text), $encryptedText);
-        $this->assertEquals(maDecrypt($key, $alphabet, $encryptedText), "I love GitHub");
+        $this->assertEquals(
+            maDecrypt($key, $alphabet, $encryptedText),
+            "I love GitHub"
+        );
     }
 }

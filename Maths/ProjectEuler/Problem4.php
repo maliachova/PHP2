@@ -10,7 +10,10 @@ function problem4(): int
         for ($j = $i; $j < 1000; $j++) {
             $product = $i * $j;
 
-            if (strrev((string)$product) === (string)$product && $product > $largest) {
+            if (
+                strrev((string)$product) === (string)$product
+                && $product > $largest
+            ) {
                 $largest = $product;
             }
         }

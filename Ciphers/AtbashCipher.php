@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 /**
  * Encrypt a message using the Atbash Cipher.
- * The Atbash Cipher is a simple substitution cipher where each letter in the plaintext is
- * replaced with its corresponding letter from the end of the alphabet (reverse alphabet).
+ * The Atbash Cipher is a simple substitution cipher where each letter in the
+ * plaintext is
+ * replaced with its corresponding letter from the end of the alphabet (reverse
+ * alphabet).
  * Non-alphabet characters are not modified.
  *
  * @param string $plainText The plaintext to encrypt.

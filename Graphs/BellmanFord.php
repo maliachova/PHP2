@@ -3,7 +3,8 @@
 declare(strict_types=1);
 
 /**
- * The Bellman–Ford algorithm is an algorithm that computes shortest paths from a single source vertex to all of the
+ * The Bellman–Ford algorithm is an algorithm that computes shortest paths from a
+ * single source vertex to all of the
  * other vertices in a weighted digraph.
  * (https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm).
  *
@@ -14,9 +15,16 @@ declare(strict_types=1);
  *
  * @return array An array of shortest paths from $start to all other vertices
  */
-function bellmanFord(array $verticesNames, array $edges, string $start, bool $verbose = false): array
-{
-    $vertices = array_combine($verticesNames, array_fill(0, count($verticesNames), PHP_INT_MAX));
+function bellmanFord(
+    array $verticesNames,
+    array $edges,
+    string $start,
+    bool $verbose = false
+): array {
+    $vertices = array_combine(
+        $verticesNames,
+        array_fill(0, count($verticesNames), PHP_INT_MAX)
+    );
 
     $change = true;
     $round = 1;

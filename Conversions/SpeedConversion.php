@@ -39,11 +39,21 @@ function convertSpeed(float $speed, string $unitFrom, string $unitTo): float
     $availableUnits = array_keys($speedUnitsFrom);
 
     if (!is_numeric($speed)) {
-        throw new \Exception("Please pass a valid speed number for converting it from one unit to another.");
+        throw new \Exception(
+            "Please pass a valid speed number for converting it from one unit to another."
+        );
     }
 
-    if (!in_array($unitFrom, $availableUnits) || !in_array($unitTo, $availableUnits)) {
-        throw new \Exception("Please pass a valid speed unit.\n\nAvailable units: " . implode(', ', $availableUnits));
+    if (
+        !in_array($unitFrom, $availableUnits)
+        || !in_array($unitTo, $availableUnits)
+    ) {
+        throw new \Exception(
+            "Please pass a valid speed unit.\n\nAvailable units: " . implode(
+                ', ',
+                $availableUnits
+            )
+        );
     }
 
     return round($speed * $speedUnitsFrom[$unitFrom] * $speedUnitsTo[$unitTo], 2);

@@ -46,5 +46,6 @@ function problem6(int $maxNumber = 100): int
         $sums += $i; // add number to sum to square later
     }
 
-    return ($sums ** 2) - $sumOfSquares; // difference of square of the total sum and sum of squares
+    // difference of square of the total sum and sum of squares
+    return ($sums ** 2) - $sumOfSquares;
 }

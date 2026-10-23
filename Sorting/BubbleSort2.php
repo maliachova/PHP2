@@ -5,7 +5,8 @@ declare(strict_types=1);
 /*
  * Bubble Sort
  *
- * Compare numbers in an array 2 at a time and switch them if the second number is smaller
+ * Compare numbers in an array 2 at a time and switch them if the second number is
+ * smaller
  *
  * @param array $input array of random numbers
  *

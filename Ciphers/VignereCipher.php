@@ -56,7 +56,9 @@ function vigenere_decrypt($ciphertext, $key): string
             // Calculate the shift based on the key
             $shift = ord($key[$i % $keyLength]) - ord('A');
             // Apply the Vigenère decryption formula
-            $decryptedChar = chr(((ord($char) - ord('A') - $shift + 26) % 26) + ord('A'));
+            $decryptedChar = chr(
+                ((ord($char) - ord('A') - $shift + 26) % 26) + ord('A')
+            );
             // Append the decrypted character to the result
             $decryptedText .= $decryptedChar;
         } else {

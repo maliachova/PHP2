@@ -5,7 +5,8 @@ declare(strict_types=1);
 /**
  * Binary search algorithm iterative approach
  *
- * Be careful collection must be ascending sorted, otherwise result will be unpredictable
+ * Be careful collection must be ascending sorted, otherwise result will be
+ * unpredictable
  *
  * Examples:
  * binarySearchIterative([0, 5, 7, 10, 15], 0);
@@ -46,7 +47,8 @@ function binarySearchIterative(array $list, $target): ?int
 /**
  * Binary search algorithm in PHP by recursion
  *
- * Be careful collection must be ascending sorted, otherwise result will be unpredictable
+ * Be careful collection must be ascending sorted, otherwise result will be
+ * unpredictable
  *
  * Examples:
  * binarySearchByRecursion([0, 5, 7, 10, 15], 0, 0, 4);

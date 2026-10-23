@@ -3,13 +3,17 @@
 declare(strict_types=1);
 
 /* Ternary search is similar to binary search
- * It rather divides the sorted array into three parts rather than.two parts by using two middle points, $mid1  $mid2.
+ * It rather divides the sorted array into three parts rather than.two parts by using
+ * two middle points, $mid1  $mid2.
  * The value of the $key will first be compared with the two $mid points,
  * the value will be returned if there is a match.
- * Then, if the value of the $key is less than $mid1, narrow the interval to the first part.
- * Else, if the value of the $key is greater than $mid2, narrow the interval to the third part.
+ * Then, if the value of the $key is less than $mid1, narrow the interval to the
+ * first part.
+ * Else, if the value of the $key is greater than $mid2, narrow the interval to the
+ * third part.
  * Otherwise, narrow the interval to the $middle part.
- * Repeat the steps until the value is found or the interval is empty (value not found after checking all elements).
+ * Repeat the steps until the value is found or the interval is empty (value not
+ * found after checking all elements).
  */
 function ternarySearchByRecursion(array $arr, $key, $low, $high)
 {
@@ -53,7 +57,8 @@ function ternarySearchIterative(array $arr, $key): ?float
     $low = 0;
     $high = count($arr) - 1;
 
-    // Continue searching while the high pointer is greater than or equal to the low pointer.
+    // Continue searching while the high pointer is greater than or equal to the low
+    // pointer.
     while ($high >= $low) {
         // Calculate the first and second midpoints.
         $mid1 = floor($low + ($high - $low) / 3);

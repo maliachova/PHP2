@@ -5,8 +5,10 @@ declare(strict_types=1);
 /**
  * HeapSort Algorithm
  *
- * The HeapSort algorithm sorts an array by first transforming the array into a max heap and then
- * iteratively swapping the maximum element from the heap with the last unsorted element
+ * The HeapSort algorithm sorts an array by first transforming the array into a max
+ * heap and then
+ * iteratively swapping the maximum element from the heap with the last unsorted
+ * element
  * and "heapifying" the heap again.
  *
  * @throws \UnexpectedValueException
@@ -20,7 +22,9 @@ function heapSort(array $arr): array
 
     // Throw an exception if the array has no elements.
     if ($n <= 0) {
-        throw new \UnexpectedValueException('Input array must have at least one element.');
+        throw new \UnexpectedValueException(
+            'Input array must have at least one element.'
+        );
     }
 
     // Build a max heap from the array.
@@ -30,7 +34,8 @@ function heapSort(array $arr): array
 
     // Extract elements from the max heap and build the sorted array.
     for ($i = $n - 1; $i >= 0; $i--) {
-        // Swap the root(maximum value) of the heap with the last element of the heap.
+        // Swap the root(maximum value) of the heap with the last element of the
+        // heap.
         [$arr[0], $arr[$i]] = [$arr[$i], $arr[0]];
 
         // Heapify the reduced heap.

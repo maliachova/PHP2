@@ -3,10 +3,12 @@
 declare(strict_types=1);
 
 /*
- * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request: #168
+ * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request:
+ * #168
  * https://github.com/TheAlgorithms/PHP/pull/168
  *
- * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing bugs/corrections to this file.
+ * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing
+ * bugs/corrections to this file.
  * Thank you!
  */
 
@@ -88,7 +90,10 @@ class SplayTree extends SplayTreeRotations
      */
     protected function splay(?SplayTreeNode $node, int $key): ?SplayTreeNode
     {
-        if (!$node instanceof \DataStructures\SplayTree\SplayTreeNode || $node->key === $key) {
+        if (
+            !$node instanceof \DataStructures\SplayTree\SplayTreeNode
+            || $node->key === $key
+        ) {
             return $node;
         }
 
@@ -122,7 +127,9 @@ class SplayTree extends SplayTreeRotations
         if ($node->left->key < $key) {
             // Zig-Zag (Left-Right case)
             $node->left->right = $this->splay($node->left->right, $key);
-            if ($node->left->right instanceof \DataStructures\SplayTree\SplayTreeNode) {
+            if (
+                $node->left->right instanceof \DataStructures\SplayTree\SplayTreeNode
+            ) {
                 return $this->zigZag($node);
             }
         }
@@ -135,7 +142,8 @@ class SplayTree extends SplayTreeRotations
 
     /**
      *  Handles the splay operation when the key is located in the right subtree.
-     *  This includes Zag-Zag (Right-Right), Zag-Zig (Right-Left), and Zag (Right) cases.
+     *  This includes Zag-Zag (Right-Right), Zag-Zig (Right-Left), and Zag (Right)
+     *  cases.
      *
      * Time complexity: Amortized O(log n).
      *
@@ -158,7 +166,9 @@ class SplayTree extends SplayTreeRotations
         if ($node->right->key > $key) {
             // Zag-Zig (Right-Left case)
             $node->right->left = $this->splay($node->right->left, $key);
-            if ($node->right->left instanceof \DataStructures\SplayTree\SplayTreeNode) {
+            if (
+                $node->right->left instanceof \DataStructures\SplayTree\SplayTreeNode
+            ) {
                 return $this->zagZig($node);
             }
         }
@@ -170,8 +180,10 @@ class SplayTree extends SplayTreeRotations
     }
 
     /**
-     * Insert a new element into the splay tree following binary search tree insertion.
-     * Then, apply rotations to bring the newly inserted node to the root of the tree.
+     * Insert a new element into the splay tree following binary search tree
+     * insertion.
+     * Then, apply rotations to bring the newly inserted node to the root of the
+     * tree.
      *
      * Time complexity: O(log n) for the splay operation.
      *
@@ -195,15 +207,19 @@ class SplayTree extends SplayTreeRotations
      *
      * Time complexity: O(log n) for binary search tree insertion.
      *
-     * @param SplayTreeNode|null $node The (sub)tree's root node to start inserting after
+     * @param SplayTreeNode|null $node The (sub)tree's root node to start inserting
+     * after
      * @param int $key The node's key to insert
      * @param mixed $value The value associated with the key
      *
      * @return SplayTreeNode|null Returns the new root after insertion
      * @throws LogicException If the key already exists
      */
-    private function insertNode(?SplayTreeNode $node, int $key, mixed $value): SplayTreeNode
-    {
+    private function insertNode(
+        ?SplayTreeNode $node,
+        int $key,
+        mixed $value
+    ): SplayTreeNode {
         if (!$node instanceof \DataStructures\SplayTree\SplayTreeNode) {
             return new SplayTreeNode($key, $value);
         }
@@ -230,7 +246,8 @@ class SplayTree extends SplayTreeRotations
      *
      * @param int $key The node's key being searched
      *
-     * @return SplayTreeNode|null Returns the new root of either the found node or the last visited
+     * @return SplayTreeNode|null Returns the new root of either the found node or
+     * the last visited
      */
     public function search(int $key): ?SplayTreeNode
     {
@@ -255,14 +272,18 @@ class SplayTree extends SplayTreeRotations
      *
      * Time complexity: O(log n) for binary search tree search.
      *
-     * @param SplayTreeNode|null $node The (sub)tree's root node to start searching from
+     * @param SplayTreeNode|null $node The (sub)tree's root node to start searching
+     * from
      * @param int $key  The node's key being searched
      * @param SplayTreeNode|null $lastVisited Keep track of the last visited node
      *
      * @return SplayTreeNode|null Returns the new root of the found node or Null
      */
-    private function searchNode(?SplayTreeNode $node, int $key, ?SplayTreeNode &$lastVisited): ?SplayTreeNode
-    {
+    private function searchNode(
+        ?SplayTreeNode $node,
+        int $key,
+        ?SplayTreeNode &$lastVisited
+    ): ?SplayTreeNode {
         if (!$node instanceof \DataStructures\SplayTree\SplayTreeNode) {
             return null;
         }
@@ -281,7 +302,8 @@ class SplayTree extends SplayTreeRotations
 
     /**
      * Check if a node with the given key exists in the tree.
-     * Apply rotations to the searched node or to the last visited node to the root of the tree.
+     * Apply rotations to the searched node or to the last visited node to the root
+     * of the tree.
      *
      * Time complexity: O(log n) for the splay operation.
      *
@@ -292,12 +314,14 @@ class SplayTree extends SplayTreeRotations
     public function isFound(int $key): bool
     {
         $foundNode = $this->search($key);
-        return $foundNode instanceof \DataStructures\SplayTree\SplayTreeNode && $foundNode->key === $key;
+        return $foundNode instanceof \DataStructures\SplayTree\SplayTreeNode
+            && $foundNode->key === $key;
     }
 
     /**
      * Updates the value of the node with the given key.
-     * If the node is found, update its value and apply rotations to bring it to the root of the tree.
+     * If the node is found, update its value and apply rotations to bring it to the
+     * root of the tree.
      * Otherwise, apply rotations to the last node visited in the search.
      *
      * Time complexity: O(log n) for the splay operation.
@@ -305,7 +329,8 @@ class SplayTree extends SplayTreeRotations
      * @param int $key The key of the node to update
      * @param mixed $value The new value to set
      *
-     * @return SplayTreeNode|null Returns the root of the tree after the update or the last visited
+     * @return SplayTreeNode|null Returns the root of the tree after the update or
+     * the last visited
      */
     public function update(int $key, mixed $value): ?SplayTreeNode
     {
@@ -318,10 +343,13 @@ class SplayTree extends SplayTreeRotations
 
     /**
      * Deletes the node with the given key from the tree.
-     * Splays the node to be deleted to the root, then isolates it and restructures the tree.
-     * If the key doesn't exist, apply rotations to bring the closest node to the root.
+     * Splays the node to be deleted to the root, then isolates it and restructures
+     * the tree.
+     * If the key doesn't exist, apply rotations to bring the closest node to the
+     * root.
      *
-     * Time complexity: O(log n) for the splay operation and O(log n) for restructuring the tree.
+     * Time complexity: O(log n) for the splay operation and O(log n) for
+     * restructuring the tree.
      *
      * @param int $key The key of the node to delete
      *
@@ -331,7 +359,9 @@ class SplayTree extends SplayTreeRotations
     public function delete(int $key): ?SplayTreeNode
     {
         if (!$this->isFound($key)) {
-            throw new LogicException("Key: " . $key . " not found in tree. Splayed the last visited node.");
+            throw new LogicException(
+                "Key: " . $key . " not found in tree. Splayed the last visited node."
+            );
         }
 
         $leftSubtree = $this->root->left;
@@ -366,8 +396,10 @@ class SplayTree extends SplayTreeRotations
      *
      * @return SplayTreeNode|null The new root after restructuring
      */
-    private function restructureAfterDeletion(?SplayTreeNode $leftSubtree, ?SplayTreeNode $rightSubtree): ?SplayTreeNode
-    {
+    private function restructureAfterDeletion(
+        ?SplayTreeNode $leftSubtree,
+        ?SplayTreeNode $rightSubtree
+    ): ?SplayTreeNode {
         if (!$leftSubtree instanceof \DataStructures\SplayTree\SplayTreeNode) {
             return $this->handleEmptyLeftSubtree($rightSubtree);
         }
@@ -382,8 +414,9 @@ class SplayTree extends SplayTreeRotations
      *
      * @return SplayTreeNode|null The new root
      */
-    private function handleEmptyLeftSubtree(?SplayTreeNode $rightSubtreeRoot): ?SplayTreeNode
-    {
+    private function handleEmptyLeftSubtree(
+        ?SplayTreeNode $rightSubtreeRoot
+    ): ?SplayTreeNode {
         $this->root = $rightSubtreeRoot;
         if ($this->root instanceof \DataStructures\SplayTree\SplayTreeNode) {
             $this->root->parent = null;
@@ -400,8 +433,10 @@ class SplayTree extends SplayTreeRotations
      *
      * @return SplayTreeNode The new root after merging
      */
-    private function mergeSubtrees(SplayTreeNode $leftSubtreeRoot, ?SplayTreeNode $rightSubtreeRoot): SplayTreeNode
-    {
+    private function mergeSubtrees(
+        SplayTreeNode $leftSubtreeRoot,
+        ?SplayTreeNode $rightSubtreeRoot
+    ): SplayTreeNode {
         $maxLeftNode = $this->maxNode($leftSubtreeRoot);
         $this->root = $maxLeftNode;
 
@@ -412,15 +447,18 @@ class SplayTree extends SplayTreeRotations
     }
 
     /**
-     * Detaches the max node from the left subtree and reattaches the left subtree to the new root.
+     * Detaches the max node from the left subtree and reattaches the left subtree to
+     * the new root.
      *
      * @param SplayTreeNode $maxLeftNode The max node of the left subtree
      * @param SplayTreeNode $leftSubtreeRoot The root of the left subtree
      *
      * @return void
      */
-    private function detachMaxNodeFromLeftSubtree(SplayTreeNode $maxLeftNode, SplayTreeNode $leftSubtreeRoot): void
-    {
+    private function detachMaxNodeFromLeftSubtree(
+        SplayTreeNode $maxLeftNode,
+        SplayTreeNode $leftSubtreeRoot
+    ): void {
         $maxLeftNodeParent = $maxLeftNode->parent;
         if ($maxLeftNodeParent instanceof \DataStructures\SplayTree\SplayTreeNode) {
             $maxLeftNodeParent->right = null;
@@ -453,7 +491,8 @@ class SplayTree extends SplayTreeRotations
      *
      * @param SplayTreeNode|null $node The subtree to search for the maximum node
      *
-     * @return SplayTreeNode|null The node with the maximum key, or null if the subtree is empty
+     * @return SplayTreeNode|null The node with the maximum key, or null if the
+     * subtree is empty
      */
     public function maxNode(?SplayTreeNode $node): ?SplayTreeNode
     {

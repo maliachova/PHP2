@@ -117,8 +117,10 @@ class DoublyLinkedList implements \Stringable
         // Loop through the list until we reach the end of the list
         while ($current instanceof \Node) {
             // If the current node's data is the data we're looking for
-            // Set the current node's previous node's next node to the current node's next node
-            // Set the current node's next node's previous node to the current node's previous node
+            // Set the current node's previous node's next node to the current node's
+            // next node
+            // Set the current node's next node's previous node to the current node's
+            // previous node
             if ($current->data === $data) {
                 $current->prev->next = $current->next;
                 $current->next->prev = $current->prev;
@@ -165,8 +167,10 @@ class DoublyLinkedList implements \Stringable
             $current = $current->next;
         }
 
-        // Set the current node's previous node's next node to the current node's next node
-        // Set the current node's next node's previous node to the current node's previous node
+        // Set the current node's previous node's next node to the current node's
+        // next node
+        // Set the current node's next node's previous node to the current node's
+        // previous node
         $current->prev->next = $current->next;
         $current->next->prev = $current->prev;
     }
@@ -289,7 +293,8 @@ class DoublyLinkedList implements \Stringable
 
         // Loop through the list until we reach the end of the list
         while ($current instanceof \Node) {
-            // If the current node's data is the data we're looking for, return the current node
+            // If the current node's data is the data we're looking for, return the
+            // current node
             if ($current->data === $data) {
                 return $current;
             }
@@ -329,7 +334,8 @@ class DoublyLinkedList implements \Stringable
             // Append the current node's data to the string
             $string .= $current->data;
 
-            // If the current node's next node is not null, append a comma and a space to the string
+            // If the current node's next node is not null, append a comma and a
+            // space to the string
             if ($current->next instanceof \Node) {
                 $string .= ', ';
             }

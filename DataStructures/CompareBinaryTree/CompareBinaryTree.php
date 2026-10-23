@@ -5,7 +5,8 @@ declare(strict_types=1);
 namespace DataStructures\CompareBinaryTree;
 
 /**
- * Recurrent comparison of binary trees based on comparison of left and right branches
+ * Recurrent comparison of binary trees based on comparison of left and right
+ * branches
  * (https://en.wikipedia.org/wiki/Binary_tree).
  *
  * @author Michał Żarnecki https://github.com/rzarno

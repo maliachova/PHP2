@@ -15,7 +15,9 @@ declare(strict_types=1);
 function decimalToBinary($decimalNumber): string
 {
     if (!is_numeric($decimalNumber)) {
-        throw new \Exception('Please pass a valid Decimal Number for Converting it to a Binary Number.');
+        throw new \Exception(
+            'Please pass a valid Decimal Number for Converting it to a Binary Number.'
+        );
     }
 
     $binaryNumber = '';

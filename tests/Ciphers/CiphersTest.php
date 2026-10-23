@@ -21,7 +21,13 @@ class CiphersTest extends TestCase
         $input_str = "test@string";
         $key = "test-key";
         $invalid_key = "wrong-key";
-        $this->assertEquals($input_str, xorCipher(xorCipher($input_str, $key), $key));
-        $this->assertNotEquals($input_str, xorCipher(xorCipher($input_str, $key), $invalid_key));
+        $this->assertEquals(
+            $input_str,
+            xorCipher(xorCipher($input_str, $key), $key)
+        );
+        $this->assertNotEquals(
+            $input_str,
+            xorCipher(xorCipher($input_str, $key), $invalid_key)
+        );
     }
 }

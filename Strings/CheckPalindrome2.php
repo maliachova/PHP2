@@ -17,7 +17,9 @@ function checkPalindromeString(string $string, bool $caseInsensitive = true): st
     $string = trim($string);
 
     if ($string === '' || $string === '0') {
-        throw new \Exception('You are given empty string. Please give a non-empty string value');
+        throw new \Exception(
+            'You are given empty string. Please give a non-empty string value'
+        );
     }
 
     /**

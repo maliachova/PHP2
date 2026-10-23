@@ -3,10 +3,12 @@
 declare(strict_types=1);
 
 /*
- * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request: #174
+ * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request:
+ * #174
  * https://github.com/TheAlgorithms/PHP/pull/174
  *
- * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing bugs/corrections to this file.
+ * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing
+ * bugs/corrections to this file.
  * Thank you!
  */
 
@@ -21,16 +23,20 @@ class BSTree extends BinaryTreeTraversal
     private int $counter = 0;
 
     /**
-     * Optionally provide an array of key-value pairs to build the binary search tree from.
+     * Optionally provide an array of key-value pairs to build the binary search tree
+     * from.
      * Optionally set the traversal algorithm for the Iterator interface.
      * Otherwise, with manual insert() and setTraversalType() after initialization.
      *
      * @return mixed
      */
-    public function __construct(array $initialData = [], string $traversalType = parent::IN_ORDER)
-    {
+    public function __construct(
+        array $initialData = [],
+        string $traversalType = parent::IN_ORDER
+    ) {
         foreach ($initialData as $key => $value) {
-            $this->insert($key, $value);                // Build the tree from an array of key-value pairs
+            // Build the tree from an array of key-value pairs
+            $this->insert($key, $value);
         }
 
         parent::setTraversalType($traversalType);
@@ -89,7 +95,8 @@ class BSTree extends BinaryTreeTraversal
     }
 
     /**
-     * Removes and isolates an existing node from the BST and update structure references.
+     * Removes and isolates an existing node from the BST and update structure
+     * references.
      *
      * Time complexity: O(log n) for binary search tree node removal.
      *
@@ -158,7 +165,8 @@ class BSTree extends BinaryTreeTraversal
     {
         $discard = $rootPtr;
 
-        if ($discard->isLeaf()) {           // Case 1: Node to be removed is a leaf node
+        // Case 1: Node to be removed is a leaf node
+        if ($discard->isLeaf()) {
             $rootPtr = null;
         } elseif ($rootPtr->left != null) { // Case 2: Node has only a left child
             $rootPtr = $rootPtr->left;
@@ -254,7 +262,8 @@ class BSTree extends BinaryTreeTraversal
 
     /**
      * Get the depth of the given node relative to the root of the tree.
-     * Traverses from the given node up to the root of the tree by recursively following the parent references
+     * Traverses from the given node up to the root of the tree by recursively
+     * following the parent references
      *
      * Time complexity: O(d_p) where d_p: depth of node p in tree
      *
@@ -271,7 +280,8 @@ class BSTree extends BinaryTreeTraversal
 
     /**
      * Get the height of the given node relative to the farthest leaf node.
-     * Recursively visits all children of the given node determining the maximum height of its subtrees
+     * Recursively visits all children of the given node determining the maximum
+     * height of its subtrees
      *
      * Time Complexity: O(n)
      *
@@ -378,7 +388,10 @@ class BSTree extends BinaryTreeTraversal
         $arrayRepresentation = json_decode($data, true);
 
         $binarySearchTree = new self();
-        $binarySearchTree->root = $binarySearchTree->deserializeTree($arrayRepresentation, null);
+        $binarySearchTree->root = $binarySearchTree->deserializeTree(
+            $arrayRepresentation,
+            null
+        );
 
         $binarySearchTree->updateNodeCount($binarySearchTree->root);
         return $binarySearchTree;

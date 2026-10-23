@@ -123,10 +123,16 @@ class MathsTest extends TestCase
     public function testFibonacciSeries()
     {
         $this->assertEquals([0, 1, 1, 2, 3], fibonacciRecursive(5));
-        $this->assertEquals([0, 1, 1, 2, 3, 5, 8, 13, 21, 34], fibonacciRecursive(10));
+        $this->assertEquals(
+            [0, 1, 1, 2, 3, 5, 8, 13, 21, 34],
+            fibonacciRecursive(10)
+        );
 
         $this->assertEquals([0, 1, 1, 2, 3], fibonacciWithBinetFormula(5));
-        $this->assertEquals([0, 1, 1, 2, 3, 5, 8, 13, 21, 34], fibonacciWithBinetFormula(10));
+        $this->assertEquals(
+            [0, 1, 1, 2, 3, 5, 8, 13, 21, 34],
+            fibonacciWithBinetFormula(10)
+        );
     }
 
     public function testNeonNumber()
@@ -140,10 +146,16 @@ class MathsTest extends TestCase
     public function testFibonacciGenerator()
     {
         $this->assertEquals([0, 1, 1, 2, 3], iterator_to_array(loop(5, fib())));
-        $this->assertEquals([0, 1, 1, 2, 3, 5, 8, 13, 21, 34], iterator_to_array(loop(10, fib())));
+        $this->assertEquals(
+            [0, 1, 1, 2, 3, 5, 8, 13, 21, 34],
+            iterator_to_array(loop(10, fib()))
+        );
 
         $this->assertEquals([0, 1, 1, 2, 3], iterator_to_array(loop(5, fib())));
-        $this->assertEquals([0, 1, 1, 2, 3, 5, 8, 13, 21, 34], iterator_to_array(loop(10, fib())));
+        $this->assertEquals(
+            [0, 1, 1, 2, 3, 5, 8, 13, 21, 34],
+            iterator_to_array(loop(10, fib()))
+        );
     }
 
     public function testMean()

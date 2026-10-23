@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request: #160
+ * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request:
+ * #160
  * https://github.com/TheAlgorithms/PHP/pull/160
  *
- * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing bugs/corrections to this file.
+ * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing
+ * bugs/corrections to this file.
  * Thank you!
  */
 
@@ -63,9 +65,17 @@ class DisjointSetTest extends TestCase
                 $setJ = $this->ds->findSet($this->nodes[$j]);
 
                 if ($this->inSameSet($i, $j)) {
-                    $this->assertSame($setI, $setJ, "Nodes $i and $j should be in the same set");
+                    $this->assertSame(
+                        $setI,
+                        $setJ,
+                        "Nodes $i and $j should be in the same set"
+                    );
                 } else {
-                    $this->assertNotSame($setI, $setJ, "Nodes $i and $j should be in different sets");
+                    $this->assertNotSame(
+                        $setI,
+                        $setJ,
+                        "Nodes $i and $j should be in different sets"
+                    );
                 }
             }
         }

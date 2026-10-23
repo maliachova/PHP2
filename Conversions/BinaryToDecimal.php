@@ -21,7 +21,9 @@ declare(strict_types=1);
 function binaryToDecimal($binaryNumber): int|float
 {
     if (!is_numeric($binaryNumber)) {
-        throw new \Exception('Please pass a valid Binary Number for Converting it to a Decimal Number.');
+        throw new \Exception(
+            'Please pass a valid Binary Number for Converting it to a Decimal Number.'
+        );
     }
 
     $decimalNumber = 0;

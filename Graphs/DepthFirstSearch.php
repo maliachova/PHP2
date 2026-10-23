@@ -3,7 +3,8 @@
 declare(strict_types=1);
 
 /**
- * The Depth-first Search is an algorithm used for traversing or searching trees or graphs
+ * The Depth-first Search is an algorithm used for traversing or searching trees or
+ * graphs
  * (https://en.wikipedia.org/wiki/Depth-first_search).
  *
  * This is a non-recursive implementation.

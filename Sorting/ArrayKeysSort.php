@@ -25,7 +25,14 @@ class ArrayKeysSort
     ) {
         if (!empty($collection) && $keys !== []) {
             try {
-                usort($collection, function ($a, $b) use ($keys, $order, $isCaseSensitive): int {
+                usort($collection, function (
+                    $a,
+                    $b
+                ) use (
+                    $keys,
+                    $order,
+                    $isCaseSensitive
+                ): int {
 
                     $pos = 0;
                     do {

@@ -37,7 +37,8 @@ function binarySearch(array $arr, $value, $floor, $ceiling)
     if ($arr[$mid] > $value) {
         return binarySearch($arr, $value, $floor, $mid - 1);
     }
-    // search the right part of the $array If the $middle element is lower than the $value
+    // search the right part of the $array If the $middle element is lower than the
+    // $value
     return binarySearch($arr, $value, $mid + 1, $ceiling);
 }
 

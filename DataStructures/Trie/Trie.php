@@ -3,11 +3,13 @@
 declare(strict_types=1);
 
 /*
- * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request #162 and #172
+ * Created by: Ramy-Badr-Ahmed (https://github.com/Ramy-Badr-Ahmed) in Pull Request
+ * #162 and #172
  * https://github.com/TheAlgorithms/PHP/pull/162
  * https://github.com/TheAlgorithms/PHP/pull/172
  *
- * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing bugs/corrections to this file.
+ * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing
+ * bugs/corrections to this file.
  * Thank you!
  */
 
@@ -102,7 +104,10 @@ class Trie
         }
 
         foreach ($node->children as $char => $childNode) {
-            $words = array_merge($words, $this->findWordsFromNode($childNode, $prefix . $char));
+            $words = array_merge(
+                $words,
+                $this->findWordsFromNode($childNode, $prefix . $char)
+            );
         }
 
         return $words;
@@ -114,7 +119,8 @@ class Trie
      *
      * @param string $word The word to delete.
      *
-     * @return bool Returns true if the word was successfully deleted, otherwise false.
+     * @return bool Returns true if the word was successfully deleted, otherwise
+     * false.
      */
     public function delete(string $word): bool
     {
@@ -129,7 +135,8 @@ class Trie
      * @param string $word The word being deleted.
      * @param int $index The current index in the word.
      *
-     * @return bool Returns true if the current node should be deleted, otherwise false.
+     * @return bool Returns true if the current node should be deleted, otherwise
+     * false.
      */
     private function deleteHelper(TrieNode $node, string &$word, int $index): bool
     {
@@ -149,23 +156,30 @@ class Trie
         }
 
         // Recursively delete the child node
-        $shouldDeleteCurrentNode = $this->deleteHelper($childNode, $word, $index + 1);
+        $shouldDeleteCurrentNode = $this->deleteHelper(
+            $childNode,
+            $word,
+            $index + 1
+        );
 
         if ($shouldDeleteCurrentNode) {
             unset($node->children[$char]);
-            return !$node->isEndOfWord;     // true if current node is not the end of another word
+            // true if current node is not the end of another word
+            return !$node->isEndOfWord;
         }
 
         return false;
     }
 
     /**
-     * Recursively traverses the Trie starting from the given node and collects all words.
+     * Recursively traverses the Trie starting from the given node and collects all
+     * words.
      *
      * @param TrieNode $node The starting node for traversal.
      * @param string $prefix The prefix of the current path in the Trie.
      *
-     * @return array An array of words found in the Trie starting from the given node.
+     * @return array An array of words found in the Trie starting from the given
+     * node.
      */
     public function traverseTrieNode(TrieNode $node, string $prefix = ''): array
     {
@@ -176,7 +190,10 @@ class Trie
         }
 
         foreach ($node->children as $char => $childNode) {
-            $words = array_merge($words, $this->traverseTrieNode($childNode, $prefix . $char));
+            $words = array_merge(
+                $words,
+                $this->traverseTrieNode($childNode, $prefix . $char)
+            );
         }
 
         return $words;

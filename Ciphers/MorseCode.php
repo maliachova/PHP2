@@ -124,7 +124,8 @@ function decode(string $text): string
             $decodedText .= $MORSE_CODE[$c];
             // Appends the correct character
         } elseif ($c !== '' && $c !== '0') {
-            // Makes sure that the string is not empty to prevent trailing spaces or extra spaces from breaking this
+            // Makes sure that the string is not empty to prevent trailing spaces or
+            // extra spaces from breaking this
             throw new \Exception('Invalid character: ' . $c);
         }
     }

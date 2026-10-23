@@ -7,7 +7,8 @@ declare(strict_types=1);
  * in Pull Request #163: https://github.com/TheAlgorithms/PHP/pull/163
  * and #173: https://github.com/TheAlgorithms/PHP/pull/173
  *
- * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing bugs/corrections to this file.
+ * Please mention me (@Ramy-Badr-Ahmed) in any issue or pull request addressing
+ * bugs/corrections to this file.
  * Thank you!
  */
 
@@ -97,7 +98,8 @@ class AVLTree
 
     /**
      * Perform an in-order traversal of the AVL Tree.
-     * Initiates the traversal on the root node directly and returns the array of key-value pairs.
+     * Initiates the traversal on the root node directly and returns the array of
+     * key-value pairs.
      *
      * @return array
      */
@@ -108,7 +110,8 @@ class AVLTree
 
     /**
      * Perform a pre-order traversal of the AVL Tree.
-     * Initiates the traversal on the root node directly and returns the array of key-value pairs.
+     * Initiates the traversal on the root node directly and returns the array of
+     * key-value pairs.
      *
      * @return array
      */
@@ -119,7 +122,8 @@ class AVLTree
 
     /**
      * Perform a post-order traversal of the AVL Tree.
-     * Initiates the traversal on the root node directly and returns the array of key-value pairs.
+     * Initiates the traversal on the root node directly and returns the array of
+     * key-value pairs.
      *
      * @return array
      */
@@ -158,8 +162,11 @@ class AVLTree
      *
      * @return AVLTreeNode The new root of the subtree.
      */
-    private function insertNode(?AVLTreeNode $node, mixed $key, mixed $value): AVLTreeNode
-    {
+    private function insertNode(
+        ?AVLTreeNode $node,
+        mixed $key,
+        mixed $value
+    ): AVLTreeNode {
         if (!$node instanceof \DataStructures\AVLTree\AVLTreeNode) {
             return new AVLTreeNode($key, $value);
         }
@@ -258,7 +265,9 @@ class AVLTree
             return false;
         }
 
-        return $this->isBalancedHelper($node->left) && $this->isBalancedHelper($node->right);
+        return $this->isBalancedHelper($node->left) && $this->isBalancedHelper(
+            $node->right
+        );
     }
 
     /**
